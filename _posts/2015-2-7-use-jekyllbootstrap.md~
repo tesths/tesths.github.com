@@ -23,7 +23,7 @@ Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不�
 
 ![use-jekyllbootstrap-2](/images/use-jekyllbootstrap/use-jekyllbootstrap-2.png)
 
-不要问我怎么在github上怎么创建repository，右上角加好。不截图，自行研究…虽然我也是第一次。
+不要问我怎么在github上怎么创建repository，右上角"+"。不截图，自行研究…虽然我也是第一次。
 然后就是第二步了。
 
 ![use-jekyllbootstrap-3](/images/use-jekyllbootstrap/use-jekyllbootstrap-3.png)

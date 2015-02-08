@@ -14,7 +14,7 @@ categories: jekyll
 
 假设你已经更新源了，那么我们开始下一个步骤。
 因为jekyll是需要ruby环境的。
-在Mac下自带了ruby环境所以不需要安装ruby，在这我们需要安装已选ruby。
+在Mac下自带了ruby环境所以不需要安装ruby，在这我们需要安装ruby。
 命令是sudu apt-get install ruby。
 声明一下没有截图，但是所有需要的命令我会特别标注的。后面我遇到的问题会截图的。
 
@@ -22,19 +22,19 @@ categories: jekyll
 
 ![ubuntu-jekyll-environment-1](/images/ubuntu-jekyll-environment/ubuntu-jekyll-environment-1.png)
 
-虽然我磕磕盼盼的到了这一步但是我想一般情况下前面update和安装ruby应该是不会出现什么意外情况的。
+虽然我磕磕绊绊的到了这一步但是我想一般情况下前面update和安装ruby应该是不会出现什么意外情况的。
 之后就是利用gem来安装了。
-安装官方文档上写的，此时我们应该进行的操作是gem install Jekyll，但是我在输入命令之后出现这个了这个问题。
+安装官方文档上写的，此时我们应该进行的操作是gem install jekyll，但是我在输入命令之后出现这个了这个问题。
 
 ![ubuntu-jekyll-environment-2](/images/ubuntu-jekyll-environment/ubuntu-jekyll-environment-2.png)
 
-这是因为gem安装时需要获取最高权限，所以我们使用sudo gem install Jekyll
+这是因为gem安装时需要获取最高权限，所以我们使用sudo gem install jekyll
 
 ![ubuntu-jekyll-environment-3](/images/ubuntu-jekyll-environment/ubuntu-jekyll-environment-3.png)
 
 又报错了！！看error部分。出现了 “failed to build gem native extension”
 上stackoverflow…完了才知道要安装一个ruby-dev
-不太清楚ruby-dev是啥又ruby大神知道的务必教我。但是程序安装都需要dev，我记得好像以前在ubuntu下配置GoAgent的时候装过一个什么dev，在python的时候也装过一个什么什么dev。总之就安装一下呗。
+不太清楚ruby-dev是啥有ruby大神知道的务必教我。但是程序安装都需要dev，我记得好像以前在ubuntu下配置GoAgent的时候装过一个什么dev，在python的时候也装过一个什么什么dev。总之就安装一下呗。
 
 ![ubuntu-jekyll-environment-4](/images/ubuntu-jekyll-environment/ubuntu-jekyll-environment-4.png)
 
@@ -67,6 +67,6 @@ categories: jekyll
 
 ![ubuntu-jekyll-environment-9](/images/ubuntu-jekyll-environment/ubuntu-jekyll-environment-9.png)
 
-Jekyll已经成功创建了！历时一个晚上加不到一个早上终于才完成了环境的搭建。相比较去年暑假配置环境的速度这次已经很快了…我现在已经会利用google和stackoverflow搜索这方面的东西了说明这一学期在创萌还是学了很多东西的。
+Jekyll已经成功创建了！历时一个晚上加不到一个早上终于才完成了环境的搭建。相比较去年暑假配置环境的速度这次已经很快了…我现在已经会利用google和stackoverflow搜索这方面的东西了说明这一学期还是学了很多东西的。
 
 这是整个jekyll环境的配置，第一篇文章，后续我会继续我的github blog搭建之旅。

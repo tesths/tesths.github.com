@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">文章列表</h1>
+  <p class="page-ex">因为还没有添加评论功能，所以如果您想和我交流给我发邮件好了，我会尽快回复。邮箱地址在左下角~</p>
+  <p class="page-ex1">我会尽快添加评论功能的~~</p>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+</div>
