@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Feb 2015 18:52:04 +0800</pubDate>
-    <lastBuildDate>Sun, 08 Feb 2015 18:52:04 +0800</lastBuildDate>
+    <pubDate>Sun, 08 Feb 2015 19:05:28 +0800</pubDate>
+    <lastBuildDate>Sun, 08 Feb 2015 19:05:28 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -48,6 +48,16 @@
 我使用了github推出的编辑器atom。
 讲句实在话我没觉得atom哪里好用，但是它可以实时预览你的Markdown文件。
 因为我想早点发文章出去，所以Markdown的语法基本上没怎么熟悉就直接上了，看上去肯定不美观。但是Markdown确实给我的感觉很好，不复杂，但是很舒服。而且语法上也没有很难。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;4.本地jekyll环境&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;本地jekyll环境的搭建我专门写了一篇博客。一开始觉得没有什么用。后来才发现重要性。
+因为在调试的时候需要本地的jekyll环境。命令是jekyll server，可以在本地看一下效果。
+这样不用每次修改代码之后都上传预览。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;hello-world&quot;&gt;下面我将对我从hello world改动到现在这个样子进行一个阐述。&lt;/h2&gt;
@@ -108,7 +118,7 @@ Jekyll提供了一个例子可以研究一下。
       </item>
     
       <item>
-        <title>不利用Jekyllbootstrap上线jekyll</title>
+        <title>不利用Jekyllbootstrap上线Jekyll</title>
         <description>&lt;p&gt;因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。&lt;/p&gt;
 
 &lt;p&gt;首先是新建一个我的jekyll博客。&lt;/p&gt;
@@ -149,7 +159,7 @@ mv可以移动文件，批量移动文件的方式就是用&lt;em&gt;号。
       </item>
     
       <item>
-        <title>利用jekyllbootstrap开始使用jekyll</title>
+        <title>利用Jekyllbootstrap开始使用Jekyll</title>
         <description>&lt;p&gt;上次在ubuntu下配置好了jekyll的环境不知道有啥用，都准备放弃了。今天下午睡了一觉觉得不能就这样不了了之。还是需要一个地方记录一下技术路上的点滴。
 所以就继续开始我的jekyll之路了。&lt;/p&gt;
 
@@ -220,7 +230,7 @@ Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不�
       </item>
     
       <item>
-        <title>关于在ubuntu下搭建github的jekyll环境</title>
+        <title>关于在ubuntu下搭建github的Jekyll环境</title>
         <description>&lt;p&gt;之前早就想有一个自己的博客，但是想自己定制不想用别人的，所以没有选择csdn。用WordPress的话需要服务器又不想花钱。后来我们工作室我的师傅，他们现在已经成立公司了(下文和以后的文章和现实当中我都会称呼他迪哥)。迪哥将他的博客移到了github上。虽然github是静态页面，但是对我来说偶尔写写心得也是够用了。
 没有仔细研读迪哥的几篇有关jekyll 的博客自己对着文档就上了。
 因为后面几天可能还需要windows环境，所以暂时是在windows下跑的ubuntu14.04 32位的虚拟机。
