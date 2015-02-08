@@ -4,11 +4,108 @@
     <title>iWalk's Blog</title>
     <description>我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 寒假想看一些前端的知识。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Feb 2015 17:49:10 +0800</pubDate>
-    <lastBuildDate>Sun, 08 Feb 2015 17:49:10 +0800</lastBuildDate>
+    <link>judi0713.github.io/</link>
+    <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 08 Feb 2015 18:52:04 +0800</pubDate>
+    <lastBuildDate>Sun, 08 Feb 2015 18:52:04 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Jekyll基本实现写博客功能</title>
+        <description>&lt;p&gt;今天又研究了一天jekyll。
+现在已经实现这种效果了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-1.png&quot; alt=&quot;finish-basic-jekyll-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;页面部分我使用的就是jekyll本身的效果没有任何美化的过程。&lt;/p&gt;
+
+&lt;p&gt;大概总结一下有几点我觉得比较重要的。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1.git的使用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因为我全程基本上都是在linux下进行操作，所以git用的是全部的命令行。
+至于git命令行的使用我还是没有太明白，我觉得多上传几次代码应该就会慢慢熟悉，到时候大概我会将git的基本命令写一个博客出来，还希望到时候有人来访问。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2.前端知识&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因为对前端接触较少，所以可能再代码方面是十分不熟悉，所以也只能用原生的模板。
+实在是太丑。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3.Markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;整个jekyll的文章发布是用的Markdown。
+我使用了github推出的编辑器atom。
+讲句实在话我没觉得atom哪里好用，但是它可以实时预览你的Markdown文件。
+因为我想早点发文章出去，所以Markdown的语法基本上没怎么熟悉就直接上了，看上去肯定不美观。但是Markdown确实给我的感觉很好，不复杂，但是很舒服。而且语法上也没有很难。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;hello-world&quot;&gt;下面我将对我从hello world改动到现在这个样子进行一个阐述。&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-2.png&quot; alt=&quot;finish-basic-jekyll-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是原来的样子。&lt;/p&gt;
+
+&lt;p&gt;首先我打开的是_config.yml&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-3.png&quot; alt=&quot;finish-basic-jekyll-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Title对应了博客的名称。
+Email就对应了左下方的email。
+我将twitter那一行删了…后面我再考虑要不要换成我的微博啥的。
+然后description就是右下角那一串字。&lt;/p&gt;
+
+&lt;p&gt;全部修改完毕就会得到我的首页的样子。&lt;/p&gt;
+
+&lt;p&gt;还有右上角的About。
+我们打开 about.md，这是Markdown文件了。
+修改title会修改about显示的文字，修改里面的内容就可以点击About跳转进去了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-4.png&quot; alt=&quot;finish-basic-jekyll-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;还有最后就是我发布的那几篇文章。和posts这个文字的修改。
+Posts那个文字修改是在index.html里修改。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-5.png&quot; alt=&quot;finish-basic-jekyll-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;发布的所有文章都放在_posts文件夹里。
+Jekyll提供了一个例子可以研究一下。
+发布就会在首页显示。
+我连续发布了三篇所以就显示了~&lt;/p&gt;
+
+&lt;p&gt;怎么发布就需要Markdown的语法了，可以把我博客从github上download下来看看。
+不要问我看的谁的我看的迪哥的。&lt;/p&gt;
+
+&lt;p&gt;总之大概就是这样。
+后期计划还是要把Markdown的语法研究一下，不然文章看上去太丑了。
+还有就是研究一下怎么设置可以评论和查看访问记录。
+最后就是美化我的jekyll，不管是修改别人的还是我自己设计。&lt;/p&gt;
+
+&lt;p&gt;总之，前面几篇可能水分有点大，但是这一篇确实可以迅速搭建一个在github上的博客。&lt;/p&gt;
+
+&lt;p&gt;另附我博客的github地址和迪哥博客的github的地址。&lt;/p&gt;
+
+&lt;p&gt;我的&lt;a href=&quot;https://github.com/judi0713/judi0713.github.com&quot;&gt;github.com/judi0713/judi0713.github.com&lt;/a&gt;
+迪哥的&lt;a href=&quot;https://github.com/icindy/icindy.github.io&quot;&gt;github.com/icindy/icindy.github.io&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Feb 2015 18:23:10 +0800</pubDate>
+        <link>judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</link>
+        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
     
       <item>
         <title>不利用Jekyllbootstrap上线jekyll</title>
@@ -43,8 +140,8 @@ mv可以移动文件，批量移动文件的方式就是用&lt;em&gt;号。
 &lt;p&gt;打开&lt;a href=&quot;http://judi0713.github.io/&quot;&gt;judi0713.github.io&lt;/a&gt;已经可以访问了。&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Feb 2015 10:42:08 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/2015/02/08/use-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/2015/02/08/use-jekyll.html</guid>
+        <link>judi0713.github.io/jekyll/2015/02/08/use-jekyll.html</link>
+        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/08/use-jekyll.html</guid>
         
         
         <category>jekyll</category>
@@ -114,8 +211,8 @@ Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不�
 &lt;p&gt;下一步我将研究如何不使用jekyllbootstrap的框架开始使用jekyll。&lt;/p&gt;
 </description>
         <pubDate>Sat, 07 Feb 2015 21:25:18 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/2015/02/07/use-jekyllbootstrap.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/2015/02/07/use-jekyllbootstrap.html</guid>
+        <link>judi0713.github.io/jekyll/2015/02/07/use-jekyllbootstrap.html</link>
+        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/07/use-jekyllbootstrap.html</guid>
         
         
         <category>jekyll</category>
@@ -191,8 +288,8 @@ Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不�
 &lt;p&gt;这是整个jekyll环境的配置，第一篇文章，后续我会继续我的github blog搭建之旅。&lt;/p&gt;
 </description>
         <pubDate>Wed, 04 Feb 2015 10:58:29 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/2015/02/04/ubuntu-jekyll-environment.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/2015/02/04/ubuntu-jekyll-environment.html</guid>
+        <link>judi0713.github.io/jekyll/2015/02/04/ubuntu-jekyll-environment.html</link>
+        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/04/ubuntu-jekyll-environment.html</guid>
         
         
         <category>jekyll</category>
