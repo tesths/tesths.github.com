@@ -48,7 +48,7 @@ Ok，已经将jekyllbootstrap clone到本地了
 反正就是这个publickey的错误。
 这个无比蛋疼的错误…百度了半天，在csdn上发现问题所在了。
 
-[blog.sina.com.cn/s/blog_6b706e15010199p1.html](http://blog.sina.com.cn/s/blog_6b706e15010199p1.html/)(附上原帖地址)问题原因就是需为github账号添加ssh key。
+[blog.sina.com.cn/s/blog_6b706e15010199p1.html](http://blog.sina.com.cn/s/blog_6b706e15010199p1.html)(附上原帖地址)问题原因就是需为github账号添加ssh key。
 对照着这篇博客添加了ssh 之后，就ok了。
 
 ![use-jekyllbootstrap-7](/images/use-jekyllbootstrap/use-jekyllbootstrap-7.png)
