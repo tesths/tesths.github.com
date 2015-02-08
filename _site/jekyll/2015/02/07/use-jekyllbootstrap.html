@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>利用jekyllbootstrap开始使用jekyll</title>
+  <meta name="description" content="上次在ubuntu下配置好了jekyll的环境不知道有啥用，都准备放弃了。今天下午睡了一觉觉得不能就这样不了了之。还是需要一个地方记录一下技术路上的点滴。所以就继续开始我的jekyll之路了。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/2015/02/07/use-jekyllbootstrap.html">
+  <link rel="alternate" type="application/rss+xml" title="iWalk's Blog" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">iWalk's Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">利用jekyllbootstrap开始使用jekyll</h1>
+    <p class="post-meta">Feb 7, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>上次在ubuntu下配置好了jekyll的环境不知道有啥用，都准备放弃了。今天下午睡了一觉觉得不能就这样不了了之。还是需要一个地方记录一下技术路上的点滴。
+所以就继续开始我的jekyll之路了。</p>
+
+<p>提醒！！
+建议先看完整篇博客之后再操作！！！！
+如果你对照做错了出现问题别怪我….你可以百度，或者google。我已经为了写博客换了两台ubuntu已经很努力了。</p>
+
+<p>找到了一个网站<a href="http://jekyllbootstrap.com/">jekyllbootstrap.com</a>
+Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不要嘲笑一个不会前端的人在倒腾他的博客。
+总之点击去，然后</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-1.png" alt="use-jekyllbootstrap-1" /></p>
+
+<p>我点击了左下角的按钮。
+然后输入了我的github账号。
+按照它的步骤，第一步是创建一个repository</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-2.png" alt="use-jekyllbootstrap-2" /></p>
+
+<p>不要问我怎么在github上怎么创建repository，右上角加好。不截图，自行研究…虽然我也是第一次。
+然后就是第二步了。</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-3.png" alt="use-jekyllbootstrap-3" /></p>
+
+<p>我打开我的ubuntu（天，为了写博客我开了两个ubuntu！）还好加了内存条。
+依次输入命令。（不要忘记在ubuntu下安装git apt-get install git就行了）
+别傻不拉几的输入，用复制的，终端下复制方法自行百度。</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-4.png" alt="use-jekyllbootstrap-4" /></p>
+
+<p>Ok，已经将jekyllbootstrap clone到本地了
+执行第二步和第三步！</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-5.png" alt="use-jekyllbootstrap-5" /></p>
+
+<p>一切正常，第四步！
+报错了！！</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-6.png" alt="use-jekyllbootstrap-6" /></p>
+
+<p>忽略我又换了一台设备因为新设备报错又换了…
+反正就是这个publickey的错误。
+这个无比蛋疼的错误…百度了半天，在csdn上发现问题所在了。</p>
+
+<p><a href="http://blog.sina.com.cn/s/blog_6b706e15010199p1.html/">blog.sina.com.cn/s/blog_6b706e15010199p1.html</a>(附上原帖地址)问题原因就是需为github账号添加ssh key。
+对照着这篇博客添加了ssh 之后，就ok了。</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-7.png" alt="use-jekyllbootstrap-7" /></p>
+
+<p>Ok了。我的天，累死了。主要就是ssh key那一步。
+我现在用的是jekyllbootstrap的框架，怎么自己开始一个博客还没太明白。
+<a href="http://judi0713.github.io/">judi0713.github.io</a>输入之后 可以看到界面了！</p>
+
+<p><img src="/images/use-jekyllbootstrap/use-jekyllbootstrap-8.png" alt="use-jekyllbootstrap-8" /></p>
+
+<p>剩下的基本上应该就是前端知识了。到此为止已经可以访问了。
+然后可以利用上一篇文章配置的jekyll环境在本地进行调试然后上线了。</p>
+
+<p>下一步我将研究如何不使用jekyllbootstrap的框架开始使用jekyll。</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">iWalk's Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>iWalk's Blog</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 寒假想看一些前端的知识。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
