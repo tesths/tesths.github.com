@@ -1,11 +1,27 @@
 ---
 layout: page
-title: About
+title: 关于我
+date: 2015.2.8 16:22
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+##我
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+> 我是电子科技大学信息安全大二的一名学生。现在主要是跟随迪哥做ios开发。附上迪哥的blog地址[cindyfn.com](http://cindyfn.com/)多多捧场啊啊啊，很多干货的！！
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+##关于我的域名
+
+> 因为才开始搭建我的jekyll，而且前端知识不够，所以耗时很久。现在用的模板也只是原生的没有任何美化。打算以后渐渐美化之后再购入域名了~
+
+##关于我的博客名
+
+> 我的微信叫Walk，叫这个名字是有含义的。有一个故事哦~~暂时保密。因为觉得叫Walk的人可能很多，我又在做iOS开发，所以就叫iWalk了。
+
+##我的近期打算
+
+> 因为没有Mac电脑，我已经在攒钱了！！寒假主要还是打算看看前端和补习一点算法方面的知识吧。
+
+##最后
+
+大概就是这样了，后面我会逐渐我搭建jekyll的过程。然后，美化我的jekyll！！
+
