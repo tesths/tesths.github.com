@@ -6,9 +6,121 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Feb 2015 17:10:35 +0800</pubDate>
-    <lastBuildDate>Sun, 08 Feb 2015 17:10:35 +0800</lastBuildDate>
+    <pubDate>Sun, 08 Feb 2015 17:49:10 +0800</pubDate>
+    <lastBuildDate>Sun, 08 Feb 2015 17:49:10 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>不利用Jekyllbootstrap上线jekyll</title>
+        <description>&lt;p&gt;因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。&lt;/p&gt;
+
+&lt;p&gt;首先是新建一个我的jekyll博客。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-1.png&quot; alt=&quot;use-jekyll-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后我们将建好的git仓库clone到本地&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-2.png&quot; alt=&quot;use-jekyll-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我不知道怎么将myblog设置为我的git根目录来上传。
+然后就利用了笨办法，讲myblog里的所有文件移动到judi0713这个文件夹里。
+命令是&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-3.png&quot; alt=&quot;use-jekyll-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;顺便提一下， mv这个命令可以重新命名，重命名的方式就是mv filename1 filename2
+mv可以移动文件，批量移动文件的方式就是用&lt;em&gt;号。
+比如我这里使用的，就是可以将myblog的所有文件全部移动，相应的，如果是&lt;/em&gt;.*那么会将myblog的所有文件移动，保留文件夹。&lt;/p&gt;
+
+&lt;p&gt;现在我们已经将jekyll创建的文件全部移动到了git仓库里。
+下面就是要将仓库里的文件全部上传了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-4.png&quot; alt=&quot;use-jekyll-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就是这三条。具体每一条什么含义我大概明白，但是从昨晚上到今天早上我已经被git这几条命令搞的有点晕了。
+我全部理清楚之后会专门写一个和git命令行有关的blog的。&lt;/p&gt;
+
+&lt;p&gt;打开&lt;a href=&quot;http://judi0713.github.io/&quot;&gt;judi0713.github.io&lt;/a&gt;已经可以访问了。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Feb 2015 10:42:08 +0800</pubDate>
+        <link>http://yourdomain.com/jekyll/2015/02/08/use-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/2015/02/08/use-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+      <item>
+        <title>利用jekyllbootstrap开始使用jekyll</title>
+        <description>&lt;p&gt;上次在ubuntu下配置好了jekyll的环境不知道有啥用，都准备放弃了。今天下午睡了一觉觉得不能就这样不了了之。还是需要一个地方记录一下技术路上的点滴。
+所以就继续开始我的jekyll之路了。&lt;/p&gt;
+
+&lt;p&gt;提醒！！
+建议先看完整篇博客之后再操作！！！！
+如果你对照做错了出现问题别怪我….你可以百度，或者google。我已经为了写博客换了两台ubuntu已经很努力了。&lt;/p&gt;
+
+&lt;p&gt;找到了一个网站&lt;a href=&quot;http://jekyllbootstrap.com/&quot;&gt;jekyllbootstrap.com&lt;/a&gt;
+Bootstrap是Twitter开源的前端框架。具体怎么用我还在研究。不要嘲笑一个不会前端的人在倒腾他的博客。
+总之点击去，然后&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-1.png&quot; alt=&quot;use-jekyllbootstrap-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我点击了左下角的按钮。
+然后输入了我的github账号。
+按照它的步骤，第一步是创建一个repository&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-2.png&quot; alt=&quot;use-jekyllbootstrap-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不要问我怎么在github上怎么创建repository，右上角加好。不截图，自行研究…虽然我也是第一次。
+然后就是第二步了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-3.png&quot; alt=&quot;use-jekyllbootstrap-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我打开我的ubuntu（天，为了写博客我开了两个ubuntu！）还好加了内存条。
+依次输入命令。（不要忘记在ubuntu下安装git apt-get install git就行了）
+别傻不拉几的输入，用复制的，终端下复制方法自行百度。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-4.png&quot; alt=&quot;use-jekyllbootstrap-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ok，已经将jekyllbootstrap clone到本地了
+执行第二步和第三步！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-5.png&quot; alt=&quot;use-jekyllbootstrap-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一切正常，第四步！
+报错了！！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-6.png&quot; alt=&quot;use-jekyllbootstrap-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;忽略我又换了一台设备因为新设备报错又换了…
+反正就是这个publickey的错误。
+这个无比蛋疼的错误…百度了半天，在csdn上发现问题所在了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_6b706e15010199p1.html/&quot;&gt;blog.sina.com.cn/s/blog_6b706e15010199p1.html&lt;/a&gt;(附上原帖地址)问题原因就是需为github账号添加ssh key。
+对照着这篇博客添加了ssh 之后，就ok了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-7.png&quot; alt=&quot;use-jekyllbootstrap-7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ok了。我的天，累死了。主要就是ssh key那一步。
+我现在用的是jekyllbootstrap的框架，怎么自己开始一个博客还没太明白。
+&lt;a href=&quot;http://judi0713.github.io/&quot;&gt;judi0713.github.io&lt;/a&gt;输入之后 可以看到界面了！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/use-jekyllbootstrap/use-jekyllbootstrap-8.png&quot; alt=&quot;use-jekyllbootstrap-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;剩下的基本上应该就是前端知识了。到此为止已经可以访问了。
+然后可以利用上一篇文章配置的jekyll环境在本地进行调试然后上线了。&lt;/p&gt;
+
+&lt;p&gt;下一步我将研究如何不使用jekyllbootstrap的框架开始使用jekyll。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 07 Feb 2015 21:25:18 +0800</pubDate>
+        <link>http://yourdomain.com/jekyll/2015/02/07/use-jekyllbootstrap.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/2015/02/07/use-jekyllbootstrap.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
     
       <item>
         <title>关于在ubuntu下搭建github的jekyll环境</title>
