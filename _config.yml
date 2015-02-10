@@ -12,3 +12,8 @@ github_username: judi0713
 
 # Build settings
 markdown: kramdown
+
+comment :
+	provider : disqus
+	disqus : 
+		short_name : tigefa
