@@ -13,3 +13,8 @@ github_username: judi0713
 # Build settings
 markdown: kramdown
 
+# Comment
+comment : 
+	provider : duoshuo
+	duoshuo : 
+		short_name : walkginkgo
