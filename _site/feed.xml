@@ -6,9 +6,143 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Feb 2015 21:46:00 +0800</pubDate>
-    <lastBuildDate>Tue, 24 Feb 2015 21:46:00 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Feb 2015 23:44:12 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Feb 2015 23:44:12 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>关于前端文本编辑器的废话和Emmet部分文档说明</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;第一部分：关于前端文本编辑器的废话（可直接略过）&lt;/h3&gt;
+&lt;p&gt;因为寒假看了一点点前端的东西。一开始在挑文本编辑器。首先想到的是linux下的vim。后来硬是把vim下安装插件的vundle都研究了一遍，没有找到的好的js自动补全功能的配置和插件。在我纠结了三四天之后，我决定放弃vim。(好像有人用emacs这种编辑器之神写前端，我实在是不想尝试了…有机会会研究一下emacs的)。&lt;/p&gt;
+
+&lt;p&gt;其次的选择就是sublime了。CM基本上清一色sublime。从Python到前端，还有angularjs。Sublime基本完成了大一统。但是我在写js的时候发现它对js自动补全的支持没有那么好。（可能是我插件没怎么安装，懒得倒腾了）主要我xcode用多了。依依不舍别过sublime。&lt;/p&gt;
+
+&lt;p&gt;接着就是搜索了一下前端的编辑器。Github的Atom，那玩意写markdown倒是不错。自动补全功能，感觉就好像没有自动补全功能。插件功能未实验。&lt;/p&gt;
+
+&lt;p&gt;Jetbrains系列，有个webstorm。Jetbrains系列都要钱，虽然学生免费。放弃。但是jetbrain系列确实好用啊，良心，毕竟收费。&lt;/p&gt;
+
+&lt;p&gt;Notepad++，放弃。Notepad++适合看代码。&lt;/p&gt;
+
+&lt;p&gt;Lighttable，lighttable其实还不错，和sublime已经很相似了。但是对js的一些方法的补全没有那么好。Lighttable是ClojureScript写的的，很厉害。&lt;/p&gt;
+
+&lt;p&gt;最后挑来挑去挑到adobe的brackets。在写js函数的时候终于有自动补全了啊我好开心。
+然后就是装了一些插件，后文会附上我用的插件列表。装插件的时候发现了第二部分的主题。Emmet。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-1.jpg&quot; alt=&quot;brackets-emmet-1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;emmet&quot;&gt;第二部分：Emmet部分文档说明&lt;/h3&gt;
+&lt;p&gt;第二部分的文章，将基于上图来阐述。我将会介绍在brackets下，我截图的emmet菜单里所有功能的用途和使用。
+这些emmet的功能看上去复杂，其实很简单，我会一一说明，如果你是sublime的用户，你也可以参考我的文章，也可以参考emmet在github上的主页，sublime的emmet插件在github上有连接对应到emmet官方的文档。Emmet官方的文档是带有效果图的，可以方便理解它的功能。（sublime用户的emmet顺序可能和brackets不同，但是具备的功能大多相似）
+我这里再次进行阐述的意义，一在于方便我个人以后查阅，二是我在此过程中再次熟悉一下里面的各项功能。
+一下所有内容基于brackets。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;开始&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先介绍一下简单emmet使用，举个简单的例子，我在brackets下输入&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-2.png&quot; alt=&quot;brackets-emmet-2&quot; /&gt; 
+之后按下tab键，会出现&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-3.png&quot; alt=&quot;brackets-emmet-3&quot; /&gt;极大减轻了代码量。
+具体使用方法&lt;a href=&quot;http://docs.emmet.io/cheat-sheet/&quot;&gt;参见&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://docs.emmet.io/&quot;&gt;官方文档地址&lt;/a&gt;  里面有很少的地方不能完全对应官方的文档，差别很小。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;然后是介绍brackets里的功能。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Previous editor point &amp;amp;&amp;amp; next edit point 对应文档 Go to Edit Point &lt;a href=&quot;http://docs.emmet.io/actions/go-to-edit-point/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;到达之前的编辑点，到达下一个编辑点。&lt;/p&gt;
+
+&lt;p&gt;举个例子，现在输入&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-4.png&quot; alt=&quot;brackets-emmet-4&quot; /&gt;按下tab&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-5.png&quot; alt=&quot;brackets-emmet-5&quot; /&gt;
+如果此时光标在&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-6.png&quot; alt=&quot;brackets-emmet-6&quot; /&gt;那么按下next edit point会到达&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-7.png&quot; alt=&quot;brackets-emmet-7&quot; /&gt;
+再按下next edit point会到达下一个class里。同理，如果此时按下Previous editor point，会到达第一个class里。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Evaluate math expression 对应文档 Evaluate Math Expression &lt;a href=&quot;http://docs.emmet.io/actions/evaluate-math/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;计算数学表达式。&lt;/p&gt;
+
+&lt;p&gt;这个主要是计算css。举个例子 ，输入&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-8.png&quot; alt=&quot;brackets-emmet-8&quot; /&gt;然后按下快捷键，会得到&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-9.png&quot; alt=&quot;brackets-emmet-9&quot; /&gt;。
+可以进行多重的加减乘除。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Expand abbreviation 对应文档 Expand Abbreviation &lt;a href=&quot;http://docs.emmet.io/actions/expand-abbreviation/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这个就是对应我们的tab键，最主要的emmet功能。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Balance(inward)&amp;amp;&amp;amp; Balance(outward) 对应文档 Match Tag Pair &lt;a href=&quot;http://docs.emmet.io/actions/match-pair/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当我的光标处在&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-10.png&quot; alt=&quot;brackets-emmet-10&quot; /&gt;时，按下Balance(outward)，此时会选中所有的&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-11.png&quot; alt=&quot;brackets-emmet-11&quot; /&gt;，再按下Balance(outward)，会选中&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-38.png&quot; alt=&quot;brackets-emmet-38&quot; /&gt;整个&amp;lt;li&amp;gt;标签，再按下Balance(outward)，会选中&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-12.png&quot; alt=&quot;brackets-emmet-12&quot; /&gt;，再按下Balance(outward)，会选中全部的内容。Balance(inward)正好是反过来选择，我就不详细叙述了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Go to matvhing tag pair 对应文档Go to Matching Pair &lt;a href=&quot;http://docs.emmet.io/actions/go-to-pair/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;到达对应的标签。&lt;/p&gt;
+
+&lt;p&gt;当我的光标在&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-13.png&quot; alt=&quot;brackets-emmet-13&quot; /&gt;时，按下Go to matvhing tag pair，光标会到达&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-14.png&quot; alt=&quot;brackets-emmet-14&quot; /&gt;， 对应标签的最前面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Merge line 对应文档 Merge Lines &lt;a href=&quot;http://docs.emmet.io/actions/merge-lines/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;合并行。 &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-15.png&quot; alt=&quot;brackets-emmet-15&quot; /&gt;光标如红线。 按下快捷键，会&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-16.png&quot; alt=&quot;brackets-emmet-16&quot; /&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reflect value 对应文档 Reflect CSS Value &lt;a href=&quot;http://docs.emmet.io/actions/reflect-css-value/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;统一调整css数值。
+借用官方的例子。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-17.png&quot; alt=&quot;brackets-emmet-17&quot; /&gt;现在&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-18.png&quot; alt=&quot;brackets-emmet-18&quot; /&gt;光标在红线，按下快捷键，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-19.png&quot; alt=&quot;brackets-emmet-19&quot; /&gt;全部调整为50。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remove tag 对应文档 Remove Tag &lt;a href=&quot;http://docs.emmet.io/actions/remove-tag/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除标签。&lt;/p&gt;
+
+&lt;p&gt;将光标移植要删除的标签内，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-20.png&quot; alt=&quot;brackets-emmet-20&quot; /&gt;，按下快捷键，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-21.png&quot; alt=&quot;brackets-emmet-21&quot; /&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Select next itm&amp;amp;&amp;amp;select previous item 对应文档 Select Item &lt;a href=&quot;http://docs.emmet.io/actions/select-item/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-22.png&quot; alt=&quot;brackets-emmet-22&quot; /&gt;光标如红点，按下Select next itm，会选中整个html标签&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-23.png&quot; alt=&quot;brackets-emmet-23&quot; /&gt;，再按下，选中整个div标签&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-24.png&quot; alt=&quot;brackets-emmet-24&quot; /&gt;，再按下，到p标签。select previous item相反。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Split/join tag declaration 对应文档 Split/Join Tag &lt;a href=&quot;http://docs.emmet.io/actions/split-join-tag/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;分开/合并标签&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-25.png&quot; alt=&quot;brackets-emmet-25&quot; /&gt;光标在标签内，按下快捷键，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-26.png&quot; alt=&quot;brackets-emmet-26&quot; /&gt;，再按一次&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-27.png&quot; alt=&quot;brackets-emmet-27&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Toggle comment 对应文档 Toggle Comment &lt;a href=&quot;http://docs.emmet.io/actions/toggle-comment/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;注释&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-28.png&quot; alt=&quot;brackets-emmet-28&quot; /&gt;光标位置，按下快捷键，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-29.png&quot; alt=&quot;brackets-emmet-29&quot; /&gt;。
+&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-30.png&quot; alt=&quot;brackets-emmet-30&quot; /&gt;光标位置，按下快捷键，&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-31.png&quot; alt=&quot;brackets-emmet-31&quot; /&gt; 。
+就是两个tag之间的。另，在brackets里，按下ctrl+/是光标所在单行注释。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Wrap with abbreviation 对应文档 Wrap with Abbreviation &lt;a href=&quot;http://docs.emmet.io/actions/wrap-with-abbreviation/&quot;&gt;连接&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;添加新的emmet。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-32.png&quot; alt=&quot;brackets-emmet-32&quot; /&gt;按下快捷键（我的快捷键和qq冲突了…我用的点击）&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-33.png&quot; alt=&quot;brackets-emmet-33&quot; /&gt;
+出现一个这个。输入html&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-34.png&quot; alt=&quot;brackets-emmet-34&quot; /&gt;。添加了一段新的html标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update tag 对应文档 未找到&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;更新标签&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-35.png&quot; alt=&quot;brackets-emmet-35&quot; /&gt;按下快捷键输入&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-36.png&quot; alt=&quot;brackets-emmet-36&quot; /&gt;,&lt;img src=&quot;/images/brackets-emmet/brackets-emmet-37.png&quot; alt=&quot;brackets-emmet-37&quot; /&gt; 。&lt;/p&gt;
+
+&lt;p&gt;下面的连续六个和数值有关的是在css里面遇到数值的时候，可以调节数值大小，我就不具体阐述了。对应文档 Increment/Decrement Number 对应&lt;a href=&quot;http://docs.emmet.io/actions/inc-dec-number/&quot;&gt;连接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Brackets最后一个expand abbreviation (interactive)是出现输入框，添加emmet缩写的。&lt;/p&gt;
+
+&lt;p&gt;这是回学校前最后一篇技术博客。&lt;/p&gt;
+
+&lt;p&gt;后期的计划可能会明天发出，就这样。&lt;/p&gt;
+
+&lt;p&gt;希望你能留个言捧个场~&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Feb 2015 23:10:08 +0800</pubDate>
+        <link>judi0713.github.io/%E5%89%8D%E7%AB%AF/2015/02/25/brackets-emmet.html</link>
+        <guid isPermaLink="true">judi0713.github.io/%E5%89%8D%E7%AB%AF/2015/02/25/brackets-emmet.html</guid>
+        
+        
+        <category>前端</category>
+        
+      </item>
     
       <item>
         <title>帮老妈做的ppt，可被用为模版(原创)</title>
