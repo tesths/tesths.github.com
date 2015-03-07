@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>命令行git简单使用</title>
+  <meta name="description" content="早就说写一篇关于git使用的博客一直没写。今天下午休息，打了篮球和羽毛球。看了电影。现在要开始做点正事了。这篇文章可能关于git命令行的语句不多，但是我觉得都是我在搭建jekyll的过程中遇到的。我会尽可能的说明这些命令行的作用。因为git的操作比较多，还有什么分支合并新建分支什么的，还没有很好的去研究。这篇文章...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="judi0713.github.io/git/2015/03/07/git-easyuse.html">
+  <link rel="alternate" type="application/rss+xml" title="iWalk's Blog" href="judi0713.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">iWalk's Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">命令行git简单使用</h1>
+    <p class="post-meta">Mar 7, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p><strong>早就说写一篇关于git使用的博客一直没写。今天下午休息，打了篮球和羽毛球。看了电影。现在要开始做点正事了。</strong></p>
+
+<p><strong>这篇文章可能关于git命令行的语句不多，但是我觉得都是我在搭建jekyll的过程中遇到的。我会尽可能的说明这些命令行的作用。</strong></p>
+
+<p><strong>因为git的操作比较多，还有什么分支合并新建分支什么的，还没有很好的去研究。这篇文章主要对简单的命令行进行叙述，一般上传代码合并代码是没有问题的。</strong></p>
+
+<h4 id="section">以下文章都是基于我个人的使用和理解，不喜勿喷。</h4>
+
+<h2 id="section-1">开始正文</h2>
+<hr />
+
+<blockquote>
+  <h3 id="git">Git简介</h3>
+</blockquote>
+
+<p>这篇文章不介绍github，介绍git命令行，但是有必要对git和github是什么进行一个说明。你可能听说过github，据说github是世界上最大的同性社交网站。当然是开玩笑的。简单的说，github是一个开放源代码保存的地方，github也是合作项目开发的首选地。</p>
+
+<p>那么git呢，git是一个仓库，一个你用来保存代码的地方。</p>
+
+<p>所以，当我在github上注册了帐号之后，我可以将我的代码上传到git上进行保存，也可以大家合用一个仓库来合作开发。</p>
+
+<p>当然，git本身是开放的，别人可以看到你的源代码，如果是想变成不开放的，那么你就需要像github付费了。你可以去coding看一看，coding提供了免费的git仓库。我们项目的开发都是用的coding。</p>
+
+<blockquote>
+  <h3 id="git-1">Git命令行</h3>
+</blockquote>
+
+<p>Github官网上提供了<a href="http://git-scm.com/downloads/guis">图形界面</a>。</p>
+
+<p>图形界面的使用比较简单，具体使用迪哥曾经写过一篇关于mac下sourcetree的使用。<a href="http://bbs.uestc.edu.cn/forum.php?mod=viewthread&amp;tid=1468187">sourceTree git管理协同使用方法，mac下的git管理工具</a>。可以对照看一下。在这里不对图形化界面进行详细介绍。</p>
+
+<p>因为很多时候还是需要git的命令行，下面将进行简单的git命令行使用。
+我的环境是ubuntu14.04。</p>
+
+<hr />
+
+<h4 id="sourcetree">首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。</h4>
+
+<blockquote>
+  <p>上传代码到合并代码到拉代码的主要过程是这样的。</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>add-&gt;commit-&gt;fetch-&gt;pull-&gt;push</strong></p>
+
+  <p>换成中文</p>
+
+  <p><strong>添加代码-&gt;提交代码-&gt;抓取代码-&gt;拉取代码-&gt;推送代码</strong></p>
+</blockquote>
+
+<p><strong>添加代码对应git add</strong></p>
+
+<p><strong>提交代码对应git commit</strong></p>
+
+<p><strong>抓取代码对应git fetch</strong></p>
+
+<p><strong>拉取代码对应git pull</strong></p>
+
+<p><strong>推送代码对应git push</strong></p>
+
+<p>下面将逐步介绍这些命令。</p>
+
+<blockquote>
+  <h3 id="git-2">安装git</h3>
+</blockquote>
+
+<p>Ubuntu下安装git的命令行是sudo apt-get install git，不多做解释。</p>
+
+<blockquote>
+  <h3 id="git-clone">git clone</h3>
+</blockquote>
+
+<p>git clone是将github上的git仓库下载到本地。
+每一个github都要相应的git地址。如图</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-1.png" alt="git-easyuse-1" /></p>
+
+<p>命令很简单，在终端下到你想要的目录，然后git clone +url +目录就可以了。git clone后面是可以加参数的，但是我在使用过程中没有用过。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-2.png" alt="git-easyuse-2" /></p>
+
+<p>我寒假clone vundle时用的命令，后面那一串是git clone的位置。
+如果已经cd到你要clone的位置，直接git clone不用后面目录的参数就行了。</p>
+
+<blockquote>
+  <h3 id="git-3">Git帮助</h3>
+</blockquote>
+
+<p>命令 git help</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-3.png" alt="git-easyuse-3" /></p>
+
+<p><img src="/images/git-easyuse/git-easyuse-4.png" alt="git-easyuse-4" /></p>
+
+<p>可以看到所有的git命令。git help也是可以加参数的。具体查阅帮助或者文档了。</p>
+
+<blockquote>
+  <h3 id="git-4">git上传代码</h3>
+</blockquote>
+
+<p><img src="/images/git-easyuse/git-easyuse-5.png" alt="git-easyuse-5" /></p>
+
+<p>就是主要这三条命令。我会详细说明这三条命令行的作用。</p>
+
+<blockquote>
+  <h3 id="git-add">首先第一条，git add。</h3>
+</blockquote>
+
+<p>git add后面可以直接加上目录，或者文件名。“.”在这里的意思就是当前目录下所有文件。</p>
+
+<p>举个例子。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-6.png" alt="git-easyuse-6" /></p>
+
+<p>Git就会把我judi0713.github.com里所有文件全部添加了。</p>
+
+<blockquote>
+  <h3 id="commit">第二个，commit，提交。</h3>
+</blockquote>
+
+<p>首先说明参数的意思。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-7.png" alt="git-easyuse-7" /></p>
+
+<p>-a的意思就是提交所有改变的文件。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-8.png" alt="git-easyuse-8" /></p>
+
+<p>-m后面还需要加参数，就是提交信息。</p>
+
+<p>在commit时候必须要commit的信息。所以-m的参数是必须的。</p>
+
+<p>下面我开始具体说明。</p>
+
+<p>如果直接调用git commit。会进入</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-9.png" alt="git-easyuse-9" /></p>
+
+<p>如果你不小心进入这里，先输入一段信息即-m（你提交的内容）然后按F3（其实就是ctrl+o writeout）意思就是确认文件，如果不事先填写后面会无法commit。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-10.png" alt="git-easyuse-10" /></p>
+
+<p>按下F3。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-11.png" alt="git-easyuse-11" /></p>
+
+<p>然后回车。回到之前的提交界面。Ctrl+x exit就可以了。
+然后你修改的文件会出现</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-12.png" alt="git-easyuse-12" /></p>
+
+<p>大功告成。</p>
+
+<p>一开始的时候我只用了git commit –m +msg</p>
+
+<p>但是有时候会出现文件没有全部提交的问题。具体我还不知道为什么，有可能是我一开add出现问题了。</p>
+
+<p>我选择的是git commit –a –m +msg。即一次性提交所有代码。这样就不用进入那个全是英文的界面了。</p>
+
+<p>可以看一下效果图。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-13.png" alt="git-easyuse-13" /></p>
+
+<blockquote>
+  <h3 id="git-push-u-origin-master">第三个git push –u origin master。</h3>
+</blockquote>
+
+<p><img src="/images/git-easyuse/git-easyuse-14.png" alt="git-easyuse-14" /></p>
+
+<p>不清楚-u含义，查了很多都加上了-u，具体我就不说明了。</p>
+
+<p>origin是远程主机。master是git的主分支。</p>
+
+<p>这样就可以将本地修改的代码全部上传到远程主机了。</p>
+
+<p>上传的时候需要输入你的github用户名和密码。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-15.png" alt="git-easyuse-15" /></p>
+
+<p>到此为止是最主要的git命令行使用了。</p>
+
+<p>因为我使用的是jekyll是独立项目所以我没有拉代码这个步骤。</p>
+
+<blockquote>
+  <p><strong>fetch和pull的区别</strong>在于fetch是看有没有别人远程推送的代码，并不进行合并。
+pull的话直接就合并了，当然也可以省去fetch的步骤，不建议省去。
+在pull代码到本地的时候会有本地的代码冲突。Git很人性化的会将代码进行比对。你需要看别人是不是修改了你的代码，然后进行对别人代码的删除或者自己代码的删除。然后重新commit。
+其实这是很值得写的一个东西，具体等我进行命令行的git开发的时候再详细说明。</p>
+</blockquote>
+
+<p>fetch的命令就是git fetch
+pull的命令就是git pull
+因为我个人只用过图形化界面的git没有尝试过命令行没法现身说法。如果以后我使用命令行的话会具体再说明的。</p>
+
+<p>下面再介绍一个很有意思的git命令行。</p>
+
+<blockquote>
+  <h3 id="git-status">git status</h3>
+</blockquote>
+
+<p>查看git现在的状态。
+比我现在已经add过了。我调用git status。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-16.png" alt="git-easyuse-16" /></p>
+
+<p>我在commit一下查看git status。</p>
+
+<p><img src="/images/git-easyuse/git-easyuse-17.png" alt="git-easyuse-17" /></p>
+
+<p>可以查看此时我的git状态。感觉还是很不错的。</p>
+
+<hr />
+<p><strong>其实我主要介绍的还是简单的git命令行使用，是我在搭建jekyll的时候所用到的。
+还有很多我都没有介绍，比如revert，回滚。可以回到之前代码的状态。需要添加状态的id。</strong></p>
+
+<p><strong>还有分支，这个功能我真的没有很好的研究，有时间还是要把git研究一下。</strong></p>
+
+<p><strong>还有就是git rm删除文件等等。</strong></p>
+
+<p><strong>我会在使用之后再写一篇博客对我没介绍的git命令进行说明。</strong></p>
+
+<p><strong>实在是觉得git很好用，免费空间。而且作为技术人，学会上github真的很重要。特别感谢迪哥给我带进github的坑，这个同性恋交友网站让我收获很多东西。</strong></p>
+
+<p><strong>以前上网没事了看看河畔，现在没事了上github explore。</strong></p>
+
+<p><strong>就这样，欢迎各位提意见！最好不要喷我。感谢你的支持！！</strong></p>
+
+<hr />
+
+<p>今天是大学特有的女生节。祝各位女孩们永远年轻漂亮。</p>
+
+<p>最主要的。</p>
+
+<p><strong>祝信安一班的七个女孩节日快乐。红包什么的都已经象征性的发了。礼物什么的如果班长买了你们就收，没买就算了。咱都那么熟了。</strong></p>
+
+<p><strong>希望你们七个没找到下家的赶紧找下家。找到下家的幸福生活。生活也许很残酷，但是要以一个积极乐观的心态去面对。</strong></p>
+
+<p><strong>祝你们幸福啦~~</strong></p>
+
+<p>也祝所有女孩们，幸福，快乐。</p>
+
+  </article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=/git/2015/03/07/git-easyuse data-title=命令行git简单使用 data-url="judi0713.github.io/git/2015/03/07/git-easyuse.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"walkginkgo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">iWalk's Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>iWalk's Blog</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
