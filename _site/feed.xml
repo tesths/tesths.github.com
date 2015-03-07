@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iWalk's Blog</title>
-    <description>我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 寒假想看一些前端的知识。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+    <description>我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Feb 2015 20:29:55 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Feb 2015 20:29:55 +0800</lastBuildDate>
+    <pubDate>Sat, 07 Mar 2015 21:23:09 +0800</pubDate>
+    <lastBuildDate>Sat, 07 Mar 2015 21:23:09 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
