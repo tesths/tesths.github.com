@@ -4,6 +4,7 @@ email: judi0713@sina.com
 description: > # this means to ignore newlines until "baseurl:"
   我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。
   现在主要是跟随迪哥做iOS的开发。
+
   我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "judi0713.github.io" # the base hostname & protocol for your site
