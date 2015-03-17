@@ -6,12 +6,12 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Mar 2015 12:52:55 +0800</pubDate>
-    <lastBuildDate>Tue, 17 Mar 2015 12:52:55 +0800</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2015 12:55:50 +0800</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2015 12:55:50 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>用安卓和iPhone和操作你的linux（需要校园wifi环境）</title>
+        <title>用安卓和iPhone操作你的linux（需要校园wifi环境）</title>
         <description>&lt;h2 id=&quot;g&quot;&gt;写在2015.3.15   由于3G网络不能访问推迟发布&lt;/h2&gt;
 
 &lt;p&gt;首先，很对不起。我博客都已经写好了，但是发现手机数据请求没法ssh。所以推迟了发布。&lt;/p&gt;
@@ -39,7 +39,7 @@
 
 &lt;p&gt;今天早上大概又想了一个可以远程访问的办法，我实现之后会发博客的。&lt;/p&gt;
 
-&lt;p&gt;下面是14号的正文。当时写的，我就不做修改了。因为除了不能在教室3G网络访问其他都是对的可以实现的。&lt;/p&gt;
+&lt;p&gt;下面是14号的正文。当时写的，我将题目修改了，原文题目加了一个教学楼，其他内容我就不做修改了。因为除了不能在教室3G网络访问其他都是对的可以实现的。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;如果你还有什么疑问，欢迎留言，每条都会看。&lt;/strong&gt;&lt;/p&gt;
 
