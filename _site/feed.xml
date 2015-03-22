@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2015 13:43:02 +0800</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2015 13:43:02 +0800</lastBuildDate>
+    <pubDate>Sun, 22 Mar 2015 13:44:09 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Mar 2015 13:44:09 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -17,19 +17,19 @@
 &lt;p&gt;今天这篇博客主要分两个部分。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;第一部分是对之前jekyll博客搭建中未解释清楚的地方重新解释一下。&lt;/p&gt;
+  &lt;p&gt;第一部分是对之前Jekyll博客搭建中未解释清楚的地方重新解释一下。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;第二部分是ios开发的一个总结和ios后期学习的一个安排。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;jekyll&quot;&gt;第一部分 jekyll搭建博客中的问题解答&lt;/h2&gt;
+&lt;h2 id=&quot;jekyll&quot;&gt;第一部分 Jekyll搭建博客中的问题解答&lt;/h2&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;因为好友许总最近在看我的博客然后进行jekyll环境的搭建遇到了一些问题。我在此做一个解答。&lt;/p&gt;
+&lt;p&gt;因为好友许总最近在看我的博客然后进行Jekyll环境的搭建遇到了一些问题。我在此做一个解答。&lt;/p&gt;
 
-&lt;h3 id=&quot;ruby-gemjekylltime-out&quot;&gt;第一个问题是用ruby gem下载jekyll时存在time out，及超时无法下载的情况。&lt;/h3&gt;
+&lt;h3 id=&quot;ruby-gemjekylltime-out&quot;&gt;第一个问题是用ruby gem下载Jekyll时存在time out，及超时无法下载的情况。&lt;/h3&gt;
 
 &lt;p&gt;这个问题主要是因为“ruby的软件源rubygems.org因为使用的亚马逊的云服务，所以被墙了”&lt;a href=&quot;http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/&quot;&gt;（摘自唐巧的博客）&lt;/a&gt;&lt;/p&gt;
 
