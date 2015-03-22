@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2015 13:38:25 +0800</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2015 13:38:25 +0800</lastBuildDate>
+    <pubDate>Sun, 22 Mar 2015 13:41:50 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Mar 2015 13:41:50 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -69,7 +69,7 @@
 
 &lt;h3 id=&quot;ios-1&quot;&gt;下面是最近做项目过程中获得的一些东西。我会分块来叙述，因为ios这个系列会出不止一篇文章。所以这一篇现大概叙述。&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;1. 对于面向对象的理解。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 对于面向对象的理解。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;我在刚使用object-c时的时候，只具备c基础，了解简单的面向对象的概念。对于继承重写这些东西理解不是很清楚。而且在第一个项目的时候几乎没有用到面向对象，但是确实在使用oc的过程中，包括和他们做安卓的交流过程中，对于面向对象的理解更加深刻了。&lt;/p&gt;
 
@@ -79,7 +79,7 @@
 
 &lt;p&gt;因为对于oc语言的理解还不是很深刻，具体点是对c++不够熟悉，所以对于公有私有的概念不是很清楚。包括在oc中。但是现在可以简单的将一个属性暴露出来然后通过另一个界面传参的方式进行操作。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;2. 函数的封装。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 函数的封装。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;简单的说，以前用一个函数用了就用了，甚至在所有界面里都写那一个函数，这样是极其不合理的。&lt;/p&gt;
 
@@ -89,7 +89,7 @@
 
 &lt;p&gt;后期又封装了label根据文字宽度自适应高度函数的封装等等。学会函数的封装很大程度上减少了代码量。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;3. 界面传参。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 界面传参。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;这是昨天迪哥和我说的很重要的一个问题。&lt;/p&gt;
 
@@ -99,7 +99,7 @@
 
 &lt;p&gt;这样会造成B界面会有很多冗余的代码，正确的是应该传最少的参数获取最多的东西。这是后期开发中需要重视的一部分。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;4. 宏定义的使用。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 宏定义的使用。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;在第一个项目中，其实已经用到了宏定义，但是宏定义没有很好的使用。&lt;/p&gt;
 
@@ -107,7 +107,7 @@
 
 &lt;p&gt;宏定义会很大程度上方便项目的管理。所以后面还是要对宏定义做一些更好的优化，增加一些其他的东西。方便后期的开发。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;5. 界面的分离和开源组件的使用。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. 界面的分离和开源组件的使用。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;举个简单的例子来说明这个问题。&lt;/p&gt;
 
@@ -115,7 +115,7 @@
 
 &lt;p&gt;应该将这几个部分分为不同的tableview来写，虽然这样会增加代码量，但是这样方便后期的管理。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;6. 屏幕适配。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6. 屏幕适配。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;这一点对于ios开发者永远是一个头疼的问题。&lt;/p&gt;
 
@@ -123,7 +123,7 @@
 
 &lt;p&gt;毅哥对我函数的封装提出了一个问题，就是我在封装控件的时候，总是喜欢将尺寸固定。后期我在封装的时候要更多的注意center属性和屏幕尺寸，还有就是留出尺寸的接口来方便屏幕适配。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;7. 基本概念的理解。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7. 基本概念的理解。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;其实在刚开始的时候我无法理解nsmutablearray和nsarray有什么区别。直到毅哥和我解释两者区别之后。&lt;/p&gt;
 
@@ -133,11 +133,11 @@
 
 &lt;p&gt;因为苹果现在要求支持64位操作系统，所以对于变量的取值范围更加的规范起来，这是后期需要注意的一个地方。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;8. 界面通信。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8. 界面通信。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;因为ios开发的时候经常需要界面传参，所以对于delegate或者block需要有一个更好的理解。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;9. 命名。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9. 命名。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;我之所以写这点是为了表达我下次做项目一定好好起变量名字。&lt;/p&gt;
 
