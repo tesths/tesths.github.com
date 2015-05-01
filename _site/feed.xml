@@ -6,9 +6,139 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2015 17:51:41 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2015 17:51:41 +0800</lastBuildDate>
+    <pubDate>Fri, 01 May 2015 20:18:22 +0800</pubDate>
+    <lastBuildDate>Fri, 01 May 2015 20:18:22 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DWVA</title>
+        <description>&lt;p&gt;很早以前在freebuf上看到一篇文章。&lt;a href=&quot;http://www.freebuf.com/tools/4708.html&quot;&gt;十大渗透测试演练系统&lt;/a&gt;。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。&lt;/p&gt;
+
+&lt;p&gt;DWVA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DWVA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;用到的东西&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.dvwa.co.uk/&quot;&gt;DVWA&lt;/a&gt;是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.apachefriends.org/zh_cn/index.html&quot;&gt;XAMPP&lt;/a&gt;，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png&quot; alt=&quot;use-xampp-build-dvwa-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我把上面两个文件放在桌面了，DVWA我是解压好了的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;整个搭建过程&lt;/h2&gt;
+&lt;p&gt;实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。&lt;/p&gt;
+
+&lt;p&gt;进入桌面之后
+&lt;code&gt;sudo ./xampp-linux-x64-5.6.8-0-installer.run&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;记得要用sudo，因为是要安装在系统文件里的。&lt;/p&gt;
+
+&lt;p&gt;![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
+不停的next。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png&quot; alt=&quot;use-xampp-build-dvwa-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png&quot; alt=&quot;use-xampp-build-dvwa-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
+会有一个这个，点中文。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png&quot; alt=&quot;use-xampp-build-dvwa-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在浏览器输入&lt;code&gt;http://127.0.0.1/&lt;/code&gt;也会进入这个页面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png&quot; alt=&quot;use-xampp-build-dvwa-7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们点击右面的安全。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png&quot; alt=&quot;use-xampp-build-dvwa-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看到很多问题，安装下面说的我们一步一步解决，运行&lt;code&gt;sudo /opt/lamp/xampp security&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png&quot; alt=&quot;use-xampp-build-dvwa-9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。&lt;/p&gt;
+
+&lt;p&gt;跟着说明一步一步设置密码。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png&quot; alt=&quot;use-xampp-build-dvwa-10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们的mysql没有运行，所以不能查看安全性，运行mysql。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo /opt/lamp/xampp start&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png&quot; alt=&quot;use-xampp-build-dvwa-11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo /opt/lamp/xampp security&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png&quot; alt=&quot;use-xampp-build-dvwa-12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这下mysql的密码也设置Ok了~
+这时候在进入之前的web页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png&quot; alt=&quot;use-xampp-build-dvwa-13&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
+我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这时候我们在网址栏输入&lt;code&gt;127.0.0.1/dvwa&lt;/code&gt;已经有显示了。
+显示的是&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png&quot; alt=&quot;use-xampp-build-dvwa-15&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;说明我们没有连接数据库。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png&quot; alt=&quot;use-xampp-build-dvwa-16&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击红线部分，会出现下面的字。
+这时候我们要进入mysql设置DVWA的数据库。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/opt/lampp/bin/mysql -us root -p&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;create database dvwa;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png&quot; alt=&quot;use-xampp-build-dvwa-17&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果直接运行mysql会显示没有相关的软件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png&quot; alt=&quot;use-xampp-build-dvwa-18&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后修改DVWA的配置文件&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;vim config.inc.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png&quot; alt=&quot;use-xampp-build-dvwa-19&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修改db_password为刚刚设置的mysql的root密码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png&quot; alt=&quot;use-xampp-build-dvwa-20&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后再进入&lt;code&gt;http://127.0.0.1/dvwa/setup.php&lt;/code&gt; create database&lt;/p&gt;
+
+&lt;p&gt;然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。&lt;/p&gt;
+
+&lt;p&gt;记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。&lt;/p&gt;
+
+&lt;p&gt;如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。&lt;/p&gt;
+
+&lt;p&gt;好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 May 2015 03:33:42 +0800</pubDate>
+        <link>judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</link>
+        <guid isPermaLink="true">judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</guid>
+        
+        
+        <category>xampp</category>
+        
+      </item>
     
       <item>
         <title>iOS近期开发小结Ⅱ</title>
@@ -1235,47 +1365,6 @@ Jekyll提供了一个例子可以研究一下。
         <pubDate>Sun, 08 Feb 2015 18:23:10 +0800</pubDate>
         <link>judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</link>
         <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>不利用Jekyllbootstrap上线Jekyll</title>
-        <description>&lt;p&gt;因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。&lt;/p&gt;
-
-&lt;p&gt;首先是新建一个我的jekyll博客。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-1.png&quot; alt=&quot;use-jekyll-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后我们将建好的git仓库clone到本地&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-2.png&quot; alt=&quot;use-jekyll-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我不知道怎么将myblog设置为我的git根目录来上传。
-然后就利用了笨办法，讲myblog里的所有文件移动到judi0713这个文件夹里。
-命令是&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-3.png&quot; alt=&quot;use-jekyll-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;顺便提一下， mv这个命令可以重新命名，重命名的方式就是mv filename1 filename2
-mv可以移动文件，批量移动文件的方式就是用*号。
-比如我这里使用的，就是可以将myblog的所有文件全部移动，相应的，如果是*.*那么会将myblog的所有文件移动，保留文件夹。&lt;/p&gt;
-
-&lt;p&gt;现在我们已经将jekyll创建的文件全部移动到了git仓库里。
-下面就是要将仓库里的文件全部上传了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/use-jekyll/use-jekyll-4.png&quot; alt=&quot;use-jekyll-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;就是这三条。具体每一条什么含义我大概明白，但是从昨晚上到今天早上我已经被git这几条命令搞的有点晕了。
-我全部理清楚之后会专门写一个和git命令行有关的blog的。&lt;/p&gt;
-
-&lt;p&gt;打开&lt;a href=&quot;http://judi0713.github.io/&quot;&gt;judi0713.github.io&lt;/a&gt;已经可以访问了。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Feb 2015 10:42:08 +0800</pubDate>
-        <link>judi0713.github.io/jekyll/2015/02/08/use-jekyll.html</link>
-        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/08/use-jekyll.html</guid>
         
         
         <category>jekyll</category>

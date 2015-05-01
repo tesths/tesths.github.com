@@ -1,0 +1,124 @@
+---
+layout: post
+title:  利用XAMPP在Ubuntu下搭建渗透测试平台DWVA
+date:   2015-05-01 19:33:42
+categories: xampp
+---
+很早以前在freebuf上看到一篇文章。[十大渗透测试演练系统](http://www.freebuf.com/tools/4708.html)。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。
+
+DWVA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DWVA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。
+
+>另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。
+
+用到的东西
+---
+[DVWA](http://www.dvwa.co.uk/)是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。
+
+[XAMPP](https://www.apachefriends.org/zh_cn/index.html)，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。
+
+![use-xampp-build-dvwa-1](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png)
+
+我把上面两个文件放在桌面了，DVWA我是解压好了的。
+
+整个搭建过程
+---
+实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。
+
+进入桌面之后
+`sudo ./xampp-linux-x64-5.6.8-0-installer.run`
+
+记得要用sudo，因为是要安装在系统文件里的。
+
+![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
+不停的next。
+
+![use-xampp-build-dvwa-4](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png)
+
+![use-xampp-build-dvwa-5](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png)
+ 
+会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
+会有一个这个，点中文。
+
+![use-xampp-build-dvwa-6](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png)
+
+然后在浏览器输入`http://127.0.0.1/`也会进入这个页面
+
+![use-xampp-build-dvwa-7](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png)
+
+我们点击右面的安全。
+
+![use-xampp-build-dvwa-8](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png)
+
+看到很多问题，安装下面说的我们一步一步解决，运行`sudo /opt/lamp/xampp security`.
+
+![use-xampp-build-dvwa-9](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png)
+
+之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。
+
+跟着说明一步一步设置密码。
+
+![use-xampp-build-dvwa-10](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png)
+
+我们的mysql没有运行，所以不能查看安全性，运行mysql。
+
+`sudo /opt/lamp/xampp start`
+
+![use-xampp-build-dvwa-11](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png)
+
+这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。
+
+`sudo /opt/lamp/xampp security`
+
+![use-xampp-build-dvwa-12](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png)
+
+这下mysql的密码也设置Ok了~
+这时候在进入之前的web页面。
+
+![use-xampp-build-dvwa-13](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png)
+
+至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
+我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。
+
+`mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/`
+
+这时候我们在网址栏输入`127.0.0.1/dvwa`已经有显示了。
+显示的是
+
+![use-xampp-build-dvwa-15](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png)
+
+说明我们没有连接数据库。
+
+![use-xampp-build-dvwa-16](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png)
+
+点击红线部分，会出现下面的字。
+这时候我们要进入mysql设置DVWA的数据库。
+
+`/opt/lampp/bin/mysql -us root -p`
+
+`create database dvwa;`
+
+![use-xampp-build-dvwa-17](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png)
+
+如果直接运行mysql会显示没有相关的软件。
+
+![use-xampp-build-dvwa-18](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png)
+
+然后修改DVWA的配置文件
+
+`vim config.inc.php`
+
+![use-xampp-build-dvwa-19](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png)
+
+修改db_password为刚刚设置的mysql的root密码
+
+![use-xampp-build-dvwa-20](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png)
+
+然后再进入`http://127.0.0.1/dvwa/setup.php` create database
+
+然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。
+
+记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。
+
+如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。
+
+好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。

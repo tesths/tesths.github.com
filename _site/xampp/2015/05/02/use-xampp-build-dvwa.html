@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>利用XAMPP在Ubuntu下搭建渗透测试平台DWVA</title>
+  <meta name="description" content="很早以前在freebuf上看到一篇文章。十大渗透测试演练系统。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。DWVA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DWVA失败了，这次就正好就重新...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html">
+  <link rel="alternate" type="application/rss+xml" title="iWalk's Blog" href="judi0713.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">iWalk's Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">利用XAMPP在Ubuntu下搭建渗透测试平台DWVA</h1>
+    <p class="post-meta">May 2, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>很早以前在freebuf上看到一篇文章。<a href="http://www.freebuf.com/tools/4708.html">十大渗透测试演练系统</a>。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。</p>
+
+<p>DWVA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DWVA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。</p>
+
+<blockquote>
+  <p>另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。</p>
+</blockquote>
+
+<h2 id="section">用到的东西</h2>
+<p><a href="http://www.dvwa.co.uk/">DVWA</a>是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。</p>
+
+<p><a href="https://www.apachefriends.org/zh_cn/index.html">XAMPP</a>，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png" alt="use-xampp-build-dvwa-1" /></p>
+
+<p>我把上面两个文件放在桌面了，DVWA我是解压好了的。</p>
+
+<h2 id="section-1">整个搭建过程</h2>
+<p>实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。</p>
+
+<p>进入桌面之后
+<code>sudo ./xampp-linux-x64-5.6.8-0-installer.run</code></p>
+
+<p>记得要用sudo，因为是要安装在系统文件里的。</p>
+
+<p>![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
+不停的next。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png" alt="use-xampp-build-dvwa-4" /></p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png" alt="use-xampp-build-dvwa-5" /></p>
+
+<p>会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
+会有一个这个，点中文。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png" alt="use-xampp-build-dvwa-6" /></p>
+
+<p>然后在浏览器输入<code>http://127.0.0.1/</code>也会进入这个页面</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png" alt="use-xampp-build-dvwa-7" /></p>
+
+<p>我们点击右面的安全。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png" alt="use-xampp-build-dvwa-8" /></p>
+
+<p>看到很多问题，安装下面说的我们一步一步解决，运行<code>sudo /opt/lamp/xampp security</code>.</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png" alt="use-xampp-build-dvwa-9" /></p>
+
+<p>之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。</p>
+
+<p>跟着说明一步一步设置密码。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png" alt="use-xampp-build-dvwa-10" /></p>
+
+<p>我们的mysql没有运行，所以不能查看安全性，运行mysql。</p>
+
+<p><code>sudo /opt/lamp/xampp start</code></p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png" alt="use-xampp-build-dvwa-11" /></p>
+
+<p>这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。</p>
+
+<p><code>sudo /opt/lamp/xampp security</code></p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png" alt="use-xampp-build-dvwa-12" /></p>
+
+<p>这下mysql的密码也设置Ok了~
+这时候在进入之前的web页面。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png" alt="use-xampp-build-dvwa-13" /></p>
+
+<p>至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
+我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。</p>
+
+<p><code>mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/</code></p>
+
+<p>这时候我们在网址栏输入<code>127.0.0.1/dvwa</code>已经有显示了。
+显示的是</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png" alt="use-xampp-build-dvwa-15" /></p>
+
+<p>说明我们没有连接数据库。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png" alt="use-xampp-build-dvwa-16" /></p>
+
+<p>点击红线部分，会出现下面的字。
+这时候我们要进入mysql设置DVWA的数据库。</p>
+
+<p><code>/opt/lampp/bin/mysql -us root -p</code></p>
+
+<p><code>create database dvwa;</code></p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png" alt="use-xampp-build-dvwa-17" /></p>
+
+<p>如果直接运行mysql会显示没有相关的软件。</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png" alt="use-xampp-build-dvwa-18" /></p>
+
+<p>然后修改DVWA的配置文件</p>
+
+<p><code>vim config.inc.php</code></p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png" alt="use-xampp-build-dvwa-19" /></p>
+
+<p>修改db_password为刚刚设置的mysql的root密码</p>
+
+<p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png" alt="use-xampp-build-dvwa-20" /></p>
+
+<p>然后再进入<code>http://127.0.0.1/dvwa/setup.php</code> create database</p>
+
+<p>然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。</p>
+
+<p>记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。</p>
+
+<p>如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。</p>
+
+<p>好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。</p>
+
+  </article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=/xampp/2015/05/02/use-xampp-build-dvwa data-title=利用XAMPP在Ubuntu下搭建渗透测试平台DWVA data-url="judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"walkginkgo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">iWalk's Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>iWalk's Blog</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
