@@ -6,15 +6,15 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 May 2015 20:18:22 +0800</pubDate>
-    <lastBuildDate>Fri, 01 May 2015 20:18:22 +0800</lastBuildDate>
+    <pubDate>Fri, 01 May 2015 20:31:28 +0800</pubDate>
+    <lastBuildDate>Fri, 01 May 2015 20:31:28 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DWVA</title>
+        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</title>
         <description>&lt;p&gt;很早以前在freebuf上看到一篇文章。&lt;a href=&quot;http://www.freebuf.com/tools/4708.html&quot;&gt;十大渗透测试演练系统&lt;/a&gt;。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。&lt;/p&gt;
 
-&lt;p&gt;DWVA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DWVA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
+&lt;p&gt;DVWA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DVWA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。&lt;/p&gt;
