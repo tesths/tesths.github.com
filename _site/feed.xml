@@ -6,9 +6,41 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 May 2015 23:35:00 +0800</pubDate>
-    <lastBuildDate>Sat, 02 May 2015 23:35:00 +0800</lastBuildDate>
+    <pubDate>Sun, 03 May 2015 22:06:26 +0800</pubDate>
+    <lastBuildDate>Sun, 03 May 2015 22:06:26 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>iOS开发模式MVVM 1理解开发模式(占坑，未写完)</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;一些废话&lt;/h2&gt;
+&lt;p&gt;距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。
+五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。&lt;/p&gt;
+
+&lt;h2 id=&quot;racmvcmvvm&quot;&gt;RAC、MVC和MVVM&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;RAC(ReactiveCocoa)&lt;/code&gt;里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;MVC(Model View Controller)&lt;/code&gt;是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
+所以这就有我们开发模式逐渐改变的第一步，迪哥利用RAC将网络层单独分离出来的写法。而且我们不断的将控件抽象出来，减少Controller中的代码。虽然代码量增加，但是后期的维护会简单不少。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;MVVM(Model ViewModel Model)&lt;/code&gt;是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。&lt;/p&gt;
+
+&lt;h2 id=&quot;mvcmvvm&quot;&gt;MVC和MVVM的比较&lt;/h2&gt;
+&lt;p&gt;其实我想贴图，但是资料太多，我还是先第一步用语言来解释我自身的理解。
+MVC中，Controller是核心，Controller对View进行操作，Controller也对Model进行操作。但是View和Model是不相互进行通信。
+MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数据，在ViewModel里对Model层进行操作，操作出一个View出来，然后直接在View层显示。这就节省了Controller中View的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;mvvm&quot;&gt;简单的MVVM实现&lt;/h2&gt;
+&lt;p&gt;占坑，不是不写，实在是没有可以贴出来看的代码。而且只是大概理解了里面的传值方式，MVVM模式不贴代码实在是没有什么可写的。
+明日下午敲几个代码然后接着更。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 May 2015 06:04:12 +0800</pubDate>
+        <link>judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html</link>
+        <guid isPermaLink="true">judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html</guid>
+        
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</title>
@@ -1261,113 +1293,6 @@ pull的命令就是git pull
         
         
         <category>windows</category>
-        
-      </item>
-    
-      <item>
-        <title>Jekyll基本实现写博客功能</title>
-        <description>&lt;p&gt;今天又研究了一天jekyll。
-现在已经实现这种效果了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-1.png&quot; alt=&quot;finish-basic-jekyll-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;页面部分我使用的就是jekyll本身的效果没有任何美化的过程。&lt;/p&gt;
-
-&lt;p&gt;大概总结一下有几点我觉得比较重要的。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1.git的使用。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;因为我全程基本上都是在linux下进行操作，所以git用的是全部的命令行。
-至于git命令行的使用我还是没有太明白，我觉得多上传几次代码应该就会慢慢熟悉，到时候大概我会将git的基本命令写一个博客出来，还希望到时候有人来访问。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2.前端知识&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;因为对前端接触较少，所以可能再代码方面是十分不熟悉，所以也只能用原生的模板。
-实在是太丑。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;3.Markdown&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;整个jekyll的文章发布是用的Markdown。
-我使用了github推出的编辑器atom。
-讲句实在话我没觉得atom哪里好用，但是它可以实时预览你的Markdown文件。
-因为我想早点发文章出去，所以Markdown的语法基本上没怎么熟悉就直接上了，看上去肯定不美观。但是Markdown确实给我的感觉很好，不复杂，但是很舒服。而且语法上也没有很难。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;4.本地jekyll环境&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;本地jekyll环境的搭建我专门写了一篇博客。一开始觉得没有什么用。后来才发现重要性。
-因为在调试的时候需要本地的jekyll环境。命令是jekyll server，可以在本地看一下效果。
-这样不用每次修改代码之后都上传预览。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;hello-world&quot;&gt;下面我将对我从hello world改动到现在这个样子进行一个阐述。&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-2.png&quot; alt=&quot;finish-basic-jekyll-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是原来的样子。&lt;/p&gt;
-
-&lt;p&gt;首先我打开的是_config.yml&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-3.png&quot; alt=&quot;finish-basic-jekyll-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Title对应了博客的名称。
-Email就对应了左下方的email。
-我将twitter那一行删了…后面我再考虑要不要换成我的微博啥的。
-然后description就是右下角那一串字。&lt;/p&gt;
-
-&lt;p&gt;全部修改完毕就会得到我的首页的样子。&lt;/p&gt;
-
-&lt;p&gt;还有右上角的About。
-我们打开 about.md，这是Markdown文件了。
-修改title会修改about显示的文字，修改里面的内容就可以点击About跳转进去了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-4.png&quot; alt=&quot;finish-basic-jekyll-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;还有最后就是我发布的那几篇文章。和posts这个文字的修改。
-Posts那个文字修改是在index.html里修改。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/finish-basic-jekyll/finish-basic-jekyll-5.png&quot; alt=&quot;finish-basic-jekyll-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;发布的所有文章都放在_posts文件夹里。
-Jekyll提供了一个例子可以研究一下。
-发布就会在首页显示。
-我连续发布了三篇所以就显示了~&lt;/p&gt;
-
-&lt;p&gt;怎么发布就需要Markdown的语法了，可以把我博客从github上download下来看看。
-不要问我看的谁的我看的迪哥的。&lt;/p&gt;
-
-&lt;p&gt;总之大概就是这样。
-后期计划还是要把Markdown的语法研究一下，不然文章看上去太丑了。
-还有就是研究一下怎么设置可以评论和查看访问记录。
-最后就是美化我的jekyll，不管是修改别人的还是我自己设计。&lt;/p&gt;
-
-&lt;p&gt;总之，前面几篇可能水分有点大，但是这一篇确实可以迅速搭建一个在github上的博客。&lt;/p&gt;
-
-&lt;p&gt;另附我博客的github地址和迪哥博客的github的地址。&lt;/p&gt;
-
-&lt;p&gt;我的&lt;a href=&quot;https://github.com/judi0713/judi0713.github.com&quot;&gt;github.com/judi0713/judi0713.github.com&lt;/a&gt;
-迪哥的&lt;a href=&quot;https://github.com/icindy/icindy.github.io&quot;&gt;github.com/icindy/icindy.github.io&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Feb 2015 18:23:10 +0800</pubDate>
-        <link>judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</link>
-        <guid isPermaLink="true">judi0713.github.io/jekyll/2015/02/08/finish-basic-jekyll.html</guid>
-        
-        
-        <category>jekyll</category>
         
       </item>
     

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iOS开发模式MVVM 1理解开发模式(占坑，未写完)</title>
+  <meta name="description" content="一些废话距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html">
+  <link rel="alternate" type="application/rss+xml" title="iWalk's Blog" href="judi0713.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">iWalk's Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">iOS开发模式MVVM 1理解开发模式(占坑，未写完)</h1>
+    <p class="post-meta">May 4, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="section">一些废话</h2>
+<p>距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。
+五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。</p>
+
+<h2 id="racmvcmvvm">RAC、MVC和MVVM</h2>
+<p><code>RAC(ReactiveCocoa)</code>里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。</p>
+
+<p><code>MVC(Model View Controller)</code>是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
+所以这就有我们开发模式逐渐改变的第一步，迪哥利用RAC将网络层单独分离出来的写法。而且我们不断的将控件抽象出来，减少Controller中的代码。虽然代码量增加，但是后期的维护会简单不少。</p>
+
+<p><code>MVVM(Model ViewModel Model)</code>是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。</p>
+
+<h2 id="mvcmvvm">MVC和MVVM的比较</h2>
+<p>其实我想贴图，但是资料太多，我还是先第一步用语言来解释我自身的理解。
+MVC中，Controller是核心，Controller对View进行操作，Controller也对Model进行操作。但是View和Model是不相互进行通信。
+MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数据，在ViewModel里对Model层进行操作，操作出一个View出来，然后直接在View层显示。这就节省了Controller中View的代码。</p>
+
+<h2 id="mvvm">简单的MVVM实现</h2>
+<p>占坑，不是不写，实在是没有可以贴出来看的代码。而且只是大概理解了里面的传值方式，MVVM模式不贴代码实在是没有什么可写的。
+明日下午敲几个代码然后接着更。</p>
+
+  </article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=/ios/2015/05/04/ios-mvvm-1 data-title=iOS开发模式MVVM 1理解开发模式(占坑，未写完) data-url="judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"walkginkgo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">iWalk's Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>iWalk's Blog</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
