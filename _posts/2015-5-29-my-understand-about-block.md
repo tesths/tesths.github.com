@@ -34,7 +34,7 @@ FOR CM AND PLUSUB
     myBlock(@"11111");//3
     // Outputs:---11111
 
-可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个还可以是多个。当然如果是int类型的block就需要return一个返回值了。
+可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个参数还可以是一个函数。当然如果是int类型的block就需要return一个返回值了。
 
 然后我们开始对这个void类型的函数进行定义。就是令它等于一个“^+参数”然后里面像定义一个函数一样就行了。
 在调用这个block的时候就直接就myBlock加参数就可以了。
@@ -48,7 +48,7 @@ FOR CM AND PLUSUB
 首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。
 
 	#import "ViewController.h"
-	void (^MyBlock)(NSString *str);//typedef定义一个block
+	typedef void (^MyBlock)(NSString *str);//typedef定义一个block
 
 	@interface ViewController ()
 	@end
