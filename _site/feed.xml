@@ -6,9 +6,226 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 May 2015 22:06:26 +0800</pubDate>
-    <lastBuildDate>Sun, 03 May 2015 22:06:26 +0800</lastBuildDate>
+    <pubDate>Fri, 29 May 2015 20:15:45 +0800</pubDate>
+    <lastBuildDate>Fri, 29 May 2015 20:15:45 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Block 我所理解的回调</title>
+        <description>&lt;h2 id=&quot;for-cm-and-plusub&quot;&gt;FOR CM AND PLUSUB&lt;/h2&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;废话&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;开发iOS距离一年还有四个月。block的文章看了很多。也在项目中使用了，但是使用率很低，仅限于最最简单的界面传值。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我最近处于一个深度学习和补作业做实验的阶段(重点是补作业和做实验)，而且经历了两个项目现在对于OC的理解又更进了一步。于是抽时间把之前下载的关于block的视频又翻出来看了一下。有一些感受写出来，以便CM和PLUSUB以后的iOSer可以很快的学习到关于block的使用。以后这样的文章都会在标题加一个FOR CM AND PLUSUB。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;概述&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;block就是闭包，可以用来回调。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;再简单一点，指向函数的指针。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我现在只会简单的使用block，下午写了个demo利用block封装了afnetworking然后在另一个界面调用afnetworking的请求。当然不复杂。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;上代码吧，不然再废话都解释不清楚什么是block。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;part1-block&quot;&gt;&lt;em&gt;part1 block的简单定义&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;我现在定义一个简单的block。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void (^myBlock)(NSString *str);//1
+myBlock = ^(NSString *str)
+{
+    NSLog(@&quot;---%@&quot;, str);//2
+};
+myBlock(@&quot;11111&quot;);//3
+// Outputs:---11111
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个还可以是多个。当然如果是int类型的block就需要return一个返回值了。&lt;/p&gt;
+
+&lt;p&gt;然后我们开始对这个void类型的函数进行定义。就是令它等于一个“^+参数”然后里面像定义一个函数一样就行了。
+在调用这个block的时候就直接就myBlock加参数就可以了。&lt;/p&gt;
+
+&lt;p&gt;我们可以打断点来看一下整个block的执行顺序。我在代码后面加了标示。&lt;/p&gt;
+
+&lt;p&gt;执行顺序是1 3 2，可以看到myBlock没有按照程序执行的顺序来调用而是在调用之后执行了2的代码。这个例子可能不那么明显，但是可以开始初步理解回调。&lt;/p&gt;
+
+&lt;h2 id=&quot;part2-block&quot;&gt;&lt;em&gt;part2 传参block&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;下面把难度加大一点，我们把block当参数传。然后看一个block的例子。
+首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#import &quot;ViewController.h&quot;
+void (^MyBlock)(NSString *str);//typedef定义一个block
+
+@interface ViewController ()
+@end
+
+@implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    MyBlock tblock = ^(NSString *str) {
+	NSLog(@&quot;-----%@&quot;, str);//1
+    };
+    [self testBlock:tblock];//2
+}
+- (void)testBlock:(MyBlock)mBlock
+//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock
+//简单的说格式就是 “返回值 + (^) + 参数 + 名字”
+{
+    mBlock(@&quot;1111&quot;);//3
+}
+// Outputs:-----1111
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在上面的代码中，我们写了一个testBlock的函数，将我们的tblock作为参数传到了testBlock函数里面，然后再testBlock里用mBlock调用了我们所写的MyBlock这个函数。&lt;/p&gt;
+
+&lt;p&gt;打断点看一下整体的运行流程，2 3 1。这里可以更加明显理解“回调”的含义。&lt;/p&gt;
+
+&lt;h2 id=&quot;part3-buttonblock&quot;&gt;&lt;em&gt;part3 点击button触发block&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;经历了上面两个part基本上应该对block有个简单的理解。下面再加一点难度，用按钮触发一个回调来改变按钮的颜色。&lt;/p&gt;
+
+&lt;p&gt;不多解释，直接上代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#import &quot;ViewController.h&quot;
+typedef void (^MyBlock)(UIColor *color);
+@interface ViewController ()
+@property (nonatomic, strong) UIButton *testbtn;
+@end
+
+@implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.testbtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.testbtn.frame = CGRectMake(0, 0, 200, 40);
+    self.testbtn.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:self.testbtn];
+    [self.testbtn addTarget:self action:@selector(testfunc) forControlEvents:UIControlEventTouchUpInside];
+}
+- (void)testfunc
+{
+    MyBlock myblock = ^(UIColor *color) {
+	self.testbtn.backgroundColor = color;
+    };
+    [self testBlock:myblock];
+}
+- (void)testBlock:(MyBlock)myBlock
+{
+    UIColor *color = [UIColor redColor];
+    myBlock(color);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;part4-afnetwork&quot;&gt;&lt;em&gt;part4 利用回调分离afnetwork的请求&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;直接上代码了。&lt;/p&gt;
+
+&lt;p&gt;TestNetworkViewController是afnetwork使用的地方。
+TestViewController是我们需要调用网络请求的地方。
+SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//  TestNetworkViewController.h
+#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &quot;SearchModel.h&quot;
+typedef void (^GetModel)(SearchModel *model);
+@interface TestNetworkViewController : UIViewController
++ (void)getUrl:(GetModel)getmodel;
+@end
+
+//TestNetworkViewController.m
+#import &quot;TestNetworkViewController.h&quot;
+@interface TestNetworkViewController ()
+@end
+@implementation TestNetworkViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
++ (void)getUrl:(GetModel)getmodel
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@&quot;http://xxx.xx.xxx.xx:xxxx/app/search_haosou&quot; parameters:@{@&quot;keyword&quot;:@&quot;android&quot;} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+	NSLog(@&quot;JSON: %@&quot;, responseObject);
+	SearchModel *service = [MTLJSONAdapter modelOfClass:SearchModel.class fromJSONDictionary:responseObject error:nil];
+	getmodel(service);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+	NSLog(@&quot;Error: %@&quot;, error);
+    }];
+}
+@end
+
+//  TestViewController.h
+#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &quot;SearchModel.h&quot;
+@interface TestViewController : UIViewController
+@end
+
+#import &quot;TestViewController.h&quot;
+#import &quot;TestNetworkViewController.h&quot;
+#import &quot;SearchModel.h&quot;
+@interface TestViewController ()
+@property (nonatomic, strong) SearchModel *test;
+@end
+
+@implementation TestViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [testBtn setTitle:@&quot;test&quot; forState:UIControlStateNormal];
+    [testBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    testBtn.frame = CGRectMake(0, 100, 200, 40);
+    [testBtn addTarget:self action:@selector(getUrl) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:testBtn];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+- (void)getUrl
+{
+    [TestNetworkViewController getUrl:^(SearchModel *model) {
+	self.test = model;
+	NSLog(@&quot;\n\n\n\n%@&quot;, self.test);
+    }];
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;首先还是得说一下我这里只是演示了最最简单的block使用，因为作为一个iOS开发者不会block，那么有一大半的代码是看不懂的，在后面理解RAC的时候也会出现很大的问题。所以这里我只是做了简单的说明，至于在block里为什么不能调用self，自从segmentfault上有人问过之后我答错之后现在也算是理解了一部分了，但是牵扯到了内存回收的问题，我还需要一段时间来消化。消化完之后会继续写博客的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;总之，block非常的有用，初期写block非常的难过，但是难过过了也就慢慢会喜欢上block的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;post-credits-scene&quot;&gt;post-credits scene&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;最近实在是忙的不可开交，一星期两场考试四个实验。还欠了人jobdeer.com一篇博客还没写，人送的书都没时间看。抽时间还要补起来。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;最近博客的更新频率也是大大降低…唉。都是泪。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;先写到这了。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 30 May 2015 04:02:33 +0800</pubDate>
+        <link>judi0713.github.io/ios/2015/05/30/my-understand-about-block.html</link>
+        <guid isPermaLink="true">judi0713.github.io/ios/2015/05/30/my-understand-about-block.html</guid>
+        
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>iOS开发模式MVVM 1理解开发模式(占坑，未写完)</title>
@@ -1205,94 +1422,6 @@ pull的命令就是git pull
         
         
         <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>windows电脑的使用和优化杂谈</title>
-        <description>&lt;p&gt;因为上次回学校看见英语老师，他说他电脑慢了…我具体也没看到他电脑什么情况就赶着回家了。现在我把我最近windows上会用的一些优化方法介绍一下（算不上优化，个人使用习惯）。还会介绍一点我在windows经常使用的软件。unix系操作系统还轻喷。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;本文仅代表个人观点，由于本人技术有限所以只能想到哪说哪，如有得罪还请见谅。如果你是程序员朋友，还请您轻喷这篇文章。如果你是一般用户，选择您觉得适用的参考。
-不喜勿喷勿骂。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;优化上，我给别人的意见都是不装360。
-因为它捆绑了太多东西，并不是说360不好，确实很影响速度。
-不过当年要没有360现在还不知道病毒多疯狂。
-如果用360也行，具体参加5。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果你是微软官方纯净的windows操作系统只用kms破解的话我觉得杀毒软件和优化软件没有必要使用。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;平常如果用优化软件就经常清理，一定要时常清理！！我就太懒老不清理每次清理完我觉得都快。我一般大概一个月想起来一次吧…我用的腾讯管家。及时清理就行。有些缓存文件我也不知道在哪怎么删除，但是它能找到删除。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;其他就是一些基本的，桌面上少放点东西及时清理桌面。
-还有就是不经常用的软件就及时卸载了，我建议有优化软件的用优化软件卸载。因为清理的相对比较彻底。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;软件的使用上就是同一功能装一个就行，不要装了搜狗输入法再装百度输入法这种。包括优化软件也是这样。包括看视频的。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;电脑上的回收站还是要及时清理，我经常性发现C盘存储量飚红，后来发现是回收站东西太多，你也可以设置一下回收站的回收机制。具体我就不介绍了。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;有一条很重要，下载软件尽量从官方网站下载。如果你从非官方的地方下载，那你最好确认它是从官方网站找的，我一直觉得我们用的office2013其实很不错，虽然是破解的。但是至少给我感觉很正规，安装选项里面东西很齐全。而且确实需要破解才能用。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;最近发现其实内存很影响电脑速度的，尤其我这种喜欢开两个操作系统的。我回来前加了一根4G内存条，现在电脑跑mac的虚拟机基本没有什么太大压力（可惜键盘驱动有问题我的天）。我买的4G内存条好的那种两百多其实感觉还不错。固态硬盘的话，一般我不建议，因为固态硬盘一旦坏了，数据全无。普通硬盘还是可以恢复一部分的。现在制约电脑速度的已经不是cpu了，是硬盘，所以如果电脑慢了，我觉得百分之七八十是电脑装的软件有问题或者有消耗内存的软件在运行。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;迅雷的话，我用的是迅雷出的那一款极速版，就只有下载，没有其他的什么广告之类的我觉得还不错。而且如果你电脑上有播放器的话其实没有必要安装迅雷看看什么的。参见5。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;注意右下角的状态栏，一般来说除了系统自带的那些这个显卡那个声卡电源无线网输入法之类的。如果你看到没有什么用的及时关了，这个很影响速度。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果你觉得你可以，我强烈建议你在卡的时候打开任务管理器，看一下内存使用情况和软件使用情况。遇到感觉有问题的就百度一下。一定不要乱关，有把握了再结束任务。比如我用的VMware，至今不知道为什么会有后台运行。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;还有一点。安装操作系统，我强烈建议从微软官方的下载光盘镜像来安装操作系统，安装最纯净的操作系统。安装之后kms破解或者买序列号都行。我给我妈的电脑安装的是win7 32位正版操作系统，是学校发的正版序列号和微软官方的镜像。开机有点卡，不过运行起来速度还不错。2G的内存。应该用了至少七八年了吧。去年暑假重装的，我只给她装了火狐和腾讯管家和office2013。我刚刚给老妈装了prezi，然后上网查了点资料，速度还很快。她说就开机慢…开机慢是win7操作系统的问题，win8在很多地方都优化了现在速度还很不错。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;大概就只能想到这么多，基本就几条，少装重复功能的软件，多清理电脑缓存和回收站。&lt;/p&gt;
-
-&lt;p&gt;下面推荐几款软件。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;浏览器：火狐或者chrome或者ie，不推荐360，装了360就用着也没啥哈。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;办公软件：office2013 强推 十分好用 百度一下有一个下载下来是iso文件和kms破解的，特别好用，iso文件打开方式就是解压缩就行了。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;pdf阅读：adobe reader其实不错，但是一个朋友给我推荐了一款Sumatra PDF，免费开源，而且轻量级，我觉得还不错哈。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;听歌：网易云音乐这个没有任何异议。我知道很多人用酷狗和qq，你尝试一下就会用网易了，它会根据你听的歌给你推荐歌，推荐的神准，简直了！！良心推荐。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;下载软件：我用的是迅雷极速版，没有广告没有插件我觉得还不错&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;视频播放器：我用的QQ影音，理由是没有广告，个人比较喜欢下载下来看。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;就写这么多，欢迎和我交流，我近期会把评论功能加上，现在只能给我发邮件了，我的邮箱在左下角。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 10 Feb 2015 11:29:08 +0800</pubDate>
-        <link>judi0713.github.io/windows/2015/02/10/somethingaboutwindows.html</link>
-        <guid isPermaLink="true">judi0713.github.io/windows/2015/02/10/somethingaboutwindows.html</guid>
-        
-        
-        <category>windows</category>
         
       </item>
     
