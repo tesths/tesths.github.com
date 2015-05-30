@@ -146,7 +146,7 @@ pre {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #494949;
+  border-top: 0px solid #494949;
   border-bottom: 1px solid #efefef;
   min-height: 56px;
   position: relative; }
