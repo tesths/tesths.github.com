@@ -1,2 +1,5 @@
-My Blog
-1.test already init
+testHs Blog
+
+>我叫巨迪，来自电子科技大学。
+现在是创萌工作室iOS开发组负责人。成都加减法有限公司iOS开发。
+这是我的Github博客。我会一直维护下去。
