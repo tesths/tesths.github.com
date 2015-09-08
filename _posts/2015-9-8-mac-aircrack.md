@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  mac安装aircrack-ng
+title:  Mac安装Aircrack-ng
 date:   2015-09-08 20:06:00
 categories: free
 ---
