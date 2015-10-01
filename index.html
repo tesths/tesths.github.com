@@ -5,16 +5,18 @@ layout: default
 <div class="home">
 
   <h1 class="page-heading">文章列表</h1>
-  <p class="page-ex1">已经添加了评论功能，欢迎你和我交流，我是新手，让我们共同进步~</p>
+
+
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <h2>	
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+			  <span class="glyphicon glyphicon-leaf" aria-hidden="true" width="96px" height="25px">   {{ post.title }}</span>
+		  </a>
         </h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
       </li>
     {% endfor %}
   </ul>

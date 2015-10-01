@@ -6,9 +6,71 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jul 2015 10:32:33 +0800</pubDate>
-    <lastBuildDate>Wed, 29 Jul 2015 10:32:33 +0800</lastBuildDate>
+    <pubDate>Thu, 01 Oct 2015 11:06:00 +0800</pubDate>
+    <lastBuildDate>Thu, 01 Oct 2015 11:06:00 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Mac安装Aircrack-ng</title>
+        <description>&lt;p&gt;9.4号中午去外面吃完冒菜回来都快三点了，这个点尴尬的不行。于是就去工作室倒腾点东西。也不想写代码，就开始各种在mac下装软件。项目基本上暂时没有什么要特别忙的，我也不能总写，都写了慎哥就没得写了。今晚上就把之前做的东西来个小记。&lt;/p&gt;
+
+&lt;p&gt;想到的是破译wifi，当然最终因为各种因素没破译成功。不过中间过程还是很享受的。下面开始。&lt;/p&gt;
+
+&lt;p&gt;百度了一下。有一篇&lt;a href=&quot;http://www.yyker.com/20131109457.html]&quot;&gt;MACOS苹果系统下破解无线网WPA,WPA2密码&lt;/a&gt;。用到的主要工具是Aircrack。于是就开始倒腾了。&lt;/p&gt;
+
+&lt;h2 id=&quot;macport&quot;&gt;安装macport&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;首先第一步要安装&lt;a href=&quot;https://www.macports.org/&quot;&gt;macport&lt;/a&gt;。macport据我理解，相当于homebrew，ubuntu下相当于apt-get install。根据官网来说，安装macport最简单的方法就是下载pkg文件直接安装，但是我在下载pkg安装过程中，会出现卡死的问题。google了半天没找到解决方法。于是就下载了源代码安装，这在官网上都有说明。前面什么安装xcode的command line tools那是装机必备我就不多说了。&lt;/p&gt;
+
+&lt;p&gt;下载之后在官网上有说明，解压之后进入目录，进行&lt;code&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;
+之后需要添加环境变量，我没看懂官网的说明，自行google了一下。看到很多人的博客都写过这个问题，我在此就摘录一下。&lt;/p&gt;
+
+&lt;p&gt;需要将/opt/local/bin和/opt/local/sbin添加到$PATH搜索路径中。然后编辑/etc/profile，这里需要超级用户。如果用vim的话需要wq！在profile里加入下面两句&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;export PATH=/opt/local/bin:$PATH&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;export PATH=/opt/local/sbin:$PATH&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后就可以了，如果要立即生效，那么需要利用source命令&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样就可以用了，执行&lt;code&gt;sudo port -v selfupdate&lt;/code&gt;更新。到这步会发现好像仿佛是被墙了。。。&lt;/p&gt;
+
+&lt;h2 id=&quot;proxychains&quot;&gt;安装proxychains&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;然后我又陷入了难题，好不容易手动编译安装成功了。结果更新好像被墙了咋办。查查查，命令行下使用代理的方法。找到一个东西，叫做&lt;a href=&quot;https://github.com/rofl0r/proxychains-ng&quot;&gt;proxychains&lt;/a&gt;。搜这个用了好久，因为我用的是ss，ss支持的时socks5，而iterm支持http，这就麻烦了。后来在v2ex上发现hzlzh问了这个问题。我就安装这个了。&lt;/p&gt;
+
+&lt;p&gt;安装proxychains4非常简单，直接用homebrew就可以了。&lt;code&gt;brew install proxychains-ng&lt;/code&gt;
+安装完毕要设置代理&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code&gt;/usr/local/etc/proxychains.conf&lt;/code&gt; 最下面 
+&lt;code&gt;[ProxyList]
+socks5  127.0.0.1 1080&lt;/code&gt;
+测试proxychain能不能用，&lt;code&gt;proxychains4 curl twitter.com&lt;/code&gt;会显示ok。我就不截图了。&lt;/p&gt;
+
+&lt;p&gt;proxychain可以让它后面的命令行直接走代理的路线，而不用直接进行网络请求。
+我刚刚用这个加上home cask装了macdown。还是很不错的。因为很多命令行是需要进行网络请求的。&lt;/p&gt;
+
+&lt;p&gt;之后就可以&lt;code&gt;proxychains4 sudo port -v selfupdate&lt;/code&gt;了。可能有点慢，不过我这次可以正常了。&lt;/p&gt;
+
+&lt;h2 id=&quot;aircrack-ng&quot;&gt;安装aircrack-ng&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;最后的最后，我们可以用&lt;code&gt;sudo port install aircrack-ng&lt;/code&gt;就可以安装aircrack了。&lt;/p&gt;
+
+&lt;p&gt;好了，剩下的就是按照那个博客说的来破解了…到这的时候我试了一下，但是班长突然打电话然我去取自行车，我就去了~后面的就没有后面了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;后面的安排&lt;/h2&gt;
+&lt;p&gt;最近项目差不多算是完成了，后面的计划可能要调整一下状态，把RAC再看看，想看看动画，然后，继续开发下一个项目了~&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Sep 2015 04:06:00 +0800</pubDate>
+        <link>judi0713.github.io/free/2015/09/09/mac-aircrack.html</link>
+        <guid isPermaLink="true">judi0713.github.io/free/2015/09/09/mac-aircrack.html</guid>
+        
+        
+        <category>free</category>
+        
+      </item>
     
       <item>
         <title>大二下学期总结和后期计划</title>
@@ -1133,258 +1195,6 @@ MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数�
         
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>命令行git简单使用</title>
-        <description>&lt;p&gt;&lt;strong&gt;早就说写一篇关于git使用的博客一直没写。今天下午休息，打了篮球和羽毛球。看了电影。现在要开始做点正事了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这篇文章可能关于git命令行的语句不多，但是我觉得都是我在搭建jekyll的过程中遇到的。我会尽可能的说明这些命令行的作用。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;因为git的操作比较多，还有什么分支合并新建分支什么的，还没有很好的去研究。这篇文章主要对简单的命令行进行叙述，一般上传代码合并代码是没有问题的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;以下文章都是基于我个人的使用和理解，不喜勿喷。&lt;/h4&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;开始正文&lt;/h2&gt;
-&lt;hr /&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git&quot;&gt;Git简介&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这篇文章不介绍github，介绍git命令行，但是有必要对git和github是什么进行一个说明。你可能听说过github，据说github是世界上最大的同性社交网站。当然是开玩笑的。简单的说，github是一个开放源代码保存的地方，github也是合作项目开发的首选地。&lt;/p&gt;
-
-&lt;p&gt;那么git呢，git是一个仓库，一个你用来保存代码的地方。&lt;/p&gt;
-
-&lt;p&gt;所以，当我在github上注册了帐号之后，我可以将我的代码上传到git上进行保存，也可以大家合用一个仓库来合作开发。&lt;/p&gt;
-
-&lt;p&gt;当然，git本身是开放的，别人可以看到你的源代码，如果是想变成不开放的，那么你就需要像github付费了。你可以去coding看一看，coding提供了免费的git仓库。我们项目的开发都是用的coding。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-1&quot;&gt;Git命令行&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Github官网上提供了&lt;a href=&quot;http://git-scm.com/downloads/guis&quot;&gt;图形界面&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;图形界面的使用比较简单，具体使用迪哥曾经写过一篇关于mac下sourcetree的使用。&lt;a href=&quot;http://bbs.uestc.edu.cn/forum.php?mod=viewthread&amp;amp;tid=1468187&quot;&gt;sourceTree git管理协同使用方法，mac下的git管理工具&lt;/a&gt;。可以对照看一下。在这里不对图形化界面进行详细介绍。&lt;/p&gt;
-
-&lt;p&gt;因为很多时候还是需要git的命令行，下面将进行简单的git命令行使用。
-我的环境是ubuntu14.04。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;sourcetree&quot;&gt;首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。&lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;上传代码到合并代码到拉代码的主要过程是这样的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;add-&amp;gt;commit-&amp;gt;fetch-&amp;gt;pull-&amp;gt;push&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;换成中文&lt;/p&gt;
-
-  &lt;p&gt;&lt;strong&gt;添加代码-&amp;gt;提交代码-&amp;gt;抓取代码-&amp;gt;拉取代码-&amp;gt;推送代码&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;添加代码对应git add&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;提交代码对应git commit&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;抓取代码对应git fetch&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;拉取代码对应git pull&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;推送代码对应git push&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;下面将逐步介绍这些命令。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-2&quot;&gt;安装git&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Ubuntu下安装git的命令行是sudo apt-get install git，不多做解释。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-clone&quot;&gt;git clone&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;git clone是将github上的git仓库下载到本地。
-每一个github都要相应的git地址。如图&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-1.png&quot; alt=&quot;git-easyuse-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;命令很简单，在终端下到你想要的目录，然后git clone +url +目录就可以了。git clone后面是可以加参数的，但是我在使用过程中没有用过。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-2.png&quot; alt=&quot;git-easyuse-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我寒假clone vundle时用的命令，后面那一串是git clone的位置。
-如果已经cd到你要clone的位置，直接git clone不用后面目录的参数就行了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-3&quot;&gt;Git帮助&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;命令 git help&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-3.png&quot; alt=&quot;git-easyuse-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-4.png&quot; alt=&quot;git-easyuse-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以看到所有的git命令。git help也是可以加参数的。具体查阅帮助或者文档了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-4&quot;&gt;git上传代码&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-5.png&quot; alt=&quot;git-easyuse-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;就是主要这三条命令。我会详细说明这三条命令行的作用。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-add&quot;&gt;首先第一条，git add。&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;git add后面可以直接加上目录，或者文件名。“.”在这里的意思就是当前目录下所有文件。&lt;/p&gt;
-
-&lt;p&gt;举个例子。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-6.png&quot; alt=&quot;git-easyuse-6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Git就会把我judi0713.github.com里所有文件全部添加了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;commit&quot;&gt;第二个，commit，提交。&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;首先说明参数的意思。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-7.png&quot; alt=&quot;git-easyuse-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;-a的意思就是提交所有改变的文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-8.png&quot; alt=&quot;git-easyuse-8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;-m后面还需要加参数，就是提交信息。&lt;/p&gt;
-
-&lt;p&gt;在commit时候必须要commit的信息。所以-m的参数是必须的。&lt;/p&gt;
-
-&lt;p&gt;下面我开始具体说明。&lt;/p&gt;
-
-&lt;p&gt;如果直接调用git commit。会进入&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-9.png&quot; alt=&quot;git-easyuse-9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果你不小心进入这里，先输入一段信息即-m（你提交的内容）然后按F3（其实就是ctrl+o writeout）意思就是确认文件，如果不事先填写后面会无法commit。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-10.png&quot; alt=&quot;git-easyuse-10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;按下F3。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-11.png&quot; alt=&quot;git-easyuse-11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后回车。回到之前的提交界面。Ctrl+x exit就可以了。
-然后你修改的文件会出现&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-12.png&quot; alt=&quot;git-easyuse-12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;大功告成。&lt;/p&gt;
-
-&lt;p&gt;一开始的时候我只用了git commit –m +msg&lt;/p&gt;
-
-&lt;p&gt;但是有时候会出现文件没有全部提交的问题。具体我还不知道为什么，有可能是我一开add出现问题了。&lt;/p&gt;
-
-&lt;p&gt;我选择的是git commit –a –m +msg。即一次性提交所有代码。这样就不用进入那个全是英文的界面了。&lt;/p&gt;
-
-&lt;p&gt;可以看一下效果图。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-13.png&quot; alt=&quot;git-easyuse-13&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-push-u-origin-master&quot;&gt;第三个git push –u origin master。&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-14.png&quot; alt=&quot;git-easyuse-14&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;不清楚-u含义，查了很多都加上了-u，具体我就不说明了。&lt;/p&gt;
-
-&lt;p&gt;origin是远程主机。master是git的主分支。&lt;/p&gt;
-
-&lt;p&gt;这样就可以将本地修改的代码全部上传到远程主机了。&lt;/p&gt;
-
-&lt;p&gt;上传的时候需要输入你的github用户名和密码。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-15.png&quot; alt=&quot;git-easyuse-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到此为止是最主要的git命令行使用了。&lt;/p&gt;
-
-&lt;p&gt;因为我使用的是jekyll是独立项目所以我没有拉代码这个步骤。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;fetch和pull的区别&lt;/strong&gt;在于fetch是看有没有别人远程推送的代码，并不进行合并。
-pull的话直接就合并了，当然也可以省去fetch的步骤，不建议省去。
-在pull代码到本地的时候会有本地的代码冲突。Git很人性化的会将代码进行比对。你需要看别人是不是修改了你的代码，然后进行对别人代码的删除或者自己代码的删除。然后重新commit。
-其实这是很值得写的一个东西，具体等我进行命令行的git开发的时候再详细说明。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;fetch的命令就是git fetch
-pull的命令就是git pull
-因为我个人只用过图形化界面的git没有尝试过命令行没法现身说法。如果以后我使用命令行的话会具体再说明的。&lt;/p&gt;
-
-&lt;p&gt;下面再介绍一个很有意思的git命令行。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h3 id=&quot;git-status&quot;&gt;git status&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;查看git现在的状态。
-比我现在已经add过了。我调用git status。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-16.png&quot; alt=&quot;git-easyuse-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我在commit一下查看git status。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/git-easyuse/git-easyuse-17.png&quot; alt=&quot;git-easyuse-17&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以查看此时我的git状态。感觉还是很不错的。&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;其实我主要介绍的还是简单的git命令行使用，是我在搭建jekyll的时候所用到的。
-还有很多我都没有介绍，比如revert，回滚。可以回到之前代码的状态。需要添加状态的id。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;还有分支，这个功能我真的没有很好的研究，有时间还是要把git研究一下。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;还有就是git rm删除文件等等。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我会在使用之后再写一篇博客对我没介绍的git命令进行说明。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;实在是觉得git很好用，免费空间。而且作为技术人，学会上github真的很重要。特别感谢迪哥给我带进github的坑，这个同性恋交友网站让我收获很多东西。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;以前上网没事了看看河畔，现在没事了上github explore。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;就这样，欢迎各位提意见！最好不要喷我。感谢你的支持！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;今天是大学特有的女生节。祝各位女孩们永远年轻漂亮。&lt;/p&gt;
-
-&lt;p&gt;最主要的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;祝信安一班的七个女孩节日快乐。红包什么的都已经象征性的发了。礼物什么的如果班长买了你们就收，没买就算了。咱都那么熟了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;希望你们七个没找到下家的赶紧找下家。找到下家的幸福生活。生活也许很残酷，但是要以一个积极乐观的心态去面对。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;祝你们幸福啦~~&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;也祝所有女孩们，幸福，快乐。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 07 Mar 2015 21:44:00 +0800</pubDate>
-        <link>judi0713.github.io/git/2015/03/07/git-easyuse.html</link>
-        <guid isPermaLink="true">judi0713.github.io/git/2015/03/07/git-easyuse.html</guid>
-        
-        
-        <category>git</category>
         
       </item>
     

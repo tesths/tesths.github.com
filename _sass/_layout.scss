@@ -11,14 +11,15 @@
 }
 
 .site-title {
-    font-size: 30px;
+    font-size: 20px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+	color: #0084B4;
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: #0084B4;
     }
 }
 
@@ -193,7 +194,7 @@
 /**
  * Posts
  */
-.post-header {
+. {
     margin-bottom: $spacing-unit;
 }
 
@@ -233,4 +234,8 @@
             font-size: 18px;
         }
     }
+}
+
+.glyphicon.glyphicon-leaf {
+    font-size: 17px;
 }

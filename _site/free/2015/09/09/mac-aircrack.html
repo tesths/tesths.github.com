@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>iOS开发模式MVVM 1理解开发模式(占坑，未写完)</title>
-  <meta name="description" content="一些废话距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东...">
+  <title>Mac安装Aircrack-ng</title>
+  <meta name="description" content="9.4号中午去外面吃完冒菜回来都快三点了，这个点尴尬的不行。于是就去工作室倒腾点东西。也不想写代码，就开始各种在mac下装软件。项目基本上暂时没有什么要特别忙的，我也不能总写，都写了慎哥就没得写了。今晚上就把之前做的东西来个小记。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html">
+  <link rel="canonical" href="judi0713.github.io/free/2015/09/09/mac-aircrack.html">
   <link rel="alternate" type="application/rss+xml" title="testHs" href="judi0713.github.io/feed.xml" />
   
   
@@ -63,36 +63,66 @@
         <div class="post">
 
   <header class="post-header" align="center" >
-    <h1 class="post-title">iOS开发模式MVVM 1理解开发模式(占坑，未写完)</h1>
-    <p class="post-meta">May 4, 2015</p>
+    <h1 class="post-title">Mac安装Aircrack-ng</h1>
+    <p class="post-meta">Sep 9, 2015</p>
   </header>
 
   <article class="post-content">
-    <h2 id="section">一些废话</h2>
-<p>距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。
-五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。</p>
+    <p>9.4号中午去外面吃完冒菜回来都快三点了，这个点尴尬的不行。于是就去工作室倒腾点东西。也不想写代码，就开始各种在mac下装软件。项目基本上暂时没有什么要特别忙的，我也不能总写，都写了慎哥就没得写了。今晚上就把之前做的东西来个小记。</p>
 
-<h2 id="racmvcmvvm">RAC、MVC和MVVM</h2>
-<p><code>RAC(ReactiveCocoa)</code>里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。</p>
+<p>想到的是破译wifi，当然最终因为各种因素没破译成功。不过中间过程还是很享受的。下面开始。</p>
 
-<p><code>MVC(Model View Controller)</code>是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
-所以这就有我们开发模式逐渐改变的第一步，迪哥利用RAC将网络层单独分离出来的写法。而且我们不断的将控件抽象出来，减少Controller中的代码。虽然代码量增加，但是后期的维护会简单不少。</p>
+<p>百度了一下。有一篇<a href="http://www.yyker.com/20131109457.html]">MACOS苹果系统下破解无线网WPA,WPA2密码</a>。用到的主要工具是Aircrack。于是就开始倒腾了。</p>
 
-<p><code>MVVM(Model ViewModel Model)</code>是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。</p>
+<h2 id="macport">安装macport</h2>
+<hr />
 
-<h2 id="mvcmvvm">MVC和MVVM的比较</h2>
-<p>其实我想贴图，但是资料太多，我还是先第一步用语言来解释我自身的理解。
-MVC中，Controller是核心，Controller对View进行操作，Controller也对Model进行操作。但是View和Model是不相互进行通信。
-MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数据，在ViewModel里对Model层进行操作，操作出一个View出来，然后直接在View层显示。这就节省了Controller中View的代码。</p>
+<p>首先第一步要安装<a href="https://www.macports.org/">macport</a>。macport据我理解，相当于homebrew，ubuntu下相当于apt-get install。根据官网来说，安装macport最简单的方法就是下载pkg文件直接安装，但是我在下载pkg安装过程中，会出现卡死的问题。google了半天没找到解决方法。于是就下载了源代码安装，这在官网上都有说明。前面什么安装xcode的command line tools那是装机必备我就不多说了。</p>
 
-<h2 id="mvvm">简单的MVVM实现</h2>
-<p>占坑，不是不写，实在是没有可以贴出来看的代码。而且只是大概理解了里面的传值方式，MVVM模式不贴代码实在是没有什么可写的。
-明日下午敲几个代码然后接着更。</p>
+<p>下载之后在官网上有说明，解压之后进入目录，进行<code>./configure &amp;&amp; make &amp;&amp; sudo make install</code>
+之后需要添加环境变量，我没看懂官网的说明，自行google了一下。看到很多人的博客都写过这个问题，我在此就摘录一下。</p>
+
+<p>需要将/opt/local/bin和/opt/local/sbin添加到$PATH搜索路径中。然后编辑/etc/profile，这里需要超级用户。如果用vim的话需要wq！在profile里加入下面两句</p>
+
+<p><code>export PATH=/opt/local/bin:$PATH</code></p>
+
+<p><code>export PATH=/opt/local/sbin:$PATH</code></p>
+
+<p>然后就可以了，如果要立即生效，那么需要利用source命令<code>source /etc/profile</code></p>
+
+<p>这样就可以用了，执行<code>sudo port -v selfupdate</code>更新。到这步会发现好像仿佛是被墙了。。。</p>
+
+<h2 id="proxychains">安装proxychains</h2>
+<hr />
+
+<p>然后我又陷入了难题，好不容易手动编译安装成功了。结果更新好像被墙了咋办。查查查，命令行下使用代理的方法。找到一个东西，叫做<a href="https://github.com/rofl0r/proxychains-ng">proxychains</a>。搜这个用了好久，因为我用的是ss，ss支持的时socks5，而iterm支持http，这就麻烦了。后来在v2ex上发现hzlzh问了这个问题。我就安装这个了。</p>
+
+<p>安装proxychains4非常简单，直接用homebrew就可以了。<code>brew install proxychains-ng</code>
+安装完毕要设置代理</p>
+
+<p>修改<code>/usr/local/etc/proxychains.conf</code> 最下面 
+<code>[ProxyList]
+socks5  127.0.0.1 1080</code>
+测试proxychain能不能用，<code>proxychains4 curl twitter.com</code>会显示ok。我就不截图了。</p>
+
+<p>proxychain可以让它后面的命令行直接走代理的路线，而不用直接进行网络请求。
+我刚刚用这个加上home cask装了macdown。还是很不错的。因为很多命令行是需要进行网络请求的。</p>
+
+<p>之后就可以<code>proxychains4 sudo port -v selfupdate</code>了。可能有点慢，不过我这次可以正常了。</p>
+
+<h2 id="aircrack-ng">安装aircrack-ng</h2>
+<hr />
+<p>最后的最后，我们可以用<code>sudo port install aircrack-ng</code>就可以安装aircrack了。</p>
+
+<p>好了，剩下的就是按照那个博客说的来破解了…到这的时候我试了一下，但是班长突然打电话然我去取自行车，我就去了~后面的就没有后面了。</p>
+
+<h2 id="section">后面的安排</h2>
+<p>最近项目差不多算是完成了，后面的计划可能要调整一下状态，把RAC再看看，想看看动画，然后，继续开发下一个项目了~</p>
 
   </article>
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/05/04/ios-mvvm-1 data-title=iOS开发模式MVVM 1理解开发模式(占坑，未写完) data-url="judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html"></div>
+	<div class="ds-thread" data-thread-key=/free/2015/09/09/mac-aircrack data-title=Mac安装Aircrack-ng data-url="judi0713.github.io/free/2015/09/09/mac-aircrack.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
