@@ -21,5 +21,20 @@ layout: default
     {% endfor %}
   </ul>
 
+<script>
+	var uu = [];
+	$.each($(".upost-li"), function(index, val) {
+		 var uuRe = $(this).find("abbr").text().split(" ");
+		 if (uu.length == 0){
+		 	uu = uuRe;
+		 	$(this).before('<p class="text-center upost-css">'+uuRe[1]+" "+uuRe[2]+'</p>');
+		 }else if(uuRe[1] != uu[1] || uuRe[2] != uu[2]){
+		 	uu = uuRe;
+		 	$(this).before('<p class="text-center upost-css">'+uuRe[1]+" "+uuRe[2]+'</p>');
+		 	
+		 }
+	});
+</script>
+	
 
 </div>
