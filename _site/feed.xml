@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 03 Oct 2015 10:40:21 +0800</pubDate>
-    <lastBuildDate>Sat, 03 Oct 2015 10:40:21 +0800</lastBuildDate>
+    <pubDate>Sat, 03 Oct 2015 10:50:29 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Oct 2015 10:50:29 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -19,6 +19,8 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;我写这篇文章已经做好了被喷死吐槽死的准备了，因为我感觉我封装的太有问题了，但是又真的很想写一写，毕竟对我来说确实解决了一个大问题。&lt;/p&gt;
+
+&lt;p&gt;另外:链接不知道为啥都不变色了😭基本上我都给链接了，就凑合一下吧…&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;先简单的说说我们的网络请求转变过程&lt;/h2&gt;
 
@@ -68,7 +70,7 @@
 
 &lt;p&gt;下面来解释一下，首先第一个block是我们的主viewcontroller，也就是我们逻辑部分和视图部分。首先第一个block调Coding_NetAPIManager里的函数。然后在Coding_NetAPIManager再调CodingNetAPIClient里的函数。&lt;/p&gt;
 
-&lt;h4 id=&quot;codingcodinghttpscodingnetueasepcodingiosgit&quot;&gt;(具体Coding代码请看&lt;a href=&quot;https://coding.net/u/ease/p/Coding_iOS/git&quot;&gt;Coding客户端&lt;/a&gt;代码的链接)&lt;/h4&gt;
+&lt;h3 id=&quot;codingcodinghttpscodingnetueasepcodingiosgit&quot;&gt;(具体Coding代码请看&lt;a href=&quot;https://coding.net/u/ease/p/Coding_iOS/git&quot;&gt;Coding客户端&lt;/a&gt;代码的链接)&lt;/h3&gt;
 
 &lt;p&gt;我们倒着来说。&lt;/p&gt;
 
