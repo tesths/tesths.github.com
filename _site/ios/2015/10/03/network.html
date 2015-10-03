@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>根据Coding的iOS端重新用RAC封装网络请求</title>
+  <meta name="description" content="FOR CM AND PLUSUB">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="judi0713.github.io/ios/2015/10/03/network.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="judi0713.github.io/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/syntax.css" rel="stylesheet">
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">根据Coding的iOS端重新用RAC封装网络请求</h1>
+    <p class="post-meta">Oct 3, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="for-cm-and-plusub">FOR CM AND PLUSUB</h2>
+
+<blockquote>
+  <p>好久没写博客了。之前一直在研究MVVM这种新的开发模式。也算是沉淀了一段时间，国庆期间可能还会写写MVVM。今天要聊的是创萌工作室的iOS客户端网络请求的封装。因为很多原因封装的还不够好存在很多问题今天写出来只是想把最近做的事情写出来作个记录。</p>
+</blockquote>
+
+<p>我写这篇文章已经做好了被喷死吐槽死的准备了，因为我感觉我封装的太有问题了，但是又真的很想写一写，毕竟对我来说确实解决了一个大问题。</p>
+
+<h2 id="section">先简单的说说我们的网络请求转变过程</h2>
+
+<p>加入工作室一年。一共做了有三四个项目了。我先大概叙述一下我们的网络请求的转变过程</p>
+
+<h2 id="afnetworking"><code>第一阶段 直接调用AFNetworking</code></h2>
+
+<p>第一个项目那时候懵懂无知，每个界面都直接调<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>。这样导致的问题就是代码量骤然增加。</p>
+
+<h2 id="ytknetwork"><code>第二阶段 直接调用YTKNetwork</code></h2>
+
+<p>第二个项目刚做的时候唐巧开源了他们在猿题库封装的<a href="https://github.com/yuantiku/YTKNetwork">YTKNetwork</a>。那时候还是懵懂无知，还是在每个界面都开始直接调YTKNetwork。人家封装的那么好的东西就被我用成这个栽子，简直对不起巧大。我记得有个界面好像有5条网络请求，可以想象代码的冗余度。</p>
+
+<h2 id="reactivecocoa"><code>第三阶段 开始使用ReactiveCocoa</code></h2>
+
+<p>因为在做第二个项目的时候我和迪哥负责不同的客户端。迪哥在看了limboy的<a href="http://limboy.me/ios/2014/01/05/ios-rest-client-implementation.html">基于AFNetworking2.0和ReactiveCocoa2.1的iOS REST Client</a>开始将网络请求剥离到一个专门的界面，这样每次就不用写很多的东西了。</p>
+
+<p>limboy用了<a href="https://github.com/CodaFi/AFNetworking-RACExtensions">AFNetworking-RACExtensions</a>来实现回调的效果。简单的说就是subscribe一个信号，然后信号会返回一个信号回来，这样就实现了将网络请求部分剥离的效果。</p>
+
+<p>我在第二个项目基本上结束的时候上线了一个自己独立开发的app，里面就是用了这样的方法。</p>
+
+<p>这学期在做项目的时候还是在沿用迪哥的代码，但是我发现了很多问题。</p>
+
+<p>一是limboy在写rac代码的时候用的concat无法完成网络请求再请求。简单的说，服务器在返回告诉我session失效的时候我先需要后台自动登录然后再次网络请求。我再写的时候concat无法实现再次网络请求，我也不太明白为什么，试了各种方法都不行。这是很困惑我的我后面还需要再次研究一下。</p>
+
+<p>二是再判断服务器返回的东西的时候，需要判断状态码。如果成功，那么会有json数据返回回来，如果失败则没有数据。出现这样的情况如果我在Acontroller调Bcontroller的网络请求则还需要判断是不是返回了一个数组或者对象，如果是，开始对数据进行处理，如果不是，还得重新进行网络请求，因为说明session失效了。</p>
+
+<p>这样还是导致了网络请求部分有大量的代码。</p>
+
+<h2 id="codingios">根据Coding的iOS重新封装网络请求</h2>
+
+<p><a href="https://coding.net/u/ease/p/Coding_iOS/git">Coding的iOS客户端</a>是开源的，在Github和Coding官网都有。我放的链接是一个下载下来就能跑起来的。(强迫症，跑不起来的代码都不想看..不过现在看MVVM好多都跑不起来也硬着头皮看了)</p>
+
+<p>Coding的网络请求自己看了。Coding是用block来进行回调的。至于这一块选择notice还是block还是delegate，可以参考<a href="http://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html">iOS应用架构谈 网络层设计方案</a>我算是认真看了，但是不是很能写的出来…</p>
+
+<blockquote>
+  <p>插一句话，我们为什么不用block。因为迪哥也不太会block就直接上rac了，我之前的博客写过简单的block，我在写代码的时候用delegate和notice比较多所以对block的实践比较少。这是我自身的问题。而且说实话我觉得用rac挺好的，因为block加上typedef啥的其实很多东西的，不像rac直接调就完事了。</p>
+</blockquote>
+
+<h2 id="section-1">下面开始今天的算是干货的东西</h2>
+
+<h2 id="coding">1. 分析Coding网络请求</h2>
+
+<h3 id="coding-1"><em>Coding的网络请求我觉得可以总结为</em></h3>
+
+<h3 id="block---block---afnetworking">block -&gt; block -&gt; AFNetworking</h3>
+
+<p>下面来解释一下，首先第一个block是我们的主viewcontroller，也就是我们逻辑部分和视图部分。首先第一个block调Coding_NetAPIManager里的函数。然后在Coding_NetAPIManager再调CodingNetAPIClient里的函数。</p>
+
+<h4 id="codingcodinghttpscodingnetueasepcodingiosgit">(具体Coding代码请看<a href="https://coding.net/u/ease/p/Coding_iOS/git">Coding客户端</a>代码的链接)</h4>
+
+<p>我们倒着来说。</p>
+
+<h2 id="afnetworking-1"><code>第三部分 AFNetworking</code></h2>
+
+<p>在我分类的AFNetworking里也就是CodingNetAPIClient里，Coding进行了一件事情，那就是进行AFNetworking的网络请求。</p>
+
+<p>在获取到数据的时候的对reponse进行一个判断。在判断数据的时候，如果数据有错误，则直接显示错误的msg，如果没有错误，那么则不返回任何东西。</p>
+
+<p>然后在网络请求中判断，如果有错误，那么返回nil和id类型的error。如果没错误，返回response和nil。</p>
+
+<h2 id="block"><code>第二部分 block</code></h2>
+
+<p>在这部分里，回调的结果有两种，一种是有数据，一种是没数据。其实到这就行了。那么现在在这第二个部分干什么呢，json转model。就这么简单。返回的东西，如果有数据返回，那么就再次返回model或者是data和nil，如果没有数据返回，就返回nil和error。</p>
+
+<h2 id="block-1"><code>第一部分 block</code></h2>
+<p>到这里，其实只要判断有无数据就可以啦。</p>
+
+<p>好了。下面我们只需要用RAC来替换block就完成了。当然了，中间有坑，不会那么简单的…</p>
+
+<h2 id="section-2">2. 改写网络请求</h2>
+
+<p>我要上代码了。依然三部分。我们还是倒着来。我放关键的代码在这。</p>
+
+<p>既然我把Coding的代码分成了</p>
+
+<h3 id="block---block---afnetworking-1">block -&gt; block -&gt; AFNetworking</h3>
+
+<p>那么我的基本上就可以说是</p>
+
+<h3 id="rac---rac---afnetworking">RAC -&gt; RAC -&gt; AFNetworking</h3>
+
+<p>也是倒着来。</p>
+
+<h2 id="afnetworking-2"><code>第三部分 AFNetworking</code></h2>
+<p><code>这是AFNetworking网络请求</code></p>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//一切仿照Coding</span>
+<span class="k">case</span> <span class="nl">Get</span><span class="p">:{</span>
+    <span class="k">return</span> <span class="p">[[[[</span><span class="nb">self</span> <span class="nl">rac_GET</span><span class="p">:</span><span class="n">aPath</span> <span class="nl">parameters</span><span class="p">:</span><span class="n">params</span><span class="p">]</span> <span class="nl">map</span><span class="p">:</span><span class="o">^</span><span class="kt">id</span><span class="p">(</span><span class="n">RACTuple</span> <span class="o">*</span><span class="n">JSONAndHeaders</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">responseObject</span> <span class="o">=</span> <span class="n">JSONAndHeaders</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">DebugLog</span><span class="p">(</span><span class="s">@&quot;</span><span class="se">\n</span><span class="s">===========response===========</span><span class="se">\n</span><span class="s">%@:</span><span class="se">\n</span><span class="s">%@&quot;</span><span class="p">,</span> <span class="n">aPath</span><span class="p">,</span> <span class="n">responseObject</span><span class="p">);</span>
+<span class="c1">//这里调用下一个部分的函数</span>
+        <span class="kt">id</span> <span class="n">error</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="nl">handleResponse</span><span class="p">:</span><span class="n">responseObject</span> <span class="nl">autoShowError</span><span class="p">:</span><span class="n">autoShowError</span> <span class="nl">rerequestJsonDataWithPath</span><span class="p">:</span><span class="n">aPath</span> <span class="nl">withParams</span><span class="p">:</span><span class="n">params</span> <span class="nl">withMethodType</span><span class="p">:</span><span class="n">method</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">RACTuplePack</span><span class="p">(</span><span class="nb">nil</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">return</span> <span class="n">RACTuplePack</span><span class="p">(</span><span class="n">responseObject</span><span class="p">,</span> <span class="nb">nil</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}]</span>
+             <span class="nl">catch</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="n">DebugLog</span><span class="p">(</span><span class="s">@&quot;</span><span class="se">\n</span><span class="s">===========response===========</span><span class="se">\n</span><span class="s">%@:</span><span class="se">\n</span><span class="s">%@&quot;</span><span class="p">,</span> <span class="n">aPath</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+                 <span class="k">return</span> <span class="p">[</span><span class="nb">self</span> <span class="nl">showError</span><span class="p">:</span><span class="n">error</span><span class="p">];</span>
+             <span class="p">}]</span> <span class="n">replayLazily</span><span class="p">];</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p><code>这是对返回值的处理</code></p>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-(</span><span class="kt">id</span><span class="p">)</span><span class="nf">handleResponse:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">responseJSON</span> <span class="nf">autoShowError:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nv">autoShowError</span>
+<span class="nf">rerequestJsonDataWithPath:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aPath</span>
+         <span class="nf">withParams:</span><span class="p">(</span><span class="bp">NSDictionary</span><span class="o">*</span><span class="p">)</span><span class="nv">params</span>
+     <span class="nf">withMethodType:</span><span class="p">(</span><span class="n">NetworkMethod</span><span class="p">)</span><span class="nv">method</span><span class="p">{</span>
+    <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="bp">NSNumber</span> <span class="o">*</span><span class="n">resultCode</span> <span class="o">=</span> <span class="p">[</span><span class="n">responseJSON</span> <span class="nl">valueForKeyPath</span><span class="p">:</span><span class="s">@&quot;status&quot;</span><span class="p">];</span>
+    
+    <span class="c1">//如果服务器返回的值不是正确有数值的话</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">resultCode</span><span class="p">.</span><span class="n">intValue</span> <span class="o">!=</span> <span class="n">VALUE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSError</span> <span class="nl">errorWithDomain</span><span class="p">:</span><span class="n">BASE_URL</span> <span class="nl">code</span><span class="p">:</span><span class="n">resultCode</span><span class="p">.</span><span class="n">intValue</span> <span class="nl">userInfo</span><span class="p">:</span><span class="n">responseJSON</span><span class="p">];</span>
+        <span class="c1">//如果服务器返回session失效的错误码</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resultCode</span><span class="p">.</span><span class="n">intValue</span> <span class="o">==</span> <span class="n">VALUE</span><span class="p">)</span> <span class="p">{</span><span class="c1">//用户未登录</span>
+            <span class="p">[[[</span><span class="n">NetWork</span> <span class="n">sharedManager</span><span class="p">]</span> <span class="n">login</span><span class="p">]</span> <span class="nl">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">RACTuple</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">RACTupleUnpack</span><span class="p">(</span><span class="kt">id</span> <span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+                <span class="c1">//由于没登陆那么这里调用第二个部分RAC的登陆方法，进行重新登陆</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//这时有数据返回则再次发出网络请求</span>
+                    <span class="p">[</span><span class="nb">self</span> <span class="nl">rerequestJsonDataWithPath</span><span class="p">:</span><span class="n">aPath</span> <span class="nl">withParams</span><span class="p">:</span><span class="n">params</span> <span class="nl">withMethodType</span><span class="p">:</span><span class="n">method</span><span class="p">];</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    
+                <span class="p">}</span>
+            <span class="p">}];</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">autoShowError</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">[</span><span class="nb">self</span> <span class="nl">showError</span><span class="p">:</span><span class="n">error</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p><code>这是重新登陆后再次进行网络请求</code></p>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">rerequestJsonDataWithPath:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aPath</span>
+                      <span class="nf">withParams:</span><span class="p">(</span><span class="bp">NSDictionary</span><span class="o">*</span><span class="p">)</span><span class="nv">params</span>
+                  <span class="nf">withMethodType:</span><span class="p">(</span><span class="n">NetworkMethod</span><span class="p">)</span><span class="nv">method</span>
+<span class="p">{</span>
+    <span class="p">[[[</span><span class="n">NetWorkCheck</span> <span class="n">sharedJsonClient</span><span class="p">]</span> <span class="nl">requestJsonDataWithPath</span><span class="p">:</span><span class="n">aPath</span> <span class="nl">withParams</span><span class="p">:</span><span class="n">params</span> <span class="nl">withMethodType</span><span class="p">:</span><span class="n">Get</span><span class="p">]</span> <span class="nl">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;success&quot;</span><span class="p">);</span>
+    <span class="p">}];</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="rac"><code>第二部分 RAC</code></h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">)</span><span class="nf">test2</span>
+<span class="p">{</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="s">@&quot;/MyList.do&quot;</span><span class="p">;</span>
+    
+    <span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;id&quot;</span><span class="o">:</span><span class="s">@&quot;22&quot;</span><span class="l">}</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="p">[[[</span><span class="n">NetWorkCheck</span> <span class="n">sharedJsonClient</span><span class="p">]</span> <span class="nl">requestJsonDataWithPath</span><span class="p">:</span><span class="n">path</span> <span class="nl">withParams</span><span class="p">:</span><span class="n">params</span> <span class="nl">withMethodType</span><span class="p">:</span><span class="n">Get</span><span class="p">]</span> <span class="nl">map</span><span class="p">:</span><span class="o">^</span><span class="kt">id</span><span class="p">(</span><span class="n">RACTuple</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">RACTupleUnpack</span><span class="p">(</span><span class="kt">id</span> <span class="n">resultData</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resultData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">RACTuplePack</span><span class="p">(</span><span class="n">resultData</span><span class="p">,</span> <span class="nb">nil</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">RACTuplePack</span><span class="p">(</span><span class="nb">nil</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}];</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="rac-1"><code>第一部分 RAC</code></h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">test2:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span>
+<span class="p">{</span>
+    <span class="p">[[[</span><span class="n">NetWork</span> <span class="n">sharedManager</span><span class="p">]</span> <span class="n">test2</span><span class="p">]</span> <span class="nl">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">RACTuple</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">RACTupleUnpack</span><span class="p">(</span><span class="kt">id</span> <span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+            
+        <span class="p">}</span>
+    <span class="p">}];</span>
+<span class="p">}</span></code></pre></div>
+
+<blockquote>
+  <p>看代码的时候最好是从第一部分看，我为了突出重点所以把第三部分放到最前面了。基本上我就干了一件事情，把block改写为RAC。</p>
+</blockquote>
+
+<h2 id="section-3">3. 问题以及填坑</h2>
+
+<h3 id="section-4">问题一：回调两个值</h3>
+
+<p>其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用<code>RACTupleUnpack(id resultData, NSError *error) = x;</code>来解加压缩变量(用词不准确见谅)</p>
+
+<p>在这里非常感谢<a href="supermao.cn/zhe-yang-hao-yong-de-reactivecocoagen-ben-ting-bu-xia-lai/">这样好用的ReactiveCocoa，根本停不下来</a>这篇博客。看到了RACTuplePack这个宏定义。</p>
+
+<h3 id="session">问题二：如何在服务器返回session失效之后进行两次链接请求，一次后台自动登录，一次重新进行网络请求</h3>
+
+<p>在Coding的代码里，我看到如果未登录是会弹出登录界面。但是我们要求是后台登录然后重新请求。</p>
+
+<p>我开始是想在get请求那部分直接在此调get的网络请求。但是不会执行两次网络请求。</p>
+
+<p>之前的项目是在vc的界面判断没数据则在此调用函数。如果那样的话我不是白封装半天了…于是决定封装到network里，我就在重新登录后判断有无数据，有数据则意味着登录成功，登录成功，在此调一个登录的函数。</p>
+
+<p>虽然这样看上去就不合理，但是是我能尝试出来的一个办法了…尝试了好几天，查了半天也没有类似的解决方案。</p>
+
+<h3 id="section-5">问题三：为什么有时候不会执行网络请求</h3>
+
+<p>我在解决问题二的时候就出现这种问题，不能进行网络请求，我只是一个简单的调函数。但是，但是，但是，在rac里必须要subscribeNext，如果不subscribeNext则不会调！这是需要记住的。</p>
+
+<h2 id="section-6">4. 还存在的问题以及不足</h2>
+
+<ol>
+  <li>
+    <p>Coding对于Get请求还做了缓存，我没做。后面会慢慢加上。</p>
+  </li>
+  <li>
+    <p>RAC是对于很多东西的一个大集合，比如block比如KVO等等。所以需要对iOS的内存管理机制进行一个深入理解，这是我一直所欠缺的。这个问题在我解决问题二的时候出现了好几次报错，都是这个问题。但是我却无法解决。</p>
+  </li>
+  <li>
+    <p>Coding中还用到了很多显示错误的MBProgress等等，我在此都没写，如果想仔细研究去看Coding的源码。</p>
+  </li>
+  <li>
+    <p>Coding的网络请求还有很多对文件的处理，post请求等等，我现在只改写了Get和Post请求。后面需要把Coding这一套都好好的研究一下。</p>
+  </li>
+  <li>
+    <p>对于RAC的理解还是不够，在整个过程中遇到很多问题。</p>
+  </li>
+</ol>
+
+<blockquote>
+  <h2 id="codingcoding">最后的最后感谢Coding将他们的客户端开源出来，感谢为Coding贡献代码的工程师。是你们让我学到了更多的东西😘</h2>
+</blockquote>
+
+  </article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=/ios/2015/10/03/network data-title=根据Coding的iOS端重新用RAC封装网络请求 data-url="judi0713.github.io/ios/2015/10/03/network.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"walkginkgo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+</p>
+      </div>
+    </div>
+
+  </div>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>

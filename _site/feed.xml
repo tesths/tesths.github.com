@@ -6,9 +6,258 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Oct 2015 11:42:43 +0800</pubDate>
-    <lastBuildDate>Thu, 01 Oct 2015 11:42:43 +0800</lastBuildDate>
+    <pubDate>Sat, 03 Oct 2015 10:40:21 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Oct 2015 10:40:21 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>根据Coding的iOS端重新用RAC封装网络请求</title>
+        <description>&lt;h2 id=&quot;for-cm-and-plusub&quot;&gt;FOR CM AND PLUSUB&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;好久没写博客了。之前一直在研究MVVM这种新的开发模式。也算是沉淀了一段时间，国庆期间可能还会写写MVVM。今天要聊的是创萌工作室的iOS客户端网络请求的封装。因为很多原因封装的还不够好存在很多问题今天写出来只是想把最近做的事情写出来作个记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我写这篇文章已经做好了被喷死吐槽死的准备了，因为我感觉我封装的太有问题了，但是又真的很想写一写，毕竟对我来说确实解决了一个大问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;先简单的说说我们的网络请求转变过程&lt;/h2&gt;
+
+&lt;p&gt;加入工作室一年。一共做了有三四个项目了。我先大概叙述一下我们的网络请求的转变过程&lt;/p&gt;
+
+&lt;h2 id=&quot;afnetworking&quot;&gt;&lt;code&gt;第一阶段 直接调用AFNetworking&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;第一个项目那时候懵懂无知，每个界面都直接调&lt;a href=&quot;https://github.com/AFNetworking/AFNetworking&quot;&gt;AFNetworking&lt;/a&gt;。这样导致的问题就是代码量骤然增加。&lt;/p&gt;
+
+&lt;h2 id=&quot;ytknetwork&quot;&gt;&lt;code&gt;第二阶段 直接调用YTKNetwork&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;第二个项目刚做的时候唐巧开源了他们在猿题库封装的&lt;a href=&quot;https://github.com/yuantiku/YTKNetwork&quot;&gt;YTKNetwork&lt;/a&gt;。那时候还是懵懂无知，还是在每个界面都开始直接调YTKNetwork。人家封装的那么好的东西就被我用成这个栽子，简直对不起巧大。我记得有个界面好像有5条网络请求，可以想象代码的冗余度。&lt;/p&gt;
+
+&lt;h2 id=&quot;reactivecocoa&quot;&gt;&lt;code&gt;第三阶段 开始使用ReactiveCocoa&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;因为在做第二个项目的时候我和迪哥负责不同的客户端。迪哥在看了limboy的&lt;a href=&quot;http://limboy.me/ios/2014/01/05/ios-rest-client-implementation.html&quot;&gt;基于AFNetworking2.0和ReactiveCocoa2.1的iOS REST Client&lt;/a&gt;开始将网络请求剥离到一个专门的界面，这样每次就不用写很多的东西了。&lt;/p&gt;
+
+&lt;p&gt;limboy用了&lt;a href=&quot;https://github.com/CodaFi/AFNetworking-RACExtensions&quot;&gt;AFNetworking-RACExtensions&lt;/a&gt;来实现回调的效果。简单的说就是subscribe一个信号，然后信号会返回一个信号回来，这样就实现了将网络请求部分剥离的效果。&lt;/p&gt;
+
+&lt;p&gt;我在第二个项目基本上结束的时候上线了一个自己独立开发的app，里面就是用了这样的方法。&lt;/p&gt;
+
+&lt;p&gt;这学期在做项目的时候还是在沿用迪哥的代码，但是我发现了很多问题。&lt;/p&gt;
+
+&lt;p&gt;一是limboy在写rac代码的时候用的concat无法完成网络请求再请求。简单的说，服务器在返回告诉我session失效的时候我先需要后台自动登录然后再次网络请求。我再写的时候concat无法实现再次网络请求，我也不太明白为什么，试了各种方法都不行。这是很困惑我的我后面还需要再次研究一下。&lt;/p&gt;
+
+&lt;p&gt;二是再判断服务器返回的东西的时候，需要判断状态码。如果成功，那么会有json数据返回回来，如果失败则没有数据。出现这样的情况如果我在Acontroller调Bcontroller的网络请求则还需要判断是不是返回了一个数组或者对象，如果是，开始对数据进行处理，如果不是，还得重新进行网络请求，因为说明session失效了。&lt;/p&gt;
+
+&lt;p&gt;这样还是导致了网络请求部分有大量的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;codingios&quot;&gt;根据Coding的iOS重新封装网络请求&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://coding.net/u/ease/p/Coding_iOS/git&quot;&gt;Coding的iOS客户端&lt;/a&gt;是开源的，在Github和Coding官网都有。我放的链接是一个下载下来就能跑起来的。(强迫症，跑不起来的代码都不想看..不过现在看MVVM好多都跑不起来也硬着头皮看了)&lt;/p&gt;
+
+&lt;p&gt;Coding的网络请求自己看了。Coding是用block来进行回调的。至于这一块选择notice还是block还是delegate，可以参考&lt;a href=&quot;http://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html&quot;&gt;iOS应用架构谈 网络层设计方案&lt;/a&gt;我算是认真看了，但是不是很能写的出来…&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;插一句话，我们为什么不用block。因为迪哥也不太会block就直接上rac了，我之前的博客写过简单的block，我在写代码的时候用delegate和notice比较多所以对block的实践比较少。这是我自身的问题。而且说实话我觉得用rac挺好的，因为block加上typedef啥的其实很多东西的，不像rac直接调就完事了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;下面开始今天的算是干货的东西&lt;/h2&gt;
+
+&lt;h2 id=&quot;coding&quot;&gt;1. 分析Coding网络请求&lt;/h2&gt;
+
+&lt;h3 id=&quot;coding-1&quot;&gt;&lt;em&gt;Coding的网络请求我觉得可以总结为&lt;/em&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;block---block---afnetworking&quot;&gt;block -&amp;gt; block -&amp;gt; AFNetworking&lt;/h3&gt;
+
+&lt;p&gt;下面来解释一下，首先第一个block是我们的主viewcontroller，也就是我们逻辑部分和视图部分。首先第一个block调Coding_NetAPIManager里的函数。然后在Coding_NetAPIManager再调CodingNetAPIClient里的函数。&lt;/p&gt;
+
+&lt;h4 id=&quot;codingcodinghttpscodingnetueasepcodingiosgit&quot;&gt;(具体Coding代码请看&lt;a href=&quot;https://coding.net/u/ease/p/Coding_iOS/git&quot;&gt;Coding客户端&lt;/a&gt;代码的链接)&lt;/h4&gt;
+
+&lt;p&gt;我们倒着来说。&lt;/p&gt;
+
+&lt;h2 id=&quot;afnetworking-1&quot;&gt;&lt;code&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在我分类的AFNetworking里也就是CodingNetAPIClient里，Coding进行了一件事情，那就是进行AFNetworking的网络请求。&lt;/p&gt;
+
+&lt;p&gt;在获取到数据的时候的对reponse进行一个判断。在判断数据的时候，如果数据有错误，则直接显示错误的msg，如果没有错误，那么则不返回任何东西。&lt;/p&gt;
+
+&lt;p&gt;然后在网络请求中判断，如果有错误，那么返回nil和id类型的error。如果没错误，返回response和nil。&lt;/p&gt;
+
+&lt;h2 id=&quot;block&quot;&gt;&lt;code&gt;第二部分 block&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在这部分里，回调的结果有两种，一种是有数据，一种是没数据。其实到这就行了。那么现在在这第二个部分干什么呢，json转model。就这么简单。返回的东西，如果有数据返回，那么就再次返回model或者是data和nil，如果没有数据返回，就返回nil和error。&lt;/p&gt;
+
+&lt;h2 id=&quot;block-1&quot;&gt;&lt;code&gt;第一部分 block&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;到这里，其实只要判断有无数据就可以啦。&lt;/p&gt;
+
+&lt;p&gt;好了。下面我们只需要用RAC来替换block就完成了。当然了，中间有坑，不会那么简单的…&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2. 改写网络请求&lt;/h2&gt;
+
+&lt;p&gt;我要上代码了。依然三部分。我们还是倒着来。我放关键的代码在这。&lt;/p&gt;
+
+&lt;p&gt;既然我把Coding的代码分成了&lt;/p&gt;
+
+&lt;h3 id=&quot;block---block---afnetworking-1&quot;&gt;block -&amp;gt; block -&amp;gt; AFNetworking&lt;/h3&gt;
+
+&lt;p&gt;那么我的基本上就可以说是&lt;/p&gt;
+
+&lt;h3 id=&quot;rac---rac---afnetworking&quot;&gt;RAC -&amp;gt; RAC -&amp;gt; AFNetworking&lt;/h3&gt;
+
+&lt;p&gt;也是倒着来。&lt;/p&gt;
+
+&lt;h2 id=&quot;afnetworking-2&quot;&gt;&lt;code&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;这是AFNetworking网络请求&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//一切仿照Coding&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rac_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//这里调用下一个部分的函数&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;handleResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoShowError&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
+             &lt;span class=&quot;nl&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;replayLazily&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;这是对返回值的处理&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;handleResponse:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autoShowError:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;autoShowError&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
+         &lt;span class=&quot;nf&quot;&gt;withParams:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
+     &lt;span class=&quot;nf&quot;&gt;withMethodType:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;valueForKeyPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;status&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;//如果服务器返回的值不是正确有数值的话&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;errorWithDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_URL&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//如果服务器返回session失效的错误码&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//用户未登录&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//由于没登陆那么这里调用第二个部分RAC的登陆方法，进行重新登陆&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//这时有数据返回则再次发出网络请求&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;这是重新登陆后再次进行网络请求&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
+                      &lt;span class=&quot;nf&quot;&gt;withParams:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
+                  &lt;span class=&quot;nf&quot;&gt;withMethodType:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;success&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;rac&quot;&gt;&lt;code&gt;第二部分 RAC&lt;/code&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;test2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;/MyList.do&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;22&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;rac-1&quot;&gt;&lt;code&gt;第一部分 RAC&lt;/code&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;IBAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;test2:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;看代码的时候最好是从第一部分看，我为了突出重点所以把第三部分放到最前面了。基本上我就干了一件事情，把block改写为RAC。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;3. 问题以及填坑&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;问题一：回调两个值&lt;/h3&gt;
+
+&lt;p&gt;其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用&lt;code&gt;RACTupleUnpack(id resultData, NSError *error) = x;&lt;/code&gt;来解加压缩变量(用词不准确见谅)&lt;/p&gt;
+
+&lt;p&gt;在这里非常感谢&lt;a href=&quot;supermao.cn/zhe-yang-hao-yong-de-reactivecocoagen-ben-ting-bu-xia-lai/&quot;&gt;这样好用的ReactiveCocoa，根本停不下来&lt;/a&gt;这篇博客。看到了RACTuplePack这个宏定义。&lt;/p&gt;
+
+&lt;h3 id=&quot;session&quot;&gt;问题二：如何在服务器返回session失效之后进行两次链接请求，一次后台自动登录，一次重新进行网络请求&lt;/h3&gt;
+
+&lt;p&gt;在Coding的代码里，我看到如果未登录是会弹出登录界面。但是我们要求是后台登录然后重新请求。&lt;/p&gt;
+
+&lt;p&gt;我开始是想在get请求那部分直接在此调get的网络请求。但是不会执行两次网络请求。&lt;/p&gt;
+
+&lt;p&gt;之前的项目是在vc的界面判断没数据则在此调用函数。如果那样的话我不是白封装半天了…于是决定封装到network里，我就在重新登录后判断有无数据，有数据则意味着登录成功，登录成功，在此调一个登录的函数。&lt;/p&gt;
+
+&lt;p&gt;虽然这样看上去就不合理，但是是我能尝试出来的一个办法了…尝试了好几天，查了半天也没有类似的解决方案。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;问题三：为什么有时候不会执行网络请求&lt;/h3&gt;
+
+&lt;p&gt;我在解决问题二的时候就出现这种问题，不能进行网络请求，我只是一个简单的调函数。但是，但是，但是，在rac里必须要subscribeNext，如果不subscribeNext则不会调！这是需要记住的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;4. 还存在的问题以及不足&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coding对于Get请求还做了缓存，我没做。后面会慢慢加上。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RAC是对于很多东西的一个大集合，比如block比如KVO等等。所以需要对iOS的内存管理机制进行一个深入理解，这是我一直所欠缺的。这个问题在我解决问题二的时候出现了好几次报错，都是这个问题。但是我却无法解决。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coding中还用到了很多显示错误的MBProgress等等，我在此都没写，如果想仔细研究去看Coding的源码。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coding的网络请求还有很多对文件的处理，post请求等等，我现在只改写了Get和Post请求。后面需要把Coding这一套都好好的研究一下。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于RAC的理解还是不够，在整个过程中遇到很多问题。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;codingcoding&quot;&gt;最后的最后感谢Coding将他们的客户端开源出来，感谢为Coding贡献代码的工程师。是你们让我学到了更多的东西😘&lt;/h2&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 03 Oct 2015 18:35:01 +0800</pubDate>
+        <link>judi0713.github.io/ios/2015/10/03/network.html</link>
+        <guid isPermaLink="true">judi0713.github.io/ios/2015/10/03/network.html</guid>
+        
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Mac安装Aircrack-ng</title>
@@ -996,205 +1245,6 @@ MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数�
         
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>用安卓和iPhone操作你的linux（需要校园wifi环境）</title>
-        <description>&lt;h2 id=&quot;g&quot;&gt;写在2015.3.15   由于3G网络不能访问推迟发布&lt;/h2&gt;
-
-&lt;p&gt;首先，很对不起。我博客都已经写好了，但是发现手机数据请求没法ssh。所以推迟了发布。&lt;/p&gt;
-
-&lt;p&gt;具体为什么手机数据网络无法ssh我明天上课会问一下计算机网络的老师。&lt;/p&gt;
-
-&lt;h2 id=&quot;g-1&quot;&gt;写在2015.3.17   3G网络不能访问的原因分析&lt;/h2&gt;
-&lt;p&gt;计算机网络的老师没有回邮件，但是不想推迟发布了博客了。&lt;/p&gt;
-
-&lt;p&gt;博客原文中很多地方写到可以用3G网络ssh，事实证明现在在寝室这样做是是不可能访问的的。3G网络是肯定可以ssh的，我后期会想其他办法来实现用3G网络远程访问。&lt;/p&gt;
-
-&lt;h3 id=&quot;g-2&quot;&gt;3G网络无法访问的原因&lt;/h3&gt;
-
-&lt;p&gt;昨天在写邮件的时候发哥给我分析了一下数据网络不能请求的原因。我觉得是这个问题，所以我就先写出来了。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;首先先感谢发哥。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;简单的说，寝室路由器和手机3G不在一个大的网络下。&lt;/p&gt;
-
-&lt;p&gt;我们的寝室路由器上面还有很多个路由器，我们只是那个路由器的一个分支，没有最终接入外网，在校园网访问应该是没有问题的。在那个最终介入整个外网的路由器上绑定我的端口号才可以。而我们的3G网络最终是接入整个大的互联网的。&lt;/p&gt;
-
-&lt;p&gt;所以，需要搞定最上层的路由器找学校给我开一个端口，这样在教学楼用3G就可以访问了。但是这是不现实的。&lt;/p&gt;
-
-&lt;p&gt;信安一班的同志们很抱歉，说好周日发博客教大家用的但是因为出了问题现在才发布。&lt;/p&gt;
-
-&lt;p&gt;今天早上大概又想了一个可以远程访问的办法，我实现之后会发博客的。&lt;/p&gt;
-
-&lt;p&gt;下面是14号的正文。当时写的，我将题目修改了，原文题目加了一个教学楼，其他内容我就不做修改了。因为除了不能在教室3G网络访问其他都是对的可以实现的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果你还有什么疑问，欢迎留言，每条都会看。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;写在2015.3.14   博客正文&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;起因：&lt;/h2&gt;
-
-&lt;p&gt;因为学校开了unix操作系统的课。所以最近很多同学选了unix课或者去蹭unix课，使得unix突然变的十分火热。到处都在装虚拟机vmware。本来说写一篇文章简述怎么安装虚拟机的，但是觉得实在没有什么可写的，百度一下就差不多了。&lt;/p&gt;
-
-&lt;p&gt;因为最近看到到处在装虚拟机觉得得玩点其他的，之后就想起来原来熊大大和bingo他们教我远程ssh访问ubuntu，于是就想倒腾了一下ssh。百度了一下发现安卓手机上也有可以进行ssh访问的软件，那么我现在只要把我的电脑绑定路由器端口，手机连上网，就可以在教室用手机访问我在寝室的ubuntu了~&lt;/p&gt;
-
-&lt;p&gt;如果你想学习unix操作系统，安装虚拟机之后，这样也是一种很好的学习方式哦~&lt;/p&gt;
-
-&lt;p&gt;整个过程很简单，没有什么很复杂的东西，如果你能看完会觉得这件事情非常实用。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;最终的样子：&lt;/h2&gt;
-&lt;p&gt;简单的说我实现了一个这样的功能，我截屏来说明，本人没有ipad所以就截一个安卓的和电脑的屏了。&lt;/p&gt;
-
-&lt;p&gt;这是安卓手机上。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-1.png&quot; alt=&quot;remotecontrol-linux-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是电脑上。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-2.png&quot; alt=&quot;remotecontrol-linux-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以看到，我在安卓手机上用命令行访问到了一台linux设备。这样即使上课没有电脑，我也可以用手机来操作我的电脑学习linux下的很多命令了，这样没有图形界面可以更好的强迫自己学习命令。而且可以进行代码的编写，感觉还是很不错的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;下面我开始介绍我用到的工具和方法&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;工具&lt;/strong&gt;
-&amp;gt; 安卓系统设备一台，或者iphone，ipad，一台电脑，需要接入互联网。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用到的软件：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;安卓：connectbot，或者juicessh（我下载了但是没搞明白怎么用）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;iPhone或者ipad：试过iterminal ssh tool，App store搜索ssh就可以了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;电脑：vmware，安装好ubuntu或者其他linux操作系。putty或者xshell进行ssh连接。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;下面开始。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;首先还是要介绍一下ssh，我不用百度的话，依旧用我的理解来阐述ssh的含义。&lt;/p&gt;
-
-&lt;p&gt;Ssh，security shell。安全的命令行。简单的说，只要给我主机的ip地址和端口号，给我访问主机的账户，我就可以远程用命令行来访问主机。之前看过毅哥在本地用putty连接阿里云进行服务器的调试，还是感觉挺帅气的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;正式开始步骤说明&lt;/h2&gt;
-&lt;p&gt;在你的虚拟机目录下，点击编辑虚拟机设置。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-3.png&quot; alt=&quot;remotecontrol-linux-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后选择网络适配器，桥接模式。如图所示（此过程需要将虚拟机关机，我这里设置好了就没有关机）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-4.png&quot; alt=&quot;remotecontrol-linux-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;打开ubuntu，安装ssh。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-5.png&quot; alt=&quot;remotecontrol-linux-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;网上很多说要输入命令查看是否有sshd，有的话说明ssh已经打开了。截图如下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-6.png&quot; alt=&quot;remotecontrol-linux-6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;反正我是直接再开启一次了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-7.png&quot; alt=&quot;remotecontrol-linux-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;下面就是查看本机的ip地址。如图所示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-8.png&quot; alt=&quot;remotecontrol-linux-8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ssh默认的端口号是22。
-这时候如果你的手机和电脑在一个局域网里，打开putty或者xshel或者是你手机上的connectbot已经可以访问了，在一个网络就行，&lt;strong&gt;室友都可以访问到。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-9.png&quot; alt=&quot;remotecontrol-linux-9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里需要你的linux帐号和密码。我不多阐述。&lt;/p&gt;
-
-&lt;p&gt;现在我们需要设置外网可以访问。&lt;/p&gt;
-
-&lt;p&gt;为了安全我们先修改端口号。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-10.png&quot; alt=&quot;remotecontrol-linux-10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;打开之后添加我们要的端口号。默认的里面有22，先不慌删，后面确认其他端口可以访问再删。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-11.png&quot; alt=&quot;remotecontrol-linux-11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在这里我遇到了很多问题，网上很多说这里restart一下ssh就行了，但是我试不行，修改端口号之后重启电脑才能生效。&lt;/p&gt;
-
-&lt;p&gt;现在，我们基本完成了所有的准备工作，下一步就是绑定寝室路由器的端口了。&lt;/p&gt;
-
-&lt;p&gt;我们寝室是TP-link。&lt;/p&gt;
-
-&lt;p&gt;192.168.1.1 进入路由器界面。
-选择转发规则虚拟服务器。然后添加新条目。（你的这里应该什么都没有）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-12.png&quot; alt=&quot;remotecontrol-linux-12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;进入添加新条目。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-13.png&quot; alt=&quot;remotecontrol-linux-13&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;输入ubuntu下你打开的端口，我刚刚打开的是3389，还有利用ifconfig获得的ip地址。
-点击保存即可，不需要重新启动路由器。
-之后进入路由器主界面。安全起见我划去了我们寝室的路由ip。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-14.png&quot; alt=&quot;remotecontrol-linux-14&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;IP地址就你路由器拨号上网之后的ip地址。
-到这里基本就完成了所有的准备工作。&lt;/p&gt;
-
-&lt;p&gt;下面我要用安卓手机来远程访问我的linux电脑了。Iphone用户类似操作，因为没有设备就不详细截图说明了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-15.png&quot; alt=&quot;remotecontrol-linux-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;按照用户名（你的linux下的用户名）和外网ip地址即路由器ip加上端口号。
-然后按下虚拟键盘的回车。
-选择yes。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\remotecontrol-linux\remotecontrol-linux-16.png&quot; alt=&quot;remotecontrol-linux-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;输入密码之后就可以访问了！&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;另外，connectbot下点击屏幕在键盘的左上角会出现ctrl键，ctrl+i是tab键。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;然后音量键是放大字体。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;至于在电脑上用putty和xshell访问我就不多叙述了。最后不要忘记删除你22的那个端口哦。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;总之以后早上上课前可以把电脑打开，端口转发设置好，然后在教室访问就行了~~&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;存在两个问题我还有必要说明一下，一是我不知道手机流量访问的流量消耗情况，明天我会去试一下，还有就是ubuntu固定ip地址的问题。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这些问题解决之后我会在空间和朋友圈进行详细的说明，或者是发博客来说明。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;如果在整个过程中你遇到什么问题，可以给我留言，我会尽力帮你解决的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;能看到这真的很谢谢你的支持，希望你能有收获。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果你觉得写得好，帮我把文章分享出去是对我最好的鼓励！&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 16 Mar 2015 02:39:22 +0800</pubDate>
-        <link>judi0713.github.io/linux/2015/03/16/remotecontrol-linux.html</link>
-        <guid isPermaLink="true">judi0713.github.io/linux/2015/03/16/remotecontrol-linux.html</guid>
-        
-        
-        <category>linux</category>
         
       </item>
     

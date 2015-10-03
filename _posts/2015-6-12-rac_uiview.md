@@ -2,7 +2,7 @@
 layout: post
 title:  ReactiveCocoa在UIView上的运用
 date:   2015-6-12 17:02:33
-categories: IOS
+categories: iOS
 ---
 
 FOR CM AND PLUSUB
