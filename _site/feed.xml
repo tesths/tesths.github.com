@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Oct 2015 10:41:32 +0800</pubDate>
-    <lastBuildDate>Mon, 05 Oct 2015 10:41:32 +0800</lastBuildDate>
+    <pubDate>Mon, 05 Oct 2015 10:43:12 +0800</pubDate>
+    <lastBuildDate>Mon, 05 Oct 2015 10:43:12 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -24,10 +24,10 @@
       </item>
     
       <item>
-        <title>iOS开发新框架MVVM 1理解开发模式(填坑)</title>
+        <title>iOS开发框架MVVM 1理解开发模式(填坑)</title>
         <description>&lt;p&gt;好了，我作大死的连续第五天奋斗在电脑跟前了，好的。&lt;/p&gt;
 
-&lt;p&gt;接着上次写的&lt;a href=&quot;http://walkginkgo.com/ios/2015/05/04/ios-mvvm-1.html&quot;&gt;iOS开发新框架MVVM 1理解开发模式(占坑，未写完)&lt;/a&gt;来继续聊聊我们的MVVM。&lt;/p&gt;
+&lt;p&gt;接着上次写的&lt;a href=&quot;http://walkginkgo.com/ios/2015/05/04/ios-mvvm-1.html&quot;&gt;iOS开发框架MVVM 1理解开发模式(占坑，未写完)&lt;/a&gt;来继续聊聊我们的MVVM。&lt;/p&gt;
 
 &lt;p&gt;昨天聊了网络层的封装，今天聊聊开发模式，架构师应该干的事情。我一个编程界的新手也想聊聊，昨天说了要做高素质的流氓。今儿只是聊聊我对MVC和MVVM的感受和想法，具体的概述看我第一篇介绍。因为打字的时候就不会乱七八糟的想一些事情了。&lt;/p&gt;
 
@@ -925,7 +925,7 @@ SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
       </item>
     
       <item>
-        <title>iOS开发新框架MVVM 1理解开发模式(占坑，未写完)</title>
+        <title>iOS开发框架MVVM 1理解开发模式(占坑，未写完)</title>
         <description>&lt;h2 id=&quot;section&quot;&gt;一些废话&lt;/h2&gt;
 &lt;p&gt;距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。
 五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。&lt;/p&gt;
