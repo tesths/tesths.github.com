@@ -6,9 +6,103 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Oct 2015 10:45:01 +0800</pubDate>
-    <lastBuildDate>Mon, 05 Oct 2015 10:45:01 +0800</lastBuildDate>
+    <pubDate>Wed, 18 Nov 2015 19:58:57 +0800</pubDate>
+    <lastBuildDate>Wed, 18 Nov 2015 19:58:57 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Mac升级10.11 EI Captain 填坑</title>
+        <description>&lt;p&gt;上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。&lt;/p&gt;
+
+&lt;p&gt;其实我是很反对更新的，一更新就得踩坑，但是强迫症患者没法看到有更新不去更。&lt;/p&gt;
+
+&lt;p&gt;下面开始正文。&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrew&quot;&gt;1. homebrew不能使用&lt;/h2&gt;
+
+&lt;p&gt;homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用&lt;code&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是&lt;code&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;当然，有&lt;code&gt;sudo xcodebuild -license&lt;/code&gt;的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。&lt;/p&gt;
+
+&lt;p&gt;解决方法：首先&lt;code&gt;xcode-select -p&lt;/code&gt;一般默认是&lt;code&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;
+但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。&lt;/p&gt;
+
+&lt;p&gt;很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。&lt;/p&gt;
+
+&lt;h2 id=&quot;xtrafinder&quot;&gt;2. Xtrafinder不能使用&lt;/h2&gt;
+
+&lt;p&gt;Xtrafinder更新完之后会提醒你怎么做，这就是苹果的rootless机制导致的，开开就OK了。&lt;/p&gt;
+
+&lt;p&gt;我想说的就是Xtrafinder会挡住finder一部分，前天好像已经出了更新，但是源没有换，所以还是0.25.6版本。V2ex上有人问了，大家都一样，不是电脑的问题所以不要着急。&lt;/p&gt;
+
+&lt;h2 id=&quot;gem&quot;&gt;3. gem更新&lt;/h2&gt;
+
+&lt;p&gt;gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
+所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。&lt;/p&gt;
+
+&lt;p&gt;网上好多方法，说自定义GEM_HOME等等。我觉得都不太好，在stackoverflow上看到一个方法很好，分享一下。&lt;/p&gt;
+
+&lt;p&gt;打开terminal修改~/.gemrc&lt;/p&gt;
+
+&lt;p&gt;增加&lt;code&gt;gem: -n/usr/local/bin&lt;/code&gt;这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。&lt;/p&gt;
+
+&lt;h2 id=&quot;xcodealcatrazwindow&quot;&gt;4.Xcode的Alcatraz不在window下显示&lt;/h2&gt;
+
+&lt;p&gt;也就自己的Mac作大死解决这个问题。&lt;/p&gt;
+
+&lt;p&gt;网上有很多在github提issue，我看了很多，对着做了很多。里面说的都很详细，在此不贴，最后面有链接。&lt;/p&gt;
+
+&lt;p&gt;基本上原因就是，你的Alcatraz没有加入Xcode的UUID。&lt;/p&gt;
+
+&lt;p&gt;这里说明一下，每个Xcode版本的UUID不一样，所以最好的方法是先获取Xcode的UUID。&lt;/p&gt;
+
+&lt;p&gt;命令是&lt;code&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;最后加到一个plist文件然后重启Xcode就可以了，大部分都是这样解决了。&lt;/p&gt;
+
+&lt;p&gt;当然，我用这个方法没有解决。万念俱灰下，重新用了百度..想看看国内人怎么解决的，记不得在cocoachina还是csdn看到一个人说，那些方法我都没有，我把Alcatraz下载下来运行了一下就ok了…&lt;/p&gt;
+
+&lt;p&gt;于是乎，我上github上下载了Alcatraz，运行了一下。。我也ok了。。&lt;/p&gt;
+
+&lt;p&gt;基本上遇到的大坑就这几个，踩完也没啥了。&lt;/p&gt;
+
+&lt;p&gt;但是我app store更新完新版本的Xcode7之后再安装Xcode6，app store就会更新我的Xcode6..而且我的homebrew也是只能识别我的Xcode6了…我一直无法解决。还有我的XQuartz一直显示过期也没法解决。简直，强迫症。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;最后唠两句。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;最近为啥没更新博客，我会说我同时写了几份代码么…完全没有时间。。
+最近的心凉的很透彻。晚上看着微信洗脸。唉，说好了四星期之后做点其他事情，这都五星期了，还在写代码。在意的东西太多，不放弃一些永远只能这样。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;还有，暂时是决定考研了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;有些事情，唉，就这了，没戏的事情总在想也没啥意义..还是忙一忙充实充实就不想了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参考链接&lt;/h2&gt;
+
+&lt;p&gt;1.&lt;a href=&quot;http://guojianxiang.com/posts/2015-10-06-Update_OSX_EI_Captain_Problems.html&quot;&gt;关于 OSX 升级到 EI Captain 的解决方案&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.&lt;a href=&quot;https://github.com/Homebrew/homebrew/issues/44071&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3.&lt;a href=&quot;http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error-on-osx-mavericks&quot;&gt;xcode-select active developer directory error on OSX Mavericks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;4.&lt;a href=&quot;http://stackoverflow.com/questions/31972968/cant-install-gems-on-macos-x-el-capitan&quot;&gt;Can’t install gems on MacOS X “El Capitan”&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Nov 2015 03:54:59 +0800</pubDate>
+        <link>judi0713.github.io/mac/2015/11/19/mac-eicaptain.html</link>
+        <guid isPermaLink="true">judi0713.github.io/mac/2015/11/19/mac-eicaptain.html</guid>
+        
+        
+        <category>mac</category>
+        
+      </item>
     
       <item>
         <title>iOS开发模式MVVM 2分离业务逻辑</title>
@@ -953,136 +1047,6 @@ MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数�
         
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</title>
-        <description>&lt;p&gt;很早以前在freebuf上看到一篇文章。&lt;a href=&quot;http://www.freebuf.com/tools/4708.html&quot;&gt;十大渗透测试演练系统&lt;/a&gt;。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。&lt;/p&gt;
-
-&lt;p&gt;DVWA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DVWA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;用到的东西&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.dvwa.co.uk/&quot;&gt;DVWA&lt;/a&gt;是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.apachefriends.org/zh_cn/index.html&quot;&gt;XAMPP&lt;/a&gt;，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png&quot; alt=&quot;use-xampp-build-dvwa-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我把上面两个文件放在桌面了，DVWA我是解压好了的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;整个搭建过程&lt;/h2&gt;
-&lt;p&gt;实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。&lt;/p&gt;
-
-&lt;p&gt;进入桌面之后
-&lt;code&gt;sudo ./xampp-linux-x64-5.6.8-0-installer.run&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;记得要用sudo，因为是要安装在系统文件里的。&lt;/p&gt;
-
-&lt;p&gt;![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
-不停的next。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png&quot; alt=&quot;use-xampp-build-dvwa-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png&quot; alt=&quot;use-xampp-build-dvwa-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
-会有一个这个，点中文。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png&quot; alt=&quot;use-xampp-build-dvwa-6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在浏览器输入&lt;code&gt;http://127.0.0.1/&lt;/code&gt;也会进入这个页面&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png&quot; alt=&quot;use-xampp-build-dvwa-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们点击右面的安全。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png&quot; alt=&quot;use-xampp-build-dvwa-8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;看到很多问题，安装下面说的我们一步一步解决，运行&lt;code&gt;sudo /opt/lamp/xampp security&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png&quot; alt=&quot;use-xampp-build-dvwa-9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。&lt;/p&gt;
-
-&lt;p&gt;跟着说明一步一步设置密码。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png&quot; alt=&quot;use-xampp-build-dvwa-10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们的mysql没有运行，所以不能查看安全性，运行mysql。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo /opt/lamp/xampp start&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png&quot; alt=&quot;use-xampp-build-dvwa-11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo /opt/lamp/xampp security&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png&quot; alt=&quot;use-xampp-build-dvwa-12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这下mysql的密码也设置Ok了~
-这时候在进入之前的web页面。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png&quot; alt=&quot;use-xampp-build-dvwa-13&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
-我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这时候我们在网址栏输入&lt;code&gt;127.0.0.1/dvwa&lt;/code&gt;已经有显示了。
-显示的是&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png&quot; alt=&quot;use-xampp-build-dvwa-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;说明我们没有连接数据库。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png&quot; alt=&quot;use-xampp-build-dvwa-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;点击红线部分，会出现下面的字。
-这时候我们要进入mysql设置DVWA的数据库。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/opt/lampp/bin/mysql -us root -p&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;create database dvwa;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png&quot; alt=&quot;use-xampp-build-dvwa-17&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果直接运行mysql会显示没有相关的软件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png&quot; alt=&quot;use-xampp-build-dvwa-18&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后修改DVWA的配置文件&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;vim config.inc.php&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png&quot; alt=&quot;use-xampp-build-dvwa-19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;修改db_password为刚刚设置的mysql的root密码&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png&quot; alt=&quot;use-xampp-build-dvwa-20&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后再进入&lt;code&gt;http://127.0.0.1/dvwa/setup.php&lt;/code&gt; create database&lt;/p&gt;
-
-&lt;p&gt;然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。&lt;/p&gt;
-
-&lt;p&gt;记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。&lt;/p&gt;
-
-&lt;p&gt;如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。&lt;/p&gt;
-
-&lt;p&gt;好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 02 May 2015 03:33:42 +0800</pubDate>
-        <link>judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</link>
-        <guid isPermaLink="true">judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</guid>
-        
-        
-        <category>xampp</category>
         
       </item>
     
