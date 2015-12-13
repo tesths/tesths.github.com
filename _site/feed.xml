@@ -6,9 +6,133 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Dec 2015 16:07:10 +0800</pubDate>
-    <lastBuildDate>Sat, 12 Dec 2015 16:07:10 +0800</lastBuildDate>
+    <pubDate>Sun, 13 Dec 2015 10:44:46 +0800</pubDate>
+    <lastBuildDate>Sun, 13 Dec 2015 10:44:46 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>iOS开发模式MVVM 2分离业务逻辑</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;习惯性的废话&lt;/h2&gt;
+&lt;p&gt;好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。&lt;/p&gt;
+
+&lt;p&gt;我知道很多人想看八卦是吧。。我也想写写我最近在干什么，为什么看上去那么忙，动态也有一段时间没更新。有时间写博客在说吧。&lt;/p&gt;
+
+&lt;p&gt;因为项目基本上结束，所以有时间研究mvvm，当然我还在学swift。学swift的原因是，它开源了。当然后面还安排了看一部分源码。期待后面满满干货的博客吧！&lt;/p&gt;
+
+&lt;p&gt;上次博客说了。我们的ViewModel到底在干啥，两件事情，网络请求，逻辑实现。当然，ViewModel不会那么简单。但是，我们先实现这两个。&lt;/p&gt;
+
+&lt;p&gt;那么来吧。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我想大多初始化定义的代码都能看懂，也没有叙述的必要，我主要把我觉得最主要的几个部分叙述一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;protocol&quot;&gt;代理 Protocol&lt;/h2&gt;
+&lt;p&gt;为什么先说代理。这也是之前和慎哥也说过cell里面有点击事件怎么写。（不知道这么写对不对…后面看一部分源码之后会再聊这个话题，先留坑）代理可以干什么，跨Controller传值。跨Controller调方法。&lt;/p&gt;
+
+&lt;p&gt;我们之前写代理，都是在某个Controller里的.h文件最上面创建代理。但实际上，Xcode提供了专门的Protocol文件。之前没有搞明白也是因为我觉得代理必须要再某个文件里声明。&lt;/p&gt;
+
+&lt;p&gt;所以，当我们单独声明了一个Protocol文件的时候，就意味着，这个Protocol可以像一个类一样来声明变量了。&lt;/p&gt;
+
+&lt;h2 id=&quot;raccommand&quot;&gt;RACCommand&lt;/h2&gt;
+&lt;p&gt;这个东西是做啥的。我只能说我解释不好，因为我没有完全理解这个东西。我只能把我理解的说出来。&lt;/p&gt;
+
+&lt;p&gt;我们的按钮都有一个点击事件。当点击的时候出发一个函数。&lt;/p&gt;
+
+&lt;p&gt;但是，当我们用了RACCommand的时候，我们的点击事件就可以这么写了。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pushBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rac_command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithSignalBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;和我之前写过的这种写法又不一样了。这种写法其实是对button addtarget那个方法的一个rac式的封装。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                            &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;用第一种方法的原因呢，我们可以把点击事件赋值成为一个RACCommand类型的属性。既然可以变成一个属性了，那么就可以重新定义并且赋值。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;分离点击事件&lt;/h2&gt;
+&lt;p&gt;我们新建一个FirstViewModel，在FirstViewModel.h中增加一个&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;excutePush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后我们让刚刚在FirstViewController里定义的那个pushBtn的rac_command，将它赋值为FirstViewModel里的excutePush&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;self.pushBtn.rac_command = self.viewModel.excutePush;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这么一赋值，就达成了一个目的。按钮的事件在viewModel中执行。&lt;/p&gt;
+
+&lt;p&gt;需要注意的是，RACCommand的block返回的时一个signal。所以，在viewModel中，我们要这么写&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;excutePush&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithSignalBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样，我们就实现了对点击事件的分离。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;分离跳转&lt;/h2&gt;
+&lt;p&gt;分离跳转，就要用到我开始说的代理了。
+我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (void)pushViewModel:(id)viewModel;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们在NSLog(@”test signal”);下面增加&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[self.service pushViewModel:viewModel];&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们还要实现这个代理。&lt;/p&gt;
+
+&lt;p&gt;在ray中的教程和雷大神的&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;MVVMReactiveCocoa&lt;/a&gt;都是新建了一个Impl文件，专门用来跳转，基本思路就是navigation本身就是一个堆栈，其实所有的vc都是在navigation其中的。我们只要控制这个这个最基本的navigation的跳转就可以了。&lt;/p&gt;
+
+&lt;p&gt;我们新建一个MVVMdemoImpl文件，里面有一个初始化的方法。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (instancetype)initWithNavigationController:(UINavigationController *)navigationController&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们把根navigation传进去来进行逻辑跳转。&lt;/p&gt;
+
+&lt;p&gt;我们在初始化的时候加上这两句核心代码。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
+self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第一句话是声明了一个demoImpl，将navigation穿进去。
+第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-(instancetype)initWithService:(id&amp;lt;MVVMdemoService&amp;gt;)service&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;参数是一个代理。我们传的时一个NSObject类型的值。而且在MVVMdemoImpl.m中，也没有对于代理的赋值为自己。&lt;/p&gt;
+
+&lt;p&gt;我是这么理解的，如果有不对，还请谅解。&lt;/p&gt;
+
+&lt;p&gt;当我们加入代理MVVMdemoService在MVVMdemoImpl的时候，因为MVVMdemoImpl是一个nsobject类型，而MVVMdemoService也是一个nsobject类型。所以，此时我们的MVVMdemoImpl具有MVVMdemoService的属性了，我们做的就是，让FirstViewModel里的service的代理即是MVVMdemoImpl。&lt;/p&gt;
+
+&lt;p&gt;简单的说。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;就是MVVMdemoImpl == FirstViewModel.service&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;那么这样的话，我们的service就可以执行MVVMdemoImpl里的pushViewModel方法了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;小结&lt;/h2&gt;
+&lt;p&gt;其实上面的最后AppDelegate的赋值代理这一块还不是很明白。有时间再说说吧。好久没写博客就想发一篇了。&lt;/p&gt;
+
+&lt;p&gt;最后的最后，有些事情，我自己不愿去努力去争取我谁也不怪。有些事情我想的很明白我一点都不想想明白。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2015 16:01:08 +0800</pubDate>
+        <link>judi0713.github.io/ios/2015/12/12/ios-mvvm-2.html</link>
+        <guid isPermaLink="true">judi0713.github.io/ios/2015/12/12/ios-mvvm-2.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>Mac升级10.11 EI Captain 填坑</title>
@@ -1039,136 +1163,6 @@ MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数�
         
         
         <category>IOS</category>
-        
-      </item>
-    
-      <item>
-        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</title>
-        <description>&lt;p&gt;很早以前在freebuf上看到一篇文章。&lt;a href=&quot;http://www.freebuf.com/tools/4708.html&quot;&gt;十大渗透测试演练系统&lt;/a&gt;。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。&lt;/p&gt;
-
-&lt;p&gt;DVWA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DVWA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;用到的东西&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.dvwa.co.uk/&quot;&gt;DVWA&lt;/a&gt;是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.apachefriends.org/zh_cn/index.html&quot;&gt;XAMPP&lt;/a&gt;，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png&quot; alt=&quot;use-xampp-build-dvwa-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我把上面两个文件放在桌面了，DVWA我是解压好了的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;整个搭建过程&lt;/h2&gt;
-&lt;p&gt;实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。&lt;/p&gt;
-
-&lt;p&gt;进入桌面之后
-&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ./xampp-linux-x64-5.6.8-0-installer.run&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;记得要用sudo，因为是要安装在系统文件里的。&lt;/p&gt;
-
-&lt;p&gt;![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
-不停的next。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png&quot; alt=&quot;use-xampp-build-dvwa-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png&quot; alt=&quot;use-xampp-build-dvwa-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
-会有一个这个，点中文。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png&quot; alt=&quot;use-xampp-build-dvwa-6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在浏览器输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/&lt;/code&gt;也会进入这个页面&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png&quot; alt=&quot;use-xampp-build-dvwa-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们点击右面的安全。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png&quot; alt=&quot;use-xampp-build-dvwa-8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;看到很多问题，安装下面说的我们一步一步解决，运行&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp security&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png&quot; alt=&quot;use-xampp-build-dvwa-9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。&lt;/p&gt;
-
-&lt;p&gt;跟着说明一步一步设置密码。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png&quot; alt=&quot;use-xampp-build-dvwa-10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们的mysql没有运行，所以不能查看安全性，运行mysql。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp start&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png&quot; alt=&quot;use-xampp-build-dvwa-11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp security&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png&quot; alt=&quot;use-xampp-build-dvwa-12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这下mysql的密码也设置Ok了~
-这时候在进入之前的web页面。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png&quot; alt=&quot;use-xampp-build-dvwa-13&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
-我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这时候我们在网址栏输入&lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1/dvwa&lt;/code&gt;已经有显示了。
-显示的是&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png&quot; alt=&quot;use-xampp-build-dvwa-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;说明我们没有连接数据库。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png&quot; alt=&quot;use-xampp-build-dvwa-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;点击红线部分，会出现下面的字。
-这时候我们要进入mysql设置DVWA的数据库。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/opt/lampp/bin/mysql -us root -p&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;create database dvwa;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png&quot; alt=&quot;use-xampp-build-dvwa-17&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果直接运行mysql会显示没有相关的软件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png&quot; alt=&quot;use-xampp-build-dvwa-18&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后修改DVWA的配置文件&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim config.inc.php&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png&quot; alt=&quot;use-xampp-build-dvwa-19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;修改db_password为刚刚设置的mysql的root密码&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png&quot; alt=&quot;use-xampp-build-dvwa-20&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后再进入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/dvwa/setup.php&lt;/code&gt; create database&lt;/p&gt;
-
-&lt;p&gt;然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。&lt;/p&gt;
-
-&lt;p&gt;记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。&lt;/p&gt;
-
-&lt;p&gt;如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。&lt;/p&gt;
-
-&lt;p&gt;好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 02 May 2015 03:33:42 +0800</pubDate>
-        <link>judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</link>
-        <guid isPermaLink="true">judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</guid>
-        
-        
-        <category>xampp</category>
         
       </item>
     
