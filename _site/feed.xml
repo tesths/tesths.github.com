@@ -6,9 +6,9 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Nov 2015 19:58:57 +0800</pubDate>
-    <lastBuildDate>Wed, 18 Nov 2015 19:58:57 +0800</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sat, 12 Dec 2015 16:07:10 +0800</pubDate>
+    <lastBuildDate>Sat, 12 Dec 2015 16:07:10 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Mac升级10.11 EI Captain 填坑</title>
@@ -20,11 +20,11 @@
 
 &lt;h2 id=&quot;homebrew&quot;&gt;1. homebrew不能使用&lt;/h2&gt;
 
-&lt;p&gt;homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用&lt;code&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是&lt;code&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是&lt;code class=&quot;highlighter-rouge&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;当然，有&lt;code&gt;sudo xcodebuild -license&lt;/code&gt;的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。&lt;/p&gt;
+&lt;p&gt;当然，有&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcodebuild -license&lt;/code&gt;的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。&lt;/p&gt;
 
-&lt;p&gt;解决方法：首先&lt;code&gt;xcode-select -p&lt;/code&gt;一般默认是&lt;code&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;
+&lt;p&gt;解决方法：首先&lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -p&lt;/code&gt;一般默认是&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;
 但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。&lt;/p&gt;
 
 &lt;p&gt;很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。&lt;/p&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;打开terminal修改~/.gemrc&lt;/p&gt;
 
-&lt;p&gt;增加&lt;code&gt;gem: -n/usr/local/bin&lt;/code&gt;这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。&lt;/p&gt;
+&lt;p&gt;增加&lt;code class=&quot;highlighter-rouge&quot;&gt;gem: -n/usr/local/bin&lt;/code&gt;这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。&lt;/p&gt;
 
 &lt;h2 id=&quot;xcodealcatrazwindow&quot;&gt;4.Xcode的Alcatraz不在window下显示&lt;/h2&gt;
 
@@ -56,7 +56,7 @@
 
 &lt;p&gt;这里说明一下，每个Xcode版本的UUID不一样，所以最好的方法是先获取Xcode的UUID。&lt;/p&gt;
 
-&lt;p&gt;命令是&lt;code&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;命令是&lt;code class=&quot;highlighter-rouge&quot;&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;最后加到一个plist文件然后重启Xcode就可以了，大部分都是这样解决了。&lt;/p&gt;
 
@@ -101,19 +101,6 @@
         
         
         <category>mac</category>
-        
-      </item>
-    
-      <item>
-        <title>iOS开发模式MVVM 2分离业务逻辑</title>
-        <description>
-</description>
-        <pubDate>Mon, 05 Oct 2015 18:37:00 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/10/05/mvvm-2.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/10/05/mvvm-2.html</guid>
-        
-        
-        <category>ios</category>
         
       </item>
     
@@ -165,7 +152,7 @@
 
 &lt;p&gt;为什么不直接聊MVC，因为MVC是大众开发iOS的模式。无论是后台还是iOS，虽然说iOS的MVC和后台的有差别，但是还是没啥好说的。是个iOS开发都知道MVC。在此也不做过多的阐述。&lt;/p&gt;
 
-&lt;p&gt;直接聊聊iOS中MVC的弊端。&lt;code&gt;实际上可以说只聊聊VC。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;直接聊聊iOS中MVC的弊端。&lt;code class=&quot;highlighter-rouge&quot;&gt;实际上可以说只聊聊VC。&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;我只写过一点点Rails。先来说说我对Rails的MVC的看法，再和iOS的MVC一比较，立马就看出弊端了。&lt;/p&gt;
 
@@ -197,21 +184,21 @@
 
 &lt;p&gt;想了一下，与其废话半天说MVVM和MVC不如直接解释MVVM每部分到底在干嘛，这样一说，立马就知道MVVM的好处了。&lt;/p&gt;
 
-&lt;h3 id=&quot;mvcview&quot;&gt;&lt;code&gt;在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;mvcview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。&lt;/code&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;mvvmviewmodel&quot;&gt;&lt;code&gt;而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;mvvmviewmodel&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;我不贴图了，我觉得看了那么多文章都不如直接说每部分是干什么的这样直接了当。&lt;/p&gt;
 
 &lt;p&gt;所以综合比较一下。下面MVC分别用M1,V1,C1来表示，MVVM用M2,V2,VM2来表示，看看发生了什么变化。&lt;/p&gt;
 
-&lt;h3 id=&quot;m1-m2-&quot;&gt;&lt;code&gt;M1-&amp;gt;M2 没变化&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;m1-m2-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;M1-&amp;gt;M2 没变化&lt;/code&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;c1-v2-iosviewcontrollerviewview&quot;&gt;&lt;code&gt;C1-&amp;gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;c1-v2-iosviewcontrollerviewview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C1-&amp;gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作&lt;/code&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;v1-v2-viewmvvmcommonviewview&quot;&gt;&lt;code&gt;V1-&amp;gt;V2 对于我个人来说，以后我会再单独抽象一个View在MVVM中来处理Common的View还有需要封装的View。&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;v1-v2-viewmvvmcommonviewview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;V1-&amp;gt;V2 对于我个人来说，以后我会再单独抽象一个View在MVVM中来处理Common的View还有需要封装的View。&lt;/code&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;c1-vm2-vm2&quot;&gt;&lt;code&gt;C1-&amp;gt;VM2 这里VM2，只进行逻辑和网络请求等等。&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;c1-vm2-vm2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C1-&amp;gt;VM2 这里VM2，只进行逻辑和网络请求等等。&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;那么，在MVVM中最重要的是什么？是数据的绑定。&lt;/p&gt;
 
@@ -245,7 +232,7 @@
         <guid isPermaLink="true">judi0713.github.io/ios/2015/10/05/ios-mvvm-11.html</guid>
         
         
-        <category>ios</category>
+        <category>iOS</category>
         
       </item>
     
@@ -265,15 +252,15 @@
 
 &lt;p&gt;加入工作室一年。一共做了有三四个项目了。我先大概叙述一下我们的网络请求的转变过程&lt;/p&gt;
 
-&lt;h2 id=&quot;afnetworking&quot;&gt;&lt;code&gt;第一阶段 直接调用AFNetworking&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;afnetworking&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第一阶段 直接调用AFNetworking&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;第一个项目那时候懵懂无知，每个界面都直接调&lt;a href=&quot;https://github.com/AFNetworking/AFNetworking&quot;&gt;AFNetworking&lt;/a&gt;。这样导致的问题就是代码量骤然增加。&lt;/p&gt;
 
-&lt;h2 id=&quot;ytknetwork&quot;&gt;&lt;code&gt;第二阶段 直接调用YTKNetwork&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;ytknetwork&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第二阶段 直接调用YTKNetwork&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;第二个项目刚做的时候唐巧开源了他们在猿题库封装的&lt;a href=&quot;https://github.com/yuantiku/YTKNetwork&quot;&gt;YTKNetwork&lt;/a&gt;。那时候还是懵懂无知，还是在每个界面都开始直接调YTKNetwork。人家封装的那么好的东西就被我用成这个栽子，简直对不起巧大。我记得有个界面好像有5条网络请求，可以想象代码的冗余度。&lt;/p&gt;
 
-&lt;h2 id=&quot;reactivecocoa&quot;&gt;&lt;code&gt;第三阶段 开始使用ReactiveCocoa&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;reactivecocoa&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第三阶段 开始使用ReactiveCocoa&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;因为在做第二个项目的时候我和迪哥负责不同的客户端。迪哥在看了limboy的&lt;a href=&quot;http://limboy.me/ios/2014/01/05/ios-rest-client-implementation.html&quot;&gt;基于AFNetworking2.0和ReactiveCocoa2.1的iOS REST Client&lt;/a&gt;开始将网络请求剥离到一个专门的界面，这样每次就不用写很多的东西了。&lt;/p&gt;
 
@@ -313,7 +300,7 @@
 
 &lt;p&gt;我们倒着来说。&lt;/p&gt;
 
-&lt;h2 id=&quot;afnetworking-1&quot;&gt;&lt;code&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;afnetworking-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;在我分类的AFNetworking里也就是CodingNetAPIClient里，Coding进行了一件事情，那就是进行AFNetworking的网络请求。&lt;/p&gt;
 
@@ -321,11 +308,11 @@
 
 &lt;p&gt;然后在网络请求中判断，如果有错误，那么返回nil和id类型的error。如果没错误，返回response和nil。&lt;/p&gt;
 
-&lt;h2 id=&quot;block&quot;&gt;&lt;code&gt;第二部分 block&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;block&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第二部分 block&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;在这部分里，回调的结果有两种，一种是有数据，一种是没数据。其实到这就行了。那么现在在这第二个部分干什么呢，json转model。就这么简单。返回的东西，如果有数据返回，那么就再次返回model或者是data和nil，如果没有数据返回，就返回nil和error。&lt;/p&gt;
 
-&lt;h2 id=&quot;block-1&quot;&gt;&lt;code&gt;第一部分 block&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;block-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第一部分 block&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;到这里，其实只要判断有无数据就可以啦。&lt;/p&gt;
 
 &lt;p&gt;好了。下面我们只需要用RAC来替换block就完成了。当然了，中间有坑，不会那么简单的…&lt;/p&gt;
@@ -344,102 +331,107 @@
 
 &lt;p&gt;也是倒着来。&lt;/p&gt;
 
-&lt;h2 id=&quot;afnetworking-2&quot;&gt;&lt;code&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;这是AFNetworking网络请求&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;afnetworking-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第三部分 AFNetworking&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这是AFNetworking网络请求&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//一切仿照Coding&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rac_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//这里调用下一个部分的函数&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;handleResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoShowError&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt; 
+&lt;span class=&quot;c1&quot;&gt;//一切仿照Coding
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSONAndHeaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//这里调用下一个部分的函数
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoShowError&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
-             &lt;span class=&quot;nl&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                 &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-             &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;replayLazily&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+             &lt;span class=&quot;nf&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                 &lt;span class=&quot;n&quot;&gt;DebugLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;===========response===========&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;replayLazily&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code&gt;这是对返回值的处理&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这是对返回值的处理&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;handleResponse:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autoShowError:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;autoShowError&lt;/span&gt;
-&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
-         &lt;span class=&quot;nf&quot;&gt;withParams:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
-     &lt;span class=&quot;nf&quot;&gt;withMethodType:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;valueForKeyPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;status&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt; 
+        &lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;handleResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;autoShowError&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
+         &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
+     &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;valueForKeyPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     
-    &lt;span class=&quot;c1&quot;&gt;//如果服务器返回的值不是正确有数值的话&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;errorWithDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_URL&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//如果服务器返回session失效的错误码&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//用户未登录&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//由于没登陆那么这里调用第二个部分RAC的登陆方法，进行重新登陆&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;c1&quot;&gt;//这时有数据返回则再次发出网络请求&lt;/span&gt;
-                    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//如果服务器返回的值不是正确有数值的话
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;errorWithDomain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BASE_URL&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//如果服务器返回session失效的错误码
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VALUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//用户未登录
+&lt;/span&gt;            &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//由于没登陆那么这里调用第二个部分RAC的登陆方法，进行重新登陆
+&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//这时有数据返回则再次发出网络请求
+&lt;/span&gt;                    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                     
                 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoShowError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code&gt;这是重新登陆后再次进行网络请求&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这是重新登陆后再次进行网络请求&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
-                      &lt;span class=&quot;nf&quot;&gt;withParams:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
-                  &lt;span class=&quot;nf&quot;&gt;withMethodType:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt; 
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rerequestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;aPath&lt;/span&gt;
+                      &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;params&lt;/span&gt;
+                  &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetworkMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;method&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;success&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aPath&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;success&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;rac&quot;&gt;&lt;code&gt;第二部分 RAC&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rac&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第二部分 RAC&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;test2&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt; 
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test2&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;/MyList.do&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;/MyList.do&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     
-    &lt;span class=&quot;bp&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;22&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;22&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
     
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWorkCheck&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedJsonClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;requestJsonDataWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;withMethodType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACTuplePack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;rac-1&quot;&gt;&lt;code&gt;第一部分 RAC&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rac-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;第一部分 RAC&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;IBAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;test2:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt; 
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IBAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sender&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NetWork&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sharedManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;RACTupleUnpack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;看代码的时候最好是从第一部分看，我为了突出重点所以把第三部分放到最前面了。基本上我就干了一件事情，把block改写为RAC。&lt;/p&gt;
@@ -449,7 +441,7 @@
 
 &lt;h3 id=&quot;section-4&quot;&gt;问题一：回调两个值&lt;/h3&gt;
 
-&lt;p&gt;其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用&lt;code&gt;RACTupleUnpack(id resultData, NSError *error) = x;&lt;/code&gt;来解加压缩变量(用词不准确见谅)&lt;/p&gt;
+&lt;p&gt;其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用&lt;code class=&quot;highlighter-rouge&quot;&gt;RACTupleUnpack(id resultData, NSError *error) = x;&lt;/code&gt;来解加压缩变量(用词不准确见谅)&lt;/p&gt;
 
 &lt;p&gt;在这里非常感谢&lt;a href=&quot;supermao.cn/zhe-yang-hao-yong-de-reactivecocoagen-ben-ting-bu-xia-lai/&quot;&gt;这样好用的ReactiveCocoa，根本停不下来&lt;/a&gt;这篇博客。看到了RACTuplePack这个宏定义。&lt;/p&gt;
 
@@ -496,7 +488,7 @@
         <guid isPermaLink="true">judi0713.github.io/ios/2015/10/03/network.html</guid>
         
         
-        <category>ios</category>
+        <category>iOS</category>
         
       </item>
     
@@ -513,40 +505,40 @@
 
 &lt;p&gt;首先第一步要安装&lt;a href=&quot;https://www.macports.org/&quot;&gt;macport&lt;/a&gt;。macport据我理解，相当于homebrew，ubuntu下相当于apt-get install。根据官网来说，安装macport最简单的方法就是下载pkg文件直接安装，但是我在下载pkg安装过程中，会出现卡死的问题。google了半天没找到解决方法。于是就下载了源代码安装，这在官网上都有说明。前面什么安装xcode的command line tools那是装机必备我就不多说了。&lt;/p&gt;
 
-&lt;p&gt;下载之后在官网上有说明，解压之后进入目录，进行&lt;code&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;
+&lt;p&gt;下载之后在官网上有说明，解压之后进入目录，进行&lt;code class=&quot;highlighter-rouge&quot;&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;
 之后需要添加环境变量，我没看懂官网的说明，自行google了一下。看到很多人的博客都写过这个问题，我在此就摘录一下。&lt;/p&gt;
 
 &lt;p&gt;需要将/opt/local/bin和/opt/local/sbin添加到$PATH搜索路径中。然后编辑/etc/profile，这里需要超级用户。如果用vim的话需要wq！在profile里加入下面两句&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;export PATH=/opt/local/bin:$PATH&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=/opt/local/bin:$PATH&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;export PATH=/opt/local/sbin:$PATH&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=/opt/local/sbin:$PATH&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;然后就可以了，如果要立即生效，那么需要利用source命令&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后就可以了，如果要立即生效，那么需要利用source命令&lt;code class=&quot;highlighter-rouge&quot;&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;这样就可以用了，执行&lt;code&gt;sudo port -v selfupdate&lt;/code&gt;更新。到这步会发现好像仿佛是被墙了。。。&lt;/p&gt;
+&lt;p&gt;这样就可以用了，执行&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo port -v selfupdate&lt;/code&gt;更新。到这步会发现好像仿佛是被墙了。。。&lt;/p&gt;
 
 &lt;h2 id=&quot;proxychains&quot;&gt;安装proxychains&lt;/h2&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;然后我又陷入了难题，好不容易手动编译安装成功了。结果更新好像被墙了咋办。查查查，命令行下使用代理的方法。找到一个东西，叫做&lt;a href=&quot;https://github.com/rofl0r/proxychains-ng&quot;&gt;proxychains&lt;/a&gt;。搜这个用了好久，因为我用的是ss，ss支持的时socks5，而iterm支持http，这就麻烦了。后来在v2ex上发现hzlzh问了这个问题。我就安装这个了。&lt;/p&gt;
 
-&lt;p&gt;安装proxychains4非常简单，直接用homebrew就可以了。&lt;code&gt;brew install proxychains-ng&lt;/code&gt;
+&lt;p&gt;安装proxychains4非常简单，直接用homebrew就可以了。&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install proxychains-ng&lt;/code&gt;
 安装完毕要设置代理&lt;/p&gt;
 
-&lt;p&gt;修改&lt;code&gt;/usr/local/etc/proxychains.conf&lt;/code&gt; 最下面 
-&lt;code&gt;[ProxyList]
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/etc/proxychains.conf&lt;/code&gt; 最下面 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[ProxyList]
 socks5  127.0.0.1 1080&lt;/code&gt;
-测试proxychain能不能用，&lt;code&gt;proxychains4 curl twitter.com&lt;/code&gt;会显示ok。我就不截图了。&lt;/p&gt;
+测试proxychain能不能用，&lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains4 curl twitter.com&lt;/code&gt;会显示ok。我就不截图了。&lt;/p&gt;
 
 &lt;p&gt;proxychain可以让它后面的命令行直接走代理的路线，而不用直接进行网络请求。
 我刚刚用这个加上home cask装了macdown。还是很不错的。因为很多命令行是需要进行网络请求的。&lt;/p&gt;
 
-&lt;p&gt;之后就可以&lt;code&gt;proxychains4 sudo port -v selfupdate&lt;/code&gt;了。可能有点慢，不过我这次可以正常了。&lt;/p&gt;
+&lt;p&gt;之后就可以&lt;code class=&quot;highlighter-rouge&quot;&gt;proxychains4 sudo port -v selfupdate&lt;/code&gt;了。可能有点慢，不过我这次可以正常了。&lt;/p&gt;
 
 &lt;h2 id=&quot;aircrack-ng&quot;&gt;安装aircrack-ng&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;p&gt;最后的最后，我们可以用&lt;code&gt;sudo port install aircrack-ng&lt;/code&gt;就可以安装aircrack了。&lt;/p&gt;
+&lt;p&gt;最后的最后，我们可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo port install aircrack-ng&lt;/code&gt;就可以安装aircrack了。&lt;/p&gt;
 
 &lt;p&gt;好了，剩下的就是按照那个博客说的来破解了…到这的时候我试了一下，但是班长突然打电话然我去取自行车，我就去了~后面的就没有后面了。&lt;/p&gt;
 
@@ -729,60 +721,60 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 写了有两周的项目，因为很多原因所以这近两周一直在写界面，但是在写界面的时候用到了ReactiveCocoa的东西，也是因为实践了所以写篇博客分享出来。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;code&gt;ReactiveCocoa（下文统称为RAC）&lt;/code&gt;，具体我就不介绍了，可以去我的博客里那篇还没填完坑的  &lt;a href=&quot;http://walkginkgo.com/ios/2015/05/03/ios-mvvm-1.html&quot;&gt;mvvm开发模式&lt;/a&gt;  文章看一下。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ReactiveCocoa（下文统称为RAC）&lt;/code&gt;，具体我就不介绍了，可以去我的博客里那篇还没填完坑的  &lt;a href=&quot;http://walkginkgo.com/ios/2015/05/03/ios-mvvm-1.html&quot;&gt;mvvm开发模式&lt;/a&gt;  文章看一下。&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;个人以为，RAC可以以信号的方式来触发各种动作，从而让代码更加精炼。&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;下面上代码吧。&lt;/h2&gt;
 
-&lt;h2 id=&quot;uibutton&quot;&gt;&lt;code&gt;在UIButton上的使用&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;uibutton&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UIButton上的使用&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                            &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                            &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;在这里，对uibutton添加了一个rac_signalForControlEvents的方式，就不用利用addtarget的方式来再写一个方法来进行对uibutton添加点击事件了。&lt;/p&gt;
 
-&lt;h2 id=&quot;uialertview&quot;&gt;&lt;code&gt;在UIAlertView的使用&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;uialertview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UIAlertView的使用&lt;/code&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;bp&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;initWithTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;选择图片上传&amp;quot;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;cancelButtonTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;取消&amp;quot;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;otherButtonTitles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;拍照上传&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;从相册选择&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;选择图片上传&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cancelButtonTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;取消&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;otherButtonTitles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;拍照上传&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;从相册选择&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     
-&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rac_buttonClickedSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chooseFromCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chooseFromAlbum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_buttonClickedSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;chooseFromCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;chooseFromAlbum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;这两个是&lt;a href=&quot;http://limboy.me/&quot;&gt;limeboy&lt;/a&gt;在博客里提到的。因为有了RAC，所以我这次放弃使用blockskit和alertview的Categories。&lt;/p&gt;
 
 &lt;p&gt;下面两个是我利用RAC的方式写的代码。&lt;/p&gt;
 
-&lt;h2 id=&quot;uitextfield&quot;&gt;&lt;code&gt;在UITextfield的使用&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;uitextfield&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UITextfield的使用&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;第一个是我封装了一个安卓风格的输入框，就是下面一条线，当选择这个框的时候，线会加粗变黑。
 我把中间的两句核心代码贴出来。self是因为我继承了一个textfield先进行功能添加和封装。所以self就是代指一个textfield了。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidBegin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
-                    &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blackColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidBegin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+                    &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blackColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
-                    &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grayColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+                    &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;grayColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;其实这两句是可以用addtarget的方式来添加的，但是我选择了用RAC的方式，更为简单也更为容易理解。当textfield被选中的时候，下面的borderline会变成黑色，当结束选择的时候，变成灰色。(其实当选择的时候borderline应该还要加粗)。&lt;/p&gt;
 
-&lt;h2 id=&quot;uipagecontrol&quot;&gt;&lt;code&gt;监控UIPagecontrol改变&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;uipagecontrol&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;监控UIPagecontrol改变&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;还有一个地方我利用到了RAC。因为我现在需要实现一个功能，图片轮播的时候，当图片切换，我需要相应的刷新下面的一个列表。因为我们的图片轮播是用到的一个开源控件，我实在是能力有限不知道怎么进一步修改这个控件来进一步封装从而实现新的功能，我就利用了RAC。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACObserve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;refreshSlideContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACObserve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refreshSlideContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;上面的代码将pageControl和它的currentPage属性相绑定，当currentPage改变的时候就会触发下面的函数。然后我传了一个currentPage的参数进去，从而下面的列表可以进一步更新。但是开始加载的时候会调用3次…我不知道我哪个地方写坑了我还在寻找。各位见谅…&lt;/p&gt;
 
@@ -801,7 +793,7 @@ socks5  127.0.0.1 1080&lt;/code&gt;
         <guid isPermaLink="true">judi0713.github.io/ios/2015/06/13/rac_uiview.html</guid>
         
         
-        <category>ios</category>
+        <category>iOS</category>
         
       </item>
     
@@ -838,13 +830,13 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 &lt;h2 id=&quot;part1-block&quot;&gt;&lt;em&gt;part1 block的简单定义&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;我现在定义一个简单的block。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;---%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;11111&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Outputs:---11111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;---%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;11111&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:---&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个参数还可以是一个函数。当然如果是int类型的block就需要return一个返回值了。&lt;/p&gt;
 
@@ -859,27 +851,27 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 &lt;p&gt;下面把难度加大一点，我们把block当参数传。然后看一个block的例子。
 首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;ViewController.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//typedef定义一个block&lt;/span&gt;
-
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;ViewController.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//typedef定义一个block
+&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;-----%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;testBlock:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mBlock&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//简单的说格式就是 “返回值 + (^) + 参数 + 名字”&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;1111&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Outputs:-----1111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;-----%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mBlock&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock
+//简单的说格式就是 “返回值 + (^) + 参数 + 名字”
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;1111&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-----&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;在上面的代码中，我们写了一个testBlock的函数，将我们的tblock作为参数传到了testBlock函数里面，然后再testBlock里用mBlock调用了我们所写的MyBlock这个函数。&lt;/p&gt;
 
@@ -890,33 +882,33 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 
 &lt;p&gt;不多解释，直接上代码。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;ViewController.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;ViewController.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greenColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testfunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;greenColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testfunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;testfunc&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testfunc&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;testBlock:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;myBlock&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;part4-afnetwork&quot;&gt;&lt;em&gt;part4 利用回调分离afnetwork的请求&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;直接上代码了。&lt;/p&gt;
@@ -925,67 +917,67 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 TestViewController是我们需要调用网络请求的地方。
 SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//  TestNetworkViewController.h&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;SearchModel.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; : &lt;span class=&quot;bp&quot;&gt;UIViewController&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUrl:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//  TestNetworkViewController.h
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &quot;SearchModel.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UIViewController&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//TestNetworkViewController.m&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;TestNetworkViewController.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//TestNetworkViewController.m
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;TestNetworkViewController.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUrl:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;getmodel&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getmodel&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;http://xxx.xx.xxx.xx:xxxx/app/search_haosou&amp;quot;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;keyword&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;android&amp;quot;&lt;/span&gt;&lt;span class=&quot;l&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;JSON: %@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MTLJSONAdapter&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;modelOfClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;fromJSONDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;Error: %@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;http://xxx.xx.xxx.xx:xxxx/app/search_haosou&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;keyword&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;android&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;JSON: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MTLJSONAdapter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;modelOfClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fromJSONDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Error: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//  TestViewController.h&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;SearchModel.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; : &lt;span class=&quot;bp&quot;&gt;UIViewController&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//  TestViewController.h
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &quot;SearchModel.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UIViewController&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;TestViewController.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;TestNetworkViewController.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#import &amp;quot;SearchModel.h&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#import &quot;TestViewController.h&quot;
+#import &quot;TestNetworkViewController.h&quot;
+#import &quot;SearchModel.h&quot;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view.&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;test&amp;quot;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;setTitleColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view.
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitleColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;whiteColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whiteColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUrl&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1014,7 +1006,7 @@ SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
         <guid isPermaLink="true">judi0713.github.io/ios/2015/05/30/my-understand-about-block.html</guid>
         
         
-        <category>ios</category>
+        <category>IOS</category>
         
       </item>
     
@@ -1025,12 +1017,12 @@ SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
 五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。&lt;/p&gt;
 
 &lt;h2 id=&quot;racmvcmvvm&quot;&gt;RAC、MVC和MVVM&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;RAC(ReactiveCocoa)&lt;/code&gt;里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RAC(ReactiveCocoa)&lt;/code&gt;里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;MVC(Model View Controller)&lt;/code&gt;是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MVC(Model View Controller)&lt;/code&gt;是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
 所以这就有我们开发模式逐渐改变的第一步，迪哥利用RAC将网络层单独分离出来的写法。而且我们不断的将控件抽象出来，减少Controller中的代码。虽然代码量增加，但是后期的维护会简单不少。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;MVVM(Model ViewModel Model)&lt;/code&gt;是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MVVM(Model ViewModel Model)&lt;/code&gt;是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。&lt;/p&gt;
 
 &lt;h2 id=&quot;mvcmvvm&quot;&gt;MVC和MVVM的比较&lt;/h2&gt;
 &lt;p&gt;其实我想贴图，但是资料太多，我还是先第一步用语言来解释我自身的理解。
@@ -1046,7 +1038,137 @@ MVVM中，我理解的ViewModel是一个过渡的层，首先Model层获取数�
         <guid isPermaLink="true">judi0713.github.io/ios/2015/05/04/ios-mvvm-1.html</guid>
         
         
-        <category>ios</category>
+        <category>IOS</category>
+        
+      </item>
+    
+      <item>
+        <title>利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</title>
+        <description>&lt;p&gt;很早以前在freebuf上看到一篇文章。&lt;a href=&quot;http://www.freebuf.com/tools/4708.html&quot;&gt;十大渗透测试演练系统&lt;/a&gt;。也给很多人推荐过。个人感觉刚开始做安全，不像我们做应用，很难找到实践的地方。所以这十个渗透系统在初期可能显得很有用。&lt;/p&gt;
+
+&lt;p&gt;DVWA是freebuf上提到的第一个。因为最近得知一个朋友在学习web安全这一块，就想起来上次我尝试搭DVWA失败了，这次就正好就重新尝试搭建一下顺便出个博客，希望能给朋友和其他想学习安全的朋友提供一点点点帮助。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;另外，这次的博客命令部分我可能采用markdown的语法模式，这样方便拷贝代码。所以有的地方就不再像以前那样截图了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;用到的东西&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.dvwa.co.uk/&quot;&gt;DVWA&lt;/a&gt;是用PHP+Mysql编写的一套用于常规WEB漏洞教学和检测的WEB脆弱性测试程序。包含了SQL注入、XSS、盲注等常见的一些安全漏洞。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.apachefriends.org/zh_cn/index.html&quot;&gt;XAMPP&lt;/a&gt;，XAMPP是完全免费且易于安装的Apache发行版，其中包含MySQL、PHP和Perl。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-1.png&quot; alt=&quot;use-xampp-build-dvwa-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我把上面两个文件放在桌面了，DVWA我是解压好了的。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;整个搭建过程&lt;/h2&gt;
+&lt;p&gt;实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。&lt;/p&gt;
+
+&lt;p&gt;进入桌面之后
+&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ./xampp-linux-x64-5.6.8-0-installer.run&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;记得要用sudo，因为是要安装在系统文件里的。&lt;/p&gt;
+
+&lt;p&gt;![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
+不停的next。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png&quot; alt=&quot;use-xampp-build-dvwa-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png&quot; alt=&quot;use-xampp-build-dvwa-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
+会有一个这个，点中文。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png&quot; alt=&quot;use-xampp-build-dvwa-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在浏览器输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/&lt;/code&gt;也会进入这个页面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png&quot; alt=&quot;use-xampp-build-dvwa-7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们点击右面的安全。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png&quot; alt=&quot;use-xampp-build-dvwa-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看到很多问题，安装下面说的我们一步一步解决，运行&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp security&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png&quot; alt=&quot;use-xampp-build-dvwa-9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之前的终端会有这个，不管它，ctrl+c它然后我们运行上面的命令，记得要加sudo。&lt;/p&gt;
+
+&lt;p&gt;跟着说明一步一步设置密码。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-10.png&quot; alt=&quot;use-xampp-build-dvwa-10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们的mysql没有运行，所以不能查看安全性，运行mysql。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp start&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png&quot; alt=&quot;use-xampp-build-dvwa-11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo /opt/lamp/xampp security&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png&quot; alt=&quot;use-xampp-build-dvwa-12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这下mysql的密码也设置Ok了~
+这时候在进入之前的web页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png&quot; alt=&quot;use-xampp-build-dvwa-13&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
+我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这时候我们在网址栏输入&lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1/dvwa&lt;/code&gt;已经有显示了。
+显示的是&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png&quot; alt=&quot;use-xampp-build-dvwa-15&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;说明我们没有连接数据库。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png&quot; alt=&quot;use-xampp-build-dvwa-16&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击红线部分，会出现下面的字。
+这时候我们要进入mysql设置DVWA的数据库。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/opt/lampp/bin/mysql -us root -p&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;create database dvwa;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png&quot; alt=&quot;use-xampp-build-dvwa-17&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果直接运行mysql会显示没有相关的软件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-18.png&quot; alt=&quot;use-xampp-build-dvwa-18&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后修改DVWA的配置文件&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;vim config.inc.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png&quot; alt=&quot;use-xampp-build-dvwa-19&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修改db_password为刚刚设置的mysql的root密码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png&quot; alt=&quot;use-xampp-build-dvwa-20&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后再进入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/dvwa/setup.php&lt;/code&gt; create database&lt;/p&gt;
+
+&lt;p&gt;然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。&lt;/p&gt;
+
+&lt;p&gt;记得如果ubuntu关机或者重启需要重新启动xampp的所有服务然后新建数据库。&lt;/p&gt;
+
+&lt;p&gt;如果没错的话，按照之前我的博客里的远程ssh访问的方式，可以让全校都访问到这个网站。至此，搭建DVWA基本是结束。这样就有了一个渗透测试的平台了。&lt;/p&gt;
+
+&lt;p&gt;好了，我是在linux环境下搭建的，我在网上看到了ubuntu server环境还有windows环境的教程。欢迎你们尝试在windows下和ubuntu server下搭建这个测试平台。如果还有问题可以留言和我交流。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 May 2015 03:33:42 +0800</pubDate>
+        <link>judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</link>
+        <guid isPermaLink="true">judi0713.github.io/xampp/2015/05/02/use-xampp-build-dvwa.html</guid>
+        
+        
+        <category>xampp</category>
         
       </item>
     

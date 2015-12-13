@@ -89,7 +89,7 @@
 <p>实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。</p>
 
 <p>进入桌面之后
-<code>sudo ./xampp-linux-x64-5.6.8-0-installer.run</code></p>
+<code class="highlighter-rouge">sudo ./xampp-linux-x64-5.6.8-0-installer.run</code></p>
 
 <p>记得要用sudo，因为是要安装在系统文件里的。</p>
 
@@ -105,7 +105,7 @@
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png" alt="use-xampp-build-dvwa-6" /></p>
 
-<p>然后在浏览器输入<code>http://127.0.0.1/</code>也会进入这个页面</p>
+<p>然后在浏览器输入<code class="highlighter-rouge">http://127.0.0.1/</code>也会进入这个页面</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-7.png" alt="use-xampp-build-dvwa-7" /></p>
 
@@ -113,7 +113,7 @@
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-8.png" alt="use-xampp-build-dvwa-8" /></p>
 
-<p>看到很多问题，安装下面说的我们一步一步解决，运行<code>sudo /opt/lamp/xampp security</code>.</p>
+<p>看到很多问题，安装下面说的我们一步一步解决，运行<code class="highlighter-rouge">sudo /opt/lamp/xampp security</code>.</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-9.png" alt="use-xampp-build-dvwa-9" /></p>
 
@@ -125,13 +125,13 @@
 
 <p>我们的mysql没有运行，所以不能查看安全性，运行mysql。</p>
 
-<p><code>sudo /opt/lamp/xampp start</code></p>
+<p><code class="highlighter-rouge">sudo /opt/lamp/xampp start</code></p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-11.png" alt="use-xampp-build-dvwa-11" /></p>
 
 <p>这个命令是运行所有的环境，单独运行的时候要进入xampp的安装环境单独启动。</p>
 
-<p><code>sudo /opt/lamp/xampp security</code></p>
+<p><code class="highlighter-rouge">sudo /opt/lamp/xampp security</code></p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png" alt="use-xampp-build-dvwa-12" /></p>
 
@@ -143,9 +143,9 @@
 <p>至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
 我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。</p>
 
-<p><code>mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/</code></p>
+<p><code class="highlighter-rouge">mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/</code></p>
 
-<p>这时候我们在网址栏输入<code>127.0.0.1/dvwa</code>已经有显示了。
+<p>这时候我们在网址栏输入<code class="highlighter-rouge">127.0.0.1/dvwa</code>已经有显示了。
 显示的是</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png" alt="use-xampp-build-dvwa-15" /></p>
@@ -157,9 +157,9 @@
 <p>点击红线部分，会出现下面的字。
 这时候我们要进入mysql设置DVWA的数据库。</p>
 
-<p><code>/opt/lampp/bin/mysql -us root -p</code></p>
+<p><code class="highlighter-rouge">/opt/lampp/bin/mysql -us root -p</code></p>
 
-<p><code>create database dvwa;</code></p>
+<p><code class="highlighter-rouge">create database dvwa;</code></p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-17.png" alt="use-xampp-build-dvwa-17" /></p>
 
@@ -169,7 +169,7 @@
 
 <p>然后修改DVWA的配置文件</p>
 
-<p><code>vim config.inc.php</code></p>
+<p><code class="highlighter-rouge">vim config.inc.php</code></p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-19.png" alt="use-xampp-build-dvwa-19" /></p>
 
@@ -177,7 +177,7 @@
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-20.png" alt="use-xampp-build-dvwa-20" /></p>
 
-<p>然后再进入<code>http://127.0.0.1/dvwa/setup.php</code> create database</p>
+<p>然后再进入<code class="highlighter-rouge">http://127.0.0.1/dvwa/setup.php</code> create database</p>
 
 <p>然后把虚拟机的网络设置成桥接模式就可以进行局域网的访问了。</p>
 

@@ -114,7 +114,7 @@
 
 <p>为什么不直接聊MVC，因为MVC是大众开发iOS的模式。无论是后台还是iOS，虽然说iOS的MVC和后台的有差别，但是还是没啥好说的。是个iOS开发都知道MVC。在此也不做过多的阐述。</p>
 
-<p>直接聊聊iOS中MVC的弊端。<code>实际上可以说只聊聊VC。</code></p>
+<p>直接聊聊iOS中MVC的弊端。<code class="highlighter-rouge">实际上可以说只聊聊VC。</code></p>
 
 <p>我只写过一点点Rails。先来说说我对Rails的MVC的看法，再和iOS的MVC一比较，立马就看出弊端了。</p>
 
@@ -146,21 +146,21 @@
 
 <p>想了一下，与其废话半天说MVVM和MVC不如直接解释MVVM每部分到底在干嘛，这样一说，立马就知道MVVM的好处了。</p>
 
-<h3 id="mvcview"><code>在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。</code></h3>
+<h3 id="mvcview"><code class="highlighter-rouge">在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。</code></h3>
 
-<h3 id="mvvmviewmodel"><code>而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现</code></h3>
+<h3 id="mvvmviewmodel"><code class="highlighter-rouge">而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现</code></h3>
 
 <p>我不贴图了，我觉得看了那么多文章都不如直接说每部分是干什么的这样直接了当。</p>
 
 <p>所以综合比较一下。下面MVC分别用M1,V1,C1来表示，MVVM用M2,V2,VM2来表示，看看发生了什么变化。</p>
 
-<h3 id="m1-m2-"><code>M1-&gt;M2 没变化</code></h3>
+<h3 id="m1-m2-"><code class="highlighter-rouge">M1-&gt;M2 没变化</code></h3>
 
-<h3 id="c1-v2-iosviewcontrollerviewview"><code>C1-&gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作</code></h3>
+<h3 id="c1-v2-iosviewcontrollerviewview"><code class="highlighter-rouge">C1-&gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作</code></h3>
 
-<h3 id="v1-v2-viewmvvmcommonviewview"><code>V1-&gt;V2 对于我个人来说，以后我会再单独抽象一个View在MVVM中来处理Common的View还有需要封装的View。</code></h3>
+<h3 id="v1-v2-viewmvvmcommonviewview"><code class="highlighter-rouge">V1-&gt;V2 对于我个人来说，以后我会再单独抽象一个View在MVVM中来处理Common的View还有需要封装的View。</code></h3>
 
-<h3 id="c1-vm2-vm2"><code>C1-&gt;VM2 这里VM2，只进行逻辑和网络请求等等。</code></h3>
+<h3 id="c1-vm2-vm2"><code class="highlighter-rouge">C1-&gt;VM2 这里VM2，只进行逻辑和网络请求等等。</code></h3>
 
 <p>那么，在MVVM中最重要的是什么？是数据的绑定。</p>
 
