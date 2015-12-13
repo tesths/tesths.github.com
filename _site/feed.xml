@@ -6,8 +6,8 @@
 </description>
     <link>judi0713.github.io/</link>
     <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Dec 2015 10:44:46 +0800</pubDate>
-    <lastBuildDate>Sun, 13 Dec 2015 10:44:46 +0800</lastBuildDate>
+    <pubDate>Sun, 13 Dec 2015 10:49:01 +0800</pubDate>
+    <lastBuildDate>Sun, 13 Dec 2015 10:49:01 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -88,7 +88,7 @@
 
 &lt;p&gt;我们还要实现这个代理。&lt;/p&gt;
 
-&lt;p&gt;在ray中的教程和雷大神的&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;MVVMReactiveCocoa&lt;/a&gt;都是新建了一个Impl文件，专门用来跳转，基本思路就是navigation本身就是一个堆栈，其实所有的vc都是在navigation其中的。我们只要控制这个这个最基本的navigation的跳转就可以了。&lt;/p&gt;
+&lt;p&gt;在ray中的&lt;a href=&quot;http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1&quot;&gt;教程&lt;/a&gt;和雷大神的&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;MVVMReactiveCocoa&lt;/a&gt;都是新建了一个Impl文件，专门用来跳转，基本思路就是navigation本身就是一个堆栈，其实所有的vc都是在navigation其中的。我们只要控制这个这个最基本的navigation的跳转就可以了。&lt;/p&gt;
 
 &lt;p&gt;我们新建一个MVVMdemoImpl文件，里面有一个初始化的方法。&lt;/p&gt;
 
@@ -122,6 +122,18 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 
 &lt;h2 id=&quot;section-3&quot;&gt;小结&lt;/h2&gt;
 &lt;p&gt;其实上面的最后AppDelegate的赋值代理这一块还不是很明白。有时间再说说吧。好久没写博客就想发一篇了。&lt;/p&gt;
+
+&lt;p&gt;以上完整代码在&lt;a href=&quot;https://github.com/judi0713/MVVMdemo&quot;&gt;MVVMdemo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;参考链接&lt;/h2&gt;
+
+&lt;p&gt;1.&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;leichunfeng/MVVMReactiveCocoa&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.&lt;a href=&quot;http://codeblog.shape.dk/blog/2013/12/05/reactivecocoa-essentials-understanding-and-using-raccommand/&quot;&gt;ReactiveCocoa Essentials: Understanding and Using RACCommand&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3.&lt;a href=&quot;http://stackoverflow.com/questions/19440683/why-does-raccommands-block-return-a-signal&quot;&gt;Why Does RACCommand’s block return a signal?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;4.&lt;a href=&quot;http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1&quot;&gt;MVVM Tutorial with ReactiveCocoa: Part 1/2&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;最后的最后，有些事情，我自己不愿去努力去争取我谁也不怪。有些事情我想的很明白我一点都不想想明白。&lt;/p&gt;
 </description>
