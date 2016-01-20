@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>testHs</title>
-    <description>我是新手程序员，想找一个地方记录自己在技术上的成长和生活上的点滴。 现在主要是跟随迪哥做iOS的开发。 我的jekyll还在搭建过程当中！我会逐渐将我的jekyll美化起来的。
+    <description>我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
 </description>
-    <link>judi0713.github.io/</link>
-    <atom:link href="judi0713.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Dec 2015 20:47:41 +0800</pubDate>
-    <lastBuildDate>Sat, 19 Dec 2015 20:47:41 +0800</lastBuildDate>
+    <link>http://walkginkgo.com/</link>
+    <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 18 Jan 2016 22:07:51 +0800</pubDate>
+    <lastBuildDate>Mon, 18 Jan 2016 22:07:51 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -121,8 +121,8 @@
 &lt;p&gt;先考虑钱，情怀可是会打折的哦😘&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 Dec 2015 20:00:00 +0800</pubDate>
-        <link>judi0713.github.io/life/2015/12/19/feelings.html</link>
-        <guid isPermaLink="true">judi0713.github.io/life/2015/12/19/feelings.html</guid>
+        <link>http://walkginkgo.com/life/2015/12/19/feelings.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2015/12/19/feelings.html</guid>
         
         
         <category>life</category>
@@ -257,8 +257,8 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 &lt;p&gt;最后的最后，有些事情，我自己不愿去努力去争取我谁也不怪。有些事情我想的很明白我一点都不想想明白。&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Dec 2015 16:01:08 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/12/12/ios-mvvm-2.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/12/12/ios-mvvm-2.html</guid>
+        <link>http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html</guid>
         
         
         <category>iOS</category>
@@ -351,8 +351,8 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 &lt;p&gt;4.&lt;a href=&quot;http://stackoverflow.com/questions/31972968/cant-install-gems-on-macos-x-el-capitan&quot;&gt;Can’t install gems on MacOS X “El Capitan”&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 19 Nov 2015 03:54:59 +0800</pubDate>
-        <link>judi0713.github.io/mac/2015/11/19/mac-eicaptain.html</link>
-        <guid isPermaLink="true">judi0713.github.io/mac/2015/11/19/mac-eicaptain.html</guid>
+        <link>http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</guid>
         
         
         <category>mac</category>
@@ -483,8 +483,8 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 &lt;p&gt;我相信我写完你看完，我们都能征服MVVM！&lt;/p&gt;
 </description>
         <pubDate>Mon, 05 Oct 2015 18:37:00 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/10/05/ios-mvvm-11.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/10/05/ios-mvvm-11.html</guid>
+        <link>http://walkginkgo.com/ios/2015/10/05/ios-mvvm-11.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/10/05/ios-mvvm-11.html</guid>
         
         
         <category>iOS</category>
@@ -739,8 +739,8 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 03 Oct 2015 18:35:01 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/10/03/network.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/10/03/network.html</guid>
+        <link>http://walkginkgo.com/ios/2015/10/03/network.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/10/03/network.html</guid>
         
         
         <category>iOS</category>
@@ -801,8 +801,8 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 &lt;p&gt;最近项目差不多算是完成了，后面的计划可能要调整一下状态，把RAC再看看，想看看动画，然后，继续开发下一个项目了~&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Sep 2015 04:06:00 +0800</pubDate>
-        <link>judi0713.github.io/free/2015/09/09/mac-aircrack.html</link>
-        <guid isPermaLink="true">judi0713.github.io/free/2015/09/09/mac-aircrack.html</guid>
+        <link>http://walkginkgo.com/free/2015/09/09/mac-aircrack.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/free/2015/09/09/mac-aircrack.html</guid>
         
         
         <category>free</category>
@@ -898,8 +898,8 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Wed, 29 Jul 2015 18:21:56 +0800</pubDate>
-        <link>judi0713.github.io/life/2015/07/29/year2-second-term.html</link>
-        <guid isPermaLink="true">judi0713.github.io/life/2015/07/29/year2-second-term.html</guid>
+        <link>http://walkginkgo.com/life/2015/07/29/year2-second-term.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2015/07/29/year2-second-term.html</guid>
         
         
         <category>life</category>
@@ -959,8 +959,8 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 我和老大&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Jun 2015 06:35:00 +0800</pubDate>
-        <link>judi0713.github.io/life/2015/06/30/to-my-dear.html</link>
-        <guid isPermaLink="true">judi0713.github.io/life/2015/06/30/to-my-dear.html</guid>
+        <link>http://walkginkgo.com/life/2015/06/30/to-my-dear.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2015/06/30/to-my-dear.html</guid>
         
         
         <category>life</category>
@@ -1044,8 +1044,8 @@ socks5  127.0.0.1 1080&lt;/code&gt;
 
 </description>
         <pubDate>Sat, 13 Jun 2015 01:02:33 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/06/13/rac_uiview.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/06/13/rac_uiview.html</guid>
+        <link>http://walkginkgo.com/ios/2015/06/13/rac_uiview.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/06/13/rac_uiview.html</guid>
         
         
         <category>iOS</category>
@@ -1257,8 +1257,8 @@ SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 30 May 2015 04:02:33 +0800</pubDate>
-        <link>judi0713.github.io/ios/2015/05/30/my-understand-about-block.html</link>
-        <guid isPermaLink="true">judi0713.github.io/ios/2015/05/30/my-understand-about-block.html</guid>
+        <link>http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html</guid>
         
         
         <category>IOS</category>
