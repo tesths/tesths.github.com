@@ -12,6 +12,6 @@ github_username: judi0713
 # Build settings
 markdown: kramdown
 kramdown:
-    input: GFM
+  input: GFM
   
 timezone: Asia/Shanghai
