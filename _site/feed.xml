@@ -6,8 +6,8 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Feb 2016 14:14:06 +0800</pubDate>
-    <lastBuildDate>Wed, 03 Feb 2016 14:14:06 +0800</lastBuildDate>
+    <pubDate>Wed, 03 Feb 2016 14:16:18 +0800</pubDate>
+    <lastBuildDate>Wed, 03 Feb 2016 14:16:18 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -225,6 +225,126 @@
         
         
         <category>life</category>
+        
+      </item>
+    
+      <item>
+        <title>OpenWrt小记</title>
+        <description>&lt;h3 id=&quot;cbsflyhttpcbsflygithubio&quot;&gt;慎哥开博客了，博客做的很好看！欢迎访问~&lt;a href=&quot;http://cbsfly.github.io&quot;&gt;cbsfly&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;请合理利用互联网，不要对国家安全造成任何威胁！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因为要做比赛所以倒腾了&lt;a href=&quot;https://openwrt.org/&quot;&gt;OpenWrt&lt;/a&gt;倒腾了不到一天，做个小的记录。&lt;/p&gt;
+
+&lt;p&gt;前天上网买的路由器昨天就到货了，淘宝，33，硬改了的。16M闪存64内存好像。&lt;/p&gt;
+
+&lt;p&gt;昨天和店家交流了一下，店家人真的不错。然后我就开始把店家装好的操作系统重装，这次买的路由器是可以刷官方原版的，我就下载了一个最新版的&lt;a href=&quot;http://downloads.openwrt.org/chaos_calmer/15.05/&quot;&gt;chaos_calmer&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;什么是OpenWrt，简单的说，就是在你的路由器里面装个Linux操作系统。装上Linux的操作系统，是吧，你们懂得。基本上啥都能干了。&lt;/p&gt;
+
+&lt;p&gt;如果你家用的是极路由或者是小米路由，你要清楚，那都是深度定制的OpenWrt…&lt;/p&gt;
+
+&lt;p&gt;我倒腾了如下几个东西。一，中继。二，jump gfw。三，8021x校园网拨号。具体如下。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;预备&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先你得有个硬件能刷操作系统的路由器。我建议某宝买硬改的，很便宜。&lt;/li&gt;
+  &lt;li&gt;在ubuntu中，操作系统更新和安装软件用的是apt-get，在OpenWrt里用的是opkg(我觉得是OpenWrt Package的缩写)&lt;/li&gt;
+  &lt;li&gt;第二步可以联网进行操作，也可以本地安装。当然我一直觉得联网的好，不用编译配置啥的了…&lt;/li&gt;
+  &lt;li&gt;刚刷完操作系统的时候路由器的无线网默认是关闭的，需要登录打开。&lt;/li&gt;
+  &lt;li&gt;因为是操作系统，所以我们可以通过ssh root@192.168.1.1来对操作系统进行操作。&lt;/li&gt;
+  &lt;li&gt;刷完路由器的那个web界面叫luci。下文会用到。&lt;/li&gt;
+  &lt;li&gt;没找到中文语言包，所以下文全是英文。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;中继&lt;/h2&gt;
+&lt;p&gt;OpenWrt可以作为无线中继。在此感谢班长和姜导提供该技能包。&lt;/p&gt;
+
+&lt;p&gt;所谓无线中继，就是你用OpweWrt连接无线网，然后再把这个无线网的信号扩展了。这样就解决了一个路由器信号不够强的问题。其次，前文说道，OpenWrt是个Linux的操作系统，我们安装软件需要让路由器联网。&lt;/p&gt;
+
+&lt;p&gt;让路由器联网有两种方式，一种直接插网线到lan口。事实证明这样我就找不到路由器的ip了…&lt;/p&gt;
+
+&lt;p&gt;在咨询了班长之后我选择了无线中继的方式。&lt;/p&gt;
+
+&lt;p&gt;这有篇&lt;a href=&quot;http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS&quot;&gt;百度文库的教程&lt;/a&gt;写得很详细了我就不对步骤进行赘述了（百度文库还能有这种好材料…）因为我刷的是最新的cc版本路由器，所以界面不太一样，但是没啥差别。我只强调一个问题。&lt;/p&gt;
+
+&lt;p&gt;在第一步里，一定要设置lan口的ip，不能在同一个网段。我设置成192.168.10.1，设置完成之后，OpenWrt路由器会通过上级路由器获得一个ip，通过OpenWrt这个路由连接的设备，ssh的ip地址变成192.168.10.1，web访问也变成192.168.10.1。&lt;/p&gt;
+
+&lt;p&gt;全部设置完就可以通过OpenWrt路由器上网了，此时ssh到OpenWrt，发现已经可以ping了。&lt;/p&gt;
+
+&lt;h2 id=&quot;jump-gfw&quot;&gt;jump gfw&lt;/h2&gt;
+&lt;p&gt;前几天发朋友圈问了个敏感问题，没想到那么多人回复…&lt;/p&gt;
+
+&lt;p&gt;我现在是要入党的人，但是我又是程序员，有时候确实不得不那什么。&lt;/p&gt;
+
+&lt;p&gt;所以在此也说一下，你们有需求可以私聊我，我很乐意帮忙，具体手机和电脑怎么做我就不写了。路由器也是因为要做比赛才倒腾的。&lt;/p&gt;
+
+&lt;p&gt;我用的是shadowsocks的方式，也可以用vpn，我们工作室的极路由提供了vpn的接口，表示vpn太难搭建。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/shadowsocks/openwrt-shadowsocks&quot;&gt;openwrt-shadowsocks&lt;/a&gt;Github地址。&lt;/p&gt;
+
+&lt;p&gt;首先下载预编译的ipk到本地安装。在&lt;a href=&quot;http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.3-33429ad/&quot;&gt;shadowsocks-libev&lt;/a&gt;找到对应的机型。我的是ar71xx，然后找到那个下载次数最多的shadowsocks-libev-spec版本。这个是针对OpenWrt的优化版本。&lt;/p&gt;
+
+&lt;p&gt;下载完毕之后，通过scp命令上传到OpenWrt上，先&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg update&lt;/code&gt;，这一步是更新源，和我们ubuntu的update一样。&lt;/p&gt;
+
+&lt;p&gt;接着&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;安装，他会自动的把需要的依赖包一并下载了。到这就完成了对ss的安装。&lt;/p&gt;
+
+&lt;p&gt;在shadowsocks-libev-spec从v1.5.2开始可以使用luci配置界面。所以我就找了一下luci的package，所有的package都在&lt;a href=&quot;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/packages/&quot;&gt;packages列表&lt;/a&gt;。luci-app-shadowsocks-spec_1.3.7-1_all.ipk我的叫这个，我就下载了然后继续scp上传，然后&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后登陆web界面，这时候就有可视化的配置界面了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/openwrt/openwrt.png&quot; alt=&quot;openwrt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输入你的ss账号密码就可以了。但是需要在最下面添加ignore list，让国内的网站直接连接网络，不然的话像我，就没法看nba直播了，很多视频优酷什么的也不能看了…&lt;/p&gt;
+
+&lt;p&gt;这一步其实是关键的，新建一个后缀为list的文件，然后输入这串命令&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget -O- &#39;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&#39; | awk -F\| &#39;/CN\|ipv4/ { printf(&quot;%s/%d\n&quot;, $4, 32-log($5)/log(2)) }&#39; &amp;gt; /dev/ignore.list&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后把ignore的路径设置到你配置的那个文件就可以了。&lt;/p&gt;
+
+&lt;p&gt;这时候在开腾讯nba就能看直播了…我简直，为了看球什么都干得出来。然后再连接路由器就可以Jump gfw了~&lt;/p&gt;
+
+&lt;h2 id=&quot;x&quot;&gt;8021x校园网拨号&lt;/h2&gt;
+&lt;p&gt;不过我们不用更换源，首先我们需要&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg remove wpad-mini&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install wpad&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install wpa-cli&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;然后配置8021x的文件就可以上网了。&lt;/p&gt;
+
+&lt;p&gt;因为我走了中继，所以这个没有具体实践到拨号，只实践到安装依赖包。&lt;/p&gt;
+
+&lt;p&gt;具体参考迪哥的博客&lt;a href=&quot;http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html&quot;&gt;极路由root并8021x校园网拨号经验分享&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;结尾&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;请合理利用互联网，不要对国家安全造成任何威胁！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;参考链接&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS&quot;&gt;Openwrt无线中继教程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html&quot;&gt;极路由root并8021x校园网拨号经验分享&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/openwrt-shadowsocks&quot;&gt;openwrt-shadowsocks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.tshine.me/openwrt%E4%B9%8Bshadowsocks%E6%9B%B4%E6%96%B0ignore-list.html&quot;&gt;OpenWRT之Shadowsocks更新ignore.list&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 21 Jan 2016 11:02:00 +0800</pubDate>
+        <link>http://walkginkgo.com/linux/2016/01/21/openwrt.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/linux/2016/01/21/openwrt.html</guid>
+        
+        
+        <category>linux</category>
         
       </item>
     
@@ -1177,67 +1297,6 @@ socks5  127.0.0.1 1080&lt;/code&gt;
         <pubDate>Wed, 29 Jul 2015 18:21:56 +0800</pubDate>
         <link>http://walkginkgo.com/life/2015/07/29/year2-second-term.html</link>
         <guid isPermaLink="true">http://walkginkgo.com/life/2015/07/29/year2-second-term.html</guid>
-        
-        
-        <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>给萌萌哒的子渔酱</title>
-        <description>&lt;p&gt;写点什么吧。&lt;/p&gt;
-
-&lt;p&gt;不知道为什么一想到老大都会想到萌萌哒的子渔酱。&lt;/p&gt;
-
-&lt;p&gt;对于老大的称呼总有很多，老大是华哥喊起来的，我们就跟着喊了。子渔是老大的笔名。当然还有喊识颖的，这是迪哥喊的。也有喊颖姐的，这是雨叔。&lt;/p&gt;
-
-&lt;p&gt;第一次遇见老大当然是报道的时候了，白色的衣服，扎辫子。&lt;/p&gt;
-
-&lt;p&gt;后来再见就是班里第一次自我介绍的时候，粉色衣服。&lt;/p&gt;
-
-&lt;p&gt;再后来就慢慢熟起来了。&lt;/p&gt;
-
-&lt;p&gt;大一的时候总有很多时间，没事喊着老大出来一起。班级第一次聚会了，篮球赛了，还有班级聚餐了，还有一帮人在寝室吃东西啃兔头。大二的时候就少了。&lt;/p&gt;
-
-&lt;p&gt;还记得大一给老大录的生日视频，那是唯一送老大的东西吧。&lt;/p&gt;
-
-&lt;p&gt;对老大的印象就是女神…那不完全，还有女汉子。&lt;/p&gt;
-
-&lt;p&gt;前几天骑车去工作室的时候走路上看到老大回寝室。穿着毕业衫斜刘海长发飘飘，哇塞，真的，是女神！&lt;/p&gt;
-
-&lt;p&gt;之前看老大打球的时候，那真是一点都不女神了…&lt;/p&gt;
-
-&lt;p&gt;一个人同时兼有两种截然相反的属性也是不容易的吧。&lt;/p&gt;
-
-&lt;p&gt;老大的感觉，真的是一个很有文化气息的妹子，改变了我对科大女生的看法。&lt;/p&gt;
-
-&lt;p&gt;老大会穿着汉服到处逛悠，也会写出看不懂的文字发到空间。&lt;/p&gt;
-
-&lt;p&gt;我总会想，老大的境界到底有多高，很高。&lt;/p&gt;
-
-&lt;p&gt;你会很愿意和老大交流你遇到的问题，她会给你很好的意见，你也会得到很好的解答。&lt;/p&gt;
-
-&lt;p&gt;以前觉得老大很厉害，什么都会，会自己搭一个网站会去绿盟实习。老大现在也很厉害，总能在和老大的交流上学到很多东西。以前总想，我要好好努力要成为像老大那样，什么都会。现在觉得，至少，搭个网站什么的已经不是很难了。但是要想像老大一样有很深的文化的底蕴，很高的境界，还是很难的。像老大那样可以把每件事情考虑的很好，想的很仔细，想的很明白想的很开还是很难的。&lt;/p&gt;
-
-&lt;p&gt;至少，这两年和老大学到了很多东西。我曾经想像老大一样当上导生，去带一个班级。看样子是没机会了。这是后话。&lt;/p&gt;
-
-&lt;p&gt;晚上聚餐，一群人和老大合了影，依然问了老大很多问题。&lt;/p&gt;
-
-&lt;p&gt;很快啊，这两年。一瞬间就过完了。曾经偶像般存在的老大，现在依旧偶像般的存在。多了更多女神的感觉。和老大在一起大学生活的两年，至此，也算基本上画上了句号。&lt;/p&gt;
-
-&lt;p&gt;也许过了一段时间之后，老大会发来消息，问问我们最近怎么样。我们也会反过去问问老大怎么样。希望我们都可以很好。&lt;/p&gt;
-
-&lt;p&gt;上海，请你照顾好我们最爱最爱的老大。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/to-my-dear/to-my-dear-1.JPG&quot; alt=&quot;班级合影&quot; /&gt;
-班级合影&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/to-my-dear/to-my-dear-2.JPG&quot; alt=&quot;我和老大&quot; /&gt;
-我和老大&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Jun 2015 06:35:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2015/06/30/to-my-dear.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2015/06/30/to-my-dear.html</guid>
         
         
         <category>life</category>
