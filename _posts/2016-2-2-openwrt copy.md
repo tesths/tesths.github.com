@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  test
-date:   2016-02-03 10:00
-categories: free
+title:  我的chrome插件
+date:   2016-01-21 11:02
+categories: linux
 ---
 
 起因
