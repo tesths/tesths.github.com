@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  OpenWrt小记
-date:   2016-01-21 11:02
-categories: linux
+title:  test
+date:   2016-02-03 12:20
+categories: free
 ---
 
 起因
