@@ -11,7 +11,7 @@ categories: mac
 
 下面开始正文。
 
-##1. homebrew不能使用##
+## 1. homebrew不能使用
 
 homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用`sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer`但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是`Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool`
 
@@ -22,13 +22,13 @@ homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是�
 
 很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。
 
-##2. Xtrafinder不能使用##
+## 2. Xtrafinder不能使用
 
 Xtrafinder更新完之后会提醒你怎么做，这就是苹果的rootless机制导致的，开开就OK了。
 
 我想说的就是Xtrafinder会挡住finder一部分，前天好像已经出了更新，但是源没有换，所以还是0.25.6版本。V2ex上有人问了，大家都一样，不是电脑的问题所以不要着急。
 
-##3. gem更新##
+## 3. gem更新
 
 gem安装的东西，反正我的是都没了...因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
 所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。
@@ -39,7 +39,7 @@ gem安装的东西，反正我的是都没了...因为苹果把/usr (except /usr
 
 增加`gem: -n/usr/local/bin`这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。
 
-##4.Xcode的Alcatraz不在window下显示##
+## 4.Xcode的Alcatraz不在window下显示
 
 也就自己的Mac作大死解决这个问题。
 
@@ -71,7 +71,7 @@ gem安装的东西，反正我的是都没了...因为苹果把/usr (except /usr
 
 >有些事情，唉，就这了，没戏的事情总在想也没啥意义..还是忙一忙充实充实就不想了。
 
-##参考链接##
+## 参考链接
 
 1.[关于 OSX 升级到 EI Captain 的解决方案](http://guojianxiang.com/posts/2015-10-06-Update_OSX_EI_Captain_Problems.html)
 
