@@ -6,14 +6,227 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-    <pubDate>Mon, 18 Jan 2016 22:07:51 +0800</pubDate>
-    <lastBuildDate>Mon, 18 Jan 2016 22:07:51 +0800</lastBuildDate>
-=======
-    <pubDate>Sat, 09 Jan 2016 12:46:07 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 12:46:07 +0800</lastBuildDate>
->>>>>>> ad099f2543d20ea7b80d17042c879d8ecf57fd7f
+    <pubDate>Wed, 03 Feb 2016 14:14:06 +0800</pubDate>
+    <lastBuildDate>Wed, 03 Feb 2016 14:14:06 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>我的chrome插件</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;起因&lt;/h2&gt;
+
+&lt;p&gt;今天给瑞琪姐姐配完surge，突然想到瑞琪姐姐也有pad，pad加pocket简直神器，于是就给瑞琪姐姐安利了pocket，后来发现姐姐不会用..然后就想到我可以把我用到的chrome插件写一写。&lt;/p&gt;
+
+&lt;p&gt;正好最近也没写博客了，就当滥竽充数完成当初计划的每周一更的计划吧…&lt;/p&gt;
+
+&lt;p&gt;我只写我常用的，我不常用的就略过了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
+&lt;p&gt;以下推荐等级，5是满分！&lt;/p&gt;
+
+&lt;p&gt;先附张图。这是我的插件栏，但是好多插件可以直接运行，比如划词翻译，我就让插接件栏不显示他们了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-1.png&quot; alt=&quot;chrome-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第一个是SwitchySharp，第二个是开发者头条的分享插件，第三个是postman，第四个是pocket，第五个onetab，第六个feedly，第七个1password。第八个是postman的抓包插件。&lt;/p&gt;
+
+&lt;p&gt;具体见下文。所有插件名都可以点！所有插件名都可以点！所有插件名都可以点！&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;我最常用的&lt;/h2&gt;
+
+&lt;h3 id=&quot;password-extensionhttpschromegooglecomwebstoredetail1password-password-manageaomjjhallfgjeglblehebfpbcfeobpgkutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/1password-password-manage/aomjjhallfgjeglblehebfpbcfeobpgk?utm_source=chrome-ntp-icon&quot;&gt;1Password extension&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-2.png&quot; alt=&quot;chrome-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;大名鼎鼎的密码管理软件推出的chrome插件，储存之后基本上就不用每次输密码了，点击1Password的插件就可以自动帮你输入账号密码了。对于我这种各大网站论坛都有账号的人来说简直是福利。&lt;/p&gt;
+
+&lt;p&gt;1password在appstore是收费的，不过最近在打半价。前几天就入了一个。&lt;/p&gt;
+
+&lt;h3 id=&quot;lastpass-free-password-managerhttpschromegooglecomwebstoredetaillastpass-free-password-mahdokiejnpimakedhajhdlcegeplioahdutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?utm_source=chrome-ntp-icon&quot;&gt;LastPass: Free Password Manager&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-3.png&quot; alt=&quot;chrome-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个是之前用的密码管理插件，这个是免费的，只有跨平台的时候需要收费。当然如果只是基于浏览器的话，这个非常方便。它不像1Password需要点击才能自动填写你的用户名和密码，这个是自动检测的，用一次就明白了，非常非常推荐。&lt;/p&gt;
+
+&lt;p&gt;我之所以换1Password是因为1Password降价了…而且想在手机上也用，不然LastPass依然是我的首选。省去了我记密码的事情，再也不用每次用个文档记录还得查。&lt;/p&gt;
+
+&lt;h3 id=&quot;avatars-for-githubhttpschromegooglecomwebstoredetailavatars-for-githubpgjmdbklnfklcjfbonjfkdhaonlfogbbutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/avatars-for-github/pgjmdbklnfklcjfbonjfkdhaonlfogbb?utm_source=chrome-ntp-icon&quot;&gt;Avatars for Github&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-4.png&quot; alt=&quot;chrome-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个插件是之前stormzhang在微信公众号AndroidDeveloper上推荐的插件。原文&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;amp;mid=402064553&amp;amp;idx=1&amp;amp;sn=4bc95ed03916f87cc8dfd17baed54f24&quot;&gt;吐血推荐珍藏的Chrome插件&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作为程序员，Github基本上快要成为我每天必须要逛的网站了。Github你follow的人动态会显示在首页，但是只显示人名，大部分时间里你不知道大部分的人名对应哪个人。有了这个插件，它会显示头像，这样看上去就知道，啊，原来是这个大神有star了某个牛逼的项目。非常之方便。&lt;/p&gt;
+
+&lt;p&gt;同时在之前的那篇文章里还推荐了Octotree，可以显示Github中代码的目录，我就不做详细介绍了。&lt;/p&gt;
+
+&lt;h3 id=&quot;feedly-minihttpschromegooglecomwebstoredetailfeedly-minindhinffkekpekljifjkkkkkhopnjodjautmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/feedly-mini/ndhinffkekpekljifjkkkkkhopnjodja?utm_source=chrome-ntp-icon&quot;&gt;feedly Mini&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-5.png&quot; alt=&quot;chrome-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个简直是我用的最频繁的插件之一了..作为feedly的重度使用用户，我必须要安利一下这个插件。&lt;/p&gt;
+
+&lt;p&gt;博客基本上都支持rss订阅，这样博客有新文章我这边就能看到了。&lt;/p&gt;
+
+&lt;p&gt;这个插件一是可以在可以订阅rss的网页右下角显示一个feedly的图标，可以直接订阅这个博客到你的feedly列表。&lt;/p&gt;
+
+&lt;p&gt;而且可以在chrome插件栏快速打开你的feedly web端，现在每天开chrome第一件事情，先是开feedly看看有没有博客更新。&lt;/p&gt;
+
+&lt;h3 id=&quot;github-menu-backhttpschromegooglecomwebstoredetailgithub-menu-backmcobennfgmfddjmiikfamhhhiibcjbikutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/github-menu-back/mcobennfgmfddjmiikfamhhhiibcjbik?utm_source=chrome-ntp-icon&quot;&gt;Github Menu Back&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-6.png&quot; alt=&quot;chrome-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之前Github的首页改版了…&lt;/p&gt;
+
+&lt;p&gt;搜索栏旁边的Explore没了，没了！！！而且你的头像在最右边，还特别小！！！&lt;/p&gt;
+
+&lt;p&gt;后来那天刚改版，就有人觉得不习惯，于是开发了一个这个插件，简单的说，你的Github最上面恢复到之前的样子了。&lt;/p&gt;
+
+&lt;p&gt;有Explore，还有大大的头像，大爱。还是喜欢老版本的。&lt;/p&gt;
+
+&lt;h3 id=&quot;onetabhttpschromegooglecomwebstoredetailonetabchphlpgkkbolifaimnlloiipkdnihallutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?utm_source=chrome-ntp-icon&quot;&gt;OneTab&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-7.png&quot; alt=&quot;chrome-7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;熊大大给我推荐的插件，已经成为我chrome插件的常驻了。&lt;/p&gt;
+
+&lt;p&gt;怎么用呢。&lt;/p&gt;
+
+&lt;p&gt;我们都有这样的场景，打开了一堆网页，每个都觉得好，但是很晚了要回去来不及看怎么办。&lt;/p&gt;
+
+&lt;p&gt;OneTab一下~它会把你现在打开的所有tab变成一个网页，里面有你打开的所有网页的url。这时候你关机回家。&lt;/p&gt;
+
+&lt;p&gt;第二天来了，只要restore一下，这些网页又全部打开了~这还不是重点。之前我在配路由器的时候有很多网站都很好，舍不得关闭，又懒得收藏，还想发给班长。直接onetab一下，它自带了share的功能，这时候把它share生成的那个url发给班长，班长就能看到我找到的这些网站了。&lt;/p&gt;
+
+&lt;p&gt;不能更赞！&lt;/p&gt;
+
+&lt;h3 id=&quot;save-to-pockethttpschromegooglecomwebstoredetailsave-to-pocketniloccemoadcdkdjlinkgdfekeahmfljutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?utm_source=chrome-ntp-icon&quot;&gt;Save to Pocket&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-8.png&quot; alt=&quot;chrome-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;两个满分推荐之一。&lt;/p&gt;
+
+&lt;p&gt;pocket简直就是一个神一样存在的插件。&lt;/p&gt;
+
+&lt;p&gt;pocket是一个完整的一套。安卓到iOS，平板到手机。&lt;/p&gt;
+
+&lt;p&gt;不仅满分推荐，而且我各种安利别人…&lt;/p&gt;
+
+&lt;p&gt;干啥的呢，你安装之后，如果你上网看到好的文章，你就可以点这个插件，iphone和安卓都可以发送到pocket。然后你的pocket就会把整个网页重新排版，然后还可以缓存到你的平板或者手机上，这时候你想啥时候看就可以啥时候看了。&lt;/p&gt;
+
+&lt;p&gt;上厕所，坐车，都可以看，我经常性看到好的博客，就直接pocket一下，然后缓存好，没事的时候直接在平板就直接看了。简直不能更赞。&lt;/p&gt;
+
+&lt;h3 id=&quot;postman-httpswwwgetpostmancomapps&quot;&gt;&lt;a href=&quot;https://www.getpostman.com/apps&quot;&gt;Postman 系列&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-9.png&quot; alt=&quot;chrome-9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Postman是测试接口的软件，这是开发必备，可以看返回的json数据，可以模拟各种请求。&lt;/p&gt;
+
+&lt;p&gt;Postman最近还推出了抓包的插件Postman Interceptor，非常赞！也是我日常必备插件。&lt;/p&gt;
+
+&lt;p&gt;这个不用多介绍，下载点开就明白咋用了。用了就知道好用。&lt;/p&gt;
+
+&lt;h3 id=&quot;proxy-switchysharphttpschromegooglecomwebstoredetailproxy-switchysharpdpplabbmogkhghncfbfdeeokoefdjegmutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-ntp-icon&quot;&gt;Proxy SwitchySharp&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-10.png&quot; alt=&quot;chrome-10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第二个满分推荐。&lt;/p&gt;
+
+&lt;p&gt;作为ss的重度使用用户，用这个设置代理翻墙，还是很方便的。关于翻墙的东西，不多说，大家明白就好。&lt;/p&gt;
+
+&lt;p&gt;这个可以不再chrome store下载哦~&lt;/p&gt;
+
+&lt;h3 id=&quot;httpschromegooglecomwebstoredetaile5bc80e58f91e88085e5a4b4e69da1e58886e4baabe68f92e4bbb6kdchifnbpeflbphakmpbcfdjeidkfeoputmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%B4%E6%9D%A1%E5%88%86%E4%BA%AB%E6%8F%92%E4%BB%B6/kdchifnbpeflbphakmpbcfdjeidkfeop?utm_source=chrome-ntp-icon&quot;&gt;开发者头条分享插件&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-11.png&quot; alt=&quot;chrome-11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;开发者头条也是每天毕逛的网站，各种开发咨询。一般看到好的都会顺便分享到开发者头条。当然不做开发一般就用不到了。&lt;/p&gt;
+
+&lt;h3 id=&quot;httpschromegooglecomwebstoredetaile58892e8af8de7bfbbe8af91ikhdkkncnoglghljlkmcimlnlhkeamadutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/ikhdkkncnoglghljlkmcimlnlhkeamad?utm_source=chrome-ntp-icon&quot;&gt;划词翻译&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-12.png&quot; alt=&quot;chrome-12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选中一个词会出现一个 译 字，点击就可以翻译。对于英文不好的人，这个是神器。还可以设置很多东西，总之，很方便。雷神也在用。&lt;/p&gt;
+
+&lt;h3 id=&quot;capture-webpage-screenshot-entirely-fireshothttpschromegooglecomwebstoredetailcapture-webpage-screenshomcbpblocgmgfnpjjppndjkmgjaogfcegutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/capture-webpage-screensho/mcbpblocgmgfnpjjppndjkmgjaogfceg?utm_source=chrome-ntp-icon&quot;&gt;Capture Webpage Screenshot Entirely. FireShot&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：3.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/chrome/chrome-13.png&quot; alt=&quot;chrome-13&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个插件也是我用的比较多的，这个插件可以将你的网页保存成一个image，或者pdf，最主要的时可以把整个网页截图。&lt;/p&gt;
+
+&lt;p&gt;我经常看到某个需要经常保存的网页了或者是输入了一串东西想保存整个网页我都用这个。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;其他推荐&lt;/h3&gt;
+
+&lt;p&gt;这里就不配图了~&lt;/p&gt;
+
+&lt;h3 id=&quot;chrono-download-managerhttpschromegooglecomwebstoredetailchrono-download-managermciiogijehkdemklbdcbfkefimifhecnutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn?utm_source=chrome-ntp-icon&quot;&gt;Chrono Download Manager&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这个是一个对chrome本身下载进行扩展的插件，可以看进度，整个把chrome原生的下载界面变成和迅雷差不多的。&lt;/p&gt;
+
+&lt;p&gt;之前是看班长在用，觉得啊，好高大上，后来觉得仿佛也用不到那么多功能。就没怎么用了。chrome的下载速度，永远是我的痛。&lt;/p&gt;
+
+&lt;h3 id=&quot;colorzillahttpschromegooglecomwebstoredetailcolorzillabhlhnicpbhignbdhedgjhgdocnmhomnputmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?utm_source=chrome-ntp-icon&quot;&gt;ColorZilla&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：3.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;chrome下的取色软件。其实很好，可以取网页中各个元素的颜色。优点很明显，但是只能取网页，我在开发app的时候大部分都是取图片的颜色。&lt;/p&gt;
+
+&lt;p&gt;而且mac下有一个很成熟的取色软件，什么都能取，叫sip，我现在已经全线转sip了。&lt;/p&gt;
+
+&lt;h3 id=&quot;editthiscookiehttpschromegooglecomwebstoredetaileditthiscookiefngmhnnpilhplaeedifhccceomclgfbgutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?utm_source=chrome-ntp-icon&quot;&gt;EditThisCookie&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：3.5&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;看名字就知道，这个是可以改网页cookie的，之前在做chrome模拟微信登陆的时候用到过，但是后来也没怎么用了，毕竟不做这方面确实没办法。&lt;/p&gt;
+
+&lt;h3 id=&quot;ghosteryhttpschromegooglecomwebstoredetailghosterymlomiejdfkolichcflejclcbmpeaniijutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?utm_source=chrome-ntp-icon&quot;&gt;Ghostery&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这个是可以查看有多少网站的js对你进行了跟踪和识别等等，我一直开着，不过最近已经没怎么用了。&lt;/p&gt;
+
+&lt;p&gt;如果你想知道谁跟踪了你，这个插件绝对是非常nice的。&lt;/p&gt;
+
+&lt;h3 id=&quot;search-by-imagehttpschromegooglecomwebstoredetailsearch-by-image-by-googledajedkncpodkggklbegccjpmnglmnflmutmsourcechrome-ntp-icon&quot;&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm?utm_source=chrome-ntp-icon&quot;&gt;Search by Image&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐等级：4&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;可以搜索图片，邮件图片就会有search google with this image了。google官方推出。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 03 Feb 2016 12:20:00 +0800</pubDate>
+        <link>http://walkginkgo.com/life/2016/02/03/chrome.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2016/02/03/chrome.html</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>念书真的很幸福</title>
@@ -1031,306 +1244,5 @@ socks5  127.0.0.1 1080&lt;/code&gt;
         
       </item>
     
-      <item>
-        <title>ReactiveCocoa在UIView上的运用</title>
-        <description>&lt;h2 id=&quot;for-cm-and-plusub&quot;&gt;FOR CM AND PLUSUB&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最近项目非常繁忙…上星期本来想把和block内存管理有关的东西看一下再写一个有关block的博客的后来有关block内存管理的博客都找好了没时间实战也就没出。
-写了有两周的项目，因为很多原因所以这近两周一直在写界面，但是在写界面的时候用到了ReactiveCocoa的东西，也是因为实践了所以写篇博客分享出来。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ReactiveCocoa（下文统称为RAC）&lt;/code&gt;，具体我就不介绍了，可以去我的博客里那篇还没填完坑的  &lt;a href=&quot;http://walkginkgo.com/ios/2015/05/03/ios-mvvm-1.html&quot;&gt;mvvm开发模式&lt;/a&gt;  文章看一下。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;个人以为，RAC可以以信号的方式来触发各种动作，从而让代码更加精炼。&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;下面上代码吧。&lt;/h2&gt;
-
-&lt;h2 id=&quot;uibutton&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UIButton上的使用&lt;/code&gt;&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                            &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;在这里，对uibutton添加了一个rac_signalForControlEvents的方式，就不用利用addtarget的方式来再写一个方法来进行对uibutton添加点击事件了。&lt;/p&gt;
-
-&lt;h2 id=&quot;uialertview&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UIAlertView的使用&lt;/code&gt;&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIAlertView&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;选择图片上传&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;delegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cancelButtonTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;取消&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;otherButtonTitles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;拍照上传&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;从相册选择&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    
-&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chooseAlert&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_buttonClickedSignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;chooseFromCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;indexNumber&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;intValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;chooseFromAlbum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;这两个是&lt;a href=&quot;http://limboy.me/&quot;&gt;limeboy&lt;/a&gt;在博客里提到的。因为有了RAC，所以我这次放弃使用blockskit和alertview的Categories。&lt;/p&gt;
-
-&lt;p&gt;下面两个是我利用RAC的方式写的代码。&lt;/p&gt;
-
-&lt;h2 id=&quot;uitextfield&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在UITextfield的使用&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;第一个是我封装了一个安卓风格的输入框，就是下面一条线，当选择这个框的时候，线会加粗变黑。
-我把中间的两句核心代码贴出来。self是因为我继承了一个textfield先进行功能添加和封装。所以self就是代指一个textfield了。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidBegin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
-                    &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blackColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventEditingDidEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
-                    &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomBorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;grayColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CGColor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;其实这两句是可以用addtarget的方式来添加的，但是我选择了用RAC的方式，更为简单也更为容易理解。当textfield被选中的时候，下面的borderline会变成黑色，当结束选择的时候，变成灰色。(其实当选择的时候borderline应该还要加粗)。&lt;/p&gt;
-
-&lt;h2 id=&quot;uipagecontrol&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;监控UIPagecontrol改变&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;还有一个地方我利用到了RAC。因为我现在需要实现一个功能，图片轮播的时候，当图片切换，我需要相应的刷新下面的一个列表。因为我们的图片轮播是用到的一个开源控件，我实在是能力有限不知道怎么进一步修改这个控件来进一步封装从而实现新的功能，我就利用了RAC。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACObserve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refreshSlideContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imagePlayer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pageControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;上面的代码将pageControl和它的currentPage属性相绑定，当currentPage改变的时候就会触发下面的函数。然后我传了一个currentPage的参数进去，从而下面的列表可以进一步更新。但是开始加载的时候会调用3次…我不知道我哪个地方写坑了我还在寻找。各位见谅…&lt;/p&gt;
-
-&lt;p&gt;上面的几个代码片段就是我这两周在写纯界面的时候用到的一些和RAC有关的东西，因为本身就是写纯界面，所以没用到很多，也很简单，没有其他的功能。刚刚在查limeboy博客的时候看到NotificationCenter也可以利用RAC的方式写，我抽时间也会尝试，因为项目里没用到，所以就不贴代码了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;BTW：最近有一大波考试，博客更新程度会大大降低…后面可能会一直做项目，等积累一部分才会继续写了。多谢各位的支持。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;参考资料：&lt;/h2&gt;
-&lt;p&gt;Limboy &lt;a href=&quot;http://limboy.me/ios/2013/12/27/reactivecocoa-2.html&quot;&gt;说说ReactiveCocoa 2&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 13 Jun 2015 01:02:33 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2015/06/13/rac_uiview.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/06/13/rac_uiview.html</guid>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-<<<<<<< HEAD
-      <item>
-        <title>Block 我所理解的回调</title>
-        <description>&lt;h2 id=&quot;for-cm-and-plusub&quot;&gt;FOR CM AND PLUSUB&lt;/h2&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;废话&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;开发iOS距离一年还有四个月。block的文章看了很多。也在项目中使用了，但是使用率很低，仅限于最最简单的界面传值。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我最近处于一个深度学习和补作业做实验的阶段(重点是补作业和做实验)，而且经历了两个项目现在对于OC的理解又更进了一步。于是抽时间把之前下载的关于block的视频又翻出来看了一下。有一些感受写出来，以便CM和PLUSUB以后的iOSer可以很快的学习到关于block的使用。以后这样的文章都会在标题加一个FOR CM AND PLUSUB。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;概述&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;block就是闭包，可以用来回调。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;再简单一点，指向函数的指针。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我现在只会简单的使用block，下午写了个demo利用block封装了afnetworking然后在另一个界面调用afnetworking的请求。当然不复杂。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;上代码吧，不然再废话都解释不清楚什么是block。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;part1-block&quot;&gt;&lt;em&gt;part1 block的简单定义&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;我现在定义一个简单的block。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;---%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;11111&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:---&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个参数还可以是一个函数。当然如果是int类型的block就需要return一个返回值了。&lt;/p&gt;
-
-&lt;p&gt;然后我们开始对这个void类型的函数进行定义。就是令它等于一个“^+参数”然后里面像定义一个函数一样就行了。
-在调用这个block的时候就直接就myBlock加参数就可以了。&lt;/p&gt;
-
-&lt;p&gt;我们可以打断点来看一下整个block的执行顺序。我在代码后面加了标示。&lt;/p&gt;
-
-&lt;p&gt;执行顺序是1 3 2，可以看到myBlock没有按照程序执行的顺序来调用而是在调用之后执行了2的代码。这个例子可能不那么明显，但是可以开始初步理解回调。&lt;/p&gt;
-
-&lt;h2 id=&quot;part2-block&quot;&gt;&lt;em&gt;part2 传参block&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;下面把难度加大一点，我们把block当参数传。然后看一个block的例子。
-首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;ViewController.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//typedef定义一个block
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;-----%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//1
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mBlock&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock
-//简单的说格式就是 “返回值 + (^) + 参数 + 名字”
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;1111&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//3
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:-----&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1111&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;在上面的代码中，我们写了一个testBlock的函数，将我们的tblock作为参数传到了testBlock函数里面，然后再testBlock里用mBlock调用了我们所写的MyBlock这个函数。&lt;/p&gt;
-
-&lt;p&gt;打断点看一下整体的运行流程，2 3 1。这里可以更加明显理解“回调”的含义。&lt;/p&gt;
-
-&lt;h2 id=&quot;part3-buttonblock&quot;&gt;&lt;em&gt;part3 点击button触发block&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;经历了上面两个part基本上应该对block有个简单的理解。下面再加一点难度，用按钮触发一个回调来改变按钮的颜色。&lt;/p&gt;
-
-&lt;p&gt;不多解释，直接上代码。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;ViewController.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;greenColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testfunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testfunc&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testbtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myblock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBlock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;myBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;part4-afnetwork&quot;&gt;&lt;em&gt;part4 利用回调分离afnetwork的请求&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;直接上代码了。&lt;/p&gt;
-
-&lt;p&gt;TestNetworkViewController是afnetwork使用的地方。
-TestViewController是我们需要调用网络请求的地方。
-SearchModel是一个model，我用来解析数据的。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//  TestNetworkViewController.h
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
-#import &quot;SearchModel.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UIViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//TestNetworkViewController.m
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;TestNetworkViewController.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestNetworkViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getmodel&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperationManager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;http://xxx.xx.xxx.xx:xxxx/app/search_haosou&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;keyword&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;android&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;JSON: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MTLJSONAdapter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;modelOfClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fromJSONDictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseObject&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;getmodel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AFHTTPRequestOperation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Error: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//  TestViewController.h
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
-#import &quot;SearchModel.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UIViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;cp&quot;&gt;#import &quot;TestViewController.h&quot;
-#import &quot;TestNetworkViewController.h&quot;
-#import &quot;SearchModel.h&quot;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestViewController&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Do any additional setup after loading the view.
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIButtonTypeSystem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitleColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGRectMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIColor&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whiteColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getUrl&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestNetworkViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SearchModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;总结&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;首先还是得说一下我这里只是演示了最最简单的block使用，因为作为一个iOS开发者不会block，那么有一大半的代码是看不懂的，在后面理解RAC的时候也会出现很大的问题。所以这里我只是做了简单的说明，至于在block里为什么不能调用self，自从segmentfault上有人问过之后我答错之后现在也算是理解了一部分了，但是牵扯到了内存回收的问题，我还需要一段时间来消化。消化完之后会继续写博客的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;总之，block非常的有用，初期写block非常的难过，但是难过过了也就慢慢会喜欢上block的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;post-credits-scene&quot;&gt;post-credits scene&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;最近实在是忙的不可开交，一星期两场考试四个实验。还欠了人jobdeer.com一篇博客还没写，人送的书都没时间看。抽时间还要补起来。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最近博客的更新频率也是大大降低…唉。都是泪。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;先写到这了。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sat, 30 May 2015 04:02:33 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html</guid>
-        
-        
-        <category>IOS</category>
-        
-      </item>
-    
-=======
->>>>>>> ad099f2543d20ea7b80d17042c879d8ecf57fd7f
   </channel>
 </rss>
