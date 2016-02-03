@@ -15,10 +15,10 @@ categories: git
 ####以下文章都是基于我个人的使用和理解，不喜勿喷。####
 
 
-##开始正文##
+## 开始正文
 ---
 
-> ###Git简介###
+> ### Git简介
 
 这篇文章不介绍github，介绍git命令行，但是有必要对git和github是什么进行一个说明。你可能听说过github，据说github是世界上最大的同性社交网站。当然是开玩笑的。简单的说，github是一个开放源代码保存的地方，github也是合作项目开发的首选地。
 
@@ -28,7 +28,7 @@ categories: git
 
 当然，git本身是开放的，别人可以看到你的源代码，如果是想变成不开放的，那么你就需要像github付费了。你可以去coding看一看，coding提供了免费的git仓库。我们项目的开发都是用的coding。
 
-> ###Git命令行###
+> ### Git命令行
 
 Github官网上提供了[图形界面](http://git-scm.com/downloads/guis)。
 
@@ -39,7 +39,7 @@ Github官网上提供了[图形界面](http://git-scm.com/downloads/guis)。
 
 ---
 
-####首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。####
+#### 首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。
 
 >上传代码到合并代码到拉代码的主要过程是这样的。
 
@@ -63,11 +63,11 @@ Github官网上提供了[图形界面](http://git-scm.com/downloads/guis)。
 
 
 
->###安装git###
+>### 安装git
 
 Ubuntu下安装git的命令行是sudo apt-get install git，不多做解释。
 
->###git clone###
+>### git clone
 
 git clone是将github上的git仓库下载到本地。
 每一个github都要相应的git地址。如图
@@ -81,7 +81,7 @@ git clone是将github上的git仓库下载到本地。
 我寒假clone vundle时用的命令，后面那一串是git clone的位置。
 如果已经cd到你要clone的位置，直接git clone不用后面目录的参数就行了。
 
->###Git帮助###
+>### Git帮助
 
 命令 git help
 
@@ -91,13 +91,13 @@ git clone是将github上的git仓库下载到本地。
  
 可以看到所有的git命令。git help也是可以加参数的。具体查阅帮助或者文档了。
 
->###git上传代码###
+>### git上传代码
 
 ![git-easyuse-5](/images/git-easyuse/git-easyuse-5.png)
  
 就是主要这三条命令。我会详细说明这三条命令行的作用。
 
->###首先第一条，git add。###
+>### 首先第一条，git add。
 
 git add后面可以直接加上目录，或者文件名。“.”在这里的意思就是当前目录下所有文件。
 
@@ -107,7 +107,7 @@ git add后面可以直接加上目录，或者文件名。“.”在这里的意
  
 Git就会把我judi0713.github.com里所有文件全部添加了。
 
->###第二个，commit，提交。###
+>### 第二个，commit，提交
 
 首先说明参数的意思。
 
@@ -152,7 +152,7 @@ Git就会把我judi0713.github.com里所有文件全部添加了。
 
 ![git-easyuse-13](/images/git-easyuse/git-easyuse-13.png)
 
->###第三个git push –u origin master。###
+>### 第三个git push –u origin master
 
 ![git-easyuse-14](/images/git-easyuse/git-easyuse-14.png)
 
@@ -182,7 +182,7 @@ pull的命令就是git pull
 
 下面再介绍一个很有意思的git命令行。
 
->###git status###
+>### git status
 
 查看git现在的状态。
 比我现在已经add过了。我调用git status。

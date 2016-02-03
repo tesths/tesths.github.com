@@ -11,7 +11,7 @@ categories: free
 
 百度了一下。有一篇[MACOS苹果系统下破解无线网WPA,WPA2密码](http://www.yyker.com/20131109457.html])。用到的主要工具是Aircrack。于是就开始倒腾了。
 
-##安装macport##
+## 安装macport
 ---
 
 首先第一步要安装[macport](https://www.macports.org/)。macport据我理解，相当于homebrew，ubuntu下相当于apt-get install。根据官网来说，安装macport最简单的方法就是下载pkg文件直接安装，但是我在下载pkg安装过程中，会出现卡死的问题。google了半天没找到解决方法。于是就下载了源代码安装，这在官网上都有说明。前面什么安装xcode的command line tools那是装机必备我就不多说了。
@@ -29,7 +29,7 @@ categories: free
 
 这样就可以用了，执行`sudo port -v selfupdate`更新。到这步会发现好像仿佛是被墙了。。。
 
-##安装proxychains##
+## 安装proxychains
 ---
 
 然后我又陷入了难题，好不容易手动编译安装成功了。结果更新好像被墙了咋办。查查查，命令行下使用代理的方法。找到一个东西，叫做[proxychains](https://github.com/rofl0r/proxychains-ng)。搜这个用了好久，因为我用的是ss，ss支持的时socks5，而iterm支持http，这就麻烦了。后来在v2ex上发现hzlzh问了这个问题。我就安装这个了。
@@ -47,11 +47,11 @@ proxychain可以让它后面的命令行直接走代理的路线，而不用直�
 
 之后就可以`proxychains4 sudo port -v selfupdate`了。可能有点慢，不过我这次可以正常了。
 
-##安装aircrack-ng##
+## 安装aircrack-ng
 ---
 最后的最后，我们可以用`sudo port install aircrack-ng`就可以安装aircrack了。
 
 好了，剩下的就是按照那个博客说的来破解了...到这的时候我试了一下，但是班长突然打电话然我去取自行车，我就去了~后面的就没有后面了。
 
-##后面的安排##
+## 后面的安排
 最近项目差不多算是完成了，后面的计划可能要调整一下状态，把RAC再看看，想看看动画，然后，继续开发下一个项目了~
