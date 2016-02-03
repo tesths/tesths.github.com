@@ -5,103 +5,212 @@ date:   2016-01-21 11:02
 categories: linux
 ---
 
-###慎哥开博客了，博客做的很好看！欢迎访问~[cbsfly](http://cbsfly.github.io)###
+起因
+---
 
-> 请合理利用互联网，不要对国家安全造成任何威胁！
+今天给瑞琪姐姐配完surge，突然想到瑞琪姐姐也有pad，pad加pocket简直神器，于是就给瑞琪姐姐安利了pocket，后来发现姐姐不会用..然后就想到我可以把我用到的chrome插件写一写。
 
-因为要做比赛所以倒腾了[OpenWrt](https://openwrt.org/)倒腾了不到一天，做个小的记录。
+正好最近也没写博客了，就当滥竽充数完成当初计划的每周一更的计划吧...
 
-前天上网买的路由器昨天就到货了，淘宝，33，硬改了的。16M闪存64内存好像。
+我只写我常用的，我不常用的就略过了。
 
-昨天和店家交流了一下，店家人真的不错。然后我就开始把店家装好的操作系统重装，这次买的路由器是可以刷官方原版的，我就下载了一个最新版的[chaos_calmer](http://downloads.openwrt.org/chaos_calmer/15.05/)。
+正文
+---
+以下推荐等级，5是满分！
 
-什么是OpenWrt，简单的说，就是在你的路由器里面装个Linux操作系统。装上Linux的操作系统，是吧，你们懂得。基本上啥都能干了。
+先附张图。这是我的插件栏，但是好多插件可以直接运行，比如划词翻译，我就让插接件栏不显示他们了。
 
-如果你家用的是极路由或者是小米路由，你要清楚，那都是深度定制的OpenWrt...
+![chrome-1](/images/chrome/chrome-1.png)
 
-我倒腾了如下几个东西。一，中继。二，jump gfw。三，8021x校园网拨号。具体如下。
+第一个是SwitchySharp，第二个是开发者头条的分享插件，第三个是postman，第四个是pocket，第五个onetab，第六个feedly，第七个1password。第八个是postman的抓包插件。
 
-##预备##
-1. 首先你得有个硬件能刷操作系统的路由器。我建议某宝买硬改的，很便宜。
-2. 在ubuntu中，操作系统更新和安装软件用的是apt-get，在OpenWrt里用的是opkg(我觉得是OpenWrt Package的缩写)
-3. 第二步可以联网进行操作，也可以本地安装。当然我一直觉得联网的好，不用编译配置啥的了...
-4. 刚刷完操作系统的时候路由器的无线网默认是关闭的，需要登录打开。
-5. 因为是操作系统，所以我们可以通过ssh root@192.168.1.1来对操作系统进行操作。
-6. 刷完路由器的那个web界面叫luci。下文会用到。
-7. 没找到中文语言包，所以下文全是英文。
+具体见下文。所有插件名都可以点！所有插件名都可以点！所有插件名都可以点！
 
-##中继##
-OpenWrt可以作为无线中继。在此感谢班长和姜导提供该技能包。
+##我最常用的
 
-所谓无线中继，就是你用OpweWrt连接无线网，然后再把这个无线网的信号扩展了。这样就解决了一个路由器信号不够强的问题。其次，前文说道，OpenWrt是个Linux的操作系统，我们安装软件需要让路由器联网。
+###[1Password extension](https://chrome.google.com/webstore/detail/1password-password-manage/aomjjhallfgjeglblehebfpbcfeobpgk?utm_source=chrome-ntp-icon)
 
-让路由器联网有两种方式，一种直接插网线到lan口。事实证明这样我就找不到路由器的ip了...
+**推荐等级：4**
 
-在咨询了班长之后我选择了无线中继的方式。
+![chrome-2](/images/chrome/chrome-2.png)
 
-这有篇[百度文库的教程](http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS)写得很详细了我就不对步骤进行赘述了（百度文库还能有这种好材料...）因为我刷的是最新的cc版本路由器，所以界面不太一样，但是没啥差别。我只强调一个问题。
+大名鼎鼎的密码管理软件推出的chrome插件，储存之后基本上就不用每次输密码了，点击1Password的插件就可以自动帮你输入账号密码了。对于我这种各大网站论坛都有账号的人来说简直是福利。
 
-在第一步里，一定要设置lan口的ip，不能在同一个网段。我设置成192.168.10.1，设置完成之后，OpenWrt路由器会通过上级路由器获得一个ip，通过OpenWrt这个路由连接的设备，ssh的ip地址变成192.168.10.1，web访问也变成192.168.10.1。
+1password在appstore是收费的，不过最近在打半价。前几天就入了一个。
 
-全部设置完就可以通过OpenWrt路由器上网了，此时ssh到OpenWrt，发现已经可以ping了。
+###[LastPass: Free Password Manager](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd?utm_source=chrome-ntp-icon)
 
-##jump gfw##
-前几天发朋友圈问了个敏感问题，没想到那么多人回复...
+**推荐等级：4.5**
 
-我现在是要入党的人，但是我又是程序员，有时候确实不得不那什么。
+![chrome-3](/images/chrome/chrome-3.png)
 
-所以在此也说一下，你们有需求可以私聊我，我很乐意帮忙，具体手机和电脑怎么做我就不写了。路由器也是因为要做比赛才倒腾的。
+这个是之前用的密码管理插件，这个是免费的，只有跨平台的时候需要收费。当然如果只是基于浏览器的话，这个非常方便。它不像1Password需要点击才能自动填写你的用户名和密码，这个是自动检测的，用一次就明白了，非常非常推荐。
 
-我用的是shadowsocks的方式，也可以用vpn，我们工作室的极路由提供了vpn的接口，表示vpn太难搭建。
+我之所以换1Password是因为1Password降价了...而且想在手机上也用，不然LastPass依然是我的首选。省去了我记密码的事情，再也不用每次用个文档记录还得查。
 
-[openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)Github地址。
+###[Avatars for Github](https://chrome.google.com/webstore/detail/avatars-for-github/pgjmdbklnfklcjfbonjfkdhaonlfogbb?utm_source=chrome-ntp-icon)
 
-首先下载预编译的ipk到本地安装。在[shadowsocks-libev](http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.3-33429ad/)找到对应的机型。我的是ar71xx，然后找到那个下载次数最多的shadowsocks-libev-spec版本。这个是针对OpenWrt的优化版本。
+**推荐等级：4**
 
-下载完毕之后，通过scp命令上传到OpenWrt上，先`opkg update`，这一步是更新源，和我们ubuntu的update一样。
+![chrome-4](/images/chrome/chrome-4.png)
 
-接着
+这个插件是之前stormzhang在微信公众号AndroidDeveloper上推荐的插件。原文[吐血推荐珍藏的Chrome插件](https://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&mid=402064553&idx=1&sn=4bc95ed03916f87cc8dfd17baed54f24)
 
-`opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk`
+作为程序员，Github基本上快要成为我每天必须要逛的网站了。Github你follow的人动态会显示在首页，但是只显示人名，大部分时间里你不知道大部分的人名对应哪个人。有了这个插件，它会显示头像，这样看上去就知道，啊，原来是这个大神有star了某个牛逼的项目。非常之方便。
 
-安装，他会自动的把需要的依赖包一并下载了。到这就完成了对ss的安装。
+同时在之前的那篇文章里还推荐了Octotree，可以显示Github中代码的目录，我就不做详细介绍了。
 
-在shadowsocks-libev-spec从v1.5.2开始可以使用luci配置界面。所以我就找了一下luci的package，所有的package都在[packages列表](https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/packages/)。luci-app-shadowsocks-spec_1.3.7-1_all.ipk我的叫这个，我就下载了然后继续scp上传，然后
+###[feedly Mini](https://chrome.google.com/webstore/detail/feedly-mini/ndhinffkekpekljifjkkkkkhopnjodja?utm_source=chrome-ntp-icon)
 
-`opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk`
+**推荐等级：4.5**
 
-之后登陆web界面，这时候就有可视化的配置界面了。
+![chrome-5](/images/chrome/chrome-5.png)
 
-![openwrt](/images/openwrt/openwrt.png)
+这个简直是我用的最频繁的插件之一了..作为feedly的重度使用用户，我必须要安利一下这个插件。
 
-输入你的ss账号密码就可以了。但是需要在最下面添加ignore list，让国内的网站直接连接网络，不然的话像我，就没法看nba直播了，很多视频优酷什么的也不能看了...
+博客基本上都支持rss订阅，这样博客有新文章我这边就能看到了。
 
-这一步其实是关键的，新建一个后缀为list的文件，然后输入这串命令
+这个插件一是可以在可以订阅rss的网页右下角显示一个feedly的图标，可以直接订阅这个博客到你的feedly列表。
 
-`wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > /dev/ignore.list`
+而且可以在chrome插件栏快速打开你的feedly web端，现在每天开chrome第一件事情，先是开feedly看看有没有博客更新。
 
-然后把ignore的路径设置到你配置的那个文件就可以了。
+###[Github Menu Back](https://chrome.google.com/webstore/detail/github-menu-back/mcobennfgmfddjmiikfamhhhiibcjbik?utm_source=chrome-ntp-icon)
 
-这时候在开腾讯nba就能看直播了...我简直，为了看球什么都干得出来。然后再连接路由器就可以Jump gfw了~
+**推荐等级：4**
 
-##8021x校园网拨号##
-不过我们不用更换源，首先我们需要
+![chrome-6](/images/chrome/chrome-6.png)
 
-`opkg remove wpad-mini`
+之前Github的首页改版了...
 
-然后`opkg install wpad`和`opkg install wpa-cli`。
+搜索栏旁边的Explore没了，没了！！！而且你的头像在最右边，还特别小！！！
 
-然后配置8021x的文件就可以上网了。
+后来那天刚改版，就有人觉得不习惯，于是开发了一个这个插件，简单的说，你的Github最上面恢复到之前的样子了。
 
-因为我走了中继，所以这个没有具体实践到拨号，只实践到安装依赖包。
+有Explore，还有大大的头像，大爱。还是喜欢老版本的。
 
-具体参考迪哥的博客[极路由root并8021x校园网拨号经验分享](http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html)
+###[OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?utm_source=chrome-ntp-icon)
 
-##结尾##
-> 请合理利用互联网，不要对国家安全造成任何威胁！
+**推荐等级：4.5**
 
-##参考链接##
-1. [Openwrt无线中继教程](http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS)
-2. [极路由root并8021x校园网拨号经验分享](http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html)
-3. [openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)
-4. [OpenWRT之Shadowsocks更新ignore.list](http://blog.tshine.me/openwrt%E4%B9%8Bshadowsocks%E6%9B%B4%E6%96%B0ignore-list.html)
+![chrome-7](/images/chrome/chrome-7.png)
+
+熊大大给我推荐的插件，已经成为我chrome插件的常驻了。
+
+怎么用呢。
+
+我们都有这样的场景，打开了一堆网页，每个都觉得好，但是很晚了要回去来不及看怎么办。
+
+OneTab一下~它会把你现在打开的所有tab变成一个网页，里面有你打开的所有网页的url。这时候你关机回家。
+
+第二天来了，只要restore一下，这些网页又全部打开了~这还不是重点。之前我在配路由器的时候有很多网站都很好，舍不得关闭，又懒得收藏，还想发给班长。直接onetab一下，它自带了share的功能，这时候把它share生成的那个url发给班长，班长就能看到我找到的这些网站了。
+
+不能更赞！
+
+###[Save to Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?utm_source=chrome-ntp-icon)
+
+**推荐等级：5**
+
+![chrome-8](/images/chrome/chrome-8.png)
+
+两个满分推荐之一。
+
+pocket简直就是一个神一样存在的插件。
+
+pocket是一个完整的一套。安卓到iOS，平板到手机。
+
+不仅满分推荐，而且我各种安利别人...
+
+干啥的呢，你安装之后，如果你上网看到好的文章，你就可以点这个插件，iphone和安卓都可以发送到pocket。然后你的pocket就会把整个网页重新排版，然后还可以缓存到你的平板或者手机上，这时候你想啥时候看就可以啥时候看了。
+
+上厕所，坐车，都可以看，我经常性看到好的博客，就直接pocket一下，然后缓存好，没事的时候直接在平板就直接看了。简直不能更赞。
+
+###[Postman 系列](https://www.getpostman.com/apps)
+
+**推荐等级：4.5**
+
+![chrome-9](/images/chrome/chrome-9.png)
+
+Postman是测试接口的软件，这是开发必备，可以看返回的json数据，可以模拟各种请求。
+
+Postman最近还推出了抓包的插件Postman Interceptor，非常赞！也是我日常必备插件。
+
+这个不用多介绍，下载点开就明白咋用了。用了就知道好用。
+
+###[Proxy SwitchySharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?utm_source=chrome-ntp-icon)
+
+**推荐等级：5**
+
+![chrome-10](/images/chrome/chrome-10.png)
+
+第二个满分推荐。
+
+作为ss的重度使用用户，用这个设置代理翻墙，还是很方便的。关于翻墙的东西，不多说，大家明白就好。
+
+这个可以不再chrome store下载哦~
+
+###[开发者头条分享插件](https://chrome.google.com/webstore/detail/%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%B4%E6%9D%A1%E5%88%86%E4%BA%AB%E6%8F%92%E4%BB%B6/kdchifnbpeflbphakmpbcfdjeidkfeop?utm_source=chrome-ntp-icon)
+
+**推荐等级：4**
+
+![chrome-11](/images/chrome/chrome-11.png)
+
+开发者头条也是每天毕逛的网站，各种开发咨询。一般看到好的都会顺便分享到开发者头条。当然不做开发一般就用不到了。
+
+###[划词翻译](https://chrome.google.com/webstore/detail/%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/ikhdkkncnoglghljlkmcimlnlhkeamad?utm_source=chrome-ntp-icon)
+
+**推荐等级：4.5**
+
+![chrome-12](/images/chrome/chrome-12.png)
+
+选中一个词会出现一个 译 字，点击就可以翻译。对于英文不好的人，这个是神器。还可以设置很多东西，总之，很方便。雷神也在用。
+
+###[Capture Webpage Screenshot Entirely. FireShot](https://chrome.google.com/webstore/detail/capture-webpage-screensho/mcbpblocgmgfnpjjppndjkmgjaogfceg?utm_source=chrome-ntp-icon)
+
+**推荐等级：3.5**
+
+![chrome-13](/images/chrome/chrome-13.png)
+
+这个插件也是我用的比较多的，这个插件可以将你的网页保存成一个image，或者pdf，最主要的时可以把整个网页截图。
+
+我经常看到某个需要经常保存的网页了或者是输入了一串东西想保存整个网页我都用这个。
+
+###其他推荐
+
+这里就不配图了~
+
+###[Chrono Download Manager](https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn?utm_source=chrome-ntp-icon)
+
+**推荐等级：3**
+
+这个是一个对chrome本身下载进行扩展的插件，可以看进度，整个把chrome原生的下载界面变成和迅雷差不多的。
+
+之前是看班长在用，觉得啊，好高大上，后来觉得仿佛也用不到那么多功能。就没怎么用了。chrome的下载速度，永远是我的痛。
+
+###[ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?utm_source=chrome-ntp-icon)
+
+**推荐等级：3.5**
+
+chrome下的取色软件。其实很好，可以取网页中各个元素的颜色。优点很明显，但是只能取网页，我在开发app的时候大部分都是取图片的颜色。
+
+而且mac下有一个很成熟的取色软件，什么都能取，叫sip，我现在已经全线转sip了。
+
+###[EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?utm_source=chrome-ntp-icon)
+
+**推荐等级：3.5**
+
+看名字就知道，这个是可以改网页cookie的，之前在做chrome模拟微信登陆的时候用到过，但是后来也没怎么用了，毕竟不做这方面确实没办法。
+
+###[Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?utm_source=chrome-ntp-icon)
+
+**推荐等级：4**
+
+这个是可以查看有多少网站的js对你进行了跟踪和识别等等，我一直开着，不过最近已经没怎么用了。
+
+如果你想知道谁跟踪了你，这个插件绝对是非常nice的。
+
+
+###[Search by Image](https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm?utm_source=chrome-ntp-icon)
+
+**推荐等级：4**
+
+可以搜索图片，邮件图片就会有search google with this image了。google官方推出。
