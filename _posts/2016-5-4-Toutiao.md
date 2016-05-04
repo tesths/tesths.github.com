@@ -5,13 +5,12 @@ date:   2016-5-4
 categories: iOS
 ---
 
-> ### [Github地址](https://github.com/judi0713/TouTiao)
-> ### [下载地址](https://github.com/judi0713/TouTiao/releases)
+> ### [Github地址](https://github.com/judi0713/TouTiao)  [下载地址](https://github.com/judi0713/TouTiao/releases)
 
 先要感谢
 ---
 
-这不是软文，是真的感谢。
+> 这不是软文，是真的感谢。
 
 开发者头条是我安利过很多人的网站。因为说实话，做的真的很好。如果我觉得不好我就会换个网站开发插件了..在这里很多人会投稿一些些的好的文章。可以看到各个方面的知识。而且大部分的文章质量都很高（我已经从csdn迁移到开发者头条了）。慎哥也因为自己的投稿让自己的博客收获了很多的访问量，这对于开发者坚持写博客是一个很好的鼓励。所以，很感谢这么一个网站让我学到了很多东西。也让我扩充对整个计算机行业方面的认识不仅限于appweb还有后台了。
 
