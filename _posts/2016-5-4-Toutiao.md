@@ -5,7 +5,11 @@ date:   2016-5-4
 categories: iOS
 ---
 
-> ### [Github地址](https://github.com/judi0713/TouTiao)  [下载地址](https://github.com/judi0713/TouTiao/releases)
+> ### [Github地址](https://github.com/judi0713/TouTiao)  下载移步 [release](https://github.com/judi0713/TouTiao/releases)
+
+啊，昨天忘配图了..补个github的图..
+
+![toutiao.png](https://github.com/judi0713/TouTiao/blob/master/toutiao.png)
 
 先要感谢
 ---
