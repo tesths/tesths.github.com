@@ -9,7 +9,7 @@ categories: iOS
 
 啊，昨天忘配图了..补个github的图..
 
-![toutiao.png](https://github.com/judi0713/TouTiao/blob/master/toutiao.png)
+![toutiao.png](http://walkginkgo.com/images/toutiao.png)
 
 先要感谢
 ---
