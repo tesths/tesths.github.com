@@ -33,7 +33,6 @@ categories: iOS
 
 ![github-5](/images/github/github-5.png)
 
-
 一个一个介绍哈。
 
 ### 第一个  Showcases
@@ -64,7 +63,7 @@ Powerful integrations that help you and your team build software better, togethe
 
 为啥跳第三个？因为第三个是重点...重要的放最后。
 
-点Stars就会进入你Star过的项目里啦。具体的查找方法我后面会介绍的。就不截图了。
+点Stars就会进入你Star过的项目里啦。这没啥好介绍的。也就不截图了。
 
 ### 第三个  Trending。
 
@@ -100,7 +99,7 @@ Trending说白了，就是某个时间段里Github上被star数量最多的项�
 
 ![github-12](/images/github/github-12.png)
 
-我写博客的时候语言选择java的时候这样的..这时候就能发现完整的开源项目代码了，第五个！还有一些开源库。这个时候，一般我来说，看到我觉得不错的，果断下载下来阅读一下代码。觉得代码牛逼，立马star..多不带停顿的，有的库，我就直接star了..因为太牛逼看不懂。
+我写博客的时候语言选择java的时候是这样的..这时候就能发现完整的开源项目代码了。还有一些新出的开源库。这个时候，一般我来说，看到我觉得不错的，果断下载下来阅读一下代码。觉得代码牛逼，立马star..都不带停顿的，有的库，我就直接star了..因为太牛逼看不懂。
 
 Trending基本上我隔个几天就会看一次，有的时候闲了，每天都会看，真的一看一上午，因为有时候顺手就下载下来看看里面的代码，看看差距了..
 
@@ -108,7 +107,7 @@ Trending基本上我隔个几天就会看一次，有的时候闲了，每天都
 
 ![github-13](/images/github/github-13.png)
 
-第一个，我都知道谷歌出的flexbox-layout..一般来说月排行都能考前的，那基本上就是非常非常值得开发者去用和学习的库了。
+第一个，我都知道谷歌出的flexbox-layout..你看我一做iOS的都知道，那基本上就是非常非常值得开发者去用和学习的库了。
 
 Trending会了，基本上能发现不少牛逼的开源库和开源的项目。这样就有的学习了。
 
@@ -126,7 +125,7 @@ Trending会了，基本上能发现不少牛逼的开源库和开源的项目。
 
 [awesome](https://github.com/sindresorhus/awesome)。这玩意干啥的？简单的说，就是对某一个方面Github上的资源的汇总大贴！
 
-不想上Trending查，上awesome，帮你解决一切问题。比如[awesome-android](https://github.com/JStumpp/awesome-android)上有网络请求库，json解析库等等一系列功能的汇总，当然了，还有完整项目的汇总，我就不找了..毕竟iOS出生，安卓不熟悉。
+不想上Trending查，那就上awesome，帮你解决一切问题。比如[awesome-android](https://github.com/JStumpp/awesome-android)上有网络请求库，json解析库等等一系列功能的汇总，当然了，还有完整项目的汇总，我就不找了..毕竟iOS出生，安卓不熟悉。
 
 你以为到这大招就放完了吗？怎么可能。
 
@@ -136,7 +135,7 @@ Trending会了，基本上能发现不少牛逼的开源库和开源的项目。
 
 ![github-16](/images/github/github-16.png)
 
-免费的电子书！最重要的是，有中文的，有中文的，有中文的..重要的事情说三遍。虽然我推荐还是看中文，因为某些翻译简直爆炸。[free-programming-books-zh](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md)地址放这了~
+免费的电子书！最重要的是，有中文的，有中文的，有中文的..重要的事情说三遍。虽然我推荐还是看英文，因为某些翻译简直爆炸。[free-programming-books-zh](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md)地址放这了~
 
 你以为到这大招就放完了吗？怎么可能。
 
@@ -168,6 +167,8 @@ Trending会了，基本上能发现不少牛逼的开源库和开源的项目。
 
 什么，我要查找fork过的仓库，很多人会fork一份自己加很多东西，加上 fork:true就可以啦。
 
+什么，你想查找的不是人时代码或者组织或者是人？左上角选择啦。
+
 什么，我怎么知道这么多？看选择语言的下面！
 
 ![github-22](/images/github/github-22.png)
@@ -185,6 +186,9 @@ Trending会了，基本上能发现不少牛逼的开源库和开源的项目。
 不过大部分时间还是可以的。
 
 这样的话，如果我在搜索框输入个star数量，（不能什么都不输入！因为有限制！），就可以看到Github上仓库的star排名了~
+
+![github-25](/images/github/github-25.png)
+
 
 ## Github API
 
