@@ -2,7 +2,7 @@
 layout: post
 title:  从0开始学习 GitHub 系列之「寻找代码」
 date:   2016-5-26
-categories: iOS
+categories: free
 ---
 
 张哥在写Github系列，看到了想帮张哥分担一下。正好工作室的学弟学妹们也需要会这个，就正好写个博客了。
