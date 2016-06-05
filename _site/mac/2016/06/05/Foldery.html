@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>给萌萌哒的子渔酱</title>
-  <meta name="description" content="写点什么吧。不知道为什么一想到老大都会想到萌萌哒的子渔酱。对于老大的称呼总有很多，老大是华哥喊起来的，我们就跟着喊了。子渔是老大的笔名。当然还有喊识颖的，这是迪哥喊的。也有喊颖姐的，这是雨叔。第一次遇见老大当然是报道的时候了，白色的衣服，扎辫子。后来再见就是班里第一次自我介绍的时候，粉色衣服。再后来就慢慢熟起来了...">
+  <title>记一次Mac软件的踩坑过程</title>
+  <meta name="description" content="11个月前，有一款mac软件，叫做Foldery。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/life/2015/06/30/to-my-dear.html">
+  <link rel="canonical" href="http://walkginkgo.com/mac/2016/06/05/Foldery.html">
   <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
   
   
@@ -63,65 +63,29 @@
         <div class="post">
 
   <header class="post-header" align="center" >
-    <h1 class="post-title">给萌萌哒的子渔酱</h1>
-    <p class="post-meta">Jun 30, 2015</p>
+    <h1 class="post-title">记一次Mac软件的踩坑过程</h1>
+    <p class="post-meta">Jun 5, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>写点什么吧。</p>
+    <p>11个月前，有一款mac软件，叫做<a href="https://itunes.apple.com/us/app/foldery/id815333099?mt=12">Foldery</a>。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。</p>
 
-<p>不知道为什么一想到老大都会想到萌萌哒的子渔酱。</p>
+<p>那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了<a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html">Finder Sync extension</a>的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。</p>
 
-<p>对于老大的称呼总有很多，老大是华哥喊起来的，我们就跟着喊了。子渔是老大的笔名。当然还有喊识颖的，这是迪哥喊的。也有喊颖姐的，这是雨叔。</p>
+<p>然后就开始思考<a href="https://www.trankynam.com/xtrafinder/">xtrafinder</a>怎么干的，上星期的时候看到了inject code in finder，有两个github的项目<a href="https://github.com/rentzsch/mach_override">mach_override</a>，<a href="https://github.com/rentzsch/mach_inject">mach_inject</a>，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。</p>
 
-<p>第一次遇见老大当然是报道的时候了，白色的衣服，扎辫子。</p>
+<p>之后想，是不是applescript有接口。结果我把一本<a href="https://www.gitbook.com/book/nayanseth/basics-of-applescript/details">Basics of AppleScript</a>翻完了都想不到原理。</p>
 
-<p>后来再见就是班里第一次自我介绍的时候，粉色衣服。</p>
+<p>最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。</p>
 
-<p>再后来就慢慢熟起来了。</p>
+<p>现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的<a href="http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html">Mac升级10.11 EI Captain 填坑</a>那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了<a href="https://github.com/BettyLab/Foldery">Foldery</a>的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。</p>
 
-<p>大一的时候总有很多时间，没事喊着老大出来一起。班级第一次聚会了，篮球赛了，还有班级聚餐了，还有一帮人在寝室吃东西啃兔头。大二的时候就少了。</p>
-
-<p>还记得大一给老大录的生日视频，那是唯一送老大的东西吧。</p>
-
-<p>对老大的印象就是女神…那不完全，还有女汉子。</p>
-
-<p>前几天骑车去工作室的时候走路上看到老大回寝室。穿着毕业衫斜刘海长发飘飘，哇塞，真的，是女神！</p>
-
-<p>之前看老大打球的时候，那真是一点都不女神了…</p>
-
-<p>一个人同时兼有两种截然相反的属性也是不容易的吧。</p>
-
-<p>老大的感觉，真的是一个很有文化气息的妹子，改变了我对科大女生的看法。</p>
-
-<p>老大会穿着汉服到处逛悠，也会写出看不懂的文字发到空间。</p>
-
-<p>我总会想，老大的境界到底有多高，很高。</p>
-
-<p>你会很愿意和老大交流你遇到的问题，她会给你很好的意见，你也会得到很好的解答。</p>
-
-<p>以前觉得老大很厉害，什么都会，会自己搭一个网站会去绿盟实习。老大现在也很厉害，总能在和老大的交流上学到很多东西。以前总想，我要好好努力要成为像老大那样，什么都会。现在觉得，至少，搭个网站什么的已经不是很难了。但是要想像老大一样有很深的文化的底蕴，很高的境界，还是很难的。像老大那样可以把每件事情考虑的很好，想的很仔细，想的很明白想的很开还是很难的。</p>
-
-<p>至少，这两年和老大学到了很多东西。我曾经想像老大一样当上导生，去带一个班级。看样子是没机会了。这是后话。</p>
-
-<p>晚上聚餐，一群人和老大合了影，依然问了老大很多问题。</p>
-
-<p>很快啊，这两年。一瞬间就过完了。曾经偶像般存在的老大，现在依旧偶像般的存在。多了更多女神的感觉。和老大在一起大学生活的两年，至此，也算基本上画上了句号。</p>
-
-<p>也许过了一段时间之后，老大会发来消息，问问我们最近怎么样。我们也会反过去问问老大怎么样。希望我们都可以很好。</p>
-
-<p>上海，请你照顾好我们最爱最爱的老大。</p>
-
-<p><img src="/images/to-my-dear/to-my-dear-1.JPG" alt="班级合影" /><br />
-班级合影</p>
-
-<p><img src="/images/to-my-dear/to-my-dear-2.JPG" alt="我和老大" /><br />
-我和老大</p>
+<p>就这样，历时快两周，完成了一次伟大的踩坑。</p>
 
   </article>
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/life/2015/06/30/to-my-dear data-title=给萌萌哒的子渔酱 data-url="http://walkginkgo.com/life/2015/06/30/to-my-dear.html"></div>
+	<div class="ds-thread" data-thread-key=/mac/2016/06/05/Foldery data-title=记一次Mac软件的踩坑过程 data-url="http://walkginkgo.com/mac/2016/06/05/Foldery.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

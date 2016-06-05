@@ -67,9 +67,10 @@ a {
   color: #606060;
   text-decoration: none; }
   a:visited {
-    color: #3a3a3a; }
+    color: #606060;
+    text-decoration: underline; }
   a:hover {
-    color: #0084B4;
+    color: #00A3CF;
     text-decoration: underline; }
 
 /**
@@ -295,6 +296,8 @@ pre {
 
 .post-content {
   margin-bottom: 30px; }
+  .post-content a {
+    color: #00A3CF; }
   .post-content h2 {
     font-size: 22px; }
     @media screen and (max-width: 800px) {

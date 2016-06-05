@@ -6,9 +6,34 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 May 2016 15:46:43 +0800</pubDate>
-    <lastBuildDate>Thu, 26 May 2016 15:46:43 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Sun, 05 Jun 2016 11:43:33 +0800</pubDate>
+    <lastBuildDate>Sun, 05 Jun 2016 11:43:33 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>记一次Mac软件的踩坑过程</title>
+        <description>&lt;p&gt;11个月前，有一款mac软件，叫做&lt;a href=&quot;https://itunes.apple.com/us/app/foldery/id815333099?mt=12&quot;&gt;Foldery&lt;/a&gt;。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。&lt;/p&gt;
+
+&lt;p&gt;那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html&quot;&gt;Finder Sync extension&lt;/a&gt;的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。&lt;/p&gt;
+
+&lt;p&gt;然后就开始思考&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot;&gt;xtrafinder&lt;/a&gt;怎么干的，上星期的时候看到了inject code in finder，有两个github的项目&lt;a href=&quot;https://github.com/rentzsch/mach_override&quot;&gt;mach_override&lt;/a&gt;，&lt;a href=&quot;https://github.com/rentzsch/mach_inject&quot;&gt;mach_inject&lt;/a&gt;，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。&lt;/p&gt;
+
+&lt;p&gt;之后想，是不是applescript有接口。结果我把一本&lt;a href=&quot;https://www.gitbook.com/book/nayanseth/basics-of-applescript/details&quot;&gt;Basics of AppleScript&lt;/a&gt;翻完了都想不到原理。&lt;/p&gt;
+
+&lt;p&gt;最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。&lt;/p&gt;
+
+&lt;p&gt;现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的&lt;a href=&quot;http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html&quot;&gt;Mac升级10.11 EI Captain 填坑&lt;/a&gt;那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了&lt;a href=&quot;https://github.com/BettyLab/Foldery&quot;&gt;Foldery&lt;/a&gt;的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。&lt;/p&gt;
+
+&lt;p&gt;就这样，历时快两周，完成了一次伟大的踩坑。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/mac/2016/06/05/Foldery.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/06/05/Foldery.html</guid>
+        
+        
+        <category>Mac</category>
+        
+      </item>
     
       <item>
         <title>从0开始学习 GitHub 系列之「寻找代码」</title>
@@ -217,11 +242,11 @@
 &lt;p&gt;所以，我们都加油吧~&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 May 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/05/26/github-use.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/05/26/github-use.html</guid>
+        <link>http://walkginkgo.com/free/2016/05/26/github-use.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/free/2016/05/26/github-use.html</guid>
         
         
-        <category>iOS</category>
+        <category>free</category>
         
       </item>
     
@@ -315,7 +340,7 @@
       <item>
         <title>Higher-Order Functions</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。
+  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。&lt;br /&gt;
 今天不打算写的，今天实验课太无聊。我决定写一写。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -356,8 +381,8 @@ lucky x = &quot;Sorry, you&#39;re out of luck, pal!&quot;
 &lt;p&gt;在wiki中得介绍是这样的。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：
-接受一个或多个函数作为输入
+  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：&lt;br /&gt;
+接受一个或多个函数作为输入&lt;br /&gt;
 输出一个函数&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -414,8 +439,8 @@ ghci&amp;gt; multTwoWithNine 2 3
 
 &lt;p&gt;也就是说，函数可以将函数作为参数。&lt;/p&gt;
 
- 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a
- 	applyTwice f x = f (f x)
+ 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a&lt;br /&gt;
+ 	applyTwice f x = f (f x)&lt;br /&gt;
 
 &lt;p&gt;这个例子种，f实际上就是一个方法。&lt;/p&gt;
 
@@ -1192,7 +1217,7 @@ let brr = arr.map {
 &lt;p&gt;这样，我们就实现了对点击事件的分离。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;分离跳转&lt;/h2&gt;
-&lt;p&gt;分离跳转，就要用到我开始说的代理了。
+&lt;p&gt;分离跳转，就要用到我开始说的代理了。&lt;br /&gt;
 我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (void)pushViewModel:(id)viewModel;&lt;/code&gt;&lt;/p&gt;
@@ -1218,7 +1243,7 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;第一句话是声明了一个demoImpl，将navigation穿进去。
+&lt;p&gt;第一句话是声明了一个demoImpl，将navigation穿进去。&lt;br /&gt;
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-(instancetype)initWithService:(id&amp;lt;MVVMdemoService&amp;gt;)service&lt;/code&gt;&lt;/p&gt;
@@ -1258,100 +1283,6 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Mac升级10.11 EI Captain 填坑</title>
-        <description>&lt;p&gt;上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。&lt;/p&gt;
-
-&lt;p&gt;其实我是很反对更新的，一更新就得踩坑，但是强迫症患者没法看到有更新不去更。&lt;/p&gt;
-
-&lt;p&gt;下面开始正文。&lt;/p&gt;
-
-&lt;h2 id=&quot;homebrew&quot;&gt;1. homebrew不能使用&lt;/h2&gt;
-
-&lt;p&gt;homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是&lt;code class=&quot;highlighter-rouge&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，有&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcodebuild -license&lt;/code&gt;的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。&lt;/p&gt;
-
-&lt;p&gt;解决方法：首先&lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -p&lt;/code&gt;一般默认是&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;
-但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。&lt;/p&gt;
-
-&lt;p&gt;很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。&lt;/p&gt;
-
-&lt;h2 id=&quot;xtrafinder&quot;&gt;2. Xtrafinder不能使用&lt;/h2&gt;
-
-&lt;p&gt;Xtrafinder更新完之后会提醒你怎么做，这就是苹果的rootless机制导致的，开开就OK了。&lt;/p&gt;
-
-&lt;p&gt;我想说的就是Xtrafinder会挡住finder一部分，前天好像已经出了更新，但是源没有换，所以还是0.25.6版本。V2ex上有人问了，大家都一样，不是电脑的问题所以不要着急。&lt;/p&gt;
-
-&lt;h2 id=&quot;gem&quot;&gt;3. gem更新&lt;/h2&gt;
-
-&lt;p&gt;gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
-所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。&lt;/p&gt;
-
-&lt;p&gt;网上好多方法，说自定义GEM_HOME等等。我觉得都不太好，在stackoverflow上看到一个方法很好，分享一下。&lt;/p&gt;
-
-&lt;p&gt;打开terminal修改~/.gemrc&lt;/p&gt;
-
-&lt;p&gt;增加&lt;code class=&quot;highlighter-rouge&quot;&gt;gem: -n/usr/local/bin&lt;/code&gt;这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。&lt;/p&gt;
-
-&lt;h2 id=&quot;xcodealcatrazwindow&quot;&gt;4.Xcode的Alcatraz不在window下显示&lt;/h2&gt;
-
-&lt;p&gt;也就自己的Mac作大死解决这个问题。&lt;/p&gt;
-
-&lt;p&gt;网上有很多在github提issue，我看了很多，对着做了很多。里面说的都很详细，在此不贴，最后面有链接。&lt;/p&gt;
-
-&lt;p&gt;基本上原因就是，你的Alcatraz没有加入Xcode的UUID。&lt;/p&gt;
-
-&lt;p&gt;这里说明一下，每个Xcode版本的UUID不一样，所以最好的方法是先获取Xcode的UUID。&lt;/p&gt;
-
-&lt;p&gt;命令是&lt;code class=&quot;highlighter-rouge&quot;&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;最后加到一个plist文件然后重启Xcode就可以了，大部分都是这样解决了。&lt;/p&gt;
-
-&lt;p&gt;当然，我用这个方法没有解决。万念俱灰下，重新用了百度..想看看国内人怎么解决的，记不得在cocoachina还是csdn看到一个人说，那些方法我都没有，我把Alcatraz下载下来运行了一下就ok了…&lt;/p&gt;
-
-&lt;p&gt;于是乎，我上github上下载了Alcatraz，运行了一下。。我也ok了。。&lt;/p&gt;
-
-&lt;p&gt;基本上遇到的大坑就这几个，踩完也没啥了。&lt;/p&gt;
-
-&lt;p&gt;但是我app store更新完新版本的Xcode7之后再安装Xcode6，app store就会更新我的Xcode6..而且我的homebrew也是只能识别我的Xcode6了…我一直无法解决。还有我的XQuartz一直显示过期也没法解决。简直，强迫症。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最后唠两句。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最近为啥没更新博客，我会说我同时写了几份代码么…完全没有时间。。
-最近的心凉的很透彻。晚上看着微信洗脸。唉，说好了四星期之后做点其他事情，这都五星期了，还在写代码。在意的东西太多，不放弃一些永远只能这样。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;还有，暂时是决定考研了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;有些事情，唉，就这了，没戏的事情总在想也没啥意义..还是忙一忙充实充实就不想了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;参考链接&lt;/h2&gt;
-
-&lt;p&gt;1.&lt;a href=&quot;http://guojianxiang.com/posts/2015-10-06-Update_OSX_EI_Captain_Problems.html&quot;&gt;关于 OSX 升级到 EI Captain 的解决方案&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2.&lt;a href=&quot;https://github.com/Homebrew/homebrew/issues/44071&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;3.&lt;a href=&quot;http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error-on-osx-mavericks&quot;&gt;xcode-select active developer directory error on OSX Mavericks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;4.&lt;a href=&quot;http://stackoverflow.com/questions/31972968/cant-install-gems-on-macos-x-el-capitan&quot;&gt;Can’t install gems on MacOS X “El Capitan”&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 19 Nov 2015 03:54:59 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</guid>
-        
-        
-        <category>mac</category>
         
       </item>
     
