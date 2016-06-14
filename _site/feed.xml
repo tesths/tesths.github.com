@@ -6,9 +6,152 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 May 2016 15:46:43 +0800</pubDate>
-    <lastBuildDate>Thu, 26 May 2016 15:46:43 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 23:29:28 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 23:29:28 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>我的第一次wwdc小记</title>
+        <description>&lt;p&gt;昨晚上十一点多就开始上床，然后快一点起来看了wwdc大会。&lt;/p&gt;
+
+&lt;p&gt;这是我开发两年以来第一次看wwdc大会，本来不想写的..天天复习考试也不想写。刚刚看到巧大写了一篇微信，我决定也写一篇。&lt;/p&gt;
+
+&lt;p&gt;首先想抱歉一下昨晚上和今天一大早朋友圈的朋友们，被我刷屏了，第一次看未免有点激动。也算是做个记录，后来都删除了只保留了短的。我相信这一定是很多人看到自言自语最长的朋友圈了。&lt;/p&gt;
+
+&lt;p&gt;过去的很长时间里，我彻底的开始对mac和iOS的软件开始了狂热，各种买买买和体验，偶尔还自己想想咋做的。所以这次发布会看到macOS还是很激动的。下面依次来说。&lt;/p&gt;
+
+&lt;h2 id=&quot;watchos&quot;&gt;watchOS&lt;/h2&gt;
+
+&lt;p&gt;说实话，我对watch没啥感觉，因为太小了。不过这次watch推出了几个功能我很期待，一个就是加入了游戏的引擎，一个是可以在watch上手写字。游戏这个东西，其实在watch上还有很大想象力。所以，值得期待。&lt;/p&gt;
+
+&lt;p&gt;其他我觉得watch最让我喜欢的，是和健康一系列相关的东西，比如一个叫做breath的app，感觉很符合我的口味。虽然感觉高仿了pause。&lt;/p&gt;
+
+&lt;h2 id=&quot;macos&quot;&gt;macOS&lt;/h2&gt;
+
+&lt;p&gt;改名了，真改名了。从OS X到macOS，以后stackoverflow怎么搜索..驼峰命名也是服。&lt;/p&gt;
+
+&lt;p&gt;不过说实话，我超级喜欢。超级期待Sierra。&lt;/p&gt;
+
+&lt;p&gt;最新的版本叫Sierra，我想是不是因为集成了siri进去。&lt;/p&gt;
+
+&lt;p&gt;终于可以自动解锁，超爱。&lt;/p&gt;
+
+&lt;p&gt;剪切板和iphone同步，超爱。&lt;/p&gt;
+
+&lt;p&gt;存储优化，刚刚看巧大的文章说是放到icloud，顿时没期待了。。&lt;/p&gt;
+
+&lt;p&gt;apple pay要和支付宝进行狙击战了。&lt;/p&gt;
+
+&lt;p&gt;还有通知中心可以放文件，这个超期待。一直觉得mac的通知中心没有什么用处，超级鸡肋，这下通知中心可以用起来了。&lt;/p&gt;
+
+&lt;p&gt;说实话，siri for mac真的值得期待，就是，我一直觉得对着电脑说话很奇怪..不过siri确实提供了很多东西，值得体验。&lt;/p&gt;
+
+&lt;p&gt;虽然吐槽说，逼死了很多软件，但是说实话，就解锁，剪切板，通知中心，我就非常期待了！！&lt;/p&gt;
+
+&lt;h2 id=&quot;ios&quot;&gt;iOS&lt;/h2&gt;
+
+&lt;p&gt;推了10。&lt;/p&gt;
+
+&lt;p&gt;总结一下，就是iMessage要爆炸。&lt;/p&gt;
+
+&lt;p&gt;整个iOS10最大的亮点就是iMessage。infoq的群里都在说微信和iMessage…说就差个朋友圈了。&lt;/p&gt;
+
+&lt;p&gt;不过说实话，这个可以聊聊。&lt;/p&gt;
+
+&lt;p&gt;苹果想好好搞，你真的搞不过它。iMessage设计的，无比的充满想象力。各种神奇的效果，我简直。服了！！！iMessage值得体验。我觉得微信的聊天比起iMessage弱爆了。&lt;/p&gt;
+
+&lt;p&gt;iMessage把聊天气泡做的让我觉得，充满了感情。就是这么个感觉。&lt;/p&gt;
+
+&lt;p&gt;各种对于图片的效果，包括全屏效果也是，让我觉得更适合去表达感情。就这，就够了，超级nice。&lt;/p&gt;
+
+&lt;p&gt;然后就是通知中心这个，有人说像安卓，这么一听，是有点像…&lt;/p&gt;
+
+&lt;p&gt;apple music和地图说实话，我不是很期待，因为music我觉得还是不好看。地图的话，得体验才能知道，国内高德什么的还是挺不错的。&lt;/p&gt;
+
+&lt;p&gt;苹果特意强调了加密，这点是作为一个大公司来说很重要的。&lt;/p&gt;
+
+&lt;p&gt;最后想说说homekit。看苹果这样，想做一套，智能家居，然后用手机连接一切。小时候看虹猫蓝兔3000问，那时候说智能家居，各种神奇的控制，现在看来，不远了。我很期待那一天。&lt;/p&gt;
+
+&lt;p&gt;对了，siri可以发微信了..我也是，服了。&lt;/p&gt;
+
+&lt;h2 id=&quot;swift&quot;&gt;Swift&lt;/h2&gt;
+
+&lt;p&gt;推出了swift playground..很多人以为是ipad上可以写代码了。&lt;/p&gt;
+
+&lt;p&gt;尼玛，就是一个给娃娃学编程的软件。&lt;/p&gt;
+
+&lt;p&gt;本来想攒钱买ipad的都不想买了。但是可以预见，ipad写代码，这是迟早的事情。&lt;/p&gt;
+
+&lt;p&gt;没说Swift3，我表示很失望。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;小细节&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;库里三上发布会&lt;/h2&gt;
+
+&lt;p&gt;虽然今天输球了。但是库里真的是影响力大，湾区和硅谷也是近。据说勇士已经打入硅谷内部了。&lt;/p&gt;
+
+&lt;p&gt;watchOS，macOS和iOS都出现库里了。&lt;/p&gt;
+
+&lt;p&gt;表示我库很厉害。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;又逼死一波软件&lt;/h2&gt;
+
+&lt;p&gt;MacID，nearlock，clean my mac。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;据说Xcode8很值得期待。图像可以直接预览，支持官方插件。没仔细看。&lt;/p&gt;
+
+&lt;p&gt;内置app可以删除一部分了，这个很好。&lt;/p&gt;
+
+&lt;p&gt;对于开发者，说实话，我现在觉得watchOS和macOS的市场很大。远超于iOS。第一年看wwdc，只聊我看到的，其他也没花时间看，不多说。网上写的好的比我多了去了。&lt;/p&gt;
+
+&lt;p&gt;感觉上没有特别大的api的变化，当然这些新的extension是要去关注的。具体的，巧大的还有cyan大神都写了我也不多说，最后放链接。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;开发两年，第一年看wwdc，很感慨，失望和希望并存。失望更多的是Swift上面。其他没啥。希望，当然是我超爱的macOS啦。&lt;/p&gt;
+
+&lt;p&gt;未来的一年，我的重心可能会偏mac开发上。资金足够，入watch，顺便看看watchOS的游戏。&lt;/p&gt;
+
+&lt;p&gt;最后附上我昨晚上疯狂的朋友圈…这也是我今天这篇博客内容的主要来源。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2204.png&quot; alt=&quot;IMG_2204&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2205.png&quot; alt=&quot;IMG_2205&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2202.png&quot; alt=&quot;IMG_2202&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2203.png&quot; alt=&quot;IMG_2203&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2197.png&quot; alt=&quot;IMG_2197&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;希望明年我还能充满热情的看wwdc~这是我看的第一次，希望有机会可以去现场看~&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;可以参考的链接&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NTIyNTUyMQ==&amp;amp;mid=2709544901&amp;amp;idx=1&amp;amp;sn=4f3299a282bfd822db9bc3a7adcf4a2b&amp;amp;scene=0&quot;&gt;WWDC2016 随想&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/21348691&quot;&gt;iOS 10 给开发者带来了什么&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2016&quot;&gt;WWDC 2016 Videos&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;amp;mid=2650492058&amp;amp;idx=1&amp;amp;sn=6d4a1fffff44f5f7e9689496af9eb374&amp;amp;scene=1&quot;&gt;亲测 iOS 10：有些新功能，苹果居然没有告诉你&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/136657/wwdc-2016-initial-impressions&quot;&gt;WWDC 2016 Initial Impressions&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 04 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/ios/2016/06/04/wwdc.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/04/wwdc.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>从0开始学习 GitHub 系列之「寻找代码」</title>
@@ -217,11 +360,11 @@
 &lt;p&gt;所以，我们都加油吧~&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 May 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/05/26/github-use.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/05/26/github-use.html</guid>
+        <link>http://walkginkgo.com/free/2016/05/26/github-use.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/free/2016/05/26/github-use.html</guid>
         
         
-        <category>iOS</category>
+        <category>free</category>
         
       </item>
     
@@ -1258,100 +1401,6 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Mac升级10.11 EI Captain 填坑</title>
-        <description>&lt;p&gt;上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。&lt;/p&gt;
-
-&lt;p&gt;其实我是很反对更新的，一更新就得踩坑，但是强迫症患者没法看到有更新不去更。&lt;/p&gt;
-
-&lt;p&gt;下面开始正文。&lt;/p&gt;
-
-&lt;h2 id=&quot;homebrew&quot;&gt;1. homebrew不能使用&lt;/h2&gt;
-
-&lt;p&gt;homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是&lt;code class=&quot;highlighter-rouge&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，有&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcodebuild -license&lt;/code&gt;的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。&lt;/p&gt;
-
-&lt;p&gt;解决方法：首先&lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select -p&lt;/code&gt;一般默认是&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;
-但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。&lt;/p&gt;
-
-&lt;p&gt;很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。&lt;/p&gt;
-
-&lt;h2 id=&quot;xtrafinder&quot;&gt;2. Xtrafinder不能使用&lt;/h2&gt;
-
-&lt;p&gt;Xtrafinder更新完之后会提醒你怎么做，这就是苹果的rootless机制导致的，开开就OK了。&lt;/p&gt;
-
-&lt;p&gt;我想说的就是Xtrafinder会挡住finder一部分，前天好像已经出了更新，但是源没有换，所以还是0.25.6版本。V2ex上有人问了，大家都一样，不是电脑的问题所以不要着急。&lt;/p&gt;
-
-&lt;h2 id=&quot;gem&quot;&gt;3. gem更新&lt;/h2&gt;
-
-&lt;p&gt;gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
-所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。&lt;/p&gt;
-
-&lt;p&gt;网上好多方法，说自定义GEM_HOME等等。我觉得都不太好，在stackoverflow上看到一个方法很好，分享一下。&lt;/p&gt;
-
-&lt;p&gt;打开terminal修改~/.gemrc&lt;/p&gt;
-
-&lt;p&gt;增加&lt;code class=&quot;highlighter-rouge&quot;&gt;gem: -n/usr/local/bin&lt;/code&gt;这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。&lt;/p&gt;
-
-&lt;h2 id=&quot;xcodealcatrazwindow&quot;&gt;4.Xcode的Alcatraz不在window下显示&lt;/h2&gt;
-
-&lt;p&gt;也就自己的Mac作大死解决这个问题。&lt;/p&gt;
-
-&lt;p&gt;网上有很多在github提issue，我看了很多，对着做了很多。里面说的都很详细，在此不贴，最后面有链接。&lt;/p&gt;
-
-&lt;p&gt;基本上原因就是，你的Alcatraz没有加入Xcode的UUID。&lt;/p&gt;
-
-&lt;p&gt;这里说明一下，每个Xcode版本的UUID不一样，所以最好的方法是先获取Xcode的UUID。&lt;/p&gt;
-
-&lt;p&gt;命令是&lt;code class=&quot;highlighter-rouge&quot;&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;最后加到一个plist文件然后重启Xcode就可以了，大部分都是这样解决了。&lt;/p&gt;
-
-&lt;p&gt;当然，我用这个方法没有解决。万念俱灰下，重新用了百度..想看看国内人怎么解决的，记不得在cocoachina还是csdn看到一个人说，那些方法我都没有，我把Alcatraz下载下来运行了一下就ok了…&lt;/p&gt;
-
-&lt;p&gt;于是乎，我上github上下载了Alcatraz，运行了一下。。我也ok了。。&lt;/p&gt;
-
-&lt;p&gt;基本上遇到的大坑就这几个，踩完也没啥了。&lt;/p&gt;
-
-&lt;p&gt;但是我app store更新完新版本的Xcode7之后再安装Xcode6，app store就会更新我的Xcode6..而且我的homebrew也是只能识别我的Xcode6了…我一直无法解决。还有我的XQuartz一直显示过期也没法解决。简直，强迫症。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最后唠两句。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;最近为啥没更新博客，我会说我同时写了几份代码么…完全没有时间。。
-最近的心凉的很透彻。晚上看着微信洗脸。唉，说好了四星期之后做点其他事情，这都五星期了，还在写代码。在意的东西太多，不放弃一些永远只能这样。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;还有，暂时是决定考研了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;有些事情，唉，就这了，没戏的事情总在想也没啥意义..还是忙一忙充实充实就不想了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;参考链接&lt;/h2&gt;
-
-&lt;p&gt;1.&lt;a href=&quot;http://guojianxiang.com/posts/2015-10-06-Update_OSX_EI_Captain_Problems.html&quot;&gt;关于 OSX 升级到 EI Captain 的解决方案&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2.&lt;a href=&quot;https://github.com/Homebrew/homebrew/issues/44071&quot;&gt;Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;3.&lt;a href=&quot;http://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error-on-osx-mavericks&quot;&gt;xcode-select active developer directory error on OSX Mavericks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;4.&lt;a href=&quot;http://stackoverflow.com/questions/31972968/cant-install-gems-on-macos-x-el-capitan&quot;&gt;Can’t install gems on MacOS X “El Capitan”&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 19 Nov 2015 03:54:59 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html</guid>
-        
-        
-        <category>mac</category>
         
       </item>
     
