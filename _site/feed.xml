@@ -6,9 +6,34 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Jun 2016 23:29:28 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Jun 2016 23:29:28 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 23:31:01 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 23:31:01 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>记一次Mac软件的踩坑过程</title>
+        <description>&lt;p&gt;11个月前，有一款mac软件，叫做&lt;a href=&quot;https://itunes.apple.com/us/app/foldery/id815333099?mt=12&quot;&gt;Foldery&lt;/a&gt;。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。&lt;/p&gt;
+
+&lt;p&gt;那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html&quot;&gt;Finder Sync extension&lt;/a&gt;的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。&lt;/p&gt;
+
+&lt;p&gt;然后就开始思考&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot;&gt;xtrafinder&lt;/a&gt;怎么干的，上星期的时候看到了inject code in finder，有两个github的项目&lt;a href=&quot;https://github.com/rentzsch/mach_override&quot;&gt;mach_override&lt;/a&gt;，&lt;a href=&quot;https://github.com/rentzsch/mach_inject&quot;&gt;mach_inject&lt;/a&gt;，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。&lt;/p&gt;
+
+&lt;p&gt;之后想，是不是applescript有接口。结果我把一本&lt;a href=&quot;https://www.gitbook.com/book/nayanseth/basics-of-applescript/details&quot;&gt;Basics of AppleScript&lt;/a&gt;翻完了都想不到原理。&lt;/p&gt;
+
+&lt;p&gt;最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。&lt;/p&gt;
+
+&lt;p&gt;现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的&lt;a href=&quot;http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html&quot;&gt;Mac升级10.11 EI Captain 填坑&lt;/a&gt;那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了&lt;a href=&quot;https://github.com/BettyLab/Foldery&quot;&gt;Foldery&lt;/a&gt;的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。&lt;/p&gt;
+
+&lt;p&gt;就这样，历时快两周，完成了一次伟大的踩坑。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/mac/2016/06/05/Foldery.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/06/05/Foldery.html</guid>
+        
+        
+        <category>Mac</category>
+        
+      </item>
     
       <item>
         <title>我的第一次wwdc小记</title>
@@ -1265,142 +1290,6 @@ let brr = arr.map {
         
         
         <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>iOS开发模式MVVM 2分离业务逻辑</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;习惯性的废话&lt;/h2&gt;
-&lt;p&gt;好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。&lt;/p&gt;
-
-&lt;p&gt;我知道很多人想看八卦是吧。。我也想写写我最近在干什么，为什么看上去那么忙，动态也有一段时间没更新。有时间写博客在说吧。&lt;/p&gt;
-
-&lt;p&gt;因为项目基本上结束，所以有时间研究mvvm，当然我还在学swift。学swift的原因是，它开源了。当然后面还安排了看一部分源码。期待后面满满干货的博客吧！&lt;/p&gt;
-
-&lt;p&gt;上次博客说了。我们的ViewModel到底在干啥，两件事情，网络请求，逻辑实现。当然，ViewModel不会那么简单。但是，我们先实现这两个。&lt;/p&gt;
-
-&lt;p&gt;那么来吧。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我想大多初始化定义的代码都能看懂，也没有叙述的必要，我主要把我觉得最主要的几个部分叙述一下。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;protocol&quot;&gt;代理 Protocol&lt;/h2&gt;
-&lt;p&gt;为什么先说代理。这也是之前和慎哥也说过cell里面有点击事件怎么写。（不知道这么写对不对…后面看一部分源码之后会再聊这个话题，先留坑）代理可以干什么，跨Controller传值。跨Controller调方法。&lt;/p&gt;
-
-&lt;p&gt;我们之前写代理，都是在某个Controller里的.h文件最上面创建代理。但实际上，Xcode提供了专门的Protocol文件。之前没有搞明白也是因为我觉得代理必须要再某个文件里声明。&lt;/p&gt;
-
-&lt;p&gt;所以，当我们单独声明了一个Protocol文件的时候，就意味着，这个Protocol可以像一个类一样来声明变量了。&lt;/p&gt;
-
-&lt;h2 id=&quot;raccommand&quot;&gt;RACCommand&lt;/h2&gt;
-&lt;p&gt;这个东西是做啥的。我只能说我解释不好，因为我没有完全理解这个东西。我只能把我理解的说出来。&lt;/p&gt;
-
-&lt;p&gt;我们的按钮都有一个点击事件。当点击的时候出发一个函数。&lt;/p&gt;
-
-&lt;p&gt;但是，当我们用了RACCommand的时候，我们的点击事件就可以这么写了。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pushBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rac_command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithSignalBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;和我之前写过的这种写法又不一样了。这种写法其实是对button addtarget那个方法的一个rac式的封装。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rac_signalForControlEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlEventTouchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                            &lt;span class=&quot;nf&quot;&gt;subscribeNext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestViewController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;navigationController&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pushViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testVC&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;用第一种方法的原因呢，我们可以把点击事件赋值成为一个RACCommand类型的属性。既然可以变成一个属性了，那么就可以重新定义并且赋值。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;分离点击事件&lt;/h2&gt;
-&lt;p&gt;我们新建一个FirstViewModel，在FirstViewModel.h中增加一个&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;excutePush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后我们让刚刚在FirstViewController里定义的那个pushBtn的rac_command，将它赋值为FirstViewModel里的excutePush&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;self.pushBtn.rac_command = self.viewModel.excutePush;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这么一赋值，就达成了一个目的。按钮的事件在viewModel中执行。&lt;/p&gt;
-
-&lt;p&gt;需要注意的是，RACCommand的block返回的时一个signal。所以，在viewModel中，我们要这么写&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;excutePush&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACCommand&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initWithSignalBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;test signal&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RACSignal&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;这样，我们就实现了对点击事件的分离。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;分离跳转&lt;/h2&gt;
-&lt;p&gt;分离跳转，就要用到我开始说的代理了。
-我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (void)pushViewModel:(id)viewModel;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们在NSLog(@”test signal”);下面增加&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[self.service pushViewModel:viewModel];&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们还要实现这个代理。&lt;/p&gt;
-
-&lt;p&gt;在ray中的&lt;a href=&quot;http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1&quot;&gt;教程&lt;/a&gt;和雷大神的&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;MVVMReactiveCocoa&lt;/a&gt;都是新建了一个Impl文件，专门用来跳转，基本思路就是navigation本身就是一个堆栈，其实所有的vc都是在navigation其中的。我们只要控制这个这个最基本的navigation的跳转就可以了。&lt;/p&gt;
-
-&lt;p&gt;我们新建一个MVVMdemoImpl文件，里面有一个初始化的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (instancetype)initWithNavigationController:(UINavigationController *)navigationController&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们把根navigation传进去来进行逻辑跳转。&lt;/p&gt;
-
-&lt;p&gt;我们在初始化的时候加上这两句核心代码。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
-self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第一句话是声明了一个demoImpl，将navigation穿进去。
-第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-(instancetype)initWithService:(id&amp;lt;MVVMdemoService&amp;gt;)service&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;参数是一个代理。我们传的时一个NSObject类型的值。而且在MVVMdemoImpl.m中，也没有对于代理的赋值为自己。&lt;/p&gt;
-
-&lt;p&gt;我是这么理解的，如果有不对，还请谅解。&lt;/p&gt;
-
-&lt;p&gt;当我们加入代理MVVMdemoService在MVVMdemoImpl的时候，因为MVVMdemoImpl是一个nsobject类型，而MVVMdemoService也是一个nsobject类型。所以，此时我们的MVVMdemoImpl具有MVVMdemoService的属性了，我们做的就是，让FirstViewModel里的service的代理即是MVVMdemoImpl。&lt;/p&gt;
-
-&lt;p&gt;简单的说。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;就是MVVMdemoImpl == FirstViewModel.service&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;那么这样的话，我们的service就可以执行MVVMdemoImpl里的pushViewModel方法了。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;小结&lt;/h2&gt;
-&lt;p&gt;其实上面的最后AppDelegate的赋值代理这一块还不是很明白。有时间再说说吧。好久没写博客就想发一篇了。&lt;/p&gt;
-
-&lt;p&gt;以上完整代码在&lt;a href=&quot;https://github.com/judi0713/MVVMdemo&quot;&gt;MVVMdemo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;参考链接&lt;/h2&gt;
-
-&lt;p&gt;1.&lt;a href=&quot;https://github.com/leichunfeng/MVVMReactiveCocoa&quot;&gt;leichunfeng/MVVMReactiveCocoa&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2.&lt;a href=&quot;http://codeblog.shape.dk/blog/2013/12/05/reactivecocoa-essentials-understanding-and-using-raccommand/&quot;&gt;ReactiveCocoa Essentials: Understanding and Using RACCommand&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;3.&lt;a href=&quot;http://stackoverflow.com/questions/19440683/why-does-raccommands-block-return-a-signal&quot;&gt;Why Does RACCommand’s block return a signal?&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;4.&lt;a href=&quot;http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1&quot;&gt;MVVM Tutorial with ReactiveCocoa: Part 1/2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;最后的最后，有些事情，我自己不愿去努力去争取我谁也不怪。有些事情我想的很明白我一点都不想想明白。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 12 Dec 2015 16:01:08 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html</guid>
-        
-        
-        <category>iOS</category>
         
       </item>
     
