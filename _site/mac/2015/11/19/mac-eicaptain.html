@@ -80,7 +80,7 @@
 
 <p>当然，有<code class="highlighter-rouge">sudo xcodebuild -license</code>的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。</p>
 
-<p>解决方法：首先<code class="highlighter-rouge">xcode-select -p</code>一般默认是<code class="highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>
+<p>解决方法：首先<code class="highlighter-rouge">xcode-select -p</code>一般默认是<code class="highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code><br />
 但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。</p>
 
 <p>很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。</p>
@@ -93,7 +93,7 @@
 
 <h2 id="gem">3. gem更新</h2>
 
-<p>gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
+<p>gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。<br />
 所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。</p>
 
 <p>网上好多方法，说自定义GEM_HOME等等。我觉得都不太好，在stackoverflow上看到一个方法很好，分享一下。</p>
@@ -129,7 +129,7 @@
 </blockquote>
 
 <blockquote>
-  <p>最近为啥没更新博客，我会说我同时写了几份代码么…完全没有时间。。
+  <p>最近为啥没更新博客，我会说我同时写了几份代码么…完全没有时间。。<br />
 最近的心凉的很透彻。晚上看着微信洗脸。唉，说好了四星期之后做点其他事情，这都五星期了，还在写代码。在意的东西太多，不放弃一些永远只能这样。</p>
 </blockquote>
 

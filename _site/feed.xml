@@ -6,32 +6,178 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Jun 2016 23:31:01 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Jun 2016 23:31:01 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Thu, 23 Jun 2016 09:49:39 +0800</pubDate>
+    <lastBuildDate>Thu, 23 Jun 2016 09:49:39 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>记一次Mac软件的踩坑过程</title>
-        <description>&lt;p&gt;11个月前，有一款mac软件，叫做&lt;a href=&quot;https://itunes.apple.com/us/app/foldery/id815333099?mt=12&quot;&gt;Foldery&lt;/a&gt;。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。&lt;/p&gt;
+        <title>成都&amp;lt;T&amp;gt;技术沙龙小记</title>
+        <description>&lt;p&gt;耽误了那么久才开始写，因为连续考了三天试..那天晚上和坦坦回学校的时候朋友圈发了好长一截，我怕我忘了..闲话少说，开始记录一下吧~&lt;/p&gt;
 
-&lt;p&gt;那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html&quot;&gt;Finder Sync extension&lt;/a&gt;的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。&lt;/p&gt;
+&lt;p&gt;总体给我的感觉，很赞，真心很赞。这算是我第一次参加技术沙龙，Swift的。&lt;/p&gt;
 
-&lt;p&gt;然后就开始思考&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot;&gt;xtrafinder&lt;/a&gt;怎么干的，上星期的时候看到了inject code in finder，有两个github的项目&lt;a href=&quot;https://github.com/rentzsch/mach_override&quot;&gt;mach_override&lt;/a&gt;，&lt;a href=&quot;https://github.com/rentzsch/mach_inject&quot;&gt;mach_inject&lt;/a&gt;，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。&lt;/p&gt;
+&lt;p&gt;时间是上周日，19号。我和坦坦，下文统一为蛋哥。我和蛋哥约在活动中心见面，然后打uber去了天府软件园。去了之后和蛋哥一起吃了KFC，然后就坐在那等蓉姐和肠叔。其实之前和蛋哥有过交流，后来蓉姐来了。我简直就是作为一个记者一样，对蓉姐进行了一个采访，从蓉姐学iOS到工作，问了个遍，下次可以带着录音笔，出个采访稿也是不错的。&lt;/p&gt;
 
-&lt;p&gt;之后想，是不是applescript有接口。结果我把一本&lt;a href=&quot;https://www.gitbook.com/book/nayanseth/basics-of-applescript/details&quot;&gt;Basics of AppleScript&lt;/a&gt;翻完了都想不到原理。&lt;/p&gt;
+&lt;h2 id=&quot;section&quot;&gt;首见蓉姐&lt;/h2&gt;
 
-&lt;p&gt;最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的&lt;a href=&quot;http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html&quot;&gt;Mac升级10.11 EI Captain 填坑&lt;/a&gt;那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了&lt;a href=&quot;https://github.com/BettyLab/Foldery&quot;&gt;Foldery&lt;/a&gt;的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。&lt;/p&gt;
+&lt;p&gt;蓉姐为啥要单独提出来说？&lt;strong&gt;因为蓉姐是一个做iOS开发的女孩。&lt;/strong&gt;对，女孩..&lt;/p&gt;
 
-&lt;p&gt;就这样，历时快两周，完成了一次伟大的踩坑。&lt;/p&gt;
+&lt;p&gt;蓉姐和我想象的完全不一样，蓉姐作为一个女孩写iOS，我心里是很佩服的。我从来没有看不起女程序员，我是超级佩服。因为工作室很多学妹在学习编程上都存在大小的问题。所以我也问了蓉姐很多问题。蓉姐也超级耐心的和我解答。&lt;/p&gt;
+
+&lt;p&gt;蓉姐大三开始学iOS，现在在做智能玩具。我看了蓉姐的博客，写了一个蓝牙的系列，很nice。我还咨询了蓉姐一下iBeacon的问题，蓉姐说其实原生的api其实足够，但是蓝牙也有很多坑。蓉姐还做过php，大一学了c语言之后就做编程了。&lt;/p&gt;
+
+&lt;p&gt;蓉姐大概还是个摄影爱好者，相机和脚架很齐全，我很佩服。蓉姐说她在深圳的公司的时候压力很大也坚持下来了。总之，和蓉姐简短的聊天，除了佩服就剩佩服了。有那么一点女孩子的感觉，蓉姐的经历可以让我以后和工作室的学妹说，编程，从来不是难事，是努力可以做好的事情。&lt;/p&gt;
+
+&lt;p&gt;我和蛋哥蓉姐回合之后就去了camera360，沙龙在camera360举办，环境超级nice。我很喜欢那里的办公环境，理由很简单，我进去就看到了运动器械…跑步机瑜伽球乒乓球桌投篮机一应俱全。&lt;/p&gt;
+
+&lt;p&gt;之后就一起排了一下座位。等大家到起就开始了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;畅叔开场&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;稍微介绍一下畅叔。畅叔是帮主的大学同学，帮主就是T沙龙的总司令梁杰，梁杰跨界网红。畅叔之所以叫畅叔就是因为畅叔年级轻轻看上去好老…是真的。当然畅叔也是跨界。&lt;/p&gt;
+
+&lt;p&gt;畅叔先是感谢了泊学的赞助~还有camera360的场地提供。&lt;/p&gt;
+
+&lt;p&gt;畅叔先是大概介绍了T沙龙的起因以及T沙龙的形式。T沙龙真的要开遍全国，每个月举办线下的沙龙。最重要的是，非盈利，不收费，非盈利，不收费，非盈利，不收费。重要的事情我要说三遍。(偶尔私心一下..必须宣传)&lt;/p&gt;
+
+&lt;p&gt;T沙龙以及成功的在北京举办了很多次。像巧大啊，还有臧成威啊，还有虾神，还有sunny神都参加过，总之就是，非常成功。&lt;/p&gt;
+
+&lt;p&gt;T沙龙真的是要把热爱Swift的人聚集在一起，分享，交流。&lt;/p&gt;
+
+&lt;p&gt;成都这是第一次，当然组织者就是畅叔，蛋哥，还有蓉姐，我是打杂的。&lt;/p&gt;
+
+&lt;p&gt;之后，大家自我介绍了。其实程序员是个很开朗的职业，很能扯，很多好玩的。所以大家的自我介绍也很开心欢乐，之后就开始分享啦。&lt;/p&gt;
+
+&lt;h2 id=&quot;argo--thoughtwork&quot;&gt;从零开始写一个Argo —— ThoughtWork方志刚&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;必须要先隆重的介绍一下方志刚。&lt;strong&gt;我科大的学长&lt;/strong&gt;，和蛋哥一届的。但是现在一看，蛋哥仿佛被完爆了…&lt;/p&gt;
+
+&lt;p&gt;方志刚分享的是从零开始写一个Argo。Argo是一个解析json的三方库。方志刚采用的方式是..VNC..！！就是远程操控了投影的电脑，然后现场一步一步写来展示整个的过程。&lt;/p&gt;
+
+&lt;p&gt;这种形式我是服了。(十分后悔没有用电脑记录一下…现在写这个实在是费劲，想在技术上记录点东西都没机会..)&lt;/p&gt;
+
+&lt;p&gt;开始的时候实现了一个简单的parser，然后逐步完善功能。&lt;/p&gt;
+
+&lt;p&gt;针对Argo可能存在的一些问题进行了解决。&lt;/p&gt;
+
+&lt;p&gt;开始的时候是利用Swift的函数式特性先写了一个简单的parser。之后在此基础上进行了完善。然后写了一个Functor..到这其实我已经有点晕了。不过后面活过来了。&lt;/p&gt;
+
+&lt;p&gt;但在此基础上调用方法的话还是显得复杂，于是方志刚用了Swift的运算符重载..用这种方法对方法的调用，只需要用重载后的运算符就行了。&lt;/p&gt;
+
+&lt;p&gt;当然，在写的时候可能会出现参数过多的问题，这是camera360的高山问的..之后方志刚推荐了一个很赞的库，&lt;a href=&quot;https://github.com/thoughtbot/Curry&quot;&gt;curry&lt;/a&gt;，对就是库里..在函数式编程中很重要的一个概念，科里化。利用这个可以无论多长的函数都可以。高山说，在RAC中，写了很长的宏，宏……&lt;/p&gt;
+
+&lt;p&gt;之后，就是如果我们在写的时候出现”user.name”这种情况的时候，怎么让我的parse可以解析到后面的name。如果在haskell中，foldl，我没记错是这么个函数。用这个函数可以获得最后的那个字符串。&lt;/p&gt;
+
+&lt;p&gt;方志刚提到，由于在Swift中没有foldl，所以我们先reverse一下，然后在解析就可以了。厉害。我是服了。&lt;/p&gt;
+
+&lt;p&gt;之后的茶歇时间，之所以我后面这块记得那么清楚，是因为我在茶歇时间和他交流了一下..方志刚人很nice啊，我问最后reverse的时候他超级耐心的和我解释了，他一说foldl我就明白大概了..我还问了运算符重载在haskell的地方，他说他不知道，我问他学过haskell没，他来了一句，我都是用到再查…当时就跪了，瞬间智商碾压啊。我TM按顺序看都看不懂啊！！人家就直接stackoverflow查给我看了。他还问我是不是学过，有个free monad的概念很烧脑…我说我没学过..所以我准备后面几天学一下然后下次有机会当面再交流一下monad。&lt;/p&gt;
+
+&lt;p&gt;包括茶歇时间听蛋哥和许国卿和TW的另一外工程师官勤交流了一下函数式在生产环境里的使用，真的是，受益匪浅。&lt;/p&gt;
+
+&lt;h2 id=&quot;rethink-nsnotifucation-in-swift--camera360&quot;&gt;Rethink NSNotifucation in Swift —— Camera360高山&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;高山是camera360的iOS开发工程师。&lt;strong&gt;我科大学长。&lt;/strong&gt;他分享了他在平时开发中对于回调，通知，这些使用的一些心得，同时分享了他们团队利用RAC来代替这些的方法。&lt;/p&gt;
+
+&lt;p&gt;虽然没有方志刚那种现场写代码的感觉，但是还是有很多收获。&lt;/p&gt;
+
+&lt;p&gt;之后高山提出了关于RAC的一些问题我们讨论了一下，觉得还是很有收获的~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;茶歇&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;茶歇之所以单独提出来，是因为我们买了奇葩饮料…陈佳因为来迟到了，喝了崂山🐍水。我喝了，难喝死了。&lt;/p&gt;
+
+&lt;p&gt;茶歇各种闲扯交流，也是受益匪浅。&lt;/p&gt;
+
+&lt;h2 id=&quot;wwdc&quot;&gt;wwdc讨论&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;畅叔和蛋哥在嘉宾分享之后加了一个环节就是wwdc的讨论，因为前几天才开了wwdc..由我开头，我之前写了一片博客，提到了apple逼死了一波软件。之后又提到了ipad上的swift playground..我说我觉得那个好鸡肋，本来准备买ipad的都不打算买了。我刚说完。陈佳拿出iOS10的ipad说没有那么坑。&lt;/p&gt;
+
+&lt;p&gt;然后大家就开始围观playground啊！！我们用quicktime把ipad投影出来，然后方志刚在ipad上写了几段代码。当时那种感觉，就是，我可以考虑买ipad！&lt;/p&gt;
+
+&lt;p&gt;因为当时觉得就是一个给娃娃学编程的软件..现在发现还是有实际用处的，可以写动画，而且苹果把Uikit都给封装进去了。非常的nice。&lt;/p&gt;
+
+&lt;p&gt;如果不是陈佳，我就真觉得苹果坑了。&lt;/p&gt;
+
+&lt;p&gt;之后蛋哥说了他看的session，提到了最新的Session 219 What’s New in UICollectionView in iOS 10。就是苹果官方对collectionview进行了优化。Session 414 Using and Extending the Xcode Source Editor。Xcode提供了更加的强大的编辑功能！蓉姐还提到了Session 406 Optimizing App Startup Time..大家纷纷表示国内厂商都用这个做广告..大家纷纷针对这些都讨论了一下。还是很有收获的。&lt;/p&gt;
+
+&lt;p&gt;之后，都准备合影了..许国卿和陈佳开始玩起了iOS10的iMessage..我勒个去，那个酷炫，我是服了。当时准备录小视频的，没来及。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;感想&amp;amp;心得&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;其实我觉得，现场的边写代码超级过瘾，尤其还是函数式。&lt;/p&gt;
+
+&lt;p&gt;很早之前我就觉得，函数式迟早会火。这种上古的语言，是时候重新回归到大众的眼前了。Swift给了那么一个契机，让程序员们去学习，去了解这么一门博大精深的编程语言。这是Swift的功劳，不得不承认。这次沙龙结束，我也有更加充分的理由去强迫性的去让工作室的娃们学习函数式。&lt;/p&gt;
+
+&lt;p&gt;听完方志刚的分享，我这次下狠心学haskell了，为了下次可以很好的交流一下free monad..不过我估计我一个月学不会。因为太难了。&lt;/p&gt;
+
+&lt;p&gt;这次交流不仅听到了大牛的分享，终于见到蓉姐和畅叔，畅叔没有想象的帅，蓉姐比我想象的要厉害。蛋哥，蛋哥很早之前就认识了。蛋哥的故事，是可以完完整整写一篇博客的。我真的，每次想到蛋哥，除了佩服还是佩服。&lt;/p&gt;
+
+&lt;p&gt;说实话，我觉得这次沙龙比较成功，认识了很多大神啊！而且真的不仅学到了东西，还了解了很多camera360公司写代码的一些方式，还有TW的一些工作方式，真的觉得不错啊。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;最主要的是，科大撑起半边天。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这次去完，真的觉得。这句话要单独提出来说。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Swift改变世界！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Swift值得所有人去学习，这门新兴的语言，必将走上历史的顶峰。此处必须表达一下我对某门语言的态度。后台迟早都是Swift，安卓迟早也是Swift。对我就是想说，那门可以干这两件事情的语言，你迟早gg。&lt;/p&gt;
+
+&lt;p&gt;**我相信，&lt;t&gt;沙龙在成都会越来越好的。**&lt;/t&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;感谢&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;真的，还是感谢。超级感谢，其实第一个感谢的应该是网红梁杰，也就是蛋哥老说的帮主。没有帮主的组织，不可能有&lt;t&gt;沙龙。&lt;/t&gt;&lt;/p&gt;
+
+&lt;p&gt;其次要感谢的，当然是畅叔，蛋哥，蓉姐。没有他们的组织，也就没有成都这次的沙龙。&lt;/p&gt;
+
+&lt;p&gt;当然，要感谢泊学和camera360（按照我博客的访问量，此处赞助商应该加钱）。没有赞助，也没有这次沙龙的资金和场地。&lt;/p&gt;
+
+&lt;p&gt;当然的当然，感谢方志刚和高山的分享，还有大家的很多交流，学到了很多很多东西。&lt;/p&gt;
+
+&lt;p&gt;现在，哦，不，那天晚上，我其实就已经开始调整假期来期待下一次的沙龙了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;附图&lt;/h2&gt;
+
+&lt;p&gt;卧槽是不是忘了和畅叔蛋哥蓉姐合影了..还有蛋哥的自拍技术啊，跪了。真的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/SwiftT/IMG_2295.jpeg&quot; alt=&quot;和方志刚的合影&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;和方志刚的合影&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/SwiftT/IMG_2301.jpeg&quot; alt=&quot;和高山的合影&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;和高山的合影&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/SwiftT/IMG_2309.jpeg&quot; alt=&quot;合影&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;合影&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/SwiftT/IMG_2302.jpeg&quot; alt=&quot;聚餐的火锅&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;聚餐的火锅&lt;/p&gt;
 </description>
-        <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2016/06/05/Foldery.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/06/05/Foldery.html</guid>
+        <pubDate>Thu, 23 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/life/2016/06/23/SwiftT.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2016/06/23/SwiftT.html</guid>
         
         
-        <category>Mac</category>
+        <category>life</category>
         
       </item>
     
@@ -169,12 +315,37 @@
   &lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/136657/wwdc-2016-initial-impressions&quot;&gt;WWDC 2016 Initial Impressions&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-        <pubDate>Sat, 04 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/06/04/wwdc.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/04/wwdc.html</guid>
+        <pubDate>Tue, 14 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/ios/2016/06/14/wwdc.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/14/wwdc.html</guid>
         
         
         <category>iOS</category>
+        
+      </item>
+    
+      <item>
+        <title>记一次Mac软件的踩坑过程</title>
+        <description>&lt;p&gt;11个月前，有一款mac软件，叫做&lt;a href=&quot;https://itunes.apple.com/us/app/foldery/id815333099?mt=12&quot;&gt;Foldery&lt;/a&gt;。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。&lt;/p&gt;
+
+&lt;p&gt;那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html&quot;&gt;Finder Sync extension&lt;/a&gt;的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。&lt;/p&gt;
+
+&lt;p&gt;然后就开始思考&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot;&gt;xtrafinder&lt;/a&gt;怎么干的，上星期的时候看到了inject code in finder，有两个github的项目&lt;a href=&quot;https://github.com/rentzsch/mach_override&quot;&gt;mach_override&lt;/a&gt;，&lt;a href=&quot;https://github.com/rentzsch/mach_inject&quot;&gt;mach_inject&lt;/a&gt;，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。&lt;/p&gt;
+
+&lt;p&gt;之后想，是不是applescript有接口。结果我把一本&lt;a href=&quot;https://www.gitbook.com/book/nayanseth/basics-of-applescript/details&quot;&gt;Basics of AppleScript&lt;/a&gt;翻完了都想不到原理。&lt;/p&gt;
+
+&lt;p&gt;最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。&lt;/p&gt;
+
+&lt;p&gt;现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的&lt;a href=&quot;http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html&quot;&gt;Mac升级10.11 EI Captain 填坑&lt;/a&gt;那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了&lt;a href=&quot;https://github.com/BettyLab/Foldery&quot;&gt;Foldery&lt;/a&gt;的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。&lt;/p&gt;
+
+&lt;p&gt;就这样，历时快两周，完成了一次伟大的踩坑。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/mac/2016/06/05/Foldery.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/06/05/Foldery.html</guid>
+        
+        
+        <category>Mac</category>
         
       </item>
     
@@ -483,7 +654,7 @@
       <item>
         <title>Higher-Order Functions</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。
+  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。&lt;br /&gt;
 今天不打算写的，今天实验课太无聊。我决定写一写。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -524,8 +695,8 @@ lucky x = &quot;Sorry, you&#39;re out of luck, pal!&quot;
 &lt;p&gt;在wiki中得介绍是这样的。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：
-接受一个或多个函数作为输入
+  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：&lt;br /&gt;
+接受一个或多个函数作为输入&lt;br /&gt;
 输出一个函数&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -582,8 +753,8 @@ ghci&amp;gt; multTwoWithNine 2 3
 
 &lt;p&gt;也就是说，函数可以将函数作为参数。&lt;/p&gt;
 
- 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a
- 	applyTwice f x = f (f x)
+ 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a&lt;br /&gt;
+ 	applyTwice f x = f (f x)&lt;br /&gt;
 
 &lt;p&gt;这个例子种，f实际上就是一个方法。&lt;/p&gt;
 
@@ -1168,125 +1339,6 @@ let brr = arr.map {
         <pubDate>Sat, 09 Jan 2016 11:20:00 +0800</pubDate>
         <link>http://walkginkgo.com/life/2016/01/09/study.html</link>
         <guid isPermaLink="true">http://walkginkgo.com/life/2016/01/09/study.html</guid>
-        
-        
-        <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>创业和情怀</title>
-        <description>&lt;p&gt;有一天静姐问我，你说你想创业，是为了什么想去创业。&lt;/p&gt;
-
-&lt;p&gt;为了情怀。（很显然我不是这么回答的，原版回答在最后）&lt;/p&gt;
-
-&lt;p&gt;为什么说为了情怀，因为我觉得我的回答虽然是发自内心的，但是实在是看上去太假。我只能概括为为了情怀。那天和我妈说这个，我妈说，你竟捡大的哈（身为我妈，这么回答我我实在是太伤心了，我妈不应该全世界都不支持我她支持我嘛？？）我就当我妈理解不了，我妈没情怀。&lt;/p&gt;
-
-&lt;p&gt;情怀这个词，大概是从老罗开始要做锤子手机开始风靡互联网。老罗的精神，工匠精神，他们有情怀，更多是对产品有情怀。确实看锤子的手机发布会，会觉得，这个手机，值。迪哥都说，人老罗卖情怀人能卖掉，你能卖掉吗？&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;情怀，什么是情怀？&lt;/h2&gt;
-
-&lt;p&gt;我现在是学生党，喜欢技术，做iOS开发。我们开发会用到很多很牛逼很牛逼的库，简直，每次用我都有感叹一下。你可以看到facebook开源的pop，你可以看到twitter开源的bootstrap。我实在是觉得，太牛逼了。难以言表。&lt;/p&gt;
-
-&lt;p&gt;而且这些库，极度的成熟。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;这和情怀有什么关系？&lt;/h2&gt;
-
-&lt;p&gt;有大了关系了。你见过我们国家大的互联网公司开源像bootstrap那么厉害的库没？我没。可能是我没关注到，但至少github每天的trending我没见着BAT的库。前段时间阿里开源了他们热更新的库，还是在fork别人代码的基础上来继续维护的。&lt;/p&gt;
-
-&lt;p&gt;其实大家心里都明白。BAT的实力，不在facebook之下，阿里一个双12的技术，绝对是世界顶尖的。没啥好质疑的。我从来没说这些公司不好。我只是觉得他们这些公司，应该做的更好。阿里里面有很多人为hadoop贡献代码。但是我觉得他们的能力，应该是引导一个开源项目。而不是仅仅的贡献代码。&lt;/p&gt;
-
-&lt;p&gt;我写博客的初衷，就是想回馈iOS开发这个大社区，我想贡献我自己的力量，我的实力虽然不那么好，但是教教慎哥这样的还是可以的。&lt;/p&gt;
-
-&lt;p&gt;我说我是为了情怀写博客太假，这么说就不假了吧。但是想想其实是一个意思对吧。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;记不得之前谁和我说了，中国这些公司，都是钱驱动的。&lt;/h2&gt;
-
-&lt;p&gt;记不得之前谁和我说了，中国这些公司，都是钱驱动的。&lt;/p&gt;
-
-&lt;p&gt;我到现在都没说中国的互联网公司不好。小道消息的冯老师，从支付宝跳槽去了丁香医生。丁香医生，是我觉得现在做医学方面常识普及甚至用药最好的应用。我不知道冯老师为什么去丁香园，但至少，我觉得冯老师有情怀。&lt;/p&gt;
-
-&lt;p&gt;说句实话，丁香医生，做的真的很好，它能够让真正的医生来科普一系列生活方面医学方面很接近我们的东西。这就很好啊，这是为了人类的生活做了极大贡献的。不觉得很有情怀吗？&lt;/p&gt;
-
-&lt;p&gt;说到这，不得不提百度和谷歌。&lt;/p&gt;
-
-&lt;p&gt;搜片的时候，谷歌会把你屏蔽了，百度呢？百度全家桶的规模远超肯德基全家桶。&lt;/p&gt;
-
-&lt;p&gt;用室友写报告的时候话来说，百度，就是有市场啊。&lt;/p&gt;
-
-&lt;p&gt;是啊，中国那么多程序员用百度。中国那么多学生需要百度文库来写报告。是啊，百度一定有市场。&lt;/p&gt;
-
-&lt;p&gt;谷歌呢？虽然我不得不服，有时候搜中文，谷歌不如百度。但举个最简单的东西，谷歌前段时间开源了他们数据分析的一个东西，虽说网上吐槽的很多。百度你开源一个？谷歌没广告百度你来一个？&lt;/p&gt;
-
-&lt;h2 id=&quot;facebookoffer&quot;&gt;如果facebook给我发offer，今天发，我明天就走&lt;/h2&gt;
-
-&lt;p&gt;有一天，我和慎哥说，如果facebook给我发offer，今天发，我明天就走。&lt;/p&gt;
-
-&lt;p&gt;后来没多久，扎克伯格就把自己的99%股份捐出去了。于是乎我决定，facebook今天给我发offer，我今天就走。真的。&lt;/p&gt;
-
-&lt;p&gt;扎克伯格把钱用在了医学研究方面。上次看到有人说，这个不是一朝一夕可以解决的，需要一个长的阶段。扎克伯格说了，我希望我女儿那时候会好起来。&lt;/p&gt;
-
-&lt;p&gt;不觉得扎克伯格很有情怀吗？&lt;/p&gt;
-
-&lt;p&gt;为人类的事业做贡献。听着好伟大，但是好假，但是确实又是真的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;中国的大部分互联网公司和创业者，思考的方式是反的&lt;/h2&gt;
-
-&lt;p&gt;他们都在想，我们要为了钱创业。&lt;/p&gt;
-
-&lt;p&gt;但事实上。当你有了一款好的产品，钱自然就来了。&lt;/p&gt;
-
-&lt;p&gt;但是呢，我知道创业者都苦，没钱还累。程序员本来就是高薪职业是吧，不拿钱苦逼的创业。都不愿意。所以呢，迫于很多压力，创业变成了为了钱。&lt;/p&gt;
-
-&lt;p&gt;做好的产品。什么是好的产品？好的产品一定要有盈利点吗？&lt;/p&gt;
-
-&lt;p&gt;思考又是反的。&lt;/p&gt;
-
-&lt;p&gt;只有好的产品会带来大量的用户量，用户量到了，钱自然也就到了。而不是有盈利点所以才有钱。&lt;/p&gt;
-
-&lt;p&gt;做好的产品，什么是好的产品。BAT选择了搜索，购物，聊天。&lt;/p&gt;
-
-&lt;p&gt;方便人类生活的才是好的产品。&lt;/p&gt;
-
-&lt;p&gt;为人类进步做出贡献的一定是好产品。&lt;/p&gt;
-
-&lt;p&gt;但是我可能没那么大的实力去能为人类进步做贡献。但是我至少可以努力方便人类的生活。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;所以&lt;/h2&gt;
-
-&lt;p&gt;我要做有情怀的人所以我决定不考虑钱去认真的尝试去做一些东西。&lt;/p&gt;
-
-&lt;p&gt;所以决定了一些事情，这是后话。&lt;/p&gt;
-
-&lt;p&gt;所以，钱嘛，迟早都会有的，情怀可不是所有人都有的。&lt;/p&gt;
-
-&lt;p&gt;所以，创业，是为了情怀啊。&lt;/p&gt;
-
-&lt;p&gt;所以，我觉得我这么有情怀的人不创业可惜了。&lt;/p&gt;
-
-&lt;p&gt;我们都是有情怀的人，但是不能空谈情怀。我们都是要干大票的人，怎么能没有情怀？&lt;/p&gt;
-
-&lt;p&gt;情怀，不是用钱买的。情怀，也不是用来卖的。&lt;/p&gt;
-
-&lt;p&gt;情怀是用来让生活更美好的。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;我给静姐的回答&lt;/h2&gt;
-
-&lt;p&gt;我说，以前想创业，是觉得创业很厉害，能做点很厉害的东西。后来想创业，觉得大公司饱和，没有什么发展的前景。现在算是彻底想明白了，想为了人类的生活更便利做点贡献。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;最后的最后&lt;/h2&gt;
-
-&lt;p&gt;创业，不是为了钱，是为了情怀。&lt;/p&gt;
-
-&lt;p&gt;顺序不能反了。&lt;/p&gt;
-
-&lt;p&gt;先有情怀，自然有钱。&lt;/p&gt;
-
-&lt;p&gt;先考虑钱，情怀可是会打折的哦😘&lt;/p&gt;
-</description>
-        <pubDate>Sat, 19 Dec 2015 20:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2015/12/19/feelings.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2015/12/19/feelings.html</guid>
         
         
         <category>life</category>
