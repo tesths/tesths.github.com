@@ -6,9 +6,105 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Jun 2016 09:49:39 +0800</pubDate>
-    <lastBuildDate>Thu, 23 Jun 2016 09:49:39 +0800</lastBuildDate>
+    <pubDate>Sat, 25 Jun 2016 22:14:39 +0800</pubDate>
+    <lastBuildDate>Sat, 25 Jun 2016 22:14:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Learn You a Swift for Great Good! part -1</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;只有一句话，初学，欢迎讨论，求轻喷。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为什么是-1，因为我需要为自己的学习做一些准备工作，今天的准备工作很简单(其实也不简单，都看好几天了有一点头绪)，在Swift中寻找一个f。&lt;/p&gt;
+
+&lt;p&gt;什么意思呢？在Haskell中，如果现在有一个函数作为参数的话，需要写一个f就可以了。举个例子。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]
+map _ [] = []
+map f (x:xs) = f x : map f xs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..&lt;/p&gt;
+
+&lt;p&gt;稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对于起来。第一行是类型定义。map的第一个参数是一个函数，就是(a-&amp;gt;b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。&lt;/p&gt;
+
+&lt;p&gt;第二行，_ 在learnyouahaskell中描述为代表一个范型。所以可以理解为不管第一个参数是什么，都返回和第二个参数一样的类型，也就是一个list类型。&lt;/p&gt;
+
+&lt;p&gt;第三行，第一个f就是我们的(a-&amp;gt;b)这个函数，第二个是列表的递归，每次取列表的第一个元素，依次执行map后面那个f。所以执行起来就是，第一个元素，f 第二个元素。&lt;/p&gt;
+
+&lt;p&gt;今天的主戏，就是在Swift中找到那个f，其实这个f，就是一个函数。但是这个函数需要接受任何类型。&lt;/p&gt;
+
+&lt;p&gt;这几天一直在看，看唐巧的Swift烧脑体操系列，看ray上的教程，然后查阅资料。结论也很简单，就是范型。官方文档&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html&quot;&gt;Generics&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;之所以我看了很久，是因为我之前对于范型是迷糊的，现在也不清晰。足以见我Swift功底之差。但是看了也没有特别大的问题，范型是一个很好东西。&lt;/p&gt;
+
+&lt;p&gt;那么我们开始考虑怎么去写一个Swift版本的map函数。我们对照Haskell一步一步来。&lt;/p&gt;
+
+&lt;p&gt;首先，需要一个函数f: a-&amp;gt;b，然后需要一个数组，最后返回一个数组。我们来用Swift实现。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;func jmap&amp;lt;U, T&amp;gt;(f: U -&amp;gt; T, array: [U]) -&amp;gt; [T]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;采用范型的方式，让Swift和Haskell很好的对应了起来。语法上基本没有大的区别。下面要具体的实现map函数里面的内容。&lt;/p&gt;
+
+&lt;p&gt;我们返回了一个参数类型是T的数组，所以jmap里面需要有一个T类型的数组来用于返回。同时，我们要向f函数中传入一次的数组元素，这里用for in循环就可以了。&lt;/p&gt;
+
+&lt;p&gt;所以完整的代码是这样的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func jmap&amp;lt;U, T&amp;gt;(f: U -&amp;gt; T, array: [U]) -&amp;gt; [T] {
+    var result = [T]()
+    for element in array {
+        result.append(f(element))
+    }
+    return result
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面要做的事情。就是增加数组的extension。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Array {
+    func jjmap&amp;lt;U&amp;gt;(f: (Array.Element) -&amp;gt; U) -&amp;gt; [U] {
+        return jmap(f, array: self)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至此就可以使用我们自己写的map函数了。&lt;/p&gt;
+
+&lt;p&gt;下一篇，继续范型和高阶函数，所以很有可能还是负的part。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;本系列旨在将Haskell和Swift中的函数式对应起来学习。阅读过程中有什么错误欢迎留言。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;参考链接&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24002733/add-an-element-to-an-array-in-swift&quot;&gt;Add an element to an array in Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html&quot;&gt;Functions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html&quot;&gt;Collection Types&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html&quot;&gt;Higher-Order Functions&lt;/a&gt; 自己偶尔参考一下自己之前写的博客..&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ijoshsmith.com/2015/12/09/higher-order-functions-in-swift/&quot;&gt;Higher-order functions in Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@ivicamil/higher-order-functions-in-swift-part-1-d8e75f963d13#.a1nb2nvjr&quot;&gt;Higher Order Functions In Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-2-function-argument/&quot;&gt;Swift 烧脑体操（二） - 函数的参数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/&quot;&gt;Swift 烧脑体操（三） - 高阶函数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/03/05/swift-gym-4-map-and-flatmap/&quot;&gt;Swift 烧脑体操（四） - map 和 flatMap&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sat, 25 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>成都&amp;lt;T&amp;gt;技术沙龙小记</title>
@@ -24,27 +120,27 @@
 
 &lt;p&gt;蓉姐为啥要单独提出来说？&lt;strong&gt;因为蓉姐是一个做iOS开发的女孩。&lt;/strong&gt;对，女孩..&lt;/p&gt;
 
-&lt;p&gt;蓉姐和我想象的完全不一样，蓉姐作为一个女孩写iOS，我心里是很佩服的。我从来没有看不起女程序员，我是超级佩服。因为工作室很多学妹在学习编程上都存在大小的问题。所以我也问了蓉姐很多问题。蓉姐也超级耐心的和我解答。&lt;/p&gt;
+&lt;p&gt;蓉姐和我想象的完全不一样，蓉姐作为一个女孩写iOS，我心里是很佩服的。我从来没有看不起女程序员，我是超级佩服。因为工作室很多学妹在学习编程上都存在大大小小的问题。所以我也问了蓉姐很多问题。蓉姐也超级耐心的和我解答。&lt;/p&gt;
 
 &lt;p&gt;蓉姐大三开始学iOS，现在在做智能玩具。我看了蓉姐的博客，写了一个蓝牙的系列，很nice。我还咨询了蓉姐一下iBeacon的问题，蓉姐说其实原生的api其实足够，但是蓝牙也有很多坑。蓉姐还做过php，大一学了c语言之后就做编程了。&lt;/p&gt;
 
-&lt;p&gt;蓉姐大概还是个摄影爱好者，相机和脚架很齐全，我很佩服。蓉姐说她在深圳的公司的时候压力很大也坚持下来了。总之，和蓉姐简短的聊天，除了佩服就剩佩服了。有那么一点女孩子的感觉，蓉姐的经历可以让我以后和工作室的学妹说，编程，从来不是难事，是努力可以做好的事情。&lt;/p&gt;
+&lt;p&gt;蓉姐大概还是个摄影爱好者，相机和脚架很齐全，我很佩服。蓉姐说她在深圳的公司的时候压力很大也坚持下来了。总之，和蓉姐简短的聊天，除了佩服就剩佩服了。有那么一点女汗子的感觉，蓉姐的经历可以让我以后和工作室的学妹说，编程，从来不是难事，是努力可以做好的事情。&lt;/p&gt;
 
 &lt;p&gt;我和蛋哥蓉姐回合之后就去了camera360，沙龙在camera360举办，环境超级nice。我很喜欢那里的办公环境，理由很简单，我进去就看到了运动器械…跑步机瑜伽球乒乓球桌投篮机一应俱全。&lt;/p&gt;
 
-&lt;p&gt;之后就一起排了一下座位。等大家到起就开始了。&lt;/p&gt;
+&lt;p&gt;之后就一起排了一下座位。等大家到起齐就开始了。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;畅叔开场&lt;/h2&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;稍微介绍一下畅叔。畅叔是帮主的大学同学，帮主就是T沙龙的总司令梁杰，梁杰跨界网红。畅叔之所以叫畅叔就是因为畅叔年级轻轻看上去好老…是真的。当然畅叔也是跨界。&lt;/p&gt;
+&lt;p&gt;稍微介绍一下畅叔。畅叔是帮主的大学同学，帮主就是T沙龙的总司令梁杰，梁杰是跨界网红。畅叔之所以叫畅叔就是因为畅叔年级轻轻看上去好老…是真的。当然畅叔也是跨界。&lt;/p&gt;
 
 &lt;p&gt;畅叔先是感谢了泊学的赞助~还有camera360的场地提供。&lt;/p&gt;
 
 &lt;p&gt;畅叔先是大概介绍了T沙龙的起因以及T沙龙的形式。T沙龙真的要开遍全国，每个月举办线下的沙龙。最重要的是，非盈利，不收费，非盈利，不收费，非盈利，不收费。重要的事情我要说三遍。(偶尔私心一下..必须宣传)&lt;/p&gt;
 
-&lt;p&gt;T沙龙以及成功的在北京举办了很多次。像巧大啊，还有臧成威啊，还有虾神，还有sunny神都参加过，总之就是，非常成功。&lt;/p&gt;
+&lt;p&gt;T沙龙已经成功的在北京举办了很多次。像巧大啊，还有臧成威啊，还有虾神，还有sunny神都参加过，总之就是，非常成功。&lt;/p&gt;
 
 &lt;p&gt;T沙龙真的是要把热爱Swift的人聚集在一起，分享，交流。&lt;/p&gt;
 
@@ -88,7 +184,7 @@
 
 &lt;p&gt;虽然没有方志刚那种现场写代码的感觉，但是还是有很多收获。&lt;/p&gt;
 
-&lt;p&gt;之后高山提出了关于RAC的一些问题我们讨论了一下，觉得还是很有收获的~&lt;/p&gt;
+&lt;p&gt;之后高山提出了关于RAC的一些问题我们讨论了一下，觉得还是很棒的~&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;茶歇&lt;/h2&gt;
 
@@ -118,7 +214,7 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;其实我觉得，现场的边写代码超级过瘾，尤其还是函数式。&lt;/p&gt;
+&lt;p&gt;其实我觉得，现场的边写代码边讲超级过瘾，尤其还是函数式。&lt;/p&gt;
 
 &lt;p&gt;很早之前我就觉得，函数式迟早会火。这种上古的语言，是时候重新回归到大众的眼前了。Swift给了那么一个契机，让程序员们去学习，去了解这么一门博大精深的编程语言。这是Swift的功劳，不得不承认。这次沙龙结束，我也有更加充分的理由去强迫性的去让工作室的娃们学习函数式。&lt;/p&gt;
 
@@ -136,13 +232,13 @@
 
 &lt;p&gt;Swift值得所有人去学习，这门新兴的语言，必将走上历史的顶峰。此处必须表达一下我对某门语言的态度。后台迟早都是Swift，安卓迟早也是Swift。对我就是想说，那门可以干这两件事情的语言，你迟早gg。&lt;/p&gt;
 
-&lt;p&gt;**我相信，&lt;t&gt;沙龙在成都会越来越好的。**&lt;/t&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我相信，&amp;lt;T&amp;gt;沙龙在成都会越来越好的。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;感谢&lt;/h2&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;真的，还是感谢。超级感谢，其实第一个感谢的应该是网红梁杰，也就是蛋哥老说的帮主。没有帮主的组织，不可能有&lt;t&gt;沙龙。&lt;/t&gt;&lt;/p&gt;
+&lt;p&gt;真的，还是感谢。超级感谢，其实第一个感谢的应该是网红梁杰，也就是蛋哥老说的帮主。没有帮主的组织，不可能有&amp;lt;T&amp;gt;沙龙。&lt;/p&gt;
 
 &lt;p&gt;其次要感谢的，当然是畅叔，蛋哥，蓉姐。没有他们的组织，也就没有成都这次的沙龙。&lt;/p&gt;
 
@@ -150,7 +246,7 @@
 
 &lt;p&gt;当然的当然，感谢方志刚和高山的分享，还有大家的很多交流，学到了很多很多东西。&lt;/p&gt;
 
-&lt;p&gt;现在，哦，不，那天晚上，我其实就已经开始调整假期来期待下一次的沙龙了。&lt;/p&gt;
+&lt;p&gt;从现在，哦，不，从那天晚上开始，我其实就已经开始期待下一次的沙龙了。&lt;/p&gt;
 
 &lt;h2 id=&quot;section-5&quot;&gt;附图&lt;/h2&gt;
 
@@ -1283,65 +1379,6 @@ let brr = arr.map {
         
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>念书真的很幸福</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;后面尽量每周都写点东西，这是对自己的要求，也是2016年我想坚持做的一件事情。作为一个要从纯技术人员逐渐转型的人，写作，是记录，也是必需品。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;念书，真的很幸福。&lt;/p&gt;
-
-&lt;p&gt;刚刚和一帆说，你觉不觉得过去的一星期特别累，各种事情。一帆和我说，所以说啊，学习才是最轻松的。&lt;/p&gt;
-
-&lt;p&gt;是啊，这已经不是我第一次觉得，学习轻松。&lt;/p&gt;
-
-&lt;p&gt;从大二加入工作室开始，没课的时候我基本上都会来工作室写代码。因为我们有企业的项目，项目的进度要求非常高，这就意味着你的工作量在增加，需要在有限的时间完成大量的东西，是很难的。&lt;/p&gt;
-
-&lt;p&gt;去年的这个时候，我们做了一个医疗方面的项目，我负责iOS版本医生端全部的开发。因为开发能力加上本身任务量就大，我每天大搞从早上九点就开始开发，中午大概休息两个多小时，然后到晚上九点。这种工作强度，不止一次让我吐血。&lt;/p&gt;
-
-&lt;p&gt;过去的一周，我和一帆接手了工作室。出去玩的疲惫还没缓过来劲又开始各种事情，除了安排没有安排的事情之外，我们还对后面的发展和要做的东西进行了一个计划，整理工作室的很多事情。我们还进行了初期的招新。&lt;/p&gt;
-
-&lt;p&gt;对我个人来说，我得保持自己在一个学习的状态，技术上还需要很多的积累，不仅是对于新技术的学习还是对于已掌握技术的扩展。我还带着肾哥在学习。还和班长姜导去了一趟沙河找老师做比赛。&lt;/p&gt;
-
-&lt;p&gt;过去的一周，我强迫性的让自己早起来面对每天的挑战。平均每天大概在八点多一点点就开始了新的一天。晚上坚持跑步，让自己保持一个好的状态。&lt;/p&gt;
-
-&lt;p&gt;记得玩的时候就说，忙点好，好是好。但是，很累。&lt;/p&gt;
-
-&lt;p&gt;回头来说学习。&lt;/p&gt;
-
-&lt;p&gt;我们总觉得学习很辛苦，学习是很辛苦。但是比起工作强度来说，不那么辛苦，学习的量是一定的，但是我相信没有那么费神。大部分的人选择在最后两星期来准备考试。那么平日里只要计划好，就可以在期末的时候很好的去应对。&lt;/p&gt;
-
-&lt;p&gt;学习的东西是死的，计划和项目是活的。&lt;/p&gt;
-
-&lt;p&gt;因为你不知道未来会发生什么，所以你总在害怕去面对。&lt;/p&gt;
-
-&lt;p&gt;过去的一星期里，我把我的大部分精力都放在了工作室上，每天晚上会考虑后面的发展，会考虑还有哪些事情没做。如果过去的一周是考试周，我只需要计划我的复习就可以了。这个其实不是很难。&lt;/p&gt;
-
-&lt;p&gt;大学的学习，充满着不确定性和时间。所以剩下的时间该怎么做，是需要去规划的。正是这种不确定性，决定了你是否会累与不累。&lt;/p&gt;
-
-&lt;p&gt;读书的时候，除了学习之外，你有大量的时间去做除了学习之外的事情。你可以出去玩，可以选择去写代码，当然你也可以选择去堕落。&lt;/p&gt;
-
-&lt;p&gt;这都没什么。&lt;/p&gt;
-
-&lt;p&gt;我总在强调好好学习，好好学习是因为未来的选择会更多。技术又好，成绩又好能保研，那么未来都是光明的。&lt;/p&gt;
-
-&lt;p&gt;好好学习，不挂科，可以让你有足够的精力去面对前面的困难，而不是挂科来影响你的心情。这大概就是好好学习的意义吧。&lt;/p&gt;
-
-&lt;p&gt;我总在说好好学习，最后我连自己都做不到。&lt;/p&gt;
-
-&lt;p&gt;所以呢？为什么念书好幸福？&lt;/p&gt;
-
-&lt;p&gt;因为你可以追求你所想的，一旦工作，你没了金钱的来源，你有了生活的压力，你所追求的，就不能是纯粹的情怀了。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 09 Jan 2016 11:20:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/01/09/study.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/01/09/study.html</guid>
-        
-        
-        <category>life</category>
         
       </item>
     

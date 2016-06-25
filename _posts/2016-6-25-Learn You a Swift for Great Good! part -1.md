@@ -1,0 +1,90 @@
+---
+layout: post
+title:  Learn You a Swift for Great Good! part -1
+date:   2016-06-25
+categories: iOS
+---
+
+> 只有一句话，初学，欢迎讨论，求轻喷。
+
+为什么是-1，因为我需要为自己的学习做一些准备工作，今天的准备工作很简单(其实也不简单，都看好几天了有一点头绪)，在Swift中寻找一个f。
+
+什么意思呢？在Haskell中，如果现在有一个函数作为参数的话，需要写一个f就可以了。举个例子。
+
+```
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x:xs) = f x : map f xs
+```
+
+这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..
+
+稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对于起来。第一行是类型定义。map的第一个参数是一个函数，就是(a->b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。
+
+第二行，_ 在learnyouahaskell中描述为代表一个范型。所以可以理解为不管第一个参数是什么，都返回和第二个参数一样的类型，也就是一个list类型。
+
+第三行，第一个f就是我们的(a->b)这个函数，第二个是列表的递归，每次取列表的第一个元素，依次执行map后面那个f。所以执行起来就是，第一个元素，f 第二个元素。
+
+今天的主戏，就是在Swift中找到那个f，其实这个f，就是一个函数。但是这个函数需要接受任何类型。
+
+这几天一直在看，看唐巧的Swift烧脑体操系列，看ray上的教程，然后查阅资料。结论也很简单，就是范型。官方文档[Generics](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html)。
+
+之所以我看了很久，是因为我之前对于范型是迷糊的，现在也不清晰。足以见我Swift功底之差。但是看了也没有特别大的问题，范型是一个很好东西。
+
+那么我们开始考虑怎么去写一个Swift版本的map函数。我们对照Haskell一步一步来。
+
+首先，需要一个函数f: a->b，然后需要一个数组，最后返回一个数组。我们来用Swift实现。
+
+`func jmap<U, T>(f: U -> T, array: [U]) -> [T]`
+
+`map :: (a -> b) -> [a] -> [b]`
+
+
+采用范型的方式，让Swift和Haskell很好的对应了起来。语法上基本没有大的区别。下面要具体的实现map函数里面的内容。
+
+我们返回了一个参数类型是T的数组，所以jmap里面需要有一个T类型的数组来用于返回。同时，我们要向f函数中传入一次的数组元素，这里用for in循环就可以了。
+
+所以完整的代码是这样的。
+
+```
+func jmap<U, T>(f: U -> T, array: [U]) -> [T] {
+    var result = [T]()
+    for element in array {
+        result.append(f(element))
+    }
+    return result
+}
+```
+
+下面要做的事情。就是增加数组的extension。
+
+```
+extension Array {
+    func jjmap<U>(f: (Array.Element) -> U) -> [U] {
+        return jmap(f, array: self)
+    }
+}
+```
+
+至此就可以使用我们自己写的map函数了。
+
+下一篇，继续范型和高阶函数，所以很有可能还是负的part。
+
+> 本系列旨在将Haskell和Swift中的函数式对应起来学习。阅读过程中有什么错误欢迎留言。
+
+参考链接
+
+1. [Add an element to an array in Swift](http://stackoverflow.com/questions/24002733/add-an-element-to-an-array-in-swift)
+2. [Functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html)
+3. [Collection Types](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html)
+4. [Higher-Order Functions](http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html) 自己偶尔参考一下自己之前写的博客..
+5. [Higher-order functions in Swift](https://ijoshsmith.com/2015/12/09/higher-order-functions-in-swift/)
+6. [Higher Order Functions In Swift](https://medium.com/@ivicamil/higher-order-functions-in-swift-part-1-d8e75f963d13#.a1nb2nvjr)
+7. [Swift 烧脑体操（二） - 函数的参数](http://blog.devtang.com/2016/02/27/swift-gym-2-function-argument/)
+8. [Swift 烧脑体操（三） - 高阶函数](http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/)
+9. [Swift 烧脑体操（四） - map 和 flatMap](http://blog.devtang.com/2016/03/05/swift-gym-4-map-and-flatmap/)
+
+
+
+
+
