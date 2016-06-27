@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Learn You a Swift for Great Good! part 0 -- Swift Currying</title>
+  <meta name="description" content="  刚刚才发现上一篇的内容和Functional Swift中重了很多(因为买了没看🙄昨天翻了一遍)，而且我是自己尝试写的..今天应该就不会怎么重了，因为我本来就打算按照计划对照Haskell来写Swift，Haskell中高阶函数有map，filter，所以肯定会重。不过除此之外，我还会尽我所能实现Haskel...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/css/style.css" rel="stylesheet"> -->
+<!--  <link href="/css/syntax.css" rel="stylesheet"> -->
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">Learn You a Swift for Great Good! part 0 -- Swift Currying</h1>
+    <p class="post-meta">Jun 27, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <blockquote>
+  <p>刚刚才发现上一篇的内容和Functional Swift中重了很多(因为买了没看🙄昨天翻了一遍)，而且我是自己尝试写的..今天应该就不会怎么重了，因为我本来就打算按照计划对照Haskell来写Swift，Haskell中高阶函数有map，filter，所以肯定会重。不过除此之外，我还会尽我所能实现Haskell中的其他高阶函数。</p>
+</blockquote>
+
+<p>对了我看了喵神的<a href="http://swifter.tips/currying/">柯里化 (CURRYING)</a>以及<a href="https://www.objc.io/books/functional-swift/">Functional Swift</a>中的柯里化。Functional Swift中的例子其实还不错，但是没有用curry的范型来举例子，再加上我悟性太差，导致看了很久。最终根据Stackoverflow上找到了一个例子，看的差不多了。</p>
+
+<p>我觉得应该可以把这个概念解释的还不错了。</p>
+
+<p>其实在Haskell，是有柯里化(下文统一Currying)的。因为英文是Currying，大概我拙劣的英文觉得Currying是Carrying的意思，也就是，携带..而且Haskell是pure function的，curried是默认的..这个恰好是昨天我想在Swift中实现zipwith函数时候遇到的问题。learnyouahaskell第五章高阶函数一开头就是Curried Functions来开头的。</p>
+
+<p>所以今天先补上Haskell中和Currying还有Partial application相关的概念。</p>
+
+<p>这里是wiki的地址。<a href="https://en.wikipedia.org/wiki/Currying">Currying</a> and <a href="https://en.wikipedia.org/wiki/Partial_application">Partial application</a></p>
+
+<p>Currying我觉得可以简单理解为，你想返回什么都可以。而Partial application可以理解为固定参数得到的函数。</p>
+
+<p>在函数式编程要随时记得，任何参数或者返回值都可能是一个函数。</p>
+
+<p>以上是learnyouahaskell中提到相关的概念的介绍。下面我们来介绍Swift中的Currying。</p>
+
+<p>举两个例子来说明，一个是Stackoverflow上的我稍作了改动..一个是我根据Haskell写的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
+    return { x in { y in f(x, y) } }
+}
+</code></pre>
+</div>
+
+<p>怎么去理解这种写法的范型，是一个很值得讨论的问题。我以前一直觉得，Swift中像上个函数这么写，是有6个参数的，后来发现我错了，第一个是和上篇文章一样的那个T。我们要传一个函数，而当这个函数传完的时候，现在这个curry会根据之前的那个函数变成了一个A-&gt;B-&gt;C类型的函数。</p>
+
+<p>所以我们可以暂时不管前面那个参数f:，现在整个函数可以看做是一个A-&gt;B-&gt;C的函数。</p>
+
+<p>所谓currying，就是说，我现在让这个函数可以返回值是C，或者是返回B-&gt;C这样一个函数！这样让函数的扩展性就大大增加了！</p>
+
+<blockquote>
+  <p>配图看playground！！！！</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
+    return { x in { y in f(x, y) } }
+}
+
+func sum(a: Int, b: Int) -&gt; Int {
+    return a + b
+}
+
+let curriedSum = curry(sum)
+
+let sumWith2 = curriedSum(3)(6)
+
+let sumWith3 = curriedSum(3)
+
+print(sumWith2)
+
+print(sumWith3(5))
+</code></pre>
+</div>
+
+<p><img src="/images/swiftfrp/currying1.png" alt="currying1" /></p>
+
+<p>我们向curry函数中传一个形如(A, B)-&gt;C的函数sum，此时curriedSum是一个<strong>Int-&gt;Int-&gt;Int</strong>类型的函数，这点很好理解。</p>
+
+<p>下面是重点，我们如果想直接调用计算，因为函数是<strong>Int-&gt;Int-&gt;Int</strong>，那么就用<strong>curriedSum(num1)(num2)</strong>就可以了，此时的返回值是<strong>Int</strong>，如果我们想固定一个值，那么就用<strong>curriedSum(num1)</strong>，那么此时的返回值其实是<strong>Int-&gt;Int</strong>类型。想得到最终那个值的话，就必须再传一个参数，才能让返回类型由<strong>Int-&gt;Int</strong>变为<strong>Int</strong>。</p>
+
+<p>可以随时注意<strong>playground</strong>中<strong>sumWith2</strong>和<strong>sumWith3</strong>显示的函数类型。</p>
+
+<p>这也就是currying的最大好处，想返回什么返回什么。可以返回一个-&gt;Int，也可以返回一个<strong>Int-&gt;Int(一个函数)</strong>。其实不是想返回什么就返回什么，是参数想传什么就传什么，没啥区别。</p>
+
+<p>我们在看一个Haskell中例子，我写了一个Swift版本。这个例子无非就是多了一个参数，不过可以更方便理解。(这个函数是learnyouahaskell第五章高阶函数Curried Functions中第一个函数)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>func multThree(adder: Int) -&gt; Int -&gt; Int -&gt; Int {
+    return {
+        a in  {
+            b in
+            a * b * adder
+        }
+    }
+}
+
+let multTwo = multThree(3)
+let multOne = multThree(4)(3)
+let multZero = multThree(4)(2)(1)
+
+print(multTwo(2)(1))
+print(multOne(2))
+print(multZero)
+</code></pre>
+</div>
+
+<p><img src="/images/swiftfrp/currying2.png" alt="currying2" /></p>
+
+<p>这个函数，其实是一个<strong>Int-&gt;Int-&gt;Int-&gt;Int</strong>类型…一会看Haskell原函数就懂了。所以理论上我们可以返回三种类型，<strong>Int-&gt;Int-&gt;Int</strong>，<strong>Int-&gt;Int</strong>，<strong>Int</strong>。前两个是函数，最后一个是返回值。</p>
+
+<p>就是我们依次<strong>multTwo</strong>和<strong>multOne</strong>。</p>
+
+<p>最后提一个细节，为什么我们调用的时候要用<strong>multThree(4)(2)(1)</strong>？个人觉得，这就是函数式，其实是传了三个函数，只不过是常数函数。所以用()。</p>
+
+<p>最后我们看Haskell中实现<strong>multThree</strong>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
+multThree x y z = x * y * z
+</code></pre>
+</div>
+
+<p>这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; multThree 2 3 4
+24
+</code></pre>
+</div>
+
+<p>首先来说，我们可以直接这么使用，那么就是一个参数(常数)，一个参数(常数)，一个参数(常数)，返回值(常数)。但实际上又可以理解为，<strong>(((multThree 2) 3) 4)</strong></p>
+
+<p>我们还可以怎么去用这个函数呢。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
+ghci&gt; multTwoWithNine 2 3
+54
+</code></pre>
+</div>
+
+<p>这样的话，其实就是</p>
+
+<p><code class="highlighter-rouge">multThree :: Int -&gt; ((Int -&gt; Int) -&gt; Int)</code></p>
+
+<p>这样看来，无论参数也好，返回值也好，都可以是一个函数。</p>
+
+<p>当然，我觉得，在Haskell中写更爽一点。当然为什么那么爽。其实Curry是个姓，这个人的名，叫Haskell。</p>
+
+<p>最后结个尾。</p>
+
+<p>“Currying is common paradigm in functional programming. In fact in Haskell (another functional programming language) every function is curried by default.”其实就是..在Haskell中，所有函数都是默认curried。</p>
+
+<p>参考资料</p>
+
+<ol>
+  <li><a href="http://stackoverflow.com/questions/28767658/how-to-understand-the-currying-in-swift">How to understand the currying in Swift?</a></li>
+  <li><a href="http://stackoverflow.com/questions/24107191/curry-function-in-swift">Curry Function in Swift</a></li>
+  <li><a href="http://swifter.tips/currying/">柯里化 (CURRYING)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Currying">Currying</a></li>
+  <li><a href="https://github.com/thoughtbot/Curry/blob/master/Source/Curry.swift">thoughtbot/Curry</a></li>
+  <li><a href="http://learnyouahaskell.com/">Learn You a Haskell for Great Good! </a></li>
+  <li><a href="https://www.objc.io/books/functional-swift/">Functional Swift</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Partial_application">Partial application</a></li>
+</ol>
+
+  </article>
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=/ios/2016/06/27/Learn You a Swift for Great Good! part 0 data-title=Learn You a Swift for Great Good! part 0 -- Swift Currying data-url="http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"walkginkgo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+</p>
+      </div>
+    </div>
+
+  </div>
+<!-- <script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script> -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>

@@ -19,7 +19,7 @@ map f (x:xs) = f x : map f xs
 
 这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..
 
-稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对于起来。第一行是类型定义。map的第一个参数是一个函数，就是(a->b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。
+稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对应起来。第一行是类型定义。map的第一个参数是一个函数，就是(a->b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。
 
 第二行，_ 在learnyouahaskell中描述为代表一个范型。所以可以理解为不管第一个参数是什么，都返回和第二个参数一样的类型，也就是一个list类型。
 

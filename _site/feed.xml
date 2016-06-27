@@ -6,9 +6,166 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Jun 2016 22:14:39 +0800</pubDate>
-    <lastBuildDate>Sat, 25 Jun 2016 22:14:39 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2016 20:59:35 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2016 20:59:35 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Learn You a Swift for Great Good! part 0 -- Swift Currying</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;刚刚才发现上一篇的内容和Functional Swift中重了很多(因为买了没看🙄昨天翻了一遍)，而且我是自己尝试写的..今天应该就不会怎么重了，因为我本来就打算按照计划对照Haskell来写Swift，Haskell中高阶函数有map，filter，所以肯定会重。不过除此之外，我还会尽我所能实现Haskell中的其他高阶函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对了我看了喵神的&lt;a href=&quot;http://swifter.tips/currying/&quot;&gt;柯里化 (CURRYING)&lt;/a&gt;以及&lt;a href=&quot;https://www.objc.io/books/functional-swift/&quot;&gt;Functional Swift&lt;/a&gt;中的柯里化。Functional Swift中的例子其实还不错，但是没有用curry的范型来举例子，再加上我悟性太差，导致看了很久。最终根据Stackoverflow上找到了一个例子，看的差不多了。&lt;/p&gt;
+
+&lt;p&gt;我觉得应该可以把这个概念解释的还不错了。&lt;/p&gt;
+
+&lt;p&gt;其实在Haskell，是有柯里化(下文统一Currying)的。因为英文是Currying，大概我拙劣的英文觉得Currying是Carrying的意思，也就是，携带..而且Haskell是pure function的，curried是默认的..这个恰好是昨天我想在Swift中实现zipwith函数时候遇到的问题。learnyouahaskell第五章高阶函数一开头就是Curried Functions来开头的。&lt;/p&gt;
+
+&lt;p&gt;所以今天先补上Haskell中和Currying还有Partial application相关的概念。&lt;/p&gt;
+
+&lt;p&gt;这里是wiki的地址。&lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;Currying&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Partial_application&quot;&gt;Partial application&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Currying我觉得可以简单理解为，你想返回什么都可以。而Partial application可以理解为固定参数得到的函数。&lt;/p&gt;
+
+&lt;p&gt;在函数式编程要随时记得，任何参数或者返回值都可能是一个函数。&lt;/p&gt;
+
+&lt;p&gt;以上是learnyouahaskell中提到相关的概念的介绍。下面我们来介绍Swift中的Currying。&lt;/p&gt;
+
+&lt;p&gt;举两个例子来说明，一个是Stackoverflow上的我稍作了改动..一个是我根据Haskell写的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func curry&amp;lt;A, B, C&amp;gt;(f: (A, B) -&amp;gt; C) -&amp;gt; A -&amp;gt; B -&amp;gt; C {
+    return { x in { y in f(x, y) } }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;怎么去理解这种写法的范型，是一个很值得讨论的问题。我以前一直觉得，Swift中像上个函数这么写，是有6个参数的，后来发现我错了，第一个是和上篇文章一样的那个T。我们要传一个函数，而当这个函数传完的时候，现在这个curry会根据之前的那个函数变成了一个A-&amp;gt;B-&amp;gt;C类型的函数。&lt;/p&gt;
+
+&lt;p&gt;所以我们可以暂时不管前面那个参数f:，现在整个函数可以看做是一个A-&amp;gt;B-&amp;gt;C的函数。&lt;/p&gt;
+
+&lt;p&gt;所谓currying，就是说，我现在让这个函数可以返回值是C，或者是返回B-&amp;gt;C这样一个函数！这样让函数的扩展性就大大增加了！&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;配图看playground！！！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func curry&amp;lt;A, B, C&amp;gt;(f: (A, B) -&amp;gt; C) -&amp;gt; A -&amp;gt; B -&amp;gt; C {
+    return { x in { y in f(x, y) } }
+}
+
+func sum(a: Int, b: Int) -&amp;gt; Int {
+    return a + b
+}
+
+let curriedSum = curry(sum)
+
+let sumWith2 = curriedSum(3)(6)
+
+let sumWith3 = curriedSum(3)
+
+print(sumWith2)
+
+print(sumWith3(5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying1.png&quot; alt=&quot;currying1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们向curry函数中传一个形如(A, B)-&amp;gt;C的函数sum，此时curriedSum是一个&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;类型的函数，这点很好理解。&lt;/p&gt;
+
+&lt;p&gt;下面是重点，我们如果想直接调用计算，因为函数是&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;，那么就用&lt;strong&gt;curriedSum(num1)(num2)&lt;/strong&gt;就可以了，此时的返回值是&lt;strong&gt;Int&lt;/strong&gt;，如果我们想固定一个值，那么就用&lt;strong&gt;curriedSum(num1)&lt;/strong&gt;，那么此时的返回值其实是&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;类型。想得到最终那个值的话，就必须再传一个参数，才能让返回类型由&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;变为&lt;strong&gt;Int&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;可以随时注意&lt;strong&gt;playground&lt;/strong&gt;中&lt;strong&gt;sumWith2&lt;/strong&gt;和&lt;strong&gt;sumWith3&lt;/strong&gt;显示的函数类型。&lt;/p&gt;
+
+&lt;p&gt;这也就是currying的最大好处，想返回什么返回什么。可以返回一个-&amp;gt;Int，也可以返回一个&lt;strong&gt;Int-&amp;gt;Int(一个函数)&lt;/strong&gt;。其实不是想返回什么就返回什么，是参数想传什么就传什么，没啥区别。&lt;/p&gt;
+
+&lt;p&gt;我们在看一个Haskell中例子，我写了一个Swift版本。这个例子无非就是多了一个参数，不过可以更方便理解。(这个函数是learnyouahaskell第五章高阶函数Curried Functions中第一个函数)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func multThree(adder: Int) -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int {
+    return {
+        a in  {
+            b in
+            a * b * adder
+        }
+    }
+}
+
+let multTwo = multThree(3)
+let multOne = multThree(4)(3)
+let multZero = multThree(4)(2)(1)
+
+print(multTwo(2)(1))
+print(multOne(2))
+print(multZero)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying2.png&quot; alt=&quot;currying2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个函数，其实是一个&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;类型…一会看Haskell原函数就懂了。所以理论上我们可以返回三种类型，&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;，&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;，&lt;strong&gt;Int&lt;/strong&gt;。前两个是函数，最后一个是返回值。&lt;/p&gt;
+
+&lt;p&gt;就是我们依次&lt;strong&gt;multTwo&lt;/strong&gt;和&lt;strong&gt;multOne&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;最后提一个细节，为什么我们调用的时候要用&lt;strong&gt;multThree(4)(2)(1)&lt;/strong&gt;？个人觉得，这就是函数式，其实是传了三个函数，只不过是常数函数。所以用()。&lt;/p&gt;
+
+&lt;p&gt;最后我们看Haskell中实现&lt;strong&gt;multThree&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int
+multThree x y z = x * y * z
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; multThree 2 3 4
+24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;首先来说，我们可以直接这么使用，那么就是一个参数(常数)，一个参数(常数)，一个参数(常数)，返回值(常数)。但实际上又可以理解为，&lt;strong&gt;(((multThree 2) 3) 4)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们还可以怎么去用这个函数呢。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; let multTwoWithNine = multThree 9
+ghci&amp;gt; multTwoWithNine 2 3
+54
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这样的话，其实就是&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;multThree :: Int -&amp;gt; ((Int -&amp;gt; Int) -&amp;gt; Int)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这样看来，无论参数也好，返回值也好，都可以是一个函数。&lt;/p&gt;
+
+&lt;p&gt;当然，我觉得，在Haskell中写更爽一点。当然为什么那么爽。其实Curry是个姓，这个人的名，叫Haskell。&lt;/p&gt;
+
+&lt;p&gt;最后结个尾。&lt;/p&gt;
+
+&lt;p&gt;“Currying is common paradigm in functional programming. In fact in Haskell (another functional programming language) every function is curried by default.”其实就是..在Haskell中，所有函数都是默认curried。&lt;/p&gt;
+
+&lt;p&gt;参考资料&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/28767658/how-to-understand-the-currying-in-swift&quot;&gt;How to understand the currying in Swift?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24107191/curry-function-in-swift&quot;&gt;Curry Function in Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://swifter.tips/currying/&quot;&gt;柯里化 (CURRYING)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;Currying&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/thoughtbot/Curry/blob/master/Source/Curry.swift&quot;&gt;thoughtbot/Curry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://learnyouahaskell.com/&quot;&gt;Learn You a Haskell for Great Good! &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.objc.io/books/functional-swift/&quot;&gt;Functional Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Partial_application&quot;&gt;Partial application&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 27 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</guid>
+        
+        
+        <category>iOS</category>
+        
+      </item>
     
       <item>
         <title>Learn You a Swift for Great Good! part -1</title>
@@ -28,7 +185,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..&lt;/p&gt;
 
-&lt;p&gt;稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对于起来。第一行是类型定义。map的第一个参数是一个函数，就是(a-&amp;gt;b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。&lt;/p&gt;
+&lt;p&gt;稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对应起来。第一行是类型定义。map的第一个参数是一个函数，就是(a-&amp;gt;b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。&lt;/p&gt;
 
 &lt;p&gt;第二行，_ 在learnyouahaskell中描述为代表一个范型。所以可以理解为不管第一个参数是什么，都返回和第二个参数一样的类型，也就是一个list类型。&lt;/p&gt;
 
@@ -1259,126 +1416,6 @@ let brr = arr.map {
         
         
         <category>free</category>
-        
-      </item>
-    
-      <item>
-        <title>OpenWrt小记</title>
-        <description>&lt;h3 id=&quot;cbsflyhttpcbsflygithubio&quot;&gt;慎哥开博客了，博客做的很好看！欢迎访问~&lt;a href=&quot;http://cbsfly.github.io&quot;&gt;cbsfly&lt;/a&gt;&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请合理利用互联网，不要对国家安全造成任何威胁！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;因为要做比赛所以倒腾了&lt;a href=&quot;https://openwrt.org/&quot;&gt;OpenWrt&lt;/a&gt;倒腾了不到一天，做个小的记录。&lt;/p&gt;
-
-&lt;p&gt;前天上网买的路由器昨天就到货了，淘宝，33，硬改了的。16M闪存64内存好像。&lt;/p&gt;
-
-&lt;p&gt;昨天和店家交流了一下，店家人真的不错。然后我就开始把店家装好的操作系统重装，这次买的路由器是可以刷官方原版的，我就下载了一个最新版的&lt;a href=&quot;http://downloads.openwrt.org/chaos_calmer/15.05/&quot;&gt;chaos_calmer&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;什么是OpenWrt，简单的说，就是在你的路由器里面装个Linux操作系统。装上Linux的操作系统，是吧，你们懂得。基本上啥都能干了。&lt;/p&gt;
-
-&lt;p&gt;如果你家用的是极路由或者是小米路由，你要清楚，那都是深度定制的OpenWrt…&lt;/p&gt;
-
-&lt;p&gt;我倒腾了如下几个东西。一，中继。二，jump gfw。三，8021x校园网拨号。具体如下。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;预备&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;首先你得有个硬件能刷操作系统的路由器。我建议某宝买硬改的，很便宜。&lt;/li&gt;
-  &lt;li&gt;在ubuntu中，操作系统更新和安装软件用的是apt-get，在OpenWrt里用的是opkg(我觉得是OpenWrt Package的缩写)&lt;/li&gt;
-  &lt;li&gt;第二步可以联网进行操作，也可以本地安装。当然我一直觉得联网的好，不用编译配置啥的了…&lt;/li&gt;
-  &lt;li&gt;刚刷完操作系统的时候路由器的无线网默认是关闭的，需要登录打开。&lt;/li&gt;
-  &lt;li&gt;因为是操作系统，所以我们可以通过ssh root@192.168.1.1来对操作系统进行操作。&lt;/li&gt;
-  &lt;li&gt;刷完路由器的那个web界面叫luci。下文会用到。&lt;/li&gt;
-  &lt;li&gt;没找到中文语言包，所以下文全是英文。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;中继&lt;/h2&gt;
-&lt;p&gt;OpenWrt可以作为无线中继。在此感谢班长和姜导提供该技能包。&lt;/p&gt;
-
-&lt;p&gt;所谓无线中继，就是你用OpweWrt连接无线网，然后再把这个无线网的信号扩展了。这样就解决了一个路由器信号不够强的问题。其次，前文说道，OpenWrt是个Linux的操作系统，我们安装软件需要让路由器联网。&lt;/p&gt;
-
-&lt;p&gt;让路由器联网有两种方式，一种直接插网线到lan口。事实证明这样我就找不到路由器的ip了…&lt;/p&gt;
-
-&lt;p&gt;在咨询了班长之后我选择了无线中继的方式。&lt;/p&gt;
-
-&lt;p&gt;这有篇&lt;a href=&quot;http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS&quot;&gt;百度文库的教程&lt;/a&gt;写得很详细了我就不对步骤进行赘述了（百度文库还能有这种好材料…）因为我刷的是最新的cc版本路由器，所以界面不太一样，但是没啥差别。我只强调一个问题。&lt;/p&gt;
-
-&lt;p&gt;在第一步里，一定要设置lan口的ip，不能在同一个网段。我设置成192.168.10.1，设置完成之后，OpenWrt路由器会通过上级路由器获得一个ip，通过OpenWrt这个路由连接的设备，ssh的ip地址变成192.168.10.1，web访问也变成192.168.10.1。&lt;/p&gt;
-
-&lt;p&gt;全部设置完就可以通过OpenWrt路由器上网了，此时ssh到OpenWrt，发现已经可以ping了。&lt;/p&gt;
-
-&lt;h2 id=&quot;jump-gfw&quot;&gt;jump gfw&lt;/h2&gt;
-&lt;p&gt;前几天发朋友圈问了个敏感问题，没想到那么多人回复…&lt;/p&gt;
-
-&lt;p&gt;我现在是要入党的人，但是我又是程序员，有时候确实不得不那什么。&lt;/p&gt;
-
-&lt;p&gt;所以在此也说一下，你们有需求可以私聊我，我很乐意帮忙，具体手机和电脑怎么做我就不写了。路由器也是因为要做比赛才倒腾的。&lt;/p&gt;
-
-&lt;p&gt;我用的是shadowsocks的方式，也可以用vpn，我们工作室的极路由提供了vpn的接口，表示vpn太难搭建。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/shadowsocks/openwrt-shadowsocks&quot;&gt;openwrt-shadowsocks&lt;/a&gt;Github地址。&lt;/p&gt;
-
-&lt;p&gt;首先下载预编译的ipk到本地安装。在&lt;a href=&quot;http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.3-33429ad/&quot;&gt;shadowsocks-libev&lt;/a&gt;找到对应的机型。我的是ar71xx，然后找到那个下载次数最多的shadowsocks-libev-spec版本。这个是针对OpenWrt的优化版本。&lt;/p&gt;
-
-&lt;p&gt;下载完毕之后，通过scp命令上传到OpenWrt上，先&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg update&lt;/code&gt;，这一步是更新源，和我们ubuntu的update一样。&lt;/p&gt;
-
-&lt;p&gt;接着&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;安装，他会自动的把需要的依赖包一并下载了。到这就完成了对ss的安装。&lt;/p&gt;
-
-&lt;p&gt;在shadowsocks-libev-spec从v1.5.2开始可以使用luci配置界面。所以我就找了一下luci的package，所有的package都在&lt;a href=&quot;https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/packages/&quot;&gt;packages列表&lt;/a&gt;。luci-app-shadowsocks-spec_1.3.7-1_all.ipk我的叫这个，我就下载了然后继续scp上传，然后&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;之后登陆web界面，这时候就有可视化的配置界面了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/openwrt/openwrt.png&quot; alt=&quot;openwrt&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;输入你的ss账号密码就可以了。但是需要在最下面添加ignore list，让国内的网站直接连接网络，不然的话像我，就没法看nba直播了，很多视频优酷什么的也不能看了…&lt;/p&gt;
-
-&lt;p&gt;这一步其实是关键的，新建一个后缀为list的文件，然后输入这串命令&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget -O- &#39;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&#39; | awk -F\| &#39;/CN\|ipv4/ { printf(&quot;%s/%d\n&quot;, $4, 32-log($5)/log(2)) }&#39; &amp;gt; /dev/ignore.list&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后把ignore的路径设置到你配置的那个文件就可以了。&lt;/p&gt;
-
-&lt;p&gt;这时候在开腾讯nba就能看直播了…我简直，为了看球什么都干得出来。然后再连接路由器就可以Jump gfw了~&lt;/p&gt;
-
-&lt;h2 id=&quot;x&quot;&gt;8021x校园网拨号&lt;/h2&gt;
-&lt;p&gt;不过我们不用更换源，首先我们需要&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg remove wpad-mini&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install wpad&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;opkg install wpa-cli&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;然后配置8021x的文件就可以上网了。&lt;/p&gt;
-
-&lt;p&gt;因为我走了中继，所以这个没有具体实践到拨号，只实践到安装依赖包。&lt;/p&gt;
-
-&lt;p&gt;具体参考迪哥的博客&lt;a href=&quot;http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html&quot;&gt;极路由root并8021x校园网拨号经验分享&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;结尾&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;请合理利用互联网，不要对国家安全造成任何威胁！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;参考链接&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS&quot;&gt;Openwrt无线中继教程&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html&quot;&gt;极路由root并8021x校园网拨号经验分享&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/openwrt-shadowsocks&quot;&gt;openwrt-shadowsocks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.tshine.me/openwrt%E4%B9%8Bshadowsocks%E6%9B%B4%E6%96%B0ignore-list.html&quot;&gt;OpenWRT之Shadowsocks更新ignore.list&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Thu, 21 Jan 2016 11:02:00 +0800</pubDate>
-        <link>http://walkginkgo.com/linux/2016/01/21/openwrt.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/linux/2016/01/21/openwrt.html</guid>
-        
-        
-        <category>linux</category>
         
       </item>
     
