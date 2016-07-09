@@ -133,7 +133,7 @@
 <p>这样，我们就实现了对点击事件的分离。</p>
 
 <h2 id="section-2">分离跳转</h2>
-<p>分离跳转，就要用到我开始说的代理了。<br />
+<p>分离跳转，就要用到我开始说的代理了。
 我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法</p>
 
 <p><code class="highlighter-rouge">- (void)pushViewModel:(id)viewModel;</code></p>
@@ -159,7 +159,7 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 </code></pre>
 </div>
 
-<p>第一句话是声明了一个demoImpl，将navigation穿进去。<br />
+<p>第一句话是声明了一个demoImpl，将navigation穿进去。
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>
 
 <p><code class="highlighter-rouge">-(instancetype)initWithService:(id&lt;MVVMdemoService&gt;)service</code></p>
