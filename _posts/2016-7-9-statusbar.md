@@ -51,17 +51,21 @@ categories: Mac
 
 在里面找到 **NSStatusBar.h**，就可以看到这两个方法了。
 
+![2016-07-09_status7.png](http://o9791noio.bkt.clouddn.com/2016-07-09_status7.png)
+
 所以在小历当中，怎么说呢..其实是调用了私有的 API，但是不明显，而且调用的很少。所以上线到 App Store 是没有太大问题的。
 
 下面我们来猜测一下 Bartender 可以把所有图标放到状态栏下面那行的大概原理。
 
 `./class-dump -H -o ~/Desktop/private /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin`
 
-这个命令会把 **NSMenuExtra** 的.h头文件导出。还有其他的一系列头文件。
+这个命令会把 **NSMenuExtra** 相关的.h头文件导出。还有其他的一系列头文件。
 
-里面有 drawRect 方法，应该就是先画 view，然后把图标放进去就可以啦。
+![2016-07-09_status6.png](http://o9791noio.bkt.clouddn.com/2016-07-09_status6.png)
 
-至于按⌘拖动那个嘛..我估计，应该是提供了某个方法，可能是在 **NSMenuExtraView** 中的 mouseDown 方法，但是没文档啥的，我不确定..就得试和看命名了，我就不继续深究了。因为本来也就是一次探究大概原理的文章，主要是我 Bartender 都买了..也就没有什么继续研究的动力了哈哈。
+**NSMenuExtra** 中有 drawRect 方法，应该就是先画 view，然后把图标放进去就可以啦。
+
+至于按⌘拖动那个嘛..我估计，应该是提供了某个方法，可能是在 **NSMenuExtraView** 中的 **mouseDown** 方法，但是没文档啥的，我不确定..就得试和看命名了，我就不继续深究了。因为本来也就是一次探究大概原理的文章，主要是我 Bartender 都买了..也就没有什么继续研究的动力了哈哈。
 
 小小总结一下。
 
