@@ -6,9 +6,243 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jul 2016 12:45:26 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Jul 2016 12:45:26 +0800</lastBuildDate>
+    <pubDate>Fri, 15 Jul 2016 21:58:58 +0800</pubDate>
+    <lastBuildDate>Fri, 15 Jul 2016 21:58:58 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>让所有网页变成RSS —— Huginn</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;如果你不知道什么是 RSS，赶紧去查查是什么然后用起来吧，相信我，用了就再也离不开了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我是一个重度 RSS 使用者，一般来说，我获取信息有微博，微信，邮件，还有就是 RSS 。每次打开 Chrome 之后第一个打开的就是 Feedly，看看有没有新的内容更新，省去我了一次性打开多个网站的麻烦。但是问题来了，有些网站没有 RSS 怎么办？&lt;/p&gt;
+
+&lt;p&gt;前几天在&lt;a href=&quot;http://liqi.io/&quot;&gt;利器&lt;/a&gt;的群里，看到有在讨论一个叫 &lt;a href=&quot;https://github.com/cantino/huginn&quot;&gt;Huginn&lt;/a&gt; 的东西，一个叫祥子的朋友还很热心的给大家解答一些关于这个的问题，我稍微查了查，发现这个东西可以解决我一直的一个痛点，就决定花时间来倒腾一下。&lt;/p&gt;
+
+&lt;p&gt;Huginn 是一个 Github 的开源项目，已经上万 Star 了。简单的说这个东西是一个 IFTTT 形式的东西，可以把所有网页转换成 RSS 输出。更简单的说，就是工作流形式，类似于 iPhone 上的 Workflow。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;安装有很多的方式，官方提了有 Heroku，docker，还有服务器。&lt;/p&gt;
+
+&lt;p&gt;祥子专门写了文章介绍怎么利用 Heroku 来安装。&lt;a href=&quot;http://www.jianshu.com/p/2e6e3f845bc3&quot;&gt;Huginn安装教程—建立你自己的IFTTT&lt;/a&gt;，写的非常详细，需要的可以去看这个。&lt;/p&gt;
+
+&lt;p&gt;我是用我日本的 vps 来搭建的，但是由于官方的文档实在是太详细了…导致我想写安装发现没啥好写的，我就把遇到的几个问题略微叙述一下。&lt;/p&gt;
+
+&lt;h3 id=&quot;httpsgithubcomcantinohuginnblobmasterdocmanualinstallationmd&quot;&gt;&lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md&quot;&gt;官方文档安装教程地址&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;import-nodejs-repository&quot;&gt;坑1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install nodejs&lt;/code&gt; 就可以了。&lt;/p&gt;
+
+&lt;p&gt;因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;坑2. 需要在开始的时候设置主机语言&lt;/h3&gt;
+
+&lt;p&gt;如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;坑3. 需要设置时区&lt;/h3&gt;
+
+&lt;p&gt;不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo dpkg-reconfigure tzdata&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;css-&quot;&gt;坑4. 全部安装完毕 css 不显示&lt;/h3&gt;
+
+&lt;p&gt;Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/cantino/huginn/issues/1581&quot;&gt;css and image is not load&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;install-init-scripthttpsgithubcomcantinohuginnblobmasterdocmanualinstallationmdinstall-init-script&quot;&gt;坑5. &lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md#install-init-script&quot;&gt;Install Init Script&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;在这一步中是 &lt;strong&gt;或&lt;/strong&gt; 的关系，一定要搞明白。&lt;/p&gt;
+
+&lt;p&gt;我选择的是在这步把&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
+# jobs: bundle exec rails runner bin/threaded.rb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这两行的 &lt;strong&gt;#&lt;/strong&gt; 去掉了的。&lt;/p&gt;
+
+&lt;h3 id=&quot;nginx&quot;&gt;坑6. 配置 nginx&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;YOUR_SERVER_FQDN&lt;/strong&gt; 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;备注：我没有使用 https ，所以如果有需要 https 自己踩下吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;使用的方式我捉摸了很久才搞定..我会举个把网页转换成RSS的详细的例子。&lt;/p&gt;
+
+&lt;p&gt;开始之前首先需要解释几个东西。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;网页的格式是 html，RSS 的格式是 xml。&lt;/li&gt;
+  &lt;li&gt;xpath 是你用来确定网页元素的方法，这一步我会有一个很简单的方法来教大家怎么去搞定元素的确定。&lt;/li&gt;
+  &lt;li&gt;由于是工作流的形式，所以我们整个的过程其实有两步，第一步是抓取网页的信息，第二步是返回 RSS 的地址。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;下面开始举例子。我们现在要把&lt;a href=&quot;http://walkginkgo.com/&quot;&gt;我的博客 http://walkginkgo.com/&lt;/a&gt;转换成 RSS。&lt;/p&gt;
+
+&lt;p&gt;按照3中说的，我们需要先抓取网页信息。抓取网页信息，要创建一个 Website Agent。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn1.png&quot; alt=&quot;2016-07-15_huginn1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;按照图示，名字随便起，其他可以先默认。（全部解释太麻烦）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn2.png&quot; alt=&quot;2016-07-15_huginn2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后是关键的一步，我们要开始确定网页的元素。&lt;/p&gt;
+
+&lt;p&gt;点击 &lt;strong&gt;Toggle View&lt;/strong&gt; 到文本编辑模式。我们要修改我圈出来的两个地方。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn3.png&quot; alt=&quot;2016-07-15_huginn3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们需要修改url到我们的网址，在这里就是 &lt;strong&gt;http://walkginkgo.com/&lt;/strong&gt; 了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;extract&lt;/strong&gt; 是我们要提取的信息，我们这里要提取博客的题目，网址，发布日期，简述。&lt;/p&gt;
+
+&lt;p&gt;我们现在打开&lt;a href=&quot;http://walkginkgo.com/&quot;&gt;tesths&lt;/a&gt;这个博客进去来看怎么抓取元素。&lt;/p&gt;
+
+&lt;p&gt;在 Chrome 打开，然后选择你要的元素，选择 &lt;strong&gt;Inspect&lt;/strong&gt;。可以看到 Chrome 下面的审查元素信息已经出来了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn4.png&quot; alt=&quot;2016-07-15_huginn4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到我们的元素在 &lt;strong&gt;span&lt;/strong&gt; 标签里，这时候我们如图选择之后然后复制。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn5.png&quot; alt=&quot;2016-07-15_huginn5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn6.png&quot; alt=&quot;2016-07-15_huginn6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;复制的东西如下。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/html/body/div[1]/div/div/ul/li[1]/h2/a/span/text()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;把之前的 css 改成 xpath 然后直接复制就可以了。点击下面的 Dry Run，可以看到我们的标题已经搞定了。（css 使用见下面备注）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn7.png&quot; alt=&quot;2016-07-15_huginn7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是还有两个问题，一个是，我们只爬了一个标题，二是标题有空格。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn8.png&quot; alt=&quot;2016-07-15_huginn8.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决问题1&lt;/strong&gt;，需要把我们的 xpath 改成这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/html/body/div[1]/div/div/ul/li/h2/a/span/text()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;是因为 &lt;strong&gt;li[1]&lt;/strong&gt; 代表我们第一个标题，所以把[1]去了就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决问题2&lt;/strong&gt;，需要我们加上一句话。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;value&quot;: &quot;normalize-space(.)&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;这句话的意思就是把空格去了。&lt;/p&gt;
+
+&lt;p&gt;最后就是这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn9.png&quot; alt=&quot;2016-07-15_huginn9.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面我们把链接按照这个方法也爬下来。找到链接的地方，因为链接在a标签里面，所以我们要加一个 value，选择到 href。剩下我就不具体叙述了，我把最后完整的截图出来。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn10.png&quot; alt=&quot;2016-07-15_huginn10.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;日期什么的方法类似，也不多说。这样其实没有什么 html 的基础也可以爬网页了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn11.png&quot; alt=&quot;2016-07-15_huginn11.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dry Run&lt;/strong&gt; 之后的结果如图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn22.png&quot; alt=&quot;2016-07-15_huginn22.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;别忘记 &lt;strong&gt;Save&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;备注：官方默认创建用的是 css，Chrome 提供了复制 css 的方式，格式稍微改动成和官方例子那样&lt;strong&gt;空格&lt;/strong&gt;来代替&lt;strong&gt;&amp;gt;&lt;/strong&gt;就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这么我们就完成了工作的第一步，抓取网页，下一步要输出 RSS。&lt;/p&gt;
+
+&lt;p&gt;前面都随便写，记得 &lt;strong&gt;Sources&lt;/strong&gt; 选择我们之前的 tesths blog。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn13.png&quot; alt=&quot;2016-07-15_huginn13.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面是继续配置 &lt;strong&gt;Option&lt;/strong&gt;，这就比之前简单了。&lt;/p&gt;
+
+&lt;p&gt;但是注意我们之前的链接没有前面的 &lt;strong&gt;http://walkginkgo.com/&lt;/strong&gt; 这一串，我们要加上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn14.png&quot; alt=&quot;2016-07-15_huginn14.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后完整的是这样的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn15.png&quot; alt=&quot;2016-07-15_huginn15.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之后选择 &lt;strong&gt;Save&lt;/strong&gt; 就到了这。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn16.png&quot; alt=&quot;2016-07-15_huginn16.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到已经有 xml 格式的输出了。&lt;/p&gt;
+
+&lt;p&gt;最后一步我们要烧录 RSS。用到的时谷歌家的服务 &lt;a href=&quot;https://feedburner.google.com/&quot;&gt;feedburner&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn17.png&quot; alt=&quot;2016-07-15_huginn17.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后next。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn18.png&quot; alt=&quot;2016-07-15_huginn18.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;继续next。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn19.png&quot; alt=&quot;2016-07-15_huginn19.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;把网址复制到 Feedly 里面，大功告成！&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;更多备注&lt;/h2&gt;
+
+&lt;p&gt;因为我个人 RSS 主要是看有没有更新，所以抓取的内容不详细，需要抓取全文在手机看的话就自己倒腾啦。&lt;/p&gt;
+
+&lt;p&gt;如果输出 RSS 没有结果的话，可以看下是否允许，没运行点击一下 run 就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn21.png&quot; alt=&quot;2016-07-15_huginn21.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果你遇到输出的结果有问题，可以看下是不是event多了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-15_huginn20.png&quot; alt=&quot;2016-07-15_huginn20.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果多了就全部删除重新运行。&lt;/p&gt;
+
+&lt;p&gt;总之真的没有很难，最难的是 xpath 获取元素，但是我已经用了最简单的方式来教大家了，剩下的无论是不是专业学编程的都能很快搞定啦，就看大家怎么去玩这个了。&lt;/p&gt;
+
+&lt;p&gt;至于抓取 RSS 的频率，正在测试中..敬请关注更新。&lt;/p&gt;
+
+&lt;p&gt;参考链接&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://walden.farbox.com/post/huginn-a-rss-master-piece&quot;&gt;HUGINN:烧录RSS的神器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/2e6e3f845bc3&quot;&gt;Huginn安装教程—建立你自己的IFTTT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cantino/huginn&quot;&gt;cantino/huginn&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 15 Jul 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/mac/2016/07/15/huginn.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/07/15/huginn.html</guid>
+        
+        
+        <category>Mac</category>
+        
+      </item>
     
       <item>
         <title>Mac状态栏Hack</title>
@@ -60,17 +294,21 @@
 
 &lt;p&gt;在里面找到 &lt;strong&gt;NSStatusBar.h&lt;/strong&gt;，就可以看到这两个方法了。&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status7.png&quot; alt=&quot;2016-07-09_status7.png&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;所以在小历当中，怎么说呢..其实是调用了私有的 API，但是不明显，而且调用的很少。所以上线到 App Store 是没有太大问题的。&lt;/p&gt;
 
 &lt;p&gt;下面我们来猜测一下 Bartender 可以把所有图标放到状态栏下面那行的大概原理。&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./class-dump -H -o ~/Desktop/private /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;这个命令会把 &lt;strong&gt;NSMenuExtra&lt;/strong&gt; 的.h头文件导出。还有其他的一系列头文件。&lt;/p&gt;
+&lt;p&gt;这个命令会把 &lt;strong&gt;NSMenuExtra&lt;/strong&gt; 相关的.h头文件导出。还有其他的一系列头文件。&lt;/p&gt;
 
-&lt;p&gt;里面有 drawRect 方法，应该就是先画 view，然后把图标放进去就可以啦。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status6.png&quot; alt=&quot;2016-07-09_status6.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;至于按⌘拖动那个嘛..我估计，应该是提供了某个方法，可能是在 &lt;strong&gt;NSMenuExtraView&lt;/strong&gt; 中的 mouseDown 方法，但是没文档啥的，我不确定..就得试和看命名了，我就不继续深究了。因为本来也就是一次探究大概原理的文章，主要是我 Bartender 都买了..也就没有什么继续研究的动力了哈哈。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NSMenuExtra&lt;/strong&gt; 中有 drawRect 方法，应该就是先画 view，然后把图标放进去就可以啦。&lt;/p&gt;
+
+&lt;p&gt;至于按⌘拖动那个嘛..我估计，应该是提供了某个方法，可能是在 &lt;strong&gt;NSMenuExtraView&lt;/strong&gt; 中的 &lt;strong&gt;mouseDown&lt;/strong&gt; 方法，但是没文档啥的，我不确定..就得试和看命名了，我就不继续深究了。因为本来也就是一次探究大概原理的文章，主要是我 Bartender 都买了..也就没有什么继续研究的动力了哈哈。&lt;/p&gt;
 
 &lt;p&gt;小小总结一下。&lt;/p&gt;
 
@@ -89,8 +327,8 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Sat, 09 Jul 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2016/07/09/nsstatusbar.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/07/09/nsstatusbar.html</guid>
+        <link>http://walkginkgo.com/mac/2016/07/09/statusbar.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/07/09/statusbar.html</guid>
         
         
         <category>Mac</category>
@@ -1180,209 +1418,6 @@ map f (x:xs) = f x : map f xs
         
         
         <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Higher-Order Functions</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。
-今天不打算写的，今天实验课太无聊。我决定写一写。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;最后的部分可能我会结合swift来写一写。看我写的进度…&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;背景&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;说好的看Learn You a Haskell for Great Good，寒假敲了不少，到higher-order function卡了。光敲已经不能理解了。最近的早上有时候去的早就会看一看理解一下Haskell，把higher-order function看了小半，Lambdas之前的部分，准备写一写，也算是个记录。不得不感叹，这玩意真TM难懂。&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;introduction&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;首先简单的说一下Haskell的语法，只有这样我才能更好的把后面的东西写明白。&lt;/p&gt;
-
-&lt;p&gt;首先来看一个函数，lucky。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lucky :: Int -&amp;gt; String
-lucky 7 = &quot;LUCKY NUMBER SEVEN!&quot;
-lucky x = &quot;Sorry, you&#39;re out of luck, pal!&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这个其实和swift的语法很相似，以至于我觉得swift这里很大程度上借鉴了haskell的语法。lucky作为一个函数，参数是一个Int类型，返回值是一个String类型。当我们运行时，如果是7，就会显示是幸运数字，如果不是，那就显示sorry。&lt;/p&gt;
-
-&lt;h2 id=&quot;higher-order-function&quot;&gt;higher-order function&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;什么是higher-order function。在haskell第五章的开始说了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Haskell functions can take functions as parameters and return functions as return values. A function that does either of these things is called a higher-order function.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在wiki中得介绍是这样的。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：
-接受一个或多个函数作为输入
-输出一个函数&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可以看到这两个其实想表达的意思是一样的。那就是，函数作为参数，或者返回一个函数。&lt;/p&gt;
-
-&lt;p&gt;简单的说，在C语言中，我们都是这么写的…void func(int, int) return void。&lt;/p&gt;
-
-&lt;p&gt;在haskell中，我们可以这么写，func func(func, func) return func。&lt;/p&gt;
-
-&lt;p&gt;在函数式编程中，函数已经成为了头等公民。这就是高阶函数。到这基本上就可以理解面向对象总是说函数式把函数传来传去的梗了…&lt;/p&gt;
-
-&lt;h2 id=&quot;func-return-func&quot;&gt;func return func&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;我们一个一个来看。先看返回一个函数的情况。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int
-multThree x y z = x * y * z
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这是一个函数，参数是三个Int类型，返回这三个Int的乘积。&lt;/p&gt;
-
-&lt;p&gt;也可以写成这样。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; (Int -&amp;gt; (Int -&amp;gt; Int))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;所以，我们来分析书上的一个例子。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; let multTwoWithNine = multThree 9
-ghci&amp;gt; multTwoWithNine 2 3
-54
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在这里，我们让multTwoWithNine等于了一个函数，这个函数是multThree 9。那这个时候multThree 9实际上算是返回了一个函数。那么这样的话，可以将这个函数赋值为一个变量。&lt;/p&gt;
-
-&lt;p&gt;也就是我们的multTwoWithNine。这个时候我们的multTwoWithNine实际上要计算的就是两个数的乘积再乘上9，而乘9，实际上不算是一个函数。&lt;/p&gt;
-
-&lt;p&gt;这里就达到了函数返回一个函数。即我的标题，func return func。&lt;/p&gt;
-
-&lt;h2 id=&quot;func-as-parameters&quot;&gt;func as parameters&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;来看例子。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In Haskell, functions can take other functions as parameters, and as you’ve seen, they can also return functions as return values.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;也就是说，函数可以将函数作为参数。&lt;/p&gt;
-
- 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a
- 	applyTwice f x = f (f x)
-
-&lt;p&gt;这个例子种，f实际上就是一个方法。&lt;/p&gt;
-
-&lt;p&gt;看个例子就明白了。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; applyTwice (+3) 10
-16
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在这里，我们看上去applyTwice有三个参数，但是前两个参数被包起来了。也就是说，我们有一个函数参数，一个参数和一个返回值。&lt;/p&gt;
-
-&lt;p&gt;f x = f (f x)实际上就是f方法执行了两次。&lt;/p&gt;
-
-&lt;p&gt;怎么去理解高阶函数呢？实际上在我看来，可以这么理解，第一个函数参数，实际上实现了在第三个参数的操作。&lt;/p&gt;
-
-&lt;p&gt;为什么这里会等于16，实际上这样操作的。10 + 3 + 3。也就是，实际上第三个参数执行了函数参数的方法，得到了返回值。&lt;/p&gt;
-
-&lt;p&gt;说了这么多还是混乱是吧…感觉上这个例子可能不能很好的说明。那我们看两个好懂的。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zipWith&#39; :: (a -&amp;gt; b -&amp;gt; c) -&amp;gt; [a] -&amp;gt; [b] -&amp;gt; [c]
-zipWith&#39; _ [] _ = []
-zipWith&#39; _ _ [] = []
-zipWith&#39; f (x:xs) (y:ys) = f x y : zipWith&#39; f xs ys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;按照我上面说的，第一个函数参数，实际上是a，b参数返回c。&lt;/p&gt;
-
-&lt;p&gt;那么我们对[a]中的元素和[b]中的元素执行第一个函数的方法，最后返回的应该是列表中的每一个元素操作后的结果。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; zipWith&#39; (+) [4,2,5,6] [2,6,2,3]
-[6,8,7,9]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这个例子中，对[a]和[b]中的每一个元素进行+操作。实际上就是第一个(a -&amp;gt; b -&amp;gt; c)中的操作了。&lt;/p&gt;
-
-&lt;p&gt;第二行和第三行的意思其实是，第一个函数参数不管它什么类型，我们迪哥参数和第三个参数只要是列表，就返回列表。&lt;/p&gt;
-
-&lt;p&gt;这么一看，其实高阶函数也不是很难吧。&lt;/p&gt;
-
-&lt;p&gt;再看一个map，这个在rac和rx都有用到。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]
-map _ [] = []
-map f (x:xs) = f x : map f xs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;我们看这个函数，按照对zipWith’的理解，我们知道，这个操作其实是对[a]列表中的元素进行操作，然后这些值返回一个[b]列表。&lt;/p&gt;
-
-&lt;p&gt;我们来分析一个复杂点的map。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;首先我们(a -&amp;gt; b)要进行的函数操作其实是(map (^2))，那对第一个列表[1,2]来说，又是一个列表了，所以要返回一个列表。(map (^2)) 1 的结果是1，(map (^2)) 2的结果是4，然后返回一个列表，即[1,4]。一次类推，所以结果就是。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[1,4],[9,16,25,36],[49,64]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;swift&quot;&gt;swift中的应用&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/&quot;&gt;Swift 烧脑体操（三） - 高阶函数&lt;/a&gt;看到了swift中高阶函数的运用。&lt;/p&gt;
-
-&lt;p&gt;那我们来迁移一下理解。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let arr = [1, 2, 4]
-// arr = [1, 2, 4]
-
-let brr = arr.map {
-	&quot;No.&quot; + String($0)
-}
-// brr = [&quot;No.1&quot;, &quot;No.2&quot;, &quot;No.4&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第一个arr.map，在map中，实际上就是实现了我们上文map中f的应用，对列表里的每个元素就会进行操作。实际上和haskell中的map函数没有什么差别了。&lt;/p&gt;
-
-&lt;p&gt;实际上来说，高阶函数的应用很多，后面我在学习swift之后会继续说说这个高阶函数，当然，在我能搞定的情况下，我想尝试去学学Monad。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;大概，大概，把我理解的高阶函数交会给工作室学弟学妹们的时候，就是我要离开工作室去考研或者工作的时候了~&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sun, 06 Mar 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html</guid>
-        
-        
-        <category>free</category>
         
       </item>
     
