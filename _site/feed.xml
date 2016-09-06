@@ -6,9 +6,91 @@
 </description>
     <link>http://walkginkgo.com/</link>
     <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jun 2016 20:11:27 +0800</pubDate>
-    <lastBuildDate>Wed, 29 Jun 2016 20:11:27 +0800</lastBuildDate>
+    <pubDate>Tue, 06 Sep 2016 20:55:20 +0800</pubDate>
+    <lastBuildDate>Tue, 06 Sep 2016 20:55:20 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>我的 Kindle 使用技巧</title>
+        <description>&lt;p&gt;上学期买了 Kindle，于是 Kindle 就成为了我日常必备的物件…而且我觉得 Kindle 是我买过的超值的一个东西，所以有必要把我的一些使用心得写一写。&lt;/p&gt;
+
+&lt;p&gt;首先要解释一下，当你拿到 Kindle 的时候，会需要一个亚马逊的账号，除此之外每个 Kindle 还会对应一个邮箱（邮箱名可以修改），一般是 @kindle.cn 结尾的。可以在你的 Kindle 设置里或者在亚马逊官网找到。这个邮箱的用途之大。如果你想要什么书的话，直接用邮箱发个附件到你的 Kindle 邮箱，然后 Kindle 连上网就能自动下载这本书了。还可以在主题加上 convert，这时候要发 pdf 格式的话会自动转存 Kindle 格式，不过不推荐，pdf 格式会经常转乱。&lt;/p&gt;
+
+&lt;p&gt;还有要解释的，Kindle 的格式是 azw3 的，mobi 格式也能被 Kindle 读取，pdf 格式也可以，但是 pdf 在 Kindle 上阅读体验只差，因为字太小没法调整。如果是前两种格式的话，可以在 Kindle 中自动调整字体大小，还能重新排版，体验之好。所以如果看 pdf ，还是买一个 iPad Pro 吧。&lt;/p&gt;
+
+&lt;p&gt;解释完了，下面强势安利几个能用得上，可以让你的 Kindle 使用效率翻上 N 翻的东西。&lt;/p&gt;
+
+&lt;h2 id=&quot;kindle-cnkindle&quot;&gt;微信公众号：亚马逊Kindle服务号 微信号：cn_Kindle&lt;/h2&gt;
+
+&lt;p&gt;这是亚马逊官方的微信公众号，除了会推荐一些书之外，还组织过读书的活动。不过这个公众号最大的杀器就是，和你的专属 Kindle 邮箱绑定之后，可以将微信公众号的文章推送到你的 Kindle 上。对于我这样一个微信公众号重度使用者，是非常有用的。&lt;/p&gt;
+
+&lt;p&gt;有时候来不及看了就直接传到 Kindle 上。具体使用就是长按你要看的公众号，选择”…“，就会有一个“亚马逊Kindle服务号的”，发送就可以了。也可以打开文章在右上角选择”…“。具体的使用方法关注之后可以自己查。&lt;/p&gt;
+
+&lt;p&gt;除此之外，应该还可以在微信端买书之后直接推送到 Kindle，因我都是用电脑，所以还试过这个功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;kindle-kindle10000&quot;&gt;微信公众号：Kindle电子书库 微信号：kindle10000&lt;/h2&gt;
+
+&lt;p&gt;这个其实不该安利的，但是作为 Kindle 新用户可以使用玩玩。因为这其实就是一个盗版图书的汇集地…我刚开始的时候用，最近都买正版了。所以我不会很详细的说怎么使用，需要的自己去关注就好。&lt;/p&gt;
+
+&lt;p&gt;简单的说就是，它会用你的邮箱给你的 Kindle 邮箱发邮件。具体的绑定不难，就是利用了邮箱协议。关注之后它的说明非常之详细。&lt;/p&gt;
+
+&lt;p&gt;这个的好处在于，你想看什么书直接在微信里输它就会帮你查找，如果确定要看，那么点击推送等一会就可以在你的 Kindle 上看到了。使用之方便是难以言表的。&lt;/p&gt;
+
+&lt;p&gt;除此之外，还有 Kindle杂志公社，微信号：Mag10000，是一家的，可以推送一些杂志到你的 Kindle 上。&lt;/p&gt;
+
+&lt;h2 id=&quot;kindle-httptbookdnacn&quot;&gt;&lt;a href=&quot;http://t.bookdna.cn/&quot;&gt;Kindle 特价书&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;这个网站不知道是谁维护的，在知乎上看到之后开始变为日常每天看的网站…&lt;/p&gt;
+
+&lt;p&gt;有两个原因推荐这个网站，一是有时候不知道想看什么书，这样逛逛会发现不少好书。二是确实便宜啊，比如我买的《中国历史那些事儿系列套装》，一共是 明朝那些事儿（全7册）、这里曾经是汉朝（全6册）、唐史并不如烟（全5册）、如果这是宋史（全10册），原价是 88.59 元，我看到特价的时候，只用了 13.99 元就入了那么多书，还是比较划算的。&lt;/p&gt;
+
+&lt;h2 id=&quot;calibre----win-mac-linux&quot;&gt;calibre 软件 —— 支持 Win Mac Linux&lt;/h2&gt;
+
+&lt;p&gt;这个软件是一个电子书管理软件，可以对电子书进行格式转换等一系列操作。还可以直接在电脑上看 azw 格式和 mobi 格式。除此之外还支持制作电子书，曾经用网上提供的 pocket 接口制作了我 pocket 里面收藏的网页放到 Kindle 上看。&lt;/p&gt;
+
+&lt;p&gt;最近发现了 calibre 的新功能。因为在家的时候我在 Kindle 特价书 上会买好多书，想给我妈还有奶奶都搞一份，毕竟他们也算是出了钱的…但是亚马逊官方对于购买的书籍都加了 DRM 保护，不能在购买者之外的 Kindle 设备上看。这里不具体一步一步说怎么去除 DRM 保护了，用到的工具 &lt;a href=&quot;https://github.com/apprenticeharper/DeDRM_tools&quot;&gt;DeDRM_tools&lt;/a&gt;，可以安装 calibre 插件，然后将 azw 格式转化为 mobi 格式就可以在其他设备上看了。&lt;/p&gt;
+
+&lt;h2 id=&quot;push-to-kindlehttpfivefiltersorgkindle-it--chrome-&quot;&gt;&lt;a href=&quot;http://fivefilters.org/kindle-it/&quot;&gt;Push to Kindle&lt;/a&gt; —— Chrome 插件&lt;/h2&gt;
+
+&lt;p&gt;这个软件是有 Chrome 插件的，绑定邮箱之后可以直接将网页推送到 Kindle 上看。解决了 Pocket 上面的东西想推送到 Kindle 的问题。&lt;/p&gt;
+
+&lt;p&gt;但是如果就这么点功能未免太什么了。Push to Kindle 个人觉得最厉害的是提供了可以编辑的格式。它在抓取网页之后会显示一个 Preview，如图。如果你对排版不满意，可以点击 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt;，进入之后，把你想看的网页内容复制进来，对其中的格式进行排版再推送到 Kindle 上，几乎完美解决了不同网页在 Kindle 上阅读体验的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/kindle.jpeg&quot; alt=&quot;kindle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然，你还可以用 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt; 制作 PDF 和 EPUB。里面的内容当然是想是什么就是什么了。我曾经还放过代码，然后推送到 Kindle 上…十分不建议用 Kindle 看代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;如果你想在 Kindle 上看一些 RSS，可以上&lt;a href=&quot;https://www.dogear.cn/&quot;&gt;狗耳朵&lt;/a&gt;，里面提供了很多网站的 RSS，每天定点推送到 Kindle 上，非常方便。&lt;/p&gt;
+
+&lt;p&gt;Kindle 自带了查词功能，中英文都有。长按就可以了。&lt;/p&gt;
+
+&lt;p&gt;除此之外 Kindle 还可以制作剪切板，看到好的句子可以直接记录在剪切板中，可以用电脑拷出来。具体方法可以网上查一查。&lt;/p&gt;
+
+&lt;p&gt;据说现在 Kindle 还支持微信分享了，没有用过。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;感谢很多人在知乎以及其他网站上分享了很多 Kindle 的使用技巧，我只是针对我自己进行了一些选择，网上还有很多其他的，可以没事查一查。&lt;/p&gt;
+
+&lt;p&gt;Kindle 给我的改变比较大，上学期看了好多书，很多玩手机的时间都看书了，感觉还是学到了不少东西的，看书心里愧疚感也会减少。&lt;/p&gt;
+
+&lt;p&gt;俗话说得好。&lt;/p&gt;
+
+&lt;p&gt;“平板穷三代，Kindle 富一生。”&lt;/p&gt;
+
+&lt;p&gt;愿买了 Kindle 的你可以重新爱上读书。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/life/2016/09/06/kindle.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2016/09/06/kindle.html</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</title>
@@ -1296,100 +1378,6 @@ let brr = arr.map {
         
         
         <category>free</category>
-        
-      </item>
-    
-      <item>
-        <title>大三上+我的2016年总结</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;前几天就写好了一直没发。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这是一篇很水的博客。仅写给自己。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;还有几天，我这总结的博客拖了又拖到现在才开始写。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;不废话开始总结&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;大三上&lt;/h3&gt;
-
-&lt;p&gt;这学期写了9篇博客。iOS方面3篇，感想2篇，杂七杂八的倒腾2篇。&lt;/p&gt;
-
-&lt;p&gt;看了3本还是4本书…我来想想，看了知乎的选集，创业时我们在聊什么，于丹的最美古诗词，黑客与画家，翻了大秦帝国的某半本，围城半本。好像还一本，记不得了，这点很不错。&lt;/p&gt;
-
-&lt;p&gt;出去玩了2次。感谢姜导和姜嫂。也感谢瑶姐。让我索然无味的写代码生活多了一点其他的颜色。&lt;/p&gt;
-
-&lt;p&gt;这学期出去吃了N多次，不过也算是平常辛苦的犒劳吧。&lt;/p&gt;
-
-&lt;p&gt;日记写了一学期的，这点也很满意。&lt;/p&gt;
-
-&lt;p&gt;这学期买正版软件买了大好几百的样子。现在开始逐渐的支持正版，即使是office这种，我都淘宝买账号，又不贵，还省去了破解的麻烦。&lt;/p&gt;
-
-&lt;p&gt;工作室项目做了一个，那个坑一样的项目。不过基本上算是摆脱外包生活了。可以没有钱，但不能让外包影响心情。&lt;/p&gt;
-
-&lt;p&gt;自己还做了一个，正在上线过程中。敬请期待。不过不出意外的话，下学期要上线了。&lt;/p&gt;
-
-&lt;p&gt;依旧坚持了锻炼，除了中间有段时间脖子疼，其他时间基本每天都有锻炼，初期是平板支撑加俯卧撑，后面加了打球，到最后面是跑步，最近都有在跑，欢迎各位后面约跑。总之一直都在锻炼，瘦了10斤，但是确实感觉到胳膊和肚子上逐渐都有了肌肉的痕迹。&lt;/p&gt;
-
-&lt;p&gt;期末的时候换了手机，为了省钱只换了5s。&lt;/p&gt;
-
-&lt;p&gt;学习上，学校那些专业课开的，我简直了。很多东西都过时了！！什么年代了还用这个那个的软件。行不行啊？汇编软工计网编程好评，其他都差评。&lt;/p&gt;
-
-&lt;p&gt;这学期觉得听的最爽的课是毛概。我很认真的。&lt;/p&gt;
-
-&lt;p&gt;这学期，申请入党了。考试也过了，到现在不通知我。党是不是不愿意吸收我。&lt;/p&gt;
-
-&lt;p&gt;技术上，总算是摆脱了瓶颈期。看了yy大神的采访稿才知道后面应该怎么做，技术人，还是要多看源码。&lt;/p&gt;
-
-&lt;p&gt;当然，技术上还学了很多其他的东西，这点我还是挺满意的，比如倒腾各种东西的时间越来越快。也开始逐渐接触一些更高端的东西。&lt;/p&gt;
-
-&lt;p&gt;最近也在开始逐渐的了解整个互联网的生态环境，更加全方位的发展。主要是体验产品和对产品的理解上，都在刻意的带着训练自己。&lt;/p&gt;
-
-&lt;p&gt;依旧是抄了一学期的作业。不过已经进步了，有些能自己写的都自己写了，不想写的都抄了，大部分都不想写。我没写作业的时间都用来写代码了。很多课也开始逐渐的变得自己靠自己，而不是靠别人。这是我很感到进步的一点。&lt;/p&gt;
-
-&lt;p&gt;这学期最大的事情算是接手工作室吧。但这是后话。&lt;/p&gt;
-
-&lt;p&gt;重修刷分，是这学期最失败的一件事情。不过也是好事，我算是彻底打消了出国的想法。后面可以安心的准备考研或者工作。&lt;/p&gt;
-
-&lt;p&gt;这学期除了自己变懒了，很多计划还是没有做成，看了太多直播。而且确实，有些专业课还是要看一看的。晚睡拖延症越发严重。这是不好的。&lt;/p&gt;
-
-&lt;p&gt;感觉这学期其实特要感谢以及表扬一个人，慎哥。比较努力，跟我学iOS也很辛苦，干了很多搬砖的事情，但是确实很认真。也没事指导我穿衣打扮，在此，特意感谢以及表扬。&lt;/p&gt;
-
-&lt;p&gt;其他人，感谢起来就太多了。不一一说了。你们都知道我是爱你们的。&lt;/p&gt;
-
-&lt;p&gt;这学期用我挺哥的话说，除了XX，都完美了，那两个字请自行脑补。我实在是不堪回首。要好好学习了啊。&lt;/p&gt;
-
-&lt;p&gt;哦，对了，很严肃的话题。这学期依旧单身。即使觉得有姑娘不错。但是依旧单身。&lt;/p&gt;
-
-&lt;p&gt;自从回168韦老师和我说，不要着急，不能凑合，不能放低标准。我现在很淡定，以后我们就是高级工程师，公司CTO。姑娘们看着办。&lt;/p&gt;
-
-&lt;p&gt;这学期也想明白很多事情，比如钱和情怀。还有没想明白的，依旧纠结的考研和工作。&lt;/p&gt;
-
-&lt;p&gt;打个分，75吧，原计划，85的，真的。要不是是吧，就85了。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;2016年终总结&lt;/h3&gt;
-&lt;p&gt;博客写了26篇。&lt;/p&gt;
-
-&lt;p&gt;单身。&lt;/p&gt;
-
-&lt;p&gt;技术上越发成熟。&lt;/p&gt;
-
-&lt;p&gt;又一年了。&lt;/p&gt;
-
-&lt;p&gt;其实这一年没啥好总结的。学习就那样，技术上也就那样。&lt;/p&gt;
-
-&lt;p&gt;真的发自内心的感谢信安一班。你们又陪我度过了一年。这一年，和我在一起时间最长的就是你们。打球也好上课也好写代码也好。总有很多欢乐。&lt;/p&gt;
-
-&lt;p&gt;不能提名字，提名字就写不完了。各种感谢！深鞠躬！爱你们！&lt;/p&gt;
-</description>
-        <pubDate>Sat, 06 Feb 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/02/06/sumup.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/02/06/sumup.html</guid>
-        
-        
-        <category>life</category>
         
       </item>
     
