@@ -88,19 +88,19 @@
 <h2 id="section-1">整个搭建过程</h2>
 <p>实际上如果利用XAMPP的话整个过程非常简单，我一开始搭建的时候没有使用XAMPP，走了很多弯路。后来才发现DVWA给的官方文档就是建议用XAMPP。我建议就是开一台虚拟机，然后专门运行XAMPP就可以。</p>
 
-<p>进入桌面之后<br />
+<p>进入桌面之后
 <code class="highlighter-rouge">sudo ./xampp-linux-x64-5.6.8-0-installer.run</code></p>
 
 <p>记得要用sudo，因为是要安装在系统文件里的。</p>
 
-<p>![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png<br />
+<p>![use-xampp-build-dvwa-3](\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-3.png
 不停的next。</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-4.png" alt="use-xampp-build-dvwa-4" /></p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-5.png" alt="use-xampp-build-dvwa-5" /></p>
 
-<p>会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。<br />
+<p>会弹出很多页面，还有一个可视化的对话框，看着点。都不是很重要。
 会有一个这个，点中文。</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-6.png" alt="use-xampp-build-dvwa-6" /></p>
@@ -135,17 +135,17 @@
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-12.png" alt="use-xampp-build-dvwa-12" /></p>
 
-<p>这下mysql的密码也设置Ok了~<br />
+<p>这下mysql的密码也设置Ok了~
 这时候在进入之前的web页面。</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-13.png" alt="use-xampp-build-dvwa-13" /></p>
 
-<p>至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。<br />
+<p>至此，我们的xampp的环境已经基本上配置好了。下面要配置DVWA了。
 我们要将DVWA的目录文件改个简单的名字，我改成了dvwa，然后放到/opt/lamp/htdocs目录下。</p>
 
 <p><code class="highlighter-rouge">mv /home/cd/Desktop/dvwa/ /opt/lampp/htdocs/</code></p>
 
-<p>这时候我们在网址栏输入<code class="highlighter-rouge">127.0.0.1/dvwa</code>已经有显示了。<br />
+<p>这时候我们在网址栏输入<code class="highlighter-rouge">127.0.0.1/dvwa</code>已经有显示了。
 显示的是</p>
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-15.png" alt="use-xampp-build-dvwa-15" /></p>
@@ -154,7 +154,7 @@
 
 <p><img src="\images\use-xampp-build-dvwa\2015-5-1-use-xampp-build-dvwa-16.png" alt="use-xampp-build-dvwa-16" /></p>
 
-<p>点击红线部分，会出现下面的字。<br />
+<p>点击红线部分，会出现下面的字。
 这时候我们要进入mysql设置DVWA的数据库。</p>
 
 <p><code class="highlighter-rouge">/opt/lampp/bin/mysql -us root -p</code></p>

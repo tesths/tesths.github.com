@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>不利用Jekyllbootstrap上线Jekyll</title>
-  <meta name="description" content="因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。">
+  <title>Huginn 安装备注（持续更新）</title>
+  <meta name="description" content="安装准备工作">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/jekyll/2015/02/08/use-jekyll.html">
+  <link rel="canonical" href="http://walkginkgo.com/life/2016/08/10/huginn-install.html">
   <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
   
   
@@ -63,45 +63,79 @@
         <div class="post">
 
   <header class="post-header" align="center" >
-    <h1 class="post-title">不利用Jekyllbootstrap上线Jekyll</h1>
-    <p class="post-meta">Feb 8, 2015</p>
+    <h1 class="post-title">Huginn 安装备注（持续更新）</h1>
+    <p class="post-meta">Aug 10, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。</p>
+    <h2 id="section">安装准备工作</h2>
 
-<p>首先是新建一个我的jekyll博客。</p>
+<h3 id="section-1">1. 需要在开始的时候设置主机语言</h3>
 
-<p><img src="/images/use-jekyll/use-jekyll-1.png" alt="use-jekyll-1" /></p>
+<p>如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是</p>
 
-<p>然后我们将建好的git仓库clone到本地</p>
+<p>export LC_ALL=en_US.UTF-8 （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
 
-<p><img src="/images/use-jekyll/use-jekyll-2.png" alt="use-jekyll-2" /></p>
+<h3 id="section-2">2. 需要设置时区</h3>
 
-<p>我不知道怎么将myblog设置为我的git根目录来上传。
-然后就利用了笨办法，讲myblog里的所有文件移动到judi0713这个文件夹里。
-命令是</p>
+<p>不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。</p>
 
-<p><img src="/images/use-jekyll/use-jekyll-3.png" alt="use-jekyll-3" /></p>
+<p>sudo dpkg-reconfigure tzdata</p>
 
-<p>顺便提一下， mv这个命令可以重新命名，重命名的方式就是mv filename1 filename2
-mv可以移动文件，批量移动文件的方式就是用*号。
-比如我这里使用的，就是可以将myblog的所有文件全部移动，相应的，如果是*.*那么会将myblog的所有文件移动，保留文件夹。</p>
+<p>在Huginn官方的安装wiki中，其实有很多安装问题没有具体列出，我在上一篇博客中做了一些总结。在这篇博客中，我会做成一个安装问题的集合。以方便各位的安装。</p>
 
-<p>现在我们已经将jekyll创建的文件全部移动到了git仓库里。
-下面就是要将仓库里的文件全部上传了。</p>
+<h2 id="wiki-">官方 wiki 部分修正以及注释</h2>
 
-<p><img src="/images/use-jekyll/use-jekyll-4.png" alt="use-jekyll-4" /></p>
+<h3 id="import-nodejs-repository">1. 官方最开始有一步 Import node.js repository…</h3>
 
-<p>就是这三条。具体每一条什么含义我大概明白，但是从昨晚上到今天早上我已经被git这几条命令搞的有点晕了。
-我全部理清楚之后会专门写一个和git命令行有关的blog的。</p>
+<table>
+  <tbody>
+    <tr>
+      <td>curl -sL https://deb.nodesource.com/setup_0.12</td>
+      <td>sudo bash -</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>打开<a href="http://judi0713.github.io/">judi0713.github.io</a>已经可以访问了。</p>
+<p>这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 apt-get install nodejs 就可以了。</p>
+
+<p>因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。</p>
+
+<h3 id="install-init-script">2. Install Init Script</h3>
+
+<p>在这一步中是 或 的关系，一定要搞明白。</p>
+
+<p>我选择的是在这步把</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
+# jobs: bundle exec rails runner bin/threaded.rb 这两行的 # 去掉了的。
+</code></pre>
+</div>
+
+<h3 id="nginx">3. 配置 nginx</h3>
+
+<p>YOUR_SERVER_FQDN 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。</p>
+
+<p>备注：我没有使用 https ，所以如果有需要 https 自己踩下吧。
+作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。</p>
+
+<h2 id="section-3">错误解决方法</h2>
+
+<h3 id="web-css-">1. 全部安装完毕web打开 css 不显示</h3>
+
+<p>Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。</p>
+
+<p><a href="https://github.com/cantino/huginn/issues/1581">css and image is not load</a></p>
+
+<h3 id="bundle-install--cannot-allocate-memory-memory">2. 在 bundle install 的时候显示 “Cannot allocate memory” 等一系列和memory相关的报错</h3>
+
+<p>简单的说，swap 不够了。具体方法见 <a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">How To Add Swap on Ubuntu 14.04</a></p>
+
 
   </article>
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/jekyll/2015/02/08/use-jekyll data-title=不利用Jekyllbootstrap上线Jekyll data-url="http://walkginkgo.com/jekyll/2015/02/08/use-jekyll.html"></div>
+	<div class="ds-thread" data-thread-key=/life/2016/08/10/huginn-install data-title=Huginn 安装备注（持续更新） data-url="http://walkginkgo.com/life/2016/08/10/huginn-install.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

@@ -98,16 +98,16 @@
 <p>但是，当我们用了RACCommand的时候，我们的点击事件就可以这么写了。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">self</span><span class="p">.</span><span class="n">pushBtn</span><span class="p">.</span><span class="n">rac_command</span> <span class="o">=</span> <span class="p">[[</span><span class="n">RACCommand</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSignalBlock</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">id</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">)</span><span class="err">;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">]</span><span class="err">;</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">];</span>
 <span class="p">}];</span></code></pre></figure>
 
 <p>和我之前写过的这种写法又不一样了。这种写法其实是对button addtarget那个方法的一个rac式的封装。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[[</span><span class="n">self</span><span class="p">.</span><span class="n">testBtn</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">]</span>
                             <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">TestViewController</span> <span class="o">*</span><span class="n">testVC</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TestViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">]</span><span class="err">;</span>
-    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">testVC</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">]</span><span class="err">;</span>
+    <span class="n">TestViewController</span> <span class="o">*</span><span class="n">testVC</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TestViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">testVC</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 <span class="p">}];</span></code></pre></figure>
 
 <p>用第一种方法的原因呢，我们可以把点击事件赋值成为一个RACCommand类型的属性。既然可以变成一个属性了，那么就可以重新定义并且赋值。</p>
@@ -126,14 +126,14 @@
 <p>需要注意的是，RACCommand的block返回的时一个signal。所以，在viewModel中，我们要这么写</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc">    <span class="n">self</span><span class="p">.</span><span class="n">excutePush</span> <span class="o">=</span> <span class="p">[[</span><span class="n">RACCommand</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSignalBlock</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">id</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">)</span><span class="err">;</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">]</span><span class="err">;</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">];</span>
     <span class="p">}];</span></code></pre></figure>
 
 <p>这样，我们就实现了对点击事件的分离。</p>
 
 <h2 id="section-2">分离跳转</h2>
-<p>分离跳转，就要用到我开始说的代理了。<br />
+<p>分离跳转，就要用到我开始说的代理了。
 我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法</p>
 
 <p><code class="highlighter-rouge">- (void)pushViewModel:(id)viewModel;</code></p>
@@ -159,7 +159,7 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 </code></pre>
 </div>
 
-<p>第一句话是声明了一个demoImpl，将navigation穿进去。<br />
+<p>第一句话是声明了一个demoImpl，将navigation穿进去。
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>
 
 <p><code class="highlighter-rouge">-(instancetype)initWithService:(id&lt;MVVMdemoService&gt;)service</code></p>
