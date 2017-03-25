@@ -4,28 +4,268 @@
     <title>testHs</title>
     <description>我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
 </description>
-    <link>http://walkginkgo.com/</link>
-    <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-    <pubDate>Tue, 06 Sep 2016 20:55:20 +0800</pubDate>
-    <lastBuildDate>Tue, 06 Sep 2016 20:55:20 +0800</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
-=======
-    <pubDate>Wed, 10 Aug 2016 10:51:04 +0800</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 10:51:04 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 25 Mar 2017 17:02:26 +0800</pubDate>
+    <lastBuildDate>Sat, 25 Mar 2017 17:02:26 +0800</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>我的 Kindle 使用技巧</title>
+        <description>&lt;p&gt;上学期买了 Kindle，于是 Kindle 就成为了我日常必备的物件…而且我觉得 Kindle 是我买过的超值的一个东西，所以有必要把我的一些使用心得写一写。&lt;/p&gt;
+
+&lt;p&gt;首先要解释一下，当你拿到 Kindle 的时候，会需要一个亚马逊的账号，除此之外每个 Kindle 还会对应一个邮箱（邮箱名可以修改），一般是 @kindle.cn 结尾的。可以在你的 Kindle 设置里或者在亚马逊官网找到。这个邮箱的用途之大。如果你想要什么书的话，直接用邮箱发个附件到你的 Kindle 邮箱，然后 Kindle 连上网就能自动下载这本书了。还可以在主题加上 convert，这时候要发 pdf 格式的话会自动转存 Kindle 格式，不过不推荐，pdf 格式会经常转乱。&lt;/p&gt;
+
+&lt;p&gt;还有要解释的，Kindle 的格式是 azw3 的，mobi 格式也能被 Kindle 读取，pdf 格式也可以，但是 pdf 在 Kindle 上阅读体验只差，因为字太小没法调整。如果是前两种格式的话，可以在 Kindle 中自动调整字体大小，还能重新排版，体验之好。所以如果看 pdf ，还是买一个 iPad Pro 吧。&lt;/p&gt;
+
+&lt;p&gt;解释完了，下面强势安利几个能用得上，可以让你的 Kindle 使用效率翻上 N 翻的东西。&lt;/p&gt;
+
+&lt;h2 id=&quot;微信公众号亚马逊kindle服务号-微信号cn_kindle&quot;&gt;微信公众号：亚马逊Kindle服务号 微信号：cn_Kindle&lt;/h2&gt;
+
+&lt;p&gt;这是亚马逊官方的微信公众号，除了会推荐一些书之外，还组织过读书的活动。不过这个公众号最大的杀器就是，和你的专属 Kindle 邮箱绑定之后，可以将微信公众号的文章推送到你的 Kindle 上。对于我这样一个微信公众号重度使用者，是非常有用的。&lt;/p&gt;
+
+&lt;p&gt;有时候来不及看了就直接传到 Kindle 上。具体使用就是长按你要看的公众号，选择”…“，就会有一个“亚马逊Kindle服务号的”，发送就可以了。也可以打开文章在右上角选择”…“。具体的使用方法关注之后可以自己查。&lt;/p&gt;
+
+&lt;p&gt;除此之外，应该还可以在微信端买书之后直接推送到 Kindle，因我都是用电脑，所以还试过这个功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;微信公众号kindle电子书库-微信号kindle10000&quot;&gt;微信公众号：Kindle电子书库 微信号：kindle10000&lt;/h2&gt;
+
+&lt;p&gt;这个其实不该安利的，但是作为 Kindle 新用户可以使用玩玩。因为这其实就是一个盗版图书的汇集地…我刚开始的时候用，最近都买正版了。所以我不会很详细的说怎么使用，需要的自己去关注就好。&lt;/p&gt;
+
+&lt;p&gt;简单的说就是，它会用你的邮箱给你的 Kindle 邮箱发邮件。具体的绑定不难，就是利用了邮箱协议。关注之后它的说明非常之详细。&lt;/p&gt;
+
+&lt;p&gt;这个的好处在于，你想看什么书直接在微信里输它就会帮你查找，如果确定要看，那么点击推送等一会就可以在你的 Kindle 上看到了。使用之方便是难以言表的。&lt;/p&gt;
+
+&lt;p&gt;除此之外，还有 Kindle杂志公社，微信号：Mag10000，是一家的，可以推送一些杂志到你的 Kindle 上。&lt;/p&gt;
+
+&lt;h2 id=&quot;kindle-特价书&quot;&gt;&lt;a href=&quot;http://t.bookdna.cn/&quot;&gt;Kindle 特价书&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;这个网站不知道是谁维护的，在知乎上看到之后开始变为日常每天看的网站…&lt;/p&gt;
+
+&lt;p&gt;有两个原因推荐这个网站，一是有时候不知道想看什么书，这样逛逛会发现不少好书。二是确实便宜啊，比如我买的《中国历史那些事儿系列套装》，一共是 明朝那些事儿（全7册）、这里曾经是汉朝（全6册）、唐史并不如烟（全5册）、如果这是宋史（全10册），原价是 88.59 元，我看到特价的时候，只用了 13.99 元就入了那么多书，还是比较划算的。&lt;/p&gt;
+
+&lt;h2 id=&quot;calibre-软件--支持-win-mac-linux&quot;&gt;calibre 软件 —— 支持 Win Mac Linux&lt;/h2&gt;
+
+&lt;p&gt;这个软件是一个电子书管理软件，可以对电子书进行格式转换等一系列操作。还可以直接在电脑上看 azw 格式和 mobi 格式。除此之外还支持制作电子书，曾经用网上提供的 pocket 接口制作了我 pocket 里面收藏的网页放到 Kindle 上看。&lt;/p&gt;
+
+&lt;p&gt;最近发现了 calibre 的新功能。因为在家的时候我在 Kindle 特价书 上会买好多书，想给我妈还有奶奶都搞一份，毕竟他们也算是出了钱的…但是亚马逊官方对于购买的书籍都加了 DRM 保护，不能在购买者之外的 Kindle 设备上看。这里不具体一步一步说怎么去除 DRM 保护了，用到的工具 &lt;a href=&quot;https://github.com/apprenticeharper/DeDRM_tools&quot;&gt;DeDRM_tools&lt;/a&gt;，可以安装 calibre 插件，然后将 azw 格式转化为 mobi 格式就可以在其他设备上看了。&lt;/p&gt;
+
+&lt;h2 id=&quot;push-to-kindle--chrome-插件&quot;&gt;&lt;a href=&quot;http://fivefilters.org/kindle-it/&quot;&gt;Push to Kindle&lt;/a&gt; —— Chrome 插件&lt;/h2&gt;
+
+&lt;p&gt;这个软件是有 Chrome 插件的，绑定邮箱之后可以直接将网页推送到 Kindle 上看。解决了 Pocket 上面的东西想推送到 Kindle 的问题。&lt;/p&gt;
+
+&lt;p&gt;但是如果就这么点功能未免太什么了。Push to Kindle 个人觉得最厉害的是提供了可以编辑的格式。它在抓取网页之后会显示一个 Preview，如图。如果你对排版不满意，可以点击 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt;，进入之后，把你想看的网页内容复制进来，对其中的格式进行排版再推送到 Kindle 上，几乎完美解决了不同网页在 Kindle 上阅读体验的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/kindle.jpeg&quot; alt=&quot;kindle&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当然，你还可以用 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt; 制作 PDF 和 EPUB。里面的内容当然是想是什么就是什么了。我曾经还放过代码，然后推送到 Kindle 上…十分不建议用 Kindle 看代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;如果你想在 Kindle 上看一些 RSS，可以上&lt;a href=&quot;https://www.dogear.cn/&quot;&gt;狗耳朵&lt;/a&gt;，里面提供了很多网站的 RSS，每天定点推送到 Kindle 上，非常方便。&lt;/p&gt;
+
+&lt;p&gt;Kindle 自带了查词功能，中英文都有。长按就可以了。&lt;/p&gt;
+
+&lt;p&gt;除此之外 Kindle 还可以制作剪切板，看到好的句子可以直接记录在剪切板中，可以用电脑拷出来。具体方法可以网上查一查。&lt;/p&gt;
+
+&lt;p&gt;据说现在 Kindle 还支持微信分享了，没有用过。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;感谢很多人在知乎以及其他网站上分享了很多 Kindle 的使用技巧，我只是针对我自己进行了一些选择，网上还有很多其他的，可以没事查一查。&lt;/p&gt;
+
+&lt;p&gt;Kindle 给我的改变比较大，上学期看了好多书，很多玩手机的时间都看书了，感觉还是学到了不少东西的，看书心里愧疚感也会减少。&lt;/p&gt;
+
+&lt;p&gt;俗话说得好。&lt;/p&gt;
+
+&lt;p&gt;“平板穷三代，Kindle 富一生。”&lt;/p&gt;
+
+&lt;p&gt;愿买了 Kindle 的你可以重新爱上读书。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/life/2016/09/06/kindle.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/09/06/kindle.html</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
+    
+      <item>
+        <title>工作室总结</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;这个总结，想到哪写到哪。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;大三下的一学期，感觉整个人和工作室融合的非常之密切。因为接手工作室已经大三下了，大三下存在几个问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果招新，那么他们只有一学期的成长时间。&lt;/li&gt;
+  &lt;li&gt;工作室濒临垮台。&lt;/li&gt;
+  &lt;li&gt;我自身的时间有限，不可能全部精力放在工作室上。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;面对上面两个问题，在学期初给自己定了几个目标：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;招人，工作室不能死。&lt;/li&gt;
+  &lt;li&gt;如果招到人，尽我最大努力去教他们一些技术上的东西。&lt;/li&gt;
+  &lt;li&gt;尽可能多在工作室呆着。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对于招人，我只能说很幸运，在詹导可姐还有各位导生的大力帮助下，我们工作室招人的时候尽然出现了工作室坐不下的情况。当然这里大二占了大多数。也有大一的。当时和闫哥想，这么多人，能最后坚持下来的有多少呢。事实证明，淘汰率依然很高，最终留下的人工作室的位置占了一半。很多人坚持了几星期，也有很多人坚持了大半学期，可能因为课业问题放弃了。最终留下的这些人，我相信他们或多或少学到了很多东西。&lt;/p&gt;
+
+&lt;p&gt;如何用一学期的时间去让招来的人在技术上有一个质的飞越，这是我所思考的。对于这一点，我也在学期初定下了几个目标：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;教会他们用谷歌，用 stackoverflow&lt;/li&gt;
+  &lt;li&gt;多看英文资料，多用英文搜索&lt;/li&gt;
+  &lt;li&gt;教会他们用 GitHub&lt;/li&gt;
+  &lt;li&gt;教会他们看源码&lt;/li&gt;
+  &lt;li&gt;如果时间充足，补充一些函数式编程方面的知识&lt;/li&gt;
+  &lt;li&gt;后台从 Java 全面换向 Ruby&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其实上面几个实现起来说是简单，其实比我预想的要难一点。就拿用谷歌来说，为了让他们用谷歌，我硬是花大价钱买了路由器，连上路由器就能翻墙。但是难点在于，十几年的百度习惯不可能说改就改。再比如多看英文，有几个人能踏踏实实看英文？大部分人我相信对于英文还是有厌恶感的。看英文都厌烦，用全英文的搜索更是难。看英文烦，那么用stackoverflow和GitHub就会烦。再加上刚学，技术实力达不到，看源码也是很费劲的。&lt;/p&gt;
+
+&lt;p&gt;同时对于我自身来说，面对这么多人，加上我和闫哥还想做一些事情，加上课业，就显得很麻烦。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;在初期的时候，我的精力大多放在培养新人，但是很多时候培养的并不好，我自身的原因也很大，这是我所没有想到的，包括我和闫哥的配合上，也存在很大的问题。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;对于我存在的问题，我去学院工作室和许聚龙聊了一次，和詹导聊了一次。也进行过很多思考，并和闫哥讨论，重新分工等等，做了一些改变。但是由于各方面，更多是自己水平不足能力有限，导致工作室很多事务出现了一些拖延等，这是我所需要在后面的日子检讨的。&lt;/p&gt;
+
+&lt;p&gt;除这些之外，针对工作室之前的问题，我也有以下几个想做改进的地方：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;工作室不是全部学技术的地方，大家的感情也很重要，尤其是负责人和下面人的关系。是为了别人更好，而不是压榨大于感情。&lt;/li&gt;
+  &lt;li&gt;如果实现盈利，钱大家分，无论创业也好，不创业也好，根据劳动力来发工资。作为项目负责人，可以多拿，但是还是要秉承不压榨。&lt;/li&gt;
+  &lt;li&gt;对于盈利的大部分，作为工作室的经费，用于聚餐，学弟学妹们接手工作室之后使用。不会什么都不留下就离开工作室。&lt;/li&gt;
+  &lt;li&gt;我们技术很牛逼，但不是最牛逼的&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上几点，说我是隐射也好，什么也好，是我想做的一些改变。比如第二点，如果一个项目10万，最后分到真正开发人员手里就两三千甚至更少，不知道还好，如果知道，开发人员心里会怎么想，还能不能踏踏实实的跟着boss干。我不是说不可以压榨，压榨也有一个度。我经历的度，未免是我在学校那么工作室里看到压榨比例最高的了。比如第一点，如果我发自肺腑愿意跟着某个boss干，boss却不给予真心相对，我相信即使是创业团队，也不应该吧。我更是觉得，创业，靠的是大家拧成一股绳，各自分散，能干什么呢？技术也是一样，BAT 再厉害，做不到踏踏实实的去静下来钻研一个技术，阅读源码，技术永远不会提高。&lt;/p&gt;
+
+&lt;p&gt;这是我想去改变的，也是我希望后面工作室的人可以去改变的。&lt;/p&gt;
+
+&lt;p&gt;对于我所提到的上面提到的四方面的目标，这学期基本完成任务。&lt;/p&gt;
+
+&lt;p&gt;工作室没死，活的很好，我们人现在也不少，我也在这学期尽可能的在工作室呆上更多的时间。而且，如果说创业，核心的人肯定是有了。&lt;/p&gt;
+
+&lt;p&gt;甚至这学期最最厉害的，可以说是我们大三的几个，除了我，都找到了很好的实习。&lt;strong&gt;琪姐去了腾讯，闫哥去了搜狐，金妮去了百词斩。&lt;/strong&gt;不能说和我有很大的关系，但是也有那么一点关系吧。这是后面可以去很骄傲的说的，也是工作室很厉害的一个体现。&lt;/p&gt;
+
+&lt;p&gt;在技术上再多说一些。我在用一学期的时间把工作室打造的可以去创业，如果他们有这个新的话。&lt;/p&gt;
+
+&lt;p&gt;举几个例子来说，我们的后台从 Ruby 换到了 Java，这一点杜奎奎的功不可没。Ruby 太适合创业了。再比如，解决问题的能力，经过我一学期疯狂的洗脑，现在虽然很多人不愿意用英文搜谷歌，但是也愿意用中文搜谷歌了。这就意味着，他们解决问题的能力会比一般人强上一大截。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;教会他们用谷歌，用 stackoverflow&lt;/li&gt;
+  &lt;li&gt;多看英文资料，多用英文搜索&lt;/li&gt;
+  &lt;li&gt;教会他们用 GitHub&lt;/li&gt;
+  &lt;li&gt;教会他们看源码&lt;/li&gt;
+  &lt;li&gt;如果时间充足，补充一些函数式编程方面的知识&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;对于我定下的技术上 1-6 的实现，基本上是比较圆满的了。下面分别来说一下。&lt;/p&gt;
+
+&lt;p&gt;对于第一点，除了让工作室的无线网直接可以上谷歌之外，我在最开始的时候经常教他们如何去debug，我是做 iOS 的，但是利用谷歌和stackoverflow，可以很好的弥补技术栈的缺失。比如给张瑞调bug的时候，调了几次，他就意识到，原来英文搜索那么厉害，那么牛逼。在这一点上，我还举行过分享，来证明谷歌比百度好。&lt;/p&gt;
+
+&lt;p&gt;对于 GitHub 的使用，因为没来及做分享，但是花时间写了一篇博客，质量个人感觉还比较高。&lt;/p&gt;
+
+&lt;p&gt;看源码这一点，由于很多能力上的问题，他们的水平可能暂时还打不到，但是我每天说每天说，也很好的给他们洗脑了。&lt;/p&gt;
+
+&lt;p&gt;最后一点，我也进行了分享，给他们说了一点函数式的东西。&lt;/p&gt;
+
+&lt;p&gt;除此之外，我们经常聚餐，我常说，我这学期请你们吃饭的次数，顶上过去我在工作室吃饭次数的总和了，还都是工作室掏钱。我自以为和他们处的都不错，至少我在用心的对待他们，这就可以了。&lt;/p&gt;
+
+&lt;p&gt;这学期做了一个项目，对于分成，很负责人的说，我拿的也就比他们多一两百块钱而已…因为我从对接到各个部分都参与了。剩下的钱，除了聚餐之外，都留给他们用作日常开销了。&lt;/p&gt;
+
+&lt;p&gt;比较负责任的说，算是基本完成了预期的目标。&lt;/p&gt;
+
+&lt;p&gt;中间有一次和迪哥聊了一下，迪哥说我们没有魄力了，不去做东西了，对此我想解释一下。&lt;/p&gt;
+
+&lt;p&gt;首先来说，工作室之前留下的坑，稍微有点大了。技术上，人力上，成长上，都存在很大的问题，我在填，而且我想把这群娃带好，我用了一年半的时间来到现在的水平，我需要用一学期的时间让他们达到，这是需要时间的。而且，工作室不能死在我们手上，说是要交要交，真的就交了？不现实。创业也好，做东西也好，需要看情况来做。不是我不想做，用一学期的时间做别人两学期的事情，这是很耗费精力的。&lt;/p&gt;
+
+&lt;p&gt;当然，这只是说辞，我说了我也存在一些问题，确实也存在，这是我要去改变的，人无完人，我也不是样样精通，所以这学期有什么做的不好的，也需要一些谅解。&lt;/p&gt;
+
+&lt;p&gt;最后还想说一点，给现在的纯技术的工作室。做应用做网站想创业，可以，当然可以，但是难度在逐渐变大，如果有机会我还负责工作室，给我一学期加两个月的时间，我绝对带这个工作室转型。&lt;/p&gt;
+
+&lt;p&gt;下学期，工作室需要过渡的后面的娃们去做了，我也已经尽我最大的努力去给他们营造一个更好的环境和技术栈了。希望他们能很好的发展。&lt;/p&gt;
+
+&lt;p&gt;不过后面的事情谁知道呢？&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 26 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/life/2016/08/26/cm.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/08/26/cm.html</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
+    
+      <item>
+        <title>大三下学期总结</title>
+        <description>&lt;p&gt;有些个文章总得写。&lt;/p&gt;
+
+&lt;p&gt;大三下过的实在是充实到不能更充实。课程是一方面，工作室是一方面，当然这两方面就足够我应付的了。偶尔在加参加个什么比赛，日子就过的浑浑噩噩了。&lt;/p&gt;
+
+&lt;p&gt;再加上大三下，不能保研又不能出国，上课自然而然就显得开始放荡不羁。每天泡在电脑跟前的时间实在是创下了新的记录。我的很多改变来自于工作室，工作室也有很多改变来自于我。这是后话。&lt;/p&gt;
+
+&lt;p&gt;其实大三下是成长比较快的一学期，因为之前的一年半在工作室和学长创业，实在是见到了很多让人觉得心中有力又不知道怎么去表述的感觉。长期的外包做的我每天除了哭累还是哭累。以至于在工作室的时候隔三差五就和琪姐说不想干了。&lt;/p&gt;
+
+&lt;p&gt;但是痛苦总是让人可以有很多蜕变，经历过很多委屈很多不开心，会开始认清这个世界残酷的一面。你愿意掏心掏肺跟着别人干，别人可不会这么觉得，你是下属，就是要压榨你。当然我相信这是个例。当然我希望现实社会这也是个例。&lt;/p&gt;
+
+&lt;p&gt;技术上也是一样，经历了一年半的外包，几乎是全靠自己不断的琢磨，开始逐渐找到正确的学习方式，也开始把自己的一些弯路给小学弟们分享。这也是后话了。&lt;/p&gt;
+
+&lt;p&gt;很久没去做管理才发现自己这方面的才能需要更多的去锻炼了。这学期买了kindle，看了很多书，这一点是这学期非常满意的，看了很多书对自己的各方面都是一个提升的过程。后面这一块也是需要加强的。读书不只是会让个人能力提高，还可以对很多事情的看法产生一个新的理解。&lt;/p&gt;
+
+&lt;p&gt;学习上实在是没啥好说的。这学期精力大多放在工作室上，除了自己学了Swift，参与了T沙龙之外，技术上说实话实在是没有什么提高。倒是各方面都涉及了一点，作为工作室负责人，你不得不去从前端会到后台再到两个客户端。包括我一直很想学的Haskell，这学期也重新捡起来开始学了。暑假也学了一部分。&lt;/p&gt;
+
+&lt;p&gt;这学期还开了公众号，在写作上重新给自己定了目标。也算是大学后面的一个目标。不靠技术吃饭，靠写文字吃饭。如果能做到我会很开心的。&lt;/p&gt;
+
+&lt;p&gt;后面的打算，逐渐打算转方向，计算机的一切，最终都来源于更高深的理论基础，所以后面的重心会更偏向理论一点。&lt;/p&gt;
+
+&lt;p&gt;之前都是感谢信安1班，这学期很好的是，我们每周都会一起打篮球，没事窜寝室闲扯。大家一起锻炼总是好的。这学期几乎是跑了一学期的步，也是我很值得骄傲的一点。&lt;/p&gt;
+
+&lt;p&gt;这学期还要感谢工作室的小学弟们和小学妹们，尤其闫哥琪姐还有金尼。因为我可以自豪的说，我们工作室出了一个搜狐，一个腾讯，一个百词斩，都和我有关系，哈哈。他们的努力是必然的，我的协助也是有一定帮助的这不能否认。&lt;/p&gt;
+
+&lt;p&gt;在工作室看到很多小姑娘总是好的，枯燥的生活总得有点色彩。小学弟们也很努力，至少我现在可以比较放心的觉得工作室不会死了。这也是后话了。&lt;/p&gt;
+
+&lt;p&gt;总之。&lt;/p&gt;
+
+&lt;p&gt;这一学期实在是充实的让我觉得瞬间就没了。&lt;/p&gt;
+
+&lt;p&gt;依旧。&lt;/p&gt;
+
+&lt;p&gt;各种感谢！深鞠躬！爱你们！&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 22 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/life/2016/08/22/year3-second-term.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/08/22/year3-second-term.html</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>Huginn 安装备注（持续更新）</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;安装准备工作&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;安装准备工作&quot;&gt;安装准备工作&lt;/h2&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;1. 需要在开始的时候设置主机语言&lt;/h3&gt;
+&lt;p&gt;Huginn 的官方安装指南全部步骤已经经过测试，建议安装时直接复制官方所提供的指令进行安装。如果遇到问题，请查看最下面的 &lt;strong&gt;错误解决方法&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;对于大多数服务器来说，由于配置不够，基本都会出现 “Cannot allocate memory” 问题，也请查看 &lt;strong&gt;错误解决方法&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-需要在开始的时候设置主机语言&quot;&gt;1. 需要在开始的时候设置主机语言&lt;/h3&gt;
 
 &lt;p&gt;如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是&lt;/p&gt;
 
-&lt;p&gt;export LC_ALL=en_US.UTF-8 （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）&lt;/p&gt;
+&lt;p&gt;export LC_ALL=en_US.UTF-8 （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）
+export LANGUAGE=en_US.UTF-8&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;2. 需要设置时区&lt;/h3&gt;
+&lt;h3 id=&quot;2-需要设置时区&quot;&gt;2. 需要设置时区&lt;/h3&gt;
 
 &lt;p&gt;不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。&lt;/p&gt;
 
@@ -33,9 +273,9 @@
 
 &lt;p&gt;在Huginn官方的安装wiki中，其实有很多安装问题没有具体列出，我在上一篇博客中做了一些总结。在这篇博客中，我会做成一个安装问题的集合。以方便各位的安装。&lt;/p&gt;
 
-&lt;h2 id=&quot;wiki-&quot;&gt;官方 wiki 部分修正以及注释&lt;/h2&gt;
+&lt;h2 id=&quot;官方-wiki-部分修正以及注释&quot;&gt;官方 wiki 部分修正以及注释&lt;/h2&gt;
 
-&lt;h3 id=&quot;import-nodejs-repository&quot;&gt;1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
+&lt;h3 id=&quot;1-官方最开始有一步-import-nodejs-repository&quot;&gt;1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -50,40 +290,57 @@
 
 &lt;p&gt;因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。&lt;/p&gt;
 
-&lt;h3 id=&quot;install-init-script&quot;&gt;2. Install Init Script&lt;/h3&gt;
+&lt;h3 id=&quot;2-install-init-script&quot;&gt;2. Install Init Script&lt;/h3&gt;
 
-&lt;p&gt;在这一步中是 或 的关系，一定要搞明白。&lt;/p&gt;
-
-&lt;p&gt;我选择的是在这步把&lt;/p&gt;
+&lt;p&gt;在这一步中建议直接把&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
-# jobs: bundle exec rails runner bin/threaded.rb 这两行的 # 去掉了的。
+# jobs: bundle exec rails runner bin/threaded.rb
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;nginx&quot;&gt;3. 配置 nginx&lt;/h3&gt;
+&lt;p&gt;这两行的 # 去掉的。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-配置-nginx&quot;&gt;3. 配置 nginx&lt;/h3&gt;
 
 &lt;p&gt;YOUR_SERVER_FQDN 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。&lt;/p&gt;
 
 &lt;p&gt;备注：我没有使用 https ，所以如果有需要 https 自己踩下吧。
 作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;错误解决方法&lt;/h2&gt;
+&lt;h3 id=&quot;4-mysql-安装时不建议装-mysql_secure_installation&quot;&gt;4. Mysql 安装时不建议装 mysql_secure_installation&lt;/h3&gt;
 
-&lt;h3 id=&quot;web-css-&quot;&gt;1. 全部安装完毕web打开 css 不显示&lt;/h3&gt;
+&lt;p&gt;会加强你的密码强度..个人觉得太费事了。&lt;/p&gt;
+
+&lt;h3 id=&quot;5-install-gems-如果报错执行-bundle-install&quot;&gt;5. Install Gems 如果报错，执行 bundle install&lt;/h3&gt;
+
+&lt;p&gt;如标题&lt;/p&gt;
+
+&lt;h2 id=&quot;错误解决方法&quot;&gt;错误解决方法&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-全部安装完毕web打开-css-不显示&quot;&gt;1. 全部安装完毕web打开 css 不显示&lt;/h3&gt;
 
 &lt;p&gt;Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/cantino/huginn/issues/1581&quot;&gt;css and image is not load&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;bundle-install--cannot-allocate-memory-memory&quot;&gt;2. 在 bundle install 的时候显示 “Cannot allocate memory” 等一系列和memory相关的报错&lt;/h3&gt;
+&lt;h3 id=&quot;2-在-bundle-install-的时候显示-cannot-allocate-memory-等一系列和memory相关的报错&quot;&gt;2. 在 bundle install 的时候显示 “Cannot allocate memory” 等一系列和memory相关的报错&lt;/h3&gt;
 
 &lt;p&gt;简单的说，swap 不够了。具体方法见 &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04&quot;&gt;How To Add Swap on Ubuntu 14.04&lt;/a&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;3-mysql-设置-innodb-出现-unknown-system-variable-storage_engine&quot;&gt;3. Mysql 设置 Innodb 出现 ‘Unknown system variable ‘storage_engine’’&lt;/h3&gt;
+
+&lt;p&gt;直接在/etc/mysql/my.cnf 中设置&lt;/p&gt;
+
+&lt;p&gt;[mysqld]
+default-storage-engine = InnoDB&lt;/p&gt;
+
+&lt;p&gt;参见：&lt;a href=&quot;http://dba.stackexchange.com/questions/101908/migrate-jira-to-mysql-unknown-system-variable-storage-engine&quot;&gt;Migrate Jira to MySql - Unknown system variable ‘storage_engine’&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Wed, 10 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/08/10/huginn-install.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/08/10/huginn-install.html</guid>
+        <link>http://localhost:4000/life/2016/08/10/huginn-install.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/08/10/huginn-install.html</guid>
         
         
         <category>life</category>
@@ -102,7 +359,7 @@
 
 &lt;p&gt;Huginn 是一个 Github 的开源项目，已经上万 Star 了。简单的说这个东西是一个 IFTTT 形式的东西，可以把所有网页转换成 RSS 输出。更简单的说，就是工作流形式，类似于 iPhone 上的 Workflow。&lt;/p&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
 
 &lt;p&gt;安装有很多的方式，官方提了有 Heroku，docker，还有服务器。&lt;/p&gt;
 
@@ -110,9 +367,9 @@
 
 &lt;p&gt;我是用我日本的 vps 来搭建的，但是由于官方的文档实在是太详细了…导致我想写安装发现没啥好写的，我就把遇到的几个问题略微叙述一下。&lt;/p&gt;
 
-&lt;h3 id=&quot;httpsgithubcomcantinohuginnblobmasterdocmanualinstallationmd&quot;&gt;&lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md&quot;&gt;官方文档安装教程地址&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;官方文档安装教程地址&quot;&gt;&lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md&quot;&gt;官方文档安装教程地址&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;import-nodejs-repository&quot;&gt;坑1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
+&lt;h3 id=&quot;坑1-官方最开始有一步-import-nodejs-repository&quot;&gt;坑1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -&lt;/code&gt;&lt;/p&gt;
 
@@ -120,25 +377,25 @@
 
 &lt;p&gt;因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;坑2. 需要在开始的时候设置主机语言&lt;/h3&gt;
+&lt;h3 id=&quot;坑2-需要在开始的时候设置主机语言&quot;&gt;坑2. 需要在开始的时候设置主机语言&lt;/h3&gt;
 
 &lt;p&gt;如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export LC_ALL=en_US.UTF-8&lt;/code&gt; （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;坑3. 需要设置时区&lt;/h3&gt;
+&lt;h3 id=&quot;坑3-需要设置时区&quot;&gt;坑3. 需要设置时区&lt;/h3&gt;
 
 &lt;p&gt;不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo dpkg-reconfigure tzdata&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;css-&quot;&gt;坑4. 全部安装完毕 css 不显示&lt;/h3&gt;
+&lt;h3 id=&quot;坑4-全部安装完毕-css-不显示&quot;&gt;坑4. 全部安装完毕 css 不显示&lt;/h3&gt;
 
 &lt;p&gt;Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/cantino/huginn/issues/1581&quot;&gt;css and image is not load&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;install-init-scripthttpsgithubcomcantinohuginnblobmasterdocmanualinstallationmdinstall-init-script&quot;&gt;坑5. &lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md#install-init-script&quot;&gt;Install Init Script&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;坑5-install-init-script&quot;&gt;坑5. &lt;a href=&quot;https://github.com/cantino/huginn/blob/master/doc/manual/installation.md#install-init-script&quot;&gt;Install Init Script&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;在这一步中是 &lt;strong&gt;或&lt;/strong&gt; 的关系，一定要搞明白。&lt;/p&gt;
 
@@ -151,7 +408,7 @@
 
 &lt;p&gt;这两行的 &lt;strong&gt;#&lt;/strong&gt; 去掉了的。&lt;/p&gt;
 
-&lt;h3 id=&quot;nginx&quot;&gt;坑6. 配置 nginx&lt;/h3&gt;
+&lt;h3 id=&quot;坑6-配置-nginx&quot;&gt;坑6. 配置 nginx&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;YOUR_SERVER_FQDN&lt;/strong&gt; 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。&lt;/p&gt;
 
@@ -163,11 +420,11 @@
   &lt;p&gt;作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;bundle-installcannot-allocate-memory---git&quot;&gt;坑7. 在bundle install的时候显示“Cannot allocate memory - git”&lt;/h3&gt;
+&lt;h3 id=&quot;坑7-在bundle-install的时候显示cannot-allocate-memory---git&quot;&gt;坑7. 在bundle install的时候显示“Cannot allocate memory - git”&lt;/h3&gt;
 
 &lt;p&gt;简单的说，swap不够了..具体方法见&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04&quot;&gt;How To Add Swap on Ubuntu 14.04&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;使用&lt;/h2&gt;
+&lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
 
 &lt;p&gt;使用的方式我捉摸了很久才搞定..我会举个把网页转换成RSS的详细的例子。&lt;/p&gt;
 
@@ -297,7 +554,7 @@
 
 &lt;p&gt;把网址复制到 Feedly 里面，大功告成！&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;更多备注&lt;/h2&gt;
+&lt;h2 id=&quot;更多备注&quot;&gt;更多备注&lt;/h2&gt;
 
 &lt;p&gt;因为我个人 RSS 主要是看有没有更新，所以抓取的内容不详细，需要抓取全文在手机看的话就自己倒腾啦。&lt;/p&gt;
 
@@ -325,8 +582,8 @@
 
 </description>
         <pubDate>Fri, 15 Jul 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/07/15/huginn.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/07/15/huginn.html</guid>
+        <link>http://localhost:4000/life/2016/07/15/huginn.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/07/15/huginn.html</guid>
         
         
         <category>life</category>
@@ -416,94 +673,11 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Sat, 09 Jul 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2016/07/09/statusbar.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/07/09/statusbar.html</guid>
+        <link>http://localhost:4000/mac/2016/07/09/statusbar.html</link>
+        <guid isPermaLink="true">http://localhost:4000/mac/2016/07/09/statusbar.html</guid>
         
         
         <category>Mac</category>
-        
-      </item>
->>>>>>> 31be0c0237ec7318e5a820138082c18b6a76f789
-    
-      <item>
-        <title>我的 Kindle 使用技巧</title>
-        <description>&lt;p&gt;上学期买了 Kindle，于是 Kindle 就成为了我日常必备的物件…而且我觉得 Kindle 是我买过的超值的一个东西，所以有必要把我的一些使用心得写一写。&lt;/p&gt;
-
-&lt;p&gt;首先要解释一下，当你拿到 Kindle 的时候，会需要一个亚马逊的账号，除此之外每个 Kindle 还会对应一个邮箱（邮箱名可以修改），一般是 @kindle.cn 结尾的。可以在你的 Kindle 设置里或者在亚马逊官网找到。这个邮箱的用途之大。如果你想要什么书的话，直接用邮箱发个附件到你的 Kindle 邮箱，然后 Kindle 连上网就能自动下载这本书了。还可以在主题加上 convert，这时候要发 pdf 格式的话会自动转存 Kindle 格式，不过不推荐，pdf 格式会经常转乱。&lt;/p&gt;
-
-&lt;p&gt;还有要解释的，Kindle 的格式是 azw3 的，mobi 格式也能被 Kindle 读取，pdf 格式也可以，但是 pdf 在 Kindle 上阅读体验只差，因为字太小没法调整。如果是前两种格式的话，可以在 Kindle 中自动调整字体大小，还能重新排版，体验之好。所以如果看 pdf ，还是买一个 iPad Pro 吧。&lt;/p&gt;
-
-&lt;p&gt;解释完了，下面强势安利几个能用得上，可以让你的 Kindle 使用效率翻上 N 翻的东西。&lt;/p&gt;
-
-&lt;h2 id=&quot;kindle-cnkindle&quot;&gt;微信公众号：亚马逊Kindle服务号 微信号：cn_Kindle&lt;/h2&gt;
-
-&lt;p&gt;这是亚马逊官方的微信公众号，除了会推荐一些书之外，还组织过读书的活动。不过这个公众号最大的杀器就是，和你的专属 Kindle 邮箱绑定之后，可以将微信公众号的文章推送到你的 Kindle 上。对于我这样一个微信公众号重度使用者，是非常有用的。&lt;/p&gt;
-
-&lt;p&gt;有时候来不及看了就直接传到 Kindle 上。具体使用就是长按你要看的公众号，选择”…“，就会有一个“亚马逊Kindle服务号的”，发送就可以了。也可以打开文章在右上角选择”…“。具体的使用方法关注之后可以自己查。&lt;/p&gt;
-
-&lt;p&gt;除此之外，应该还可以在微信端买书之后直接推送到 Kindle，因我都是用电脑，所以还试过这个功能。&lt;/p&gt;
-
-&lt;h2 id=&quot;kindle-kindle10000&quot;&gt;微信公众号：Kindle电子书库 微信号：kindle10000&lt;/h2&gt;
-
-&lt;p&gt;这个其实不该安利的，但是作为 Kindle 新用户可以使用玩玩。因为这其实就是一个盗版图书的汇集地…我刚开始的时候用，最近都买正版了。所以我不会很详细的说怎么使用，需要的自己去关注就好。&lt;/p&gt;
-
-&lt;p&gt;简单的说就是，它会用你的邮箱给你的 Kindle 邮箱发邮件。具体的绑定不难，就是利用了邮箱协议。关注之后它的说明非常之详细。&lt;/p&gt;
-
-&lt;p&gt;这个的好处在于，你想看什么书直接在微信里输它就会帮你查找，如果确定要看，那么点击推送等一会就可以在你的 Kindle 上看到了。使用之方便是难以言表的。&lt;/p&gt;
-
-&lt;p&gt;除此之外，还有 Kindle杂志公社，微信号：Mag10000，是一家的，可以推送一些杂志到你的 Kindle 上。&lt;/p&gt;
-
-&lt;h2 id=&quot;kindle-httptbookdnacn&quot;&gt;&lt;a href=&quot;http://t.bookdna.cn/&quot;&gt;Kindle 特价书&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;这个网站不知道是谁维护的，在知乎上看到之后开始变为日常每天看的网站…&lt;/p&gt;
-
-&lt;p&gt;有两个原因推荐这个网站，一是有时候不知道想看什么书，这样逛逛会发现不少好书。二是确实便宜啊，比如我买的《中国历史那些事儿系列套装》，一共是 明朝那些事儿（全7册）、这里曾经是汉朝（全6册）、唐史并不如烟（全5册）、如果这是宋史（全10册），原价是 88.59 元，我看到特价的时候，只用了 13.99 元就入了那么多书，还是比较划算的。&lt;/p&gt;
-
-&lt;h2 id=&quot;calibre----win-mac-linux&quot;&gt;calibre 软件 —— 支持 Win Mac Linux&lt;/h2&gt;
-
-&lt;p&gt;这个软件是一个电子书管理软件，可以对电子书进行格式转换等一系列操作。还可以直接在电脑上看 azw 格式和 mobi 格式。除此之外还支持制作电子书，曾经用网上提供的 pocket 接口制作了我 pocket 里面收藏的网页放到 Kindle 上看。&lt;/p&gt;
-
-&lt;p&gt;最近发现了 calibre 的新功能。因为在家的时候我在 Kindle 特价书 上会买好多书，想给我妈还有奶奶都搞一份，毕竟他们也算是出了钱的…但是亚马逊官方对于购买的书籍都加了 DRM 保护，不能在购买者之外的 Kindle 设备上看。这里不具体一步一步说怎么去除 DRM 保护了，用到的工具 &lt;a href=&quot;https://github.com/apprenticeharper/DeDRM_tools&quot;&gt;DeDRM_tools&lt;/a&gt;，可以安装 calibre 插件，然后将 azw 格式转化为 mobi 格式就可以在其他设备上看了。&lt;/p&gt;
-
-&lt;h2 id=&quot;push-to-kindlehttpfivefiltersorgkindle-it--chrome-&quot;&gt;&lt;a href=&quot;http://fivefilters.org/kindle-it/&quot;&gt;Push to Kindle&lt;/a&gt; —— Chrome 插件&lt;/h2&gt;
-
-&lt;p&gt;这个软件是有 Chrome 插件的，绑定邮箱之后可以直接将网页推送到 Kindle 上看。解决了 Pocket 上面的东西想推送到 Kindle 的问题。&lt;/p&gt;
-
-&lt;p&gt;但是如果就这么点功能未免太什么了。Push to Kindle 个人觉得最厉害的是提供了可以编辑的格式。它在抓取网页之后会显示一个 Preview，如图。如果你对排版不满意，可以点击 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt;，进入之后，把你想看的网页内容复制进来，对其中的格式进行排版再推送到 Kindle 上，几乎完美解决了不同网页在 Kindle 上阅读体验的问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/kindle.jpeg&quot; alt=&quot;kindle&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，你还可以用 &lt;a href=&quot;http://pastepad.fivefilters.org/&quot;&gt;pastepad&lt;/a&gt; 制作 PDF 和 EPUB。里面的内容当然是想是什么就是什么了。我曾经还放过代码，然后推送到 Kindle 上…十分不建议用 Kindle 看代码。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;其他&lt;/h2&gt;
-
-&lt;p&gt;如果你想在 Kindle 上看一些 RSS，可以上&lt;a href=&quot;https://www.dogear.cn/&quot;&gt;狗耳朵&lt;/a&gt;，里面提供了很多网站的 RSS，每天定点推送到 Kindle 上，非常方便。&lt;/p&gt;
-
-&lt;p&gt;Kindle 自带了查词功能，中英文都有。长按就可以了。&lt;/p&gt;
-
-&lt;p&gt;除此之外 Kindle 还可以制作剪切板，看到好的句子可以直接记录在剪切板中，可以用电脑拷出来。具体方法可以网上查一查。&lt;/p&gt;
-
-&lt;p&gt;据说现在 Kindle 还支持微信分享了，没有用过。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;感谢很多人在知乎以及其他网站上分享了很多 Kindle 的使用技巧，我只是针对我自己进行了一些选择，网上还有很多其他的，可以没事查一查。&lt;/p&gt;
-
-&lt;p&gt;Kindle 给我的改变比较大，上学期看了好多书，很多玩手机的时间都看书了，感觉还是学到了不少东西的，看书心里愧疚感也会减少。&lt;/p&gt;
-
-&lt;p&gt;俗话说得好。&lt;/p&gt;
-
-&lt;p&gt;“平板穷三代，Kindle 富一生。”&lt;/p&gt;
-
-&lt;p&gt;愿买了 Kindle 的你可以重新爱上读书。&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/09/06/kindle.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/09/06/kindle.html</guid>
-        
-        
-        <category>life</category>
         
       </item>
     
@@ -579,18 +753,18 @@ print(b)
 
 &lt;p&gt;实现到这，我们接着learnyouahaskell往下实现。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zipWith&#39; :: (a -&amp;gt; b -&amp;gt; c) -&amp;gt; [a] -&amp;gt; [b] -&amp;gt; [c]
-zipWith&#39; _ [] _ = []
-zipWith&#39; _ _ [] = []
-zipWith&#39; f (x:xs) (y:ys) = f x y : zipWith&#39; f xs ys
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zipWith' :: (a -&amp;gt; b -&amp;gt; c) -&amp;gt; [a] -&amp;gt; [b] -&amp;gt; [c]
+zipWith' _ [] _ = []
+zipWith' _ _ [] = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;zipWith的作用就是讲两个列表通过某个函数合成一个函数。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; zipWith&#39; (+) [4,2,5,6] [2,6,2,3]
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
 [6,8,7,9]
-ghci&amp;gt; zipWith&#39; max [6,3,2,1] [7,3,1,5]
+ghci&amp;gt; zipWith' max [6,3,2,1] [7,3,1,5]
 [7,3,2,5]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -691,8 +865,8 @@ print(ee)
 
 </description>
         <pubDate>Wed, 29 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
+        <link>http://localhost:4000/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
         
         
         <category>iOS</category>
@@ -848,8 +1022,8 @@ ghci&amp;gt; multTwoWithNine 2 3
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 27 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</guid>
+        <link>http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</guid>
         
         
         <category>iOS</category>
@@ -944,8 +1118,8 @@ map f (x:xs) = f x : map f xs
 
 </description>
         <pubDate>Sat, 25 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
+        <link>http://localhost:4000/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
         
         
         <category>iOS</category>
@@ -960,7 +1134,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;时间是上周日，19号。我和坦坦，下文统一为蛋哥。我和蛋哥约在活动中心见面，然后打uber去了天府软件园。去了之后和蛋哥一起吃了KFC，然后就坐在那等蓉姐和肠叔。其实之前和蛋哥有过交流，后来蓉姐来了。我简直就是作为一个记者一样，对蓉姐进行了一个采访，从蓉姐学iOS到工作，问了个遍，下次可以带着录音笔，出个采访稿也是不错的。&lt;/p&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;首见蓉姐&lt;/h2&gt;
+&lt;h2 id=&quot;首见蓉姐&quot;&gt;首见蓉姐&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -976,7 +1150,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;之后就一起排了一下座位。等大家到起齐就开始了。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;畅叔开场&lt;/h2&gt;
+&lt;h2 id=&quot;畅叔开场&quot;&gt;畅叔开场&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -994,7 +1168,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;之后，大家自我介绍了。其实程序员是个很开朗的职业，很能扯，很多好玩的。所以大家的自我介绍也很开心欢乐，之后就开始分享啦。&lt;/p&gt;
 
-&lt;h2 id=&quot;argo--thoughtwork&quot;&gt;从零开始写一个Argo —— ThoughtWork方志刚&lt;/h2&gt;
+&lt;h2 id=&quot;从零开始写一个argo--thoughtwork方志刚&quot;&gt;从零开始写一个Argo —— ThoughtWork方志刚&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1022,7 +1196,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;包括茶歇时间听蛋哥和许国卿和TW的另一外工程师官勤交流了一下函数式在生产环境里的使用，真的是，受益匪浅。&lt;/p&gt;
 
-&lt;h2 id=&quot;rethink-nsnotifucation-in-swift--camera360&quot;&gt;Rethink NSNotifucation in Swift —— Camera360高山&lt;/h2&gt;
+&lt;h2 id=&quot;rethink-nsnotifucation-in-swift--camera360高山&quot;&gt;Rethink NSNotifucation in Swift —— Camera360高山&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1032,7 +1206,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;之后高山提出了关于RAC的一些问题我们讨论了一下，觉得还是很棒的~&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;茶歇&lt;/h2&gt;
+&lt;h2 id=&quot;茶歇&quot;&gt;茶歇&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1040,7 +1214,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;茶歇各种闲扯交流，也是受益匪浅。&lt;/p&gt;
 
-&lt;h2 id=&quot;wwdc&quot;&gt;wwdc讨论&lt;/h2&gt;
+&lt;h2 id=&quot;wwdc讨论&quot;&gt;wwdc讨论&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1056,7 +1230,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;之后，都准备合影了..许国卿和陈佳开始玩起了iOS10的iMessage..我勒个去，那个酷炫，我是服了。当时准备录小视频的，没来及。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;感想&amp;amp;心得&lt;/h2&gt;
+&lt;h2 id=&quot;感想心得&quot;&gt;感想&amp;amp;心得&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1080,7 +1254,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;&lt;strong&gt;我相信，&amp;lt;T&amp;gt;沙龙在成都会越来越好的。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;感谢&lt;/h2&gt;
+&lt;h2 id=&quot;感谢&quot;&gt;感谢&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -1094,7 +1268,7 @@ map f (x:xs) = f x : map f xs
 
 &lt;p&gt;从现在，哦，不，从那天晚上开始，我其实就已经开始期待下一次的沙龙了。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;附图&lt;/h2&gt;
+&lt;h2 id=&quot;附图&quot;&gt;附图&lt;/h2&gt;
 
 &lt;p&gt;卧槽是不是忘了和畅叔蛋哥蓉姐合影了..还有蛋哥的自拍技术啊，跪了。真的。&lt;/p&gt;
 
@@ -1115,689 +1289,13 @@ map f (x:xs) = f x : map f xs
 &lt;p&gt;聚餐的火锅&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/06/23/SwiftT.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/06/23/SwiftT.html</guid>
+        <link>http://localhost:4000/life/2016/06/23/SwiftT.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/06/23/SwiftT.html</guid>
         
         
         <category>life</category>
         
       </item>
     
-      <item>
-        <title>我的第一次wwdc小记</title>
-        <description>&lt;p&gt;昨晚上十一点多就开始上床，然后快一点起来看了wwdc大会。&lt;/p&gt;
-
-&lt;p&gt;这是我开发两年以来第一次看wwdc大会，本来不想写的..天天复习考试也不想写。刚刚看到巧大写了一篇微信，我决定也写一篇。&lt;/p&gt;
-
-&lt;p&gt;首先想抱歉一下昨晚上和今天一大早朋友圈的朋友们，被我刷屏了，第一次看未免有点激动。也算是做个记录，后来都删除了只保留了短的。我相信这一定是很多人看到自言自语最长的朋友圈了。&lt;/p&gt;
-
-&lt;p&gt;过去的很长时间里，我彻底的开始对mac和iOS的软件开始了狂热，各种买买买和体验，偶尔还自己想想咋做的。所以这次发布会看到macOS还是很激动的。下面依次来说。&lt;/p&gt;
-
-&lt;h2 id=&quot;watchos&quot;&gt;watchOS&lt;/h2&gt;
-
-&lt;p&gt;说实话，我对watch没啥感觉，因为太小了。不过这次watch推出了几个功能我很期待，一个就是加入了游戏的引擎，一个是可以在watch上手写字。游戏这个东西，其实在watch上还有很大想象力。所以，值得期待。&lt;/p&gt;
-
-&lt;p&gt;其他我觉得watch最让我喜欢的，是和健康一系列相关的东西，比如一个叫做breath的app，感觉很符合我的口味。虽然感觉高仿了pause。&lt;/p&gt;
-
-&lt;h2 id=&quot;macos&quot;&gt;macOS&lt;/h2&gt;
-
-&lt;p&gt;改名了，真改名了。从OS X到macOS，以后stackoverflow怎么搜索..驼峰命名也是服。&lt;/p&gt;
-
-&lt;p&gt;不过说实话，我超级喜欢。超级期待Sierra。&lt;/p&gt;
-
-&lt;p&gt;最新的版本叫Sierra，我想是不是因为集成了siri进去。&lt;/p&gt;
-
-&lt;p&gt;终于可以自动解锁，超爱。&lt;/p&gt;
-
-&lt;p&gt;剪切板和iphone同步，超爱。&lt;/p&gt;
-
-&lt;p&gt;存储优化，刚刚看巧大的文章说是放到icloud，顿时没期待了。。&lt;/p&gt;
-
-&lt;p&gt;apple pay要和支付宝进行狙击战了。&lt;/p&gt;
-
-&lt;p&gt;还有通知中心可以放文件，这个超期待。一直觉得mac的通知中心没有什么用处，超级鸡肋，这下通知中心可以用起来了。&lt;/p&gt;
-
-&lt;p&gt;说实话，siri for mac真的值得期待，就是，我一直觉得对着电脑说话很奇怪..不过siri确实提供了很多东西，值得体验。&lt;/p&gt;
-
-&lt;p&gt;虽然吐槽说，逼死了很多软件，但是说实话，就解锁，剪切板，通知中心，我就非常期待了！！&lt;/p&gt;
-
-&lt;h2 id=&quot;ios&quot;&gt;iOS&lt;/h2&gt;
-
-&lt;p&gt;推了10。&lt;/p&gt;
-
-&lt;p&gt;总结一下，就是iMessage要爆炸。&lt;/p&gt;
-
-&lt;p&gt;整个iOS10最大的亮点就是iMessage。infoq的群里都在说微信和iMessage…说就差个朋友圈了。&lt;/p&gt;
-
-&lt;p&gt;不过说实话，这个可以聊聊。&lt;/p&gt;
-
-&lt;p&gt;苹果想好好搞，你真的搞不过它。iMessage设计的，无比的充满想象力。各种神奇的效果，我简直。服了！！！iMessage值得体验。我觉得微信的聊天比起iMessage弱爆了。&lt;/p&gt;
-
-&lt;p&gt;iMessage把聊天气泡做的让我觉得，充满了感情。就是这么个感觉。&lt;/p&gt;
-
-&lt;p&gt;各种对于图片的效果，包括全屏效果也是，让我觉得更适合去表达感情。就这，就够了，超级nice。&lt;/p&gt;
-
-&lt;p&gt;然后就是通知中心这个，有人说像安卓，这么一听，是有点像…&lt;/p&gt;
-
-&lt;p&gt;apple music和地图说实话，我不是很期待，因为music我觉得还是不好看。地图的话，得体验才能知道，国内高德什么的还是挺不错的。&lt;/p&gt;
-
-&lt;p&gt;苹果特意强调了加密，这点是作为一个大公司来说很重要的。&lt;/p&gt;
-
-&lt;p&gt;最后想说说homekit。看苹果这样，想做一套，智能家居，然后用手机连接一切。小时候看虹猫蓝兔3000问，那时候说智能家居，各种神奇的控制，现在看来，不远了。我很期待那一天。&lt;/p&gt;
-
-&lt;p&gt;对了，siri可以发微信了..我也是，服了。&lt;/p&gt;
-
-&lt;h2 id=&quot;swift&quot;&gt;Swift&lt;/h2&gt;
-
-&lt;p&gt;推出了swift playground..很多人以为是ipad上可以写代码了。&lt;/p&gt;
-
-&lt;p&gt;尼玛，就是一个给娃娃学编程的软件。&lt;/p&gt;
-
-&lt;p&gt;本来想攒钱买ipad的都不想买了。但是可以预见，ipad写代码，这是迟早的事情。&lt;/p&gt;
-
-&lt;p&gt;没说Swift3，我表示很失望。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;小细节&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;库里三上发布会&lt;/h2&gt;
-
-&lt;p&gt;虽然今天输球了。但是库里真的是影响力大，湾区和硅谷也是近。据说勇士已经打入硅谷内部了。&lt;/p&gt;
-
-&lt;p&gt;watchOS，macOS和iOS都出现库里了。&lt;/p&gt;
-
-&lt;p&gt;表示我库很厉害。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;又逼死一波软件&lt;/h2&gt;
-
-&lt;p&gt;MacID，nearlock，clean my mac。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;其他&lt;/h2&gt;
-
-&lt;p&gt;据说Xcode8很值得期待。图像可以直接预览，支持官方插件。没仔细看。&lt;/p&gt;
-
-&lt;p&gt;内置app可以删除一部分了，这个很好。&lt;/p&gt;
-
-&lt;p&gt;对于开发者，说实话，我现在觉得watchOS和macOS的市场很大。远超于iOS。第一年看wwdc，只聊我看到的，其他也没花时间看，不多说。网上写的好的比我多了去了。&lt;/p&gt;
-
-&lt;p&gt;感觉上没有特别大的api的变化，当然这些新的extension是要去关注的。具体的，巧大的还有cyan大神都写了我也不多说，最后放链接。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;开发两年，第一年看wwdc，很感慨，失望和希望并存。失望更多的是Swift上面。其他没啥。希望，当然是我超爱的macOS啦。&lt;/p&gt;
-
-&lt;p&gt;未来的一年，我的重心可能会偏mac开发上。资金足够，入watch，顺便看看watchOS的游戏。&lt;/p&gt;
-
-&lt;p&gt;最后附上我昨晚上疯狂的朋友圈…这也是我今天这篇博客内容的主要来源。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2204.png&quot; alt=&quot;IMG_2204&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2205.png&quot; alt=&quot;IMG_2205&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2202.png&quot; alt=&quot;IMG_2202&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2203.png&quot; alt=&quot;IMG_2203&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/wwdc/IMG_2197.png&quot; alt=&quot;IMG_2197&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;希望明年我还能充满热情的看wwdc~这是我看的第一次，希望有机会可以去现场看~&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;可以参考的链接&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NTIyNTUyMQ==&amp;amp;mid=2709544901&amp;amp;idx=1&amp;amp;sn=4f3299a282bfd822db9bc3a7adcf4a2b&amp;amp;scene=0&quot;&gt;WWDC2016 随想&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/21348691&quot;&gt;iOS 10 给开发者带来了什么&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2016&quot;&gt;WWDC 2016 Videos&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;amp;mid=2650492058&amp;amp;idx=1&amp;amp;sn=6d4a1fffff44f5f7e9689496af9eb374&amp;amp;scene=1&quot;&gt;亲测 iOS 10：有些新功能，苹果居然没有告诉你&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/136657/wwdc-2016-initial-impressions&quot;&gt;WWDC 2016 Initial Impressions&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/06/14/wwdc.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/06/14/wwdc.html</guid>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>记一次Mac软件的踩坑过程</title>
-        <description>&lt;p&gt;11个月前，有一款mac软件，叫做&lt;a href=&quot;https://itunes.apple.com/us/app/foldery/id815333099?mt=12&quot;&gt;Foldery&lt;/a&gt;。pinapps推荐了。简单的说，可以把mac下蓝色的文件夹换成其他颜色。&lt;/p&gt;
-
-&lt;p&gt;那时候限免不知道为啥没买。最近在想它怎么实现的。因为现在要花12块钱才能买来使用，我印象中是替换颜色，所以我一直以为是把系统所有文件夹的颜色都替换了。于是就按照这个思路往下想。首先想到的是Applescript修改finder属性，但是经过一番查询，这条路失败了。这应该是上上周干的了..然后就想有没有接口可以，有，apple提供了&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Finder.html&quot;&gt;Finder Sync extension&lt;/a&gt;的接口，可以增加finder的角标还有sidebar icon。不过下载了一下demo看了一眼api，只能对finder进行一些简单的操作。附一句，dropbox就这么干的。不过，这条路就这么死了。&lt;/p&gt;
-
-&lt;p&gt;然后就开始思考&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot;&gt;xtrafinder&lt;/a&gt;怎么干的，上星期的时候看到了inject code in finder，有两个github的项目&lt;a href=&quot;https://github.com/rentzsch/mach_override&quot;&gt;mach_override&lt;/a&gt;，&lt;a href=&quot;https://github.com/rentzsch/mach_inject&quot;&gt;mach_inject&lt;/a&gt;，xtrafinder应该就是这么干的。但是想了想，人家上架了appstore。应该不会那么复杂吧，而且权限应该还不够。这条路，也死了。&lt;/p&gt;
-
-&lt;p&gt;之后想，是不是applescript有接口。结果我把一本&lt;a href=&quot;https://www.gitbook.com/book/nayanseth/basics-of-applescript/details&quot;&gt;Basics of AppleScript&lt;/a&gt;翻完了都想不到原理。&lt;/p&gt;
-
-&lt;p&gt;最后就到了昨天。昨天的查着查着看到系统图标的位置。其实finder什么的都是mac app，mac下可以看到resource，修改系统图标就都修改了。经过一番尝试，图标格式icns好像，神奇的格式。就是苹果专业图标格式。后来才发现可以直接用preview改…找到系统的图标处准备修改，发现没有权限，不过想了想应该就是这么干的了。&lt;/p&gt;
-
-&lt;p&gt;现在要解决权限问题，mac升级之后，对系统进行了保护，要关保护。见我的&lt;a href=&quot;http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html&quot;&gt;Mac升级10.11 EI Captain 填坑&lt;/a&gt;那篇文章。然后应该就可以解决权限问题了。不过这么着干和xtrafiner差不多了。想想肯定不能上架。万念俱灰。准备查查网上有没有这方面的文章，结果尼玛，我查到了&lt;a href=&quot;https://github.com/BettyLab/Foldery&quot;&gt;Foldery&lt;/a&gt;的源码，在github上。本来不想看了，后来想想差不多也完成整个思路的整理了。进去一看，直接NSWorkspace获取当前文件夹的图标位置然后覆盖一层拉倒。想想不对啊，不是全部替换嘛，后来仔细一看才发现，是单独替换。&lt;/p&gt;
-
-&lt;p&gt;就这样，历时快两周，完成了一次伟大的踩坑。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 05 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/mac/2016/06/05/Foldery.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/mac/2016/06/05/Foldery.html</guid>
-        
-        
-        <category>Mac</category>
-        
-      </item>
-    
-      <item>
-        <title>从0开始学习 GitHub 系列之「寻找代码」</title>
-        <description>&lt;p&gt;张哥在写Github系列，看到了想帮张哥分担一下。正好工作室的学弟学妹们也需要会这个，就正好写个博客了。&lt;/p&gt;
-
-&lt;p&gt;因为我是iOS开发出生..所以我就从iOS的角度来写怎么用，不过放心，Android没有什么大的差别，我们后台的学弟都是这么干的！&lt;/p&gt;
-
-&lt;p&gt;看完张哥的文章，大概已经明白了Github是怎么使用的。但我想大部分人是想用Github里面的三方库，想去看看别人的开源项目的源代码，想去看看最近有没有什么新的牛逼的代码。但是怎么去找到这些东西呢。我想介绍的就是这方面的东西。&lt;/p&gt;
-
-&lt;h2 id=&quot;exploretrending&quot;&gt;看Explore和Trending&lt;/h2&gt;
-
-&lt;p&gt;大部分人的Github顶部栏可能是这样的…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-1.png&quot; alt=&quot;github-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但我的是这样的…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-2.png&quot; alt=&quot;github-2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;看到差别了吗？右上角我的比你们多了一个Explore…记得我大二的时候Github改版，把Explore去掉了，当时好像骂声一片。有人开发了一款插件。&lt;a href=&quot;https://chrome.google.com/webstore/detail/github-menu-back/mcobennfgmfddjmiikfamhhhiibcjbik?utm_source=chrome-ntp-icon&quot;&gt;Github Menu Back&lt;/a&gt;说白了这玩意就是在你的Github顶部栏加上Explore，然后把你的头像放左边。足以见到Explore的重要性（不过这玩意得网站加载差不多才能出来..）。当然了要是不愿意用这个，可以点击头像，里面也有。如下图&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-3.png&quot; alt=&quot;github-3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们点击一个看看。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-4.png&quot; alt=&quot;github-4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;进去之后左上角有四个选项。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-5.png&quot; alt=&quot;github-5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;一个一个介绍哈。&lt;/p&gt;
-
-&lt;h3 id=&quot;showcases&quot;&gt;第一个  Showcases&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-6.png&quot; alt=&quot;github-6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第一个其实就是这个界面，点过去没啥区别。&lt;/p&gt;
-
-&lt;p&gt;就是按照某个方面，比如Package managers（其实就是三方库的管理器）。点进去里面都是某门语言的包管理器，比如iOS的cocoapods，前端的npm，vim的vundle。类比到Android里面应该就是Gradle了。不过这里应该没有Gradle..&lt;/p&gt;
-
-&lt;p&gt;比如还有web application frameworks，其实就是后台框架，肯定有rails的。&lt;/p&gt;
-
-&lt;p&gt;具体我就不介绍了。可以点进去看。在最下面有More showcases。&lt;/p&gt;
-
-&lt;h3 id=&quot;integrations&quot;&gt;第二个  Integrations&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-7.png&quot; alt=&quot;github-7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Powerful integrations that help you and your team build software better, together.&lt;/p&gt;
-
-&lt;p&gt;其实就是一些工具的整合，可以更好的开发。&lt;/p&gt;
-
-&lt;p&gt;点进去里面有很多工具，比如Travis ci，这个现在用的很多，还有Github自家的编辑器Atom等等。&lt;/p&gt;
-
-&lt;p&gt;这个得自己发掘了..不多介绍。&lt;/p&gt;
-
-&lt;h3 id=&quot;stars&quot;&gt;第四个  Stars。&lt;/h3&gt;
-
-&lt;p&gt;为啥跳第三个？因为第三个是重点…重要的放最后。&lt;/p&gt;
-
-&lt;p&gt;点Stars就会进入你Star过的项目里啦。这没啥好介绍的。也就不截图了。&lt;/p&gt;
-
-&lt;h3 id=&quot;trending&quot;&gt;第三个  Trending。&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-8.png&quot; alt=&quot;github-8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;好像有人曾经在知乎问过，程序员无聊的时候干什么。结果下面有人说，我逛Github能逛一上午…自从我发现Trending之后，我发现我也可以！&lt;/p&gt;
-
-&lt;p&gt;Trending说白了，就是某个时间段里Github上被star数量最多的项目和仓库被star数量最多的开发者！&lt;/p&gt;
-
-&lt;p&gt;我要一点一点仔细的介绍这个！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-9.png&quot; alt=&quot;github-9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;首先是左上角的。&lt;/p&gt;
-
-&lt;p&gt;这两个，是切换仓库和开发者的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-10.png&quot; alt=&quot;github-10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里是切换时间的，可以选择天，周，和月。也就是每天每周每月被star次数最多的仓库。我以前上过一次Trending..完全不知道它这个算法咋写的，莫名其妙就上了，当然我上的是天..&lt;/p&gt;
-
-&lt;p&gt;最牛逼的，是右边，右边！！&lt;/p&gt;
-
-&lt;p&gt;你以为这就结束了？作为一个职业的开发者，你当然要找到自己的方面。我最为一个iOS开发者，当然是Objective-C和Swift了，偶尔我也会看一看ruby的。当然了，安卓一定要看java了~什么？没有java？选择other language即可~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-11.png&quot; alt=&quot;github-11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当日期选择天的时候，一般会是一些开发者在微博@一些大v，然后引起一时轰动的项目，当然也有大项目。这些项目一般来说我觉得吧，质量参差不齐，有的很好有的也就一般..&lt;/p&gt;
-
-&lt;p&gt;当日期选择月的时候，那基本上就是一些很牛逼的库了，这些库一般来说真的是，开发项目必备了。这个质量，那绝对是，刚刚的。&lt;/p&gt;
-
-&lt;p&gt;现在语言选java，选today看下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-12.png&quot; alt=&quot;github-12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我写博客的时候语言选择java的时候是这样的..这时候就能发现完整的开源项目代码了。还有一些新出的开源库。这个时候，一般我来说，看到我觉得不错的，果断下载下来阅读一下代码。觉得代码牛逼，立马star..都不带停顿的，有的库，我就直接star了..因为太牛逼看不懂。&lt;/p&gt;
-
-&lt;p&gt;Trending基本上我隔个几天就会看一次，有的时候闲了，每天都会看，真的一看一上午，因为有时候顺手就下载下来看看里面的代码，看看差距了..&lt;/p&gt;
-
-&lt;p&gt;我们再选个month看看。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-13.png&quot; alt=&quot;github-13&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;第一个，我都知道谷歌出的flexbox-layout..你看我一做iOS的都知道，那基本上就是非常非常值得开发者去用和学习的库了。&lt;/p&gt;
-
-&lt;p&gt;Trending会了，基本上能发现不少牛逼的开源库和开源的项目。这样就有的学习了。&lt;/p&gt;
-
-&lt;p&gt;你以为到这大招就放完了吗？怎么可能。&lt;/p&gt;
-
-&lt;h2 id=&quot;awesome&quot;&gt;awesome系列&lt;/h2&gt;
-
-&lt;p&gt;上Github，怎么能不知道&lt;a href=&quot;https://github.com/sindresorhus/awesome&quot;&gt;awesome&lt;/a&gt;系列，这可是Github上总star数排名第十二的仓库。到我写文章的时候，35714star。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-14.png&quot; alt=&quot;github-14&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当然衍生的有各种awesome…比如&lt;a href=&quot;https://github.com/vsouza/awesome-ios&quot;&gt;awesome-ios&lt;/a&gt;，&lt;a href=&quot;https://github.com/JStumpp/awesome-android&quot;&gt;awesome-android&lt;/a&gt;，&lt;a href=&quot;https://github.com/akullpp/awesome-java&quot;&gt;awesome-java&lt;/a&gt;，&lt;a href=&quot;https://github.com/JStumpp/awesome-android&quot;&gt;awesome-android&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-15.png&quot; alt=&quot;github-15&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sindresorhus/awesome&quot;&gt;awesome&lt;/a&gt;。这玩意干啥的？简单的说，就是对某一个方面Github上的资源的汇总大贴！&lt;/p&gt;
-
-&lt;p&gt;不想上Trending查，那就上awesome，帮你解决一切问题。比如&lt;a href=&quot;https://github.com/JStumpp/awesome-android&quot;&gt;awesome-android&lt;/a&gt;上有网络请求库，json解析库等等一系列功能的汇总，当然了，还有完整项目的汇总，我就不找了..毕竟iOS出生，安卓不熟悉。&lt;/p&gt;
-
-&lt;p&gt;你以为到这大招就放完了吗？怎么可能。&lt;/p&gt;
-
-&lt;h2 id=&quot;free-programming-bookshttpsgithubcomvhffree-programming-books&quot;&gt;&lt;a href=&quot;https://github.com/vhf/free-programming-books&quot;&gt;free-programming-books&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;这可是Github上总star数排名第三的仓库。到我写文章的时候，55328star。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-16.png&quot; alt=&quot;github-16&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;免费的电子书！最重要的是，有中文的，有中文的，有中文的..重要的事情说三遍。虽然我推荐还是看英文，因为某些翻译简直爆炸。&lt;a href=&quot;https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md&quot;&gt;free-programming-books-zh&lt;/a&gt;地址放这了~&lt;/p&gt;
-
-&lt;p&gt;你以为到这大招就放完了吗？怎么可能。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;搜索！&lt;/h2&gt;
-
-&lt;p&gt;为啥加感叹号？因为这个功能，太牛逼了。&lt;/p&gt;
-
-&lt;p&gt;这个得举例说明…对了插一句，Github有时候访问超级慢。我都是走代理走的..&lt;/p&gt;
-
-&lt;p&gt;现在我们进到搜索界面，尝试搜索一下alert。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-17.png&quot; alt=&quot;github-17&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，哇好多但是我现在要搜索Swift的资源怎么办？左边有语言选择！点完就能进去。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-18.png&quot; alt=&quot;github-18&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，我要的语言没有，我想查一下ruby的alertview。那么，在搜索框输入，language:c就可以啦~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-19.png&quot; alt=&quot;github-19&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，这些星星星数好少啊。左边有选择哦，可以选择星星数量排序。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-20.png&quot; alt=&quot;github-20&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，我要1000star以上的项目！输入框加上stars:&amp;gt;=500!当然可以和language组合了~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-21.png&quot; alt=&quot;github-21&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，我要查找fork过的仓库，很多人会fork一份自己加很多东西，加上 fork:true就可以啦。&lt;/p&gt;
-
-&lt;p&gt;什么，你想查找的不是人时代码或者组织或者是人？左上角选择啦。&lt;/p&gt;
-
-&lt;p&gt;什么，我怎么知道这么多？看选择语言的下面！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-22.png&quot; alt=&quot;github-22&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在Cheat sheet里面有的！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-23.png&quot; alt=&quot;github-23&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;什么，我懒得记那么多啊？在Advanced search里面可以输入的！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-24.png&quot; alt=&quot;github-24&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;当然了，有时候我会觉得Github自身的搜索不行..我就会上谷歌..直接Github + 关键字..&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;不过大部分时间还是可以的。&lt;/p&gt;
-
-&lt;p&gt;这样的话，如果我在搜索框输入个star数量，（不能什么都不输入！因为有限制！），就可以看到Github上仓库的star排名了~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/github/github-25.png&quot; alt=&quot;github-25&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;github-api&quot;&gt;Github API&lt;/h2&gt;
-
-&lt;p&gt;Github作为全世界最大同性交友网站，当然会开放接口了。可以自己做很多基于Github的客户端，也是一个练手的好方法。&lt;/p&gt;
-
-&lt;p&gt;在网站的最下面找API，点进去就可以啦。里面有很多开放接口，基本都是json格式的接口，用来做一个移动应用真是再好不过啦。&lt;/p&gt;
-
-&lt;p&gt;网址 &lt;a href=&quot;https://developer.github.com/v3/&quot;&gt;Overview&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;我就不详细介绍了。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;以上，是我用Github那么久以来的一点感受。我一直觉得，学习写代码，最好的地方，就是Github，大量的看别人的源码，别人的开源库，能和世界上最顶尖的开发者一起学习，多么开心的一件事情~&lt;/p&gt;
-
-&lt;p&gt;对了，插一句。在iOS开发界有一个人，他是优酷的开发者，因为发布了几个很牛逼的库，收到了facebook和uber的offer！他说他的学习方式，就是上Github看源码，然后自己琢磨写。&lt;/p&gt;
-
-&lt;p&gt;所以，我们都加油吧~&lt;/p&gt;
-</description>
-        <pubDate>Thu, 26 May 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/free/2016/05/26/github-use.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/free/2016/05/26/github-use.html</guid>
-        
-        
-        <category>free</category>
-        
-      </item>
-    
-<<<<<<< HEAD
-      <item>
-        <title>开发者头条插件小记</title>
-        <description>&lt;blockquote&gt;
-  &lt;h3 id=&quot;githubhttpsgithubcomjudi0713toutiao---releasehttpsgithubcomjudi0713toutiaoreleases&quot;&gt;&lt;a href=&quot;https://github.com/judi0713/TouTiao&quot;&gt;Github地址&lt;/a&gt;  下载移步 &lt;a href=&quot;https://github.com/judi0713/TouTiao/releases&quot;&gt;release&lt;/a&gt;&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;啊，昨天忘配图了..补个github的图..&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/toutiao.png&quot; alt=&quot;toutiao.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;先要感谢&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这不是软文，是真的感谢。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;开发者头条是我安利过很多人的网站。因为说实话，做的真的很好。如果我觉得不好我就会换个网站开发插件了..在这里很多人会投稿一些些的好的文章。可以看到各个方面的知识。而且大部分的文章质量都很高（我已经从csdn迁移到开发者头条了）。慎哥也因为自己的投稿让自己的博客收获了很多的访问量，这对于开发者坚持写博客是一个很好的鼓励。所以，很感谢这么一个网站让我学到了很多东西。也让我扩充对整个计算机行业方面的认识不仅限于appweb还有后台了。&lt;/p&gt;
-
-&lt;p&gt;无论如何要感谢开发者头条的创始人戚祥，当我在微信联系他和他说的时候，他觉得想法很好，然后让他们公司的工程师蒋春成联系了我。感到非常巧合而又幸运的是，他是我11级的学长。遇到了校友真的很亲切，和学长聊了好久啊，而且都是计算机人。蒋春成给了我很多帮助。不仅给了我很多意见，还给了我很多开发需要的素材。&lt;/p&gt;
-
-&lt;p&gt;当然，还要感谢工作室的小伙伴，两台Mac电脑总是被我强行装上测试…特别感谢的还有慎哥，慎哥头一回那么支持工作，不仅装上了，还提了很多意见，大写的感谢。dkk同学甚至提了issue…也是厉害。&lt;/p&gt;
-
-&lt;p&gt;最后，当然是感谢iOS开发大社区，摸着良心说，我写不出来Alamofire和Fuzi这种库。我只能凑合凑合尽我最大努力看源码和用去学习。没有这些为社区做贡献的大神们，也就没有很多个应用。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;起因&lt;/h2&gt;
-
-&lt;p&gt;有开发Mac端插件的想法有两个原因，一是因为为了带小学弟，学起了Swift。二是因为看到了&lt;a href=&quot;https://github.com/kimar/Tailor&quot;&gt;Tailor&lt;/a&gt;这个Mac端的插件。当我看到Tailor的时候我第一个想法是，卧槽，swift改变世界，第二个想法是，看上去Mac端开发也不难，估计api都差不多…尝试一下吧…&lt;/p&gt;
-
-&lt;p&gt;然后那几天就在想图拉鼎大神的Mac软件怎么做的。。正好那几天看OpenWrt需要php，php可以调shell和系统接口。想了想，啊，Mac软件开发嘛，就是调applescript和写iOS嘛，来试试吧～&lt;/p&gt;
-
-&lt;p&gt;然后我就入坑了..在这大概分享一下整个的完成过程。&lt;/p&gt;
-
-&lt;p&gt;总结一句话，看源码。这学期虽然没有看什么大项目的..倒是完整的工程看了不少。我一次列在下面好了。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/kimar/Tailor&quot;&gt;Tailor&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.raywenderlich.com/98178/os-x-tutorial-menus-popovers-menu-bar-apps&quot;&gt;OS X Tutorial: Menus and Popovers in Menu Bar Apps&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.raywenderlich.com/87002/getting-started-with-os-x-and-swift-tutorial-part-1&quot;&gt;Getting Started With OS X and Swift Tutorial: Part 1/3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/producthunt/producthunt-osx&quot;&gt;producthunt-osx&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/cezheng/Fuzi&quot;&gt;Fuzi&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;第一个就是有这个想法的来源。第二个第三个是ray上的教材，我没仔细看，直接把demo下下来的。第四个是那几天正好看到producthunt做了一个类似的，直接就下载了。Fuzi是用来解析xml的。大改就是这些东西。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;遇到的坑&lt;/h2&gt;
-
-&lt;p&gt;遇到的第一个坑，是tableview不识别identifier…后来不知道咋的自己就好了。。这个坑后来想了想，可能是改名字之后需要重新设置一下…想不到其他的了。感觉就是把所有的重新设置一下自己就好了。&lt;/p&gt;
-
-&lt;p&gt;第二个坑就是xml解析了。我依次尝试了&lt;a href=&quot;https://github.com/cezheng/Fuzi&quot;&gt;Fuzi&lt;/a&gt;（Tailor里使用的），&lt;a href=&quot;https://github.com/tid-kijyun/Kanna&quot;&gt;Kanna&lt;/a&gt;（这个是&lt;a href=&quot;https://github.com/CatchChat/Yep&quot;&gt;Yep&lt;/a&gt;里用到的），&lt;a href=&quot;https://github.com/tadija/AEXML&quot;&gt;AEXML&lt;/a&gt;（这个是&lt;a href=&quot;http://swift.gg/&quot;&gt;swiftgg&lt;/a&gt;在一片文章提到的），最近有看到雅虎的一个&lt;a href=&quot;https://github.com/yahoojapan/SwiftyXMLParser&quot;&gt;SwiftyXMLParser&lt;/a&gt;（这个也是swiftgg提到的），还没试验..但是看上去挺好的。&lt;/p&gt;
-
-&lt;p&gt;我的思路在一开始错了，几乎所有的解析xml都是可以用&lt;a href=&quot;http://www.w3schools.com/xsl/xpath_intro.asp&quot;&gt;xpath&lt;/a&gt;来解析的，但是吧，我这个人偷懒，不想去学xpath，这就导致了我一路想用css来解析，后来发现坑了。于是开始转换思路写xpath，对着Tailor的解析写，很快也就搞定了。xpath是一个很好的东西，真的值得去了解和学习一下。&lt;/p&gt;
-
-&lt;p&gt;第三个坑，其实也不算坑，但是确实是个问题，就是Mac和iOS的迁移问题。正好，就那么巧…虾神前几天发了一篇UXKit的公众号文章，非常值得看下。对于我这种小项目，我觉得完全可以采用UXKit的方式。虾神在里面说的比我好太多了..毕竟不是一个水平。&lt;/p&gt;
-
-&lt;p&gt;不过说实话，我没想到Mac和iOS的api会差那么多。后面还是值得学习一下的。&lt;/p&gt;
-
-&lt;p&gt;最后就是，我在整个项目当中，是没有用到applescript的，但是这是Mac开发很重要的东西，后面也会想办法去尝试一下applescript。这是我很遗憾的一点。&lt;/p&gt;
-
-&lt;p&gt;彩蛋。&lt;/p&gt;
-
-&lt;p&gt;在看Tailor的代码的时候看到了函数式编程的东西..这也算是swift语言很重要的一点，我在上一篇的博客的时候介绍了部分haskell的东西。最近有在继续haskell的学习，所以顺便提一下。&lt;/p&gt;
-
-&lt;p&gt;在网络层，Tailor作者用了map函数，还用了flatmap，很好的对数据进行了分组解析再合并。这一块的代码我实在是觉得太nice了，就抄了。当然整个开发过程中很多代码都是抄的…&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;我总和工作室的人说。要回馈这个社区，要懂得感恩。这一次我好像做了那么一点努力。这大概就是之前工作室死了的那个项目小初的初衷不忘初心吧。&lt;/p&gt;
-
-&lt;p&gt;之前因为做外包，也不会很认真的去看一些很牛逼的库，就是一味的实现功能。不会去像现在这样去做点自己觉得好玩的东西，去尝试一些没尝试过的东西。至少这次做了一个东西，自己会去用。之前的外包项目，我手机里都没安装。&lt;/p&gt;
-
-&lt;p&gt;而且就像蒋春成和我说的那样，这次，真的很有成就感。虽然这个代码的难度不高，实现的功能不复杂，但是做的很开心啊，也愿意去做。&lt;/p&gt;
-
-&lt;p&gt;即使没有外包没有钱，一种纯“情怀”的状态。&lt;/p&gt;
-
-&lt;p&gt;所谓穷开心，大概就是这么一种状态。&lt;/p&gt;
-
-&lt;p&gt;祝开发者头条越来越好，我这个重度投稿者也会继续投稿我觉得质量上乘的文章的~&lt;/p&gt;
-</description>
-        <pubDate>Wed, 04 May 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ios/2016/05/04/Toutiao.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ios/2016/05/04/Toutiao.html</guid>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Higher-Order Functions</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。&lt;br /&gt;
-今天不打算写的，今天实验课太无聊。我决定写一写。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;最后的部分可能我会结合swift来写一写。看我写的进度…&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;背景&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;说好的看Learn You a Haskell for Great Good，寒假敲了不少，到higher-order function卡了。光敲已经不能理解了。最近的早上有时候去的早就会看一看理解一下Haskell，把higher-order function看了小半，Lambdas之前的部分，准备写一写，也算是个记录。不得不感叹，这玩意真TM难懂。&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;introduction&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;首先简单的说一下Haskell的语法，只有这样我才能更好的把后面的东西写明白。&lt;/p&gt;
-
-&lt;p&gt;首先来看一个函数，lucky。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lucky :: Int -&amp;gt; String
-lucky 7 = &quot;LUCKY NUMBER SEVEN!&quot;
-lucky x = &quot;Sorry, you&#39;re out of luck, pal!&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这个其实和swift的语法很相似，以至于我觉得swift这里很大程度上借鉴了haskell的语法。lucky作为一个函数，参数是一个Int类型，返回值是一个String类型。当我们运行时，如果是7，就会显示是幸运数字，如果不是，那就显示sorry。&lt;/p&gt;
-
-&lt;h2 id=&quot;higher-order-function&quot;&gt;higher-order function&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;什么是higher-order function。在haskell第五章的开始说了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Haskell functions can take functions as parameters and return functions as return values. A function that does either of these things is called a higher-order function.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在wiki中得介绍是这样的。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：&lt;br /&gt;
-接受一个或多个函数作为输入&lt;br /&gt;
-输出一个函数&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可以看到这两个其实想表达的意思是一样的。那就是，函数作为参数，或者返回一个函数。&lt;/p&gt;
-
-&lt;p&gt;简单的说，在C语言中，我们都是这么写的…void func(int, int) return void。&lt;/p&gt;
-
-&lt;p&gt;在haskell中，我们可以这么写，func func(func, func) return func。&lt;/p&gt;
-
-&lt;p&gt;在函数式编程中，函数已经成为了头等公民。这就是高阶函数。到这基本上就可以理解面向对象总是说函数式把函数传来传去的梗了…&lt;/p&gt;
-
-&lt;h2 id=&quot;func-return-func&quot;&gt;func return func&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;我们一个一个来看。先看返回一个函数的情况。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int
-multThree x y z = x * y * z
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这是一个函数，参数是三个Int类型，返回这三个Int的乘积。&lt;/p&gt;
-
-&lt;p&gt;也可以写成这样。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; (Int -&amp;gt; (Int -&amp;gt; Int))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;所以，我们来分析书上的一个例子。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; let multTwoWithNine = multThree 9
-ghci&amp;gt; multTwoWithNine 2 3
-54
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在这里，我们让multTwoWithNine等于了一个函数，这个函数是multThree 9。那这个时候multThree 9实际上算是返回了一个函数。那么这样的话，可以将这个函数赋值为一个变量。&lt;/p&gt;
-
-&lt;p&gt;也就是我们的multTwoWithNine。这个时候我们的multTwoWithNine实际上要计算的就是两个数的乘积再乘上9，而乘9，实际上不算是一个函数。&lt;/p&gt;
-
-&lt;p&gt;这里就达到了函数返回一个函数。即我的标题，func return func。&lt;/p&gt;
-
-&lt;h2 id=&quot;func-as-parameters&quot;&gt;func as parameters&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;来看例子。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;In Haskell, functions can take other functions as parameters, and as you’ve seen, they can also return functions as return values.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;也就是说，函数可以将函数作为参数。&lt;/p&gt;
-
- 	applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a&lt;br /&gt;
- 	applyTwice f x = f (f x)&lt;br /&gt;
-
-&lt;p&gt;这个例子种，f实际上就是一个方法。&lt;/p&gt;
-
-&lt;p&gt;看个例子就明白了。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; applyTwice (+3) 10
-16
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在这里，我们看上去applyTwice有三个参数，但是前两个参数被包起来了。也就是说，我们有一个函数参数，一个参数和一个返回值。&lt;/p&gt;
-
-&lt;p&gt;f x = f (f x)实际上就是f方法执行了两次。&lt;/p&gt;
-
-&lt;p&gt;怎么去理解高阶函数呢？实际上在我看来，可以这么理解，第一个函数参数，实际上实现了在第三个参数的操作。&lt;/p&gt;
-
-&lt;p&gt;为什么这里会等于16，实际上这样操作的。10 + 3 + 3。也就是，实际上第三个参数执行了函数参数的方法，得到了返回值。&lt;/p&gt;
-
-&lt;p&gt;说了这么多还是混乱是吧…感觉上这个例子可能不能很好的说明。那我们看两个好懂的。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zipWith&#39; :: (a -&amp;gt; b -&amp;gt; c) -&amp;gt; [a] -&amp;gt; [b] -&amp;gt; [c]
-zipWith&#39; _ [] _ = []
-zipWith&#39; _ _ [] = []
-zipWith&#39; f (x:xs) (y:ys) = f x y : zipWith&#39; f xs ys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;按照我上面说的，第一个函数参数，实际上是a，b参数返回c。&lt;/p&gt;
-
-&lt;p&gt;那么我们对[a]中的元素和[b]中的元素执行第一个函数的方法，最后返回的应该是列表中的每一个元素操作后的结果。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; zipWith&#39; (+) [4,2,5,6] [2,6,2,3]
-[6,8,7,9]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这个例子中，对[a]和[b]中的每一个元素进行+操作。实际上就是第一个(a -&amp;gt; b -&amp;gt; c)中的操作了。&lt;/p&gt;
-
-&lt;p&gt;第二行和第三行的意思其实是，第一个函数参数不管它什么类型，我们迪哥参数和第三个参数只要是列表，就返回列表。&lt;/p&gt;
-
-&lt;p&gt;这么一看，其实高阶函数也不是很难吧。&lt;/p&gt;
-
-&lt;p&gt;再看一个map，这个在rac和rx都有用到。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]
-map _ [] = []
-map f (x:xs) = f x : map f xs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;我们看这个函数，按照对zipWith’的理解，我们知道，这个操作其实是对[a]列表中的元素进行操作，然后这些值返回一个[b]列表。&lt;/p&gt;
-
-&lt;p&gt;我们来分析一个复杂点的map。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;首先我们(a -&amp;gt; b)要进行的函数操作其实是(map (^2))，那对第一个列表[1,2]来说，又是一个列表了，所以要返回一个列表。(map (^2)) 1 的结果是1，(map (^2)) 2的结果是4，然后返回一个列表，即[1,4]。一次类推，所以结果就是。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[1,4],[9,16,25,36],[49,64]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;swift&quot;&gt;swift中的应用&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/&quot;&gt;Swift 烧脑体操（三） - 高阶函数&lt;/a&gt;看到了swift中高阶函数的运用。&lt;/p&gt;
-
-&lt;p&gt;那我们来迁移一下理解。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let arr = [1, 2, 4]
-// arr = [1, 2, 4]
-
-let brr = arr.map {
-	&quot;No.&quot; + String($0)
-}
-// brr = [&quot;No.1&quot;, &quot;No.2&quot;, &quot;No.4&quot;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第一个arr.map，在map中，实际上就是实现了我们上文map中f的应用，对列表里的每个元素就会进行操作。实际上和haskell中的map函数没有什么差别了。&lt;/p&gt;
-
-&lt;p&gt;实际上来说，高阶函数的应用很多，后面我在学习swift之后会继续说说这个高阶函数，当然，在我能搞定的情况下，我想尝试去学学Monad。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;大概，大概，把我理解的高阶函数交会给工作室学弟学妹们的时候，就是我要离开工作室去考研或者工作的时候了~&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sun, 06 Mar 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html</guid>
-        
-        
-        <category>free</category>
-        
-      </item>
-    
-=======
->>>>>>> 31be0c0237ec7318e5a820138082c18b6a76f789
   </channel>
 </rss>

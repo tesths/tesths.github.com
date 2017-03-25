@@ -10,8 +10,8 @@
   <meta name="description" content="FOR CM AND PLUSUB">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/ios/2015/05/30/my-understand-about-block.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
   <article class="post-content">
     <h2 id="for-cm-and-plusub">FOR CM AND PLUSUB</h2>
 
-<h2 id="section">废话</h2>
+<h2 id="废话">废话</h2>
 <blockquote>
   <p>开发iOS距离一年还有四个月。block的文章看了很多。也在项目中使用了，但是使用率很低，仅限于最最简单的界面传值。</p>
 </blockquote>
@@ -79,7 +79,7 @@
   <p>我最近处于一个深度学习和补作业做实验的阶段(重点是补作业和做实验)，而且经历了两个项目现在对于OC的理解又更进了一步。于是抽时间把之前下载的关于block的视频又翻出来看了一下。有一些感受写出来，以便CM和PLUSUB以后的iOSer可以很快的学习到关于block的使用。以后这样的文章都会在标题加一个FOR CM AND PLUSUB。</p>
 </blockquote>
 
-<h2 id="section-1">概述</h2>
+<h2 id="概述">概述</h2>
 <blockquote>
   <p>block就是闭包，可以用来回调。</p>
 </blockquote>
@@ -96,7 +96,7 @@
   <p>上代码吧，不然再废话都解释不清楚什么是block。</p>
 </blockquote>
 
-<h2 id="part1-block"><em>part1 block的简单定义</em></h2>
+<h2 id="part1-block的简单定义"><em>part1 block的简单定义</em></h2>
 <p>我现在定义一个简单的block。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">myBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//1
@@ -116,7 +116,7 @@
 
 <p>执行顺序是1 3 2，可以看到myBlock没有按照程序执行的顺序来调用而是在调用之后执行了2的代码。这个例子可能不那么明显，但是可以开始初步理解回调。</p>
 
-<h2 id="part2-block"><em>part2 传参block</em></h2>
+<h2 id="part2-传参block"><em>part2 传参block</em></h2>
 <p>下面把难度加大一点，我们把block当参数传。然后看一个block的例子。
 首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。</p>
 
@@ -146,7 +146,7 @@
 
 <p>打断点看一下整体的运行流程，2 3 1。这里可以更加明显理解“回调”的含义。</p>
 
-<h2 id="part3-buttonblock"><em>part3 点击button触发block</em></h2>
+<h2 id="part3-点击button触发block"><em>part3 点击button触发block</em></h2>
 <p>经历了上面两个part基本上应该对block有个简单的理解。下面再加一点难度，用按钮触发一个回调来改变按钮的颜色。</p>
 
 <p>不多解释，直接上代码。</p>
@@ -179,7 +179,7 @@
     <span class="n">myBlock</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="part4-afnetwork"><em>part4 利用回调分离afnetwork的请求</em></h2>
+<h2 id="part4-利用回调分离afnetwork的请求"><em>part4 利用回调分离afnetwork的请求</em></h2>
 <p>直接上代码了。</p>
 
 <p>TestNetworkViewController是afnetwork使用的地方。
@@ -248,7 +248,7 @@ SearchModel是一个model，我用来解析数据的。</p>
     <span class="p">}];</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="section-2">总结</h2>
+<h2 id="总结">总结</h2>
 <blockquote>
   <p>首先还是得说一下我这里只是演示了最最简单的block使用，因为作为一个iOS开发者不会block，那么有一大半的代码是看不懂的，在后面理解RAC的时候也会出现很大的问题。所以这里我只是做了简单的说明，至于在block里为什么不能调用self，自从segmentfault上有人问过之后我答错之后现在也算是理解了一部分了，但是牵扯到了内存回收的问题，我还需要一段时间来消化。消化完之后会继续写博客的。</p>
 </blockquote>
@@ -272,22 +272,6 @@ SearchModel是一个model，我用来解析数据的。</p>
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/05/30/my-understand-about-block data-title=Block 我所理解的回调 data-url="http://walkginkgo.com/ios/2015/05/30/my-understand-about-block.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

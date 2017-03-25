@@ -10,8 +10,8 @@
   <meta name="description" content="上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/mac/2015/11/19/mac-eicaptain.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 
 <p>下面开始正文。</p>
 
-<h2 id="homebrew">1. homebrew不能使用</h2>
+<h2 id="1-homebrew不能使用">1. homebrew不能使用</h2>
 
 <p>homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用<code class="highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是<code class="highlighter-rouge">Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool</code></p>
 
@@ -85,13 +85,13 @@
 
 <p>很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。</p>
 
-<h2 id="xtrafinder">2. Xtrafinder不能使用</h2>
+<h2 id="2-xtrafinder不能使用">2. Xtrafinder不能使用</h2>
 
 <p>Xtrafinder更新完之后会提醒你怎么做，这就是苹果的rootless机制导致的，开开就OK了。</p>
 
 <p>我想说的就是Xtrafinder会挡住finder一部分，前天好像已经出了更新，但是源没有换，所以还是0.25.6版本。V2ex上有人问了，大家都一样，不是电脑的问题所以不要着急。</p>
 
-<h2 id="gem">3. gem更新</h2>
+<h2 id="3-gem更新">3. gem更新</h2>
 
 <p>gem安装的东西，反正我的是都没了…因为苹果把/usr (except /usr/local)里的东西都再见了。需要把gem的默认安装路径重新设置一下。
 所以我的rails还有博客的jekyll，当然，还有我的cocoapods都挂了。需要重新安装。</p>
@@ -102,7 +102,7 @@
 
 <p>增加<code class="highlighter-rouge">gem: -n/usr/local/bin</code>这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。</p>
 
-<h2 id="xcodealcatrazwindow">4.Xcode的Alcatraz不在window下显示</h2>
+<h2 id="4xcode的alcatraz不在window下显示">4.Xcode的Alcatraz不在window下显示</h2>
 
 <p>也就自己的Mac作大死解决这个问题。</p>
 
@@ -141,7 +141,7 @@
   <p>有些事情，唉，就这了，没戏的事情总在想也没啥意义..还是忙一忙充实充实就不想了。</p>
 </blockquote>
 
-<h2 id="section">参考链接</h2>
+<h2 id="参考链接">参考链接</h2>
 
 <p>1.<a href="http://guojianxiang.com/posts/2015-10-06-Update_OSX_EI_Captain_Problems.html">关于 OSX 升级到 EI Captain 的解决方案</a></p>
 
@@ -153,22 +153,6 @@
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/mac/2015/11/19/mac-eicaptain data-title=Mac升级10.11 EI Captain 填坑 data-url="http://walkginkgo.com/mac/2015/11/19/mac-eicaptain.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

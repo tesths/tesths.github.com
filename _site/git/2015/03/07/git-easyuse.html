@@ -10,8 +10,8 @@
   <meta name="description" content="早就说写一篇关于git使用的博客一直没写。今天下午休息，打了篮球和羽毛球。看了电影。现在要开始做点正事了。这篇文章可能关于git命令行的语句不多，但是我觉得都是我在搭建jekyll的过程中遇到的。我会尽可能的说明这些命令行的作用。因为git的操作比较多，还有什么分支合并新建分支什么的，还没有很好的去研究。这篇文章...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/git/2015/03/07/git-easyuse.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/git/2015/03/07/git-easyuse.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -76,11 +76,11 @@
 
 <p>####以下文章都是基于我个人的使用和理解，不喜勿喷。####</p>
 
-<h2 id="section">开始正文</h2>
+<h2 id="开始正文">开始正文</h2>
 <hr />
 
 <blockquote>
-  <h3 id="git">Git简介</h3>
+  <h3 id="git简介">Git简介</h3>
 </blockquote>
 
 <p>这篇文章不介绍github，介绍git命令行，但是有必要对git和github是什么进行一个说明。你可能听说过github，据说github是世界上最大的同性社交网站。当然是开玩笑的。简单的说，github是一个开放源代码保存的地方，github也是合作项目开发的首选地。</p>
@@ -92,7 +92,7 @@
 <p>当然，git本身是开放的，别人可以看到你的源代码，如果是想变成不开放的，那么你就需要像github付费了。你可以去coding看一看，coding提供了免费的git仓库。我们项目的开发都是用的coding。</p>
 
 <blockquote>
-  <h3 id="git-1">Git命令行</h3>
+  <h3 id="git命令行">Git命令行</h3>
 </blockquote>
 
 <p>Github官网上提供了<a href="http://git-scm.com/downloads/guis">图形界面</a>。</p>
@@ -104,7 +104,7 @@
 
 <hr />
 
-<h4 id="sourcetree">首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。</h4>
+<h4 id="首先我介绍我们在使用sourcetree时的上传代码流程命令行是相同的">首先我介绍我们在使用sourcetree时的上传代码流程。命令行是相同的。</h4>
 
 <blockquote>
   <p>上传代码到合并代码到拉代码的主要过程是这样的。</p>
@@ -131,7 +131,7 @@
 <p>下面将逐步介绍这些命令。</p>
 
 <blockquote>
-  <h3 id="git-2">安装git</h3>
+  <h3 id="安装git">安装git</h3>
 </blockquote>
 
 <p>Ubuntu下安装git的命令行是sudo apt-get install git，不多做解释。</p>
@@ -153,7 +153,7 @@
 如果已经cd到你要clone的位置，直接git clone不用后面目录的参数就行了。</p>
 
 <blockquote>
-  <h3 id="git-3">Git帮助</h3>
+  <h3 id="git帮助">Git帮助</h3>
 </blockquote>
 
 <p>命令 git help</p>
@@ -165,7 +165,7 @@
 <p>可以看到所有的git命令。git help也是可以加参数的。具体查阅帮助或者文档了。</p>
 
 <blockquote>
-  <h3 id="git-4">git上传代码</h3>
+  <h3 id="git上传代码">git上传代码</h3>
 </blockquote>
 
 <p><img src="/images/git-easyuse/git-easyuse-5.png" alt="git-easyuse-5" /></p>
@@ -173,7 +173,7 @@
 <p>就是主要这三条命令。我会详细说明这三条命令行的作用。</p>
 
 <blockquote>
-  <h3 id="git-add">首先第一条，git add。</h3>
+  <h3 id="首先第一条git-add">首先第一条，git add。</h3>
 </blockquote>
 
 <p>git add后面可以直接加上目录，或者文件名。“.”在这里的意思就是当前目录下所有文件。</p>
@@ -185,7 +185,7 @@
 <p>Git就会把我judi0713.github.com里所有文件全部添加了。</p>
 
 <blockquote>
-  <h3 id="commit">第二个，commit，提交</h3>
+  <h3 id="第二个commit提交">第二个，commit，提交</h3>
 </blockquote>
 
 <p>首先说明参数的意思。</p>
@@ -232,7 +232,7 @@
 <p><img src="/images/git-easyuse/git-easyuse-13.png" alt="git-easyuse-13" /></p>
 
 <blockquote>
-  <h3 id="git-push-u-origin-master">第三个git push –u origin master</h3>
+  <h3 id="第三个git-push-u-origin-master">第三个git push –u origin master</h3>
 </blockquote>
 
 <p><img src="/images/git-easyuse/git-easyuse-14.png" alt="git-easyuse-14" /></p>
@@ -311,22 +311,6 @@ pull的命令就是git pull
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/git/2015/03/07/git-easyuse data-title=命令行git简单使用 data-url="http://walkginkgo.com/git/2015/03/07/git-easyuse.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

@@ -10,8 +10,8 @@
   <meta name="description" content="  如果你不知道什么是 RSS，赶紧去查查是什么然后用起来吧，相信我，用了就再也离不开了。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/life/2016/07/15/huginn.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/life/2016/07/15/huginn.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@
 
 <p>Huginn 是一个 Github 的开源项目，已经上万 Star 了。简单的说这个东西是一个 IFTTT 形式的东西，可以把所有网页转换成 RSS 输出。更简单的说，就是工作流形式，类似于 iPhone 上的 Workflow。</p>
 
-<h2 id="section">安装</h2>
+<h2 id="安装">安装</h2>
 
 <p>安装有很多的方式，官方提了有 Heroku，docker，还有服务器。</p>
 
@@ -86,9 +86,9 @@
 
 <p>我是用我日本的 vps 来搭建的，但是由于官方的文档实在是太详细了…导致我想写安装发现没啥好写的，我就把遇到的几个问题略微叙述一下。</p>
 
-<h3 id="httpsgithubcomcantinohuginnblobmasterdocmanualinstallationmd"><a href="https://github.com/cantino/huginn/blob/master/doc/manual/installation.md">官方文档安装教程地址</a></h3>
+<h3 id="官方文档安装教程地址"><a href="https://github.com/cantino/huginn/blob/master/doc/manual/installation.md">官方文档安装教程地址</a></h3>
 
-<h3 id="import-nodejs-repository">坑1. 官方最开始有一步 Import node.js repository…</h3>
+<h3 id="坑1-官方最开始有一步-import-nodejs-repository">坑1. 官方最开始有一步 Import node.js repository…</h3>
 
 <p><code class="highlighter-rouge">curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -</code></p>
 
@@ -96,25 +96,25 @@
 
 <p>因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。</p>
 
-<h3 id="section-1">坑2. 需要在开始的时候设置主机语言</h3>
+<h3 id="坑2-需要在开始的时候设置主机语言">坑2. 需要在开始的时候设置主机语言</h3>
 
 <p>如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是</p>
 
 <p><code class="highlighter-rouge">export LC_ALL=en_US.UTF-8</code> （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
 
-<h3 id="section-2">坑3. 需要设置时区</h3>
+<h3 id="坑3-需要设置时区">坑3. 需要设置时区</h3>
 
 <p>不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。</p>
 
 <p><code class="highlighter-rouge">sudo dpkg-reconfigure tzdata</code></p>
 
-<h3 id="css-">坑4. 全部安装完毕 css 不显示</h3>
+<h3 id="坑4-全部安装完毕-css-不显示">坑4. 全部安装完毕 css 不显示</h3>
 
 <p>Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。</p>
 
 <p><a href="https://github.com/cantino/huginn/issues/1581">css and image is not load</a></p>
 
-<h3 id="install-init-scripthttpsgithubcomcantinohuginnblobmasterdocmanualinstallationmdinstall-init-script">坑5. <a href="https://github.com/cantino/huginn/blob/master/doc/manual/installation.md#install-init-script">Install Init Script</a></h3>
+<h3 id="坑5-install-init-script">坑5. <a href="https://github.com/cantino/huginn/blob/master/doc/manual/installation.md#install-init-script">Install Init Script</a></h3>
 
 <p>在这一步中是 <strong>或</strong> 的关系，一定要搞明白。</p>
 
@@ -127,7 +127,7 @@
 
 <p>这两行的 <strong>#</strong> 去掉了的。</p>
 
-<h3 id="nginx">坑6. 配置 nginx</h3>
+<h3 id="坑6-配置-nginx">坑6. 配置 nginx</h3>
 
 <p><strong>YOUR_SERVER_FQDN</strong> 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。</p>
 
@@ -139,11 +139,11 @@
   <p>作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。</p>
 </blockquote>
 
-<h3 id="bundle-installcannot-allocate-memory---git">坑7. 在bundle install的时候显示“Cannot allocate memory - git”</h3>
+<h3 id="坑7-在bundle-install的时候显示cannot-allocate-memory---git">坑7. 在bundle install的时候显示“Cannot allocate memory - git”</h3>
 
 <p>简单的说，swap不够了..具体方法见<a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04">How To Add Swap on Ubuntu 14.04</a></p>
 
-<h2 id="section-3">使用</h2>
+<h2 id="使用">使用</h2>
 
 <p>使用的方式我捉摸了很久才搞定..我会举个把网页转换成RSS的详细的例子。</p>
 
@@ -273,7 +273,7 @@
 
 <p>把网址复制到 Feedly 里面，大功告成！</p>
 
-<h2 id="section-4">更多备注</h2>
+<h2 id="更多备注">更多备注</h2>
 
 <p>因为我个人 RSS 主要是看有没有更新，所以抓取的内容不详细，需要抓取全文在手机看的话就自己倒腾啦。</p>
 
@@ -302,22 +302,6 @@
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/life/2016/07/15/huginn data-title=让所有网页变成RSS —— Huginn data-url="http://walkginkgo.com/life/2016/07/15/huginn.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

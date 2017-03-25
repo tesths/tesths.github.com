@@ -10,8 +10,8 @@
   <meta name="description" content="FOR CM AND PLUSUB  最近项目非常繁忙…上星期本来想把和block内存管理有关的东西看一下再写一个有关block的博客的后来有关block内存管理的博客都找好了没时间实战也就没出。写了有两周的项目，因为很多原因所以这近两周一直在写界面，但是在写界面的时候用到了ReactiveCocoa的东西，也是...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/ios/2015/06/13/rac_uiview.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/ios/2015/06/13/rac_uiview.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -79,9 +79,9 @@
 
 <p><em>个人以为，RAC可以以信号的方式来触发各种动作，从而让代码更加精炼。</em></p>
 
-<h2 id="section">下面上代码吧。</h2>
+<h2 id="下面上代码吧">下面上代码吧。</h2>
 
-<h2 id="uibutton"><code class="highlighter-rouge">在UIButton上的使用</code></h2>
+<h2 id="在uibutton上的使用"><code class="highlighter-rouge">在UIButton上的使用</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[[</span><span class="n">self</span><span class="p">.</span><span class="n">testBtn</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">]</span>
                             <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
@@ -91,7 +91,7 @@
 
 <p>在这里，对uibutton添加了一个rac_signalForControlEvents的方式，就不用利用addtarget的方式来再写一个方法来进行对uibutton添加点击事件了。</p>
 
-<h2 id="uialertview"><code class="highlighter-rouge">在UIAlertView的使用</code></h2>
+<h2 id="在uialertview的使用"><code class="highlighter-rouge">在UIAlertView的使用</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">UIAlertView</span> <span class="o">*</span><span class="n">chooseAlert</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIAlertView</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithTitle</span><span class="p">:</span><span class="s">@"选择图片上传"</span> <span class="nf">message</span><span class="p">:</span><span class="nb">nil</span> <span class="n">delegate</span><span class="o">:</span><span class="nb">nil</span> <span class="n">cancelButtonTitle</span><span class="o">:</span><span class="s">@"取消"</span> <span class="n">otherButtonTitles</span><span class="o">:</span><span class="s">@"拍照上传"</span><span class="p">,</span> <span class="s">@"从相册选择"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
 <span class="p">[</span><span class="n">chooseAlert</span> <span class="nf">show</span><span class="p">];</span>
@@ -108,7 +108,7 @@
 
 <p>下面两个是我利用RAC的方式写的代码。</p>
 
-<h2 id="uitextfield"><code class="highlighter-rouge">在UITextfield的使用</code></h2>
+<h2 id="在uitextfield的使用"><code class="highlighter-rouge">在UITextfield的使用</code></h2>
 <p>第一个是我封装了一个安卓风格的输入框，就是下面一条线，当选择这个框的时候，线会加粗变黑。
 我把中间的两句核心代码贴出来。self是因为我继承了一个textfield先进行功能添加和封装。所以self就是代指一个textfield了。</p>
 
@@ -123,7 +123,7 @@
 
 <p>其实这两句是可以用addtarget的方式来添加的，但是我选择了用RAC的方式，更为简单也更为容易理解。当textfield被选中的时候，下面的borderline会变成黑色，当结束选择的时候，变成灰色。(其实当选择的时候borderline应该还要加粗)。</p>
 
-<h2 id="uipagecontrol"><code class="highlighter-rouge">监控UIPagecontrol改变</code></h2>
+<h2 id="监控uipagecontrol改变"><code class="highlighter-rouge">监控UIPagecontrol改变</code></h2>
 <p>还有一个地方我利用到了RAC。因为我现在需要实现一个功能，图片轮播的时候，当图片切换，我需要相应的刷新下面的一个列表。因为我们的图片轮播是用到的一个开源控件，我实在是能力有限不知道怎么进一步修改这个控件来进一步封装从而实现新的功能，我就利用了RAC。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[</span><span class="n">RACObserve</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">imagePlayer</span><span class="p">.</span><span class="n">pageControl</span><span class="p">,</span> <span class="n">currentPage</span><span class="p">)</span> <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
@@ -138,28 +138,12 @@
   <p>BTW：最近有一大波考试，博客更新程度会大大降低…后面可能会一直做项目，等积累一部分才会继续写了。多谢各位的支持。</p>
 </blockquote>
 
-<h2 id="section-1">参考资料：</h2>
+<h2 id="参考资料">参考资料：</h2>
 <p>Limboy <a href="http://limboy.me/ios/2013/12/27/reactivecocoa-2.html">说说ReactiveCocoa 2</a></p>
 
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/06/13/rac_uiview data-title=ReactiveCocoa在UIView上的运用 data-url="http://walkginkgo.com/ios/2015/06/13/rac_uiview.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

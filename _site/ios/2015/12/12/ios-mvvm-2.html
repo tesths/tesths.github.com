@@ -10,8 +10,8 @@
   <meta name="description" content="习惯性的废话好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/ios/2015/12/12/ios-mvvm-2.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
   </header>
 
   <article class="post-content">
-    <h2 id="section">习惯性的废话</h2>
+    <h2 id="习惯性的废话">习惯性的废话</h2>
 <p>好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。</p>
 
 <p>我知道很多人想看八卦是吧。。我也想写写我最近在干什么，为什么看上去那么忙，动态也有一段时间没更新。有时间写博客在说吧。</p>
@@ -83,7 +83,7 @@
   <p>我想大多初始化定义的代码都能看懂，也没有叙述的必要，我主要把我觉得最主要的几个部分叙述一下。</p>
 </blockquote>
 
-<h2 id="protocol">代理 Protocol</h2>
+<h2 id="代理-protocol">代理 Protocol</h2>
 <p>为什么先说代理。这也是之前和慎哥也说过cell里面有点击事件怎么写。（不知道这么写对不对…后面看一部分源码之后会再聊这个话题，先留坑）代理可以干什么，跨Controller传值。跨Controller调方法。</p>
 
 <p>我们之前写代理，都是在某个Controller里的.h文件最上面创建代理。但实际上，Xcode提供了专门的Protocol文件。之前没有搞明白也是因为我觉得代理必须要再某个文件里声明。</p>
@@ -112,7 +112,7 @@
 
 <p>用第一种方法的原因呢，我们可以把点击事件赋值成为一个RACCommand类型的属性。既然可以变成一个属性了，那么就可以重新定义并且赋值。</p>
 
-<h2 id="section-1">分离点击事件</h2>
+<h2 id="分离点击事件">分离点击事件</h2>
 <p>我们新建一个FirstViewModel，在FirstViewModel.h中增加一个</p>
 
 <p><code class="highlighter-rouge"><span class="k">@property</span> <span class="p">(</span><span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">RACCommand</span> <span class="o">*</span><span class="n">excutePush</span><span class="p">;</span></code></p>
@@ -132,7 +132,7 @@
 
 <p>这样，我们就实现了对点击事件的分离。</p>
 
-<h2 id="section-2">分离跳转</h2>
+<h2 id="分离跳转">分离跳转</h2>
 <p>分离跳转，就要用到我开始说的代理了。
 我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法</p>
 
@@ -176,12 +176,12 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 
 <p>那么这样的话，我们的service就可以执行MVVMdemoImpl里的pushViewModel方法了。</p>
 
-<h2 id="section-3">小结</h2>
+<h2 id="小结">小结</h2>
 <p>其实上面的最后AppDelegate的赋值代理这一块还不是很明白。有时间再说说吧。好久没写博客就想发一篇了。</p>
 
 <p>以上完整代码在<a href="https://github.com/judi0713/MVVMdemo">MVVMdemo</a></p>
 
-<h2 id="section-4">参考链接</h2>
+<h2 id="参考链接">参考链接</h2>
 
 <p>1.<a href="https://github.com/leichunfeng/MVVMReactiveCocoa">leichunfeng/MVVMReactiveCocoa</a></p>
 
@@ -195,22 +195,6 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/12/12/ios-mvvm-2 data-title=iOS开发模式MVVM 2分离业务逻辑 data-url="http://walkginkgo.com/ios/2015/12/12/ios-mvvm-2.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

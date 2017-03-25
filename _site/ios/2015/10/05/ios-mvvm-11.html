@@ -10,8 +10,8 @@
   <meta name="description" content="好了，我作大死的连续第五天奋斗在电脑跟前了，好的。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/ios/2015/10/05/ios-mvvm-11.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/ios/2015/10/05/ios-mvvm-11.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@
 
 <p>开始今天的话题。</p>
 
-<h2 id="model">首先聊聊Model</h2>
+<h2 id="首先聊聊model">首先聊聊Model</h2>
 
 <blockquote>
   <p>为什么先聊Model，因为不论是MVC还是MVVM。都有一个是统一的，那就是Model。</p>
@@ -110,7 +110,7 @@
 
 <p>最后来总结一下Model。Model层可以没有吗，当然不能，因为无论是后台开发还是App，Model层是一切数据的来源。数据来了才能有一个完成的App。但实际上来说，我们调用Model层的语句可能很少。最主要代码还是集中在VC或者是VVM。</p>
 
-<h2 id="mvc">聊聊MVC的弊端</h2>
+<h2 id="聊聊mvc的弊端">聊聊MVC的弊端</h2>
 
 <p>为什么不直接聊MVC，因为MVC是大众开发iOS的模式。无论是后台还是iOS，虽然说iOS的MVC和后台的有差别，但是还是没啥好说的。是个iOS开发都知道MVC。在此也不做过多的阐述。</p>
 
@@ -118,7 +118,7 @@
 
 <p>我只写过一点点Rails。先来说说我对Rails的MVC的看法，再和iOS的MVC一比较，立马就看出弊端了。</p>
 
-<h2 id="railsmvc">Rails的MVC</h2>
+<h2 id="rails的mvc">Rails的MVC</h2>
 
 <p>在rails中，C是对于View中的方法进行描述。举个最简单的例子，我们在View中需要实现index，列出所有文章的列表。那么就在C中写index函数的定义就好了。不用在View里写任何东西。</p>
 
@@ -128,7 +128,7 @@
 
 <p>下面来说说iOS中的MVC</p>
 
-<h2 id="iosmvc">iOS的MVC</h2>
+<h2 id="ios的mvc">iOS的MVC</h2>
 
 <p>MVC，实际上的为的就是让各个层次负责不同的任务。那么View，Controller应该分开。</p>
 
@@ -142,25 +142,25 @@
 
 <p>那么，今天的半干货部分。自此开始。</p>
 
-<h2 id="mvvm">MVVM到底在做什么</h2>
+<h2 id="mvvm到底在做什么">MVVM到底在做什么</h2>
 
 <p>想了一下，与其废话半天说MVVM和MVC不如直接解释MVVM每部分到底在干嘛，这样一说，立马就知道MVVM的好处了。</p>
 
-<h3 id="mvcview"><code class="highlighter-rouge">在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。</code></h3>
+<h3 id="在mvc中占据我们很大代码量的是什么一是大量的view视图二是大量的网络请求三是部分逻辑"><code class="highlighter-rouge">在MVC中，占据我们很大代码量的是什么。一是大量的View视图，二是大量的网络请求，三是部分逻辑。</code></h3>
 
-<h3 id="mvvmviewmodel"><code class="highlighter-rouge">而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现</code></h3>
+<h3 id="而在mvvm中我们的viewmodel层干啥一是做网络请求二是逻辑的实现"><code class="highlighter-rouge">而在MVVM中，我们的ViewModel层干啥，一是做网络请求，二是逻辑的实现</code></h3>
 
 <p>我不贴图了，我觉得看了那么多文章都不如直接说每部分是干什么的这样直接了当。</p>
 
 <p>所以综合比较一下。下面MVC分别用M1,V1,C1来表示，MVVM用M2,V2,VM2来表示，看看发生了什么变化。</p>
 
-<h3 id="m1-m2-"><code class="highlighter-rouge">M1-&gt;M2 没变化</code></h3>
+<h3 id="m1-m2-没变化"><code class="highlighter-rouge">M1-&gt;M2 没变化</code></h3>
 
-<h3 id="c1-v2-iosviewcontrollerviewview"><code class="highlighter-rouge">C1-&gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作</code></h3>
+<h3 id="c1-v2-以后ios中的viewcontroller即是今天的view少了网络请求和逻辑处理部分只对view进行操作"><code class="highlighter-rouge">C1-&gt;V2 以后iOS中的ViewController即是今天的View。少了网络请求和逻辑处理部分，只对View进行操作</code></h3>
 
 <p>###<code class="highlighter-rouge">V1-&gt;V2 对于我个人来说，以后我会再单独抽象一个View在MVVM中来处理Common的View还有需要封装的View。</code></p>
 
-<h3 id="c1-vm2-vm2"><code class="highlighter-rouge">C1-&gt;VM2 这里VM2，只进行逻辑和网络请求等等。</code></h3>
+<h3 id="c1-vm2-这里vm2只进行逻辑和网络请求等等"><code class="highlighter-rouge">C1-&gt;VM2 这里VM2，只进行逻辑和网络请求等等。</code></h3>
 
 <p>那么，在MVVM中最重要的是什么？是数据的绑定。</p>
 
@@ -172,7 +172,7 @@
 
 <p>这我会在后面的博客开始叙述的。</p>
 
-<h2 id="section">写在后面</h2>
+<h2 id="写在后面">写在后面</h2>
 
 <p>这系列的博客想干什么。</p>
 
@@ -191,22 +191,6 @@
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/10/05/ios-mvvm-11 data-title=iOS开发框架MVVM 1理解开发模式(填坑) data-url="http://walkginkgo.com/ios/2015/10/05/ios-mvvm-11.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

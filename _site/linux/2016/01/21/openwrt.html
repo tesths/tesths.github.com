@@ -10,8 +10,8 @@
   <meta name="description" content="慎哥开博客了，博客做的很好看！欢迎访问~cbsfly">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/linux/2016/01/21/openwrt.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/linux/2016/01/21/openwrt.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
   </header>
 
   <article class="post-content">
-    <h3 id="cbsflyhttpcbsflygithubio">慎哥开博客了，博客做的很好看！欢迎访问~<a href="http://cbsfly.github.io">cbsfly</a></h3>
+    <h3 id="慎哥开博客了博客做的很好看欢迎访问cbsfly">慎哥开博客了，博客做的很好看！欢迎访问~<a href="http://cbsfly.github.io">cbsfly</a></h3>
 
 <blockquote>
   <p>请合理利用互联网，不要对国家安全造成任何威胁！</p>
@@ -86,7 +86,7 @@
 
 <p>我倒腾了如下几个东西。一，中继。二，jump gfw。三，8021x校园网拨号。具体如下。</p>
 
-<h2 id="section">预备</h2>
+<h2 id="预备">预备</h2>
 <ol>
   <li>首先你得有个硬件能刷操作系统的路由器。我建议某宝买硬改的，很便宜。</li>
   <li>在ubuntu中，操作系统更新和安装软件用的是apt-get，在OpenWrt里用的是opkg(我觉得是OpenWrt Package的缩写)</li>
@@ -97,7 +97,7 @@
   <li>没找到中文语言包，所以下文全是英文。</li>
 </ol>
 
-<h2 id="section-1">中继</h2>
+<h2 id="中继">中继</h2>
 <p>OpenWrt可以作为无线中继。在此感谢班长和姜导提供该技能包。</p>
 
 <p>所谓无线中继，就是你用OpweWrt连接无线网，然后再把这个无线网的信号扩展了。这样就解决了一个路由器信号不够强的问题。其次，前文说道，OpenWrt是个Linux的操作系统，我们安装软件需要让路由器联网。</p>
@@ -151,7 +151,7 @@
 
 <p>这时候在开腾讯nba就能看直播了…我简直，为了看球什么都干得出来。然后再连接路由器就可以Jump gfw了~</p>
 
-<h2 id="x">8021x校园网拨号</h2>
+<h2 id="8021x校园网拨号">8021x校园网拨号</h2>
 <p>不过我们不用更换源，首先我们需要</p>
 
 <p><code class="highlighter-rouge">opkg remove wpad-mini</code></p>
@@ -164,12 +164,12 @@
 
 <p>具体参考迪哥的博客<a href="http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html">极路由root并8021x校园网拨号经验分享</a></p>
 
-<h2 id="section-2">结尾</h2>
+<h2 id="结尾">结尾</h2>
 <blockquote>
   <p>请合理利用互联网，不要对国家安全造成任何威胁！</p>
 </blockquote>
 
-<h2 id="section-3">参考链接</h2>
+<h2 id="参考链接">参考链接</h2>
 <ol>
   <li><a href="http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS">Openwrt无线中继教程</a></li>
   <li><a href="http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html">极路由root并8021x校园网拨号经验分享</a></li>
@@ -179,22 +179,6 @@
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/linux/2016/01/21/openwrt data-title=OpenWrt小记 data-url="http://walkginkgo.com/linux/2016/01/21/openwrt.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 

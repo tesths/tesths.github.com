@@ -10,8 +10,8 @@
   <meta name="description" content="FOR CM AND PLUSUB">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://walkginkgo.com/ios/2015/10/03/network.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/ios/2015/10/03/network.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,19 @@
 
 <p>另外:链接不知道为啥都不变色了😭基本上我都给链接了，就凑合一下吧…</p>
 
-<h2 id="section">先简单的说说我们的网络请求转变过程</h2>
+<h2 id="先简单的说说我们的网络请求转变过程">先简单的说说我们的网络请求转变过程</h2>
 
 <p>加入工作室一年。一共做了有三四个项目了。我先大概叙述一下我们的网络请求的转变过程</p>
 
-<h2 id="afnetworking"><code class="highlighter-rouge">第一阶段 直接调用AFNetworking</code></h2>
+<h2 id="第一阶段-直接调用afnetworking"><code class="highlighter-rouge">第一阶段 直接调用AFNetworking</code></h2>
 
 <p>第一个项目那时候懵懂无知，每个界面都直接调<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>。这样导致的问题就是代码量骤然增加。</p>
 
-<h2 id="ytknetwork"><code class="highlighter-rouge">第二阶段 直接调用YTKNetwork</code></h2>
+<h2 id="第二阶段-直接调用ytknetwork"><code class="highlighter-rouge">第二阶段 直接调用YTKNetwork</code></h2>
 
 <p>第二个项目刚做的时候唐巧开源了他们在猿题库封装的<a href="https://github.com/yuantiku/YTKNetwork">YTKNetwork</a>。那时候还是懵懂无知，还是在每个界面都开始直接调YTKNetwork。人家封装的那么好的东西就被我用成这个栽子，简直对不起巧大。我记得有个界面好像有5条网络请求，可以想象代码的冗余度。</p>
 
-<h2 id="reactivecocoa"><code class="highlighter-rouge">第三阶段 开始使用ReactiveCocoa</code></h2>
+<h2 id="第三阶段-开始使用reactivecocoa"><code class="highlighter-rouge">第三阶段 开始使用ReactiveCocoa</code></h2>
 
 <p>因为在做第二个项目的时候我和迪哥负责不同的客户端。迪哥在看了limboy的<a href="http://limboy.me/ios/2014/01/05/ios-rest-client-implementation.html">基于AFNetworking2.0和ReactiveCocoa2.1的iOS REST Client</a>开始将网络请求剥离到一个专门的界面，这样每次就不用写很多的东西了。</p>
 
@@ -106,7 +106,7 @@
 
 <p>这样还是导致了网络请求部分有大量的代码。</p>
 
-<h2 id="codingios">根据Coding的iOS重新封装网络请求</h2>
+<h2 id="根据coding的ios重新封装网络请求">根据Coding的iOS重新封装网络请求</h2>
 
 <p><a href="https://coding.net/u/ease/p/Coding_iOS/git">Coding的iOS客户端</a>是开源的，在Github和Coding官网都有。我放的链接是一个下载下来就能跑起来的。(强迫症，跑不起来的代码都不想看..不过现在看MVVM好多都跑不起来也硬着头皮看了)</p>
 
@@ -116,21 +116,21 @@
   <p>插一句话，我们为什么不用block。因为迪哥也不太会block就直接上rac了，我之前的博客写过简单的block，我在写代码的时候用delegate和notice比较多所以对block的实践比较少。这是我自身的问题。而且说实话我觉得用rac挺好的，因为block加上typedef啥的其实很多东西的，不像rac直接调就完事了。</p>
 </blockquote>
 
-<h2 id="section-1">下面开始今天的算是干货的东西</h2>
+<h2 id="下面开始今天的算是干货的东西">下面开始今天的算是干货的东西</h2>
 
-<h2 id="coding">1. 分析Coding网络请求</h2>
+<h2 id="1-分析coding网络请求">1. 分析Coding网络请求</h2>
 
-<h3 id="coding-1"><em>Coding的网络请求我觉得可以总结为</em></h3>
+<h3 id="coding的网络请求我觉得可以总结为"><em>Coding的网络请求我觉得可以总结为</em></h3>
 
 <h3 id="block---block---afnetworking">block -&gt; block -&gt; AFNetworking</h3>
 
 <p>下面来解释一下，首先第一个block是我们的主viewcontroller，也就是我们逻辑部分和视图部分。首先第一个block调Coding_NetAPIManager里的函数。然后在Coding_NetAPIManager再调CodingNetAPIClient里的函数。</p>
 
-<h3 id="codingcodinghttpscodingnetueasepcodingiosgit">(具体Coding代码请看<a href="https://coding.net/u/ease/p/Coding_iOS/git">Coding客户端</a>代码的链接)</h3>
+<h3 id="具体coding代码请看coding客户端代码的链接">(具体Coding代码请看<a href="https://coding.net/u/ease/p/Coding_iOS/git">Coding客户端</a>代码的链接)</h3>
 
 <p>我们倒着来说。</p>
 
-<h2 id="afnetworking-1"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
+<h2 id="第三部分-afnetworking"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
 
 <p>在我分类的AFNetworking里也就是CodingNetAPIClient里，Coding进行了一件事情，那就是进行AFNetworking的网络请求。</p>
 
@@ -138,16 +138,16 @@
 
 <p>然后在网络请求中判断，如果有错误，那么返回nil和id类型的error。如果没错误，返回response和nil。</p>
 
-<h2 id="block"><code class="highlighter-rouge">第二部分 block</code></h2>
+<h2 id="第二部分-block"><code class="highlighter-rouge">第二部分 block</code></h2>
 
 <p>在这部分里，回调的结果有两种，一种是有数据，一种是没数据。其实到这就行了。那么现在在这第二个部分干什么呢，json转model。就这么简单。返回的东西，如果有数据返回，那么就再次返回model或者是data和nil，如果没有数据返回，就返回nil和error。</p>
 
-<h2 id="block-1"><code class="highlighter-rouge">第一部分 block</code></h2>
+<h2 id="第一部分-block"><code class="highlighter-rouge">第一部分 block</code></h2>
 <p>到这里，其实只要判断有无数据就可以啦。</p>
 
 <p>好了。下面我们只需要用RAC来替换block就完成了。当然了，中间有坑，不会那么简单的…</p>
 
-<h2 id="section-2">2. 改写网络请求</h2>
+<h2 id="2-改写网络请求">2. 改写网络请求</h2>
 
 <p>我要上代码了。依然三部分。我们还是倒着来。我放关键的代码在这。</p>
 
@@ -161,7 +161,7 @@
 
 <p>也是倒着来。</p>
 
-<h2 id="afnetworking-2"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
+<h2 id="第三部分-afnetworking-1"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
 <p><code class="highlighter-rouge">这是AFNetworking网络请求</code></p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
@@ -231,7 +231,7 @@
     <span class="p">}];</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="rac"><code class="highlighter-rouge">第二部分 RAC</code></h2>
+<h2 id="第二部分-rac"><code class="highlighter-rouge">第二部分 RAC</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="k">-</span> <span class="p">(</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">)</span><span class="n">test2</span>
@@ -250,7 +250,7 @@
     <span class="p">}];</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="rac-1"><code class="highlighter-rouge">第一部分 RAC</code></h2>
+<h2 id="第一部分-rac"><code class="highlighter-rouge">第一部分 RAC</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="k">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="nf">test2</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">sender</span>
@@ -267,15 +267,15 @@
   <p>看代码的时候最好是从第一部分看，我为了突出重点所以把第三部分放到最前面了。基本上我就干了一件事情，把block改写为RAC。</p>
 </blockquote>
 
-<h2 id="section-3">3. 问题以及填坑</h2>
+<h2 id="3-问题以及填坑">3. 问题以及填坑</h2>
 
-<h3 id="section-4">问题一：回调两个值</h3>
+<h3 id="问题一回调两个值">问题一：回调两个值</h3>
 
 <p>其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用<code class="highlighter-rouge">RACTupleUnpack(id resultData, NSError *error) = x;</code>来解加压缩变量(用词不准确见谅)</p>
 
 <p>在这里非常感谢<a href="supermao.cn/zhe-yang-hao-yong-de-reactivecocoagen-ben-ting-bu-xia-lai/">这样好用的ReactiveCocoa，根本停不下来</a>这篇博客。看到了RACTuplePack这个宏定义。</p>
 
-<h3 id="session">问题二：如何在服务器返回session失效之后进行两次链接请求，一次后台自动登录，一次重新进行网络请求</h3>
+<h3 id="问题二如何在服务器返回session失效之后进行两次链接请求一次后台自动登录一次重新进行网络请求">问题二：如何在服务器返回session失效之后进行两次链接请求，一次后台自动登录，一次重新进行网络请求</h3>
 
 <p>在Coding的代码里，我看到如果未登录是会弹出登录界面。但是我们要求是后台登录然后重新请求。</p>
 
@@ -285,11 +285,11 @@
 
 <p>虽然这样看上去就不合理，但是是我能尝试出来的一个办法了…尝试了好几天，查了半天也没有类似的解决方案。</p>
 
-<h3 id="section-5">问题三：为什么有时候不会执行网络请求</h3>
+<h3 id="问题三为什么有时候不会执行网络请求">问题三：为什么有时候不会执行网络请求</h3>
 
 <p>我在解决问题二的时候就出现这种问题，不能进行网络请求，我只是一个简单的调函数。但是，但是，但是，在rac里必须要subscribeNext，如果不subscribeNext则不会调！这是需要记住的。</p>
 
-<h2 id="section-6">4. 还存在的问题以及不足</h2>
+<h2 id="4-还存在的问题以及不足">4. 还存在的问题以及不足</h2>
 
 <ol>
   <li>
@@ -310,27 +310,11 @@
 </ol>
 
 <blockquote>
-  <h2 id="codingcoding">最后的最后感谢Coding将他们的客户端开源出来，感谢为Coding贡献代码的工程师。是你们让我学到了更多的东西😘</h2>
+  <h2 id="最后的最后感谢coding将他们的客户端开源出来感谢为coding贡献代码的工程师是你们让我学到了更多的东西">最后的最后感谢Coding将他们的客户端开源出来，感谢为Coding贡献代码的工程师。是你们让我学到了更多的东西😘</h2>
 </blockquote>
 
   </article>
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key=/ios/2015/10/03/network data-title=根据Coding的iOS端重新用RAC封装网络请求 data-url="http://walkginkgo.com/ios/2015/10/03/network.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"walkginkgo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 </div>
 
