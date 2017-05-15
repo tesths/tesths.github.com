@@ -45,23 +45,37 @@ categories: huginn
 
 5. 登陆 Codeanywhere，点击右上角的 Editor。
 
-
+![](http://walkginkgo.com/images/huginn/code-1.png)
 
 会进入一个选择界面，如我截图。
 
+![](http://walkginkgo.com/images/huginn/code-2.png)
+
 第一次的话点完 Create 会让你验证邮箱，验证完邮箱对着上图再做一遍就可以了。
 
-6. Codeanywhere 已经配置好了 Linux 和 Ruby 的环境，我们点击第一个进入命令行。
+6. 下面的话，如果你想省事，我写了一个脚本。这样你只需要输入很少的命令就可以了。
 
-如果你想省事，我写了一个脚本。这样你只需要输入很少的命令就可以了。
+点击文件 新建文件。
 
-上 [huginn.sh](https://github.com/tesths/tesths.github.com/blob/master/images/huginn/huginn.sh)，复制到 Codeanywhere 的文件编辑器里。
+![](http://walkginkgo.com/images/huginn/code-12.png)
+
+上 [huginn.sh](https://github.com/tesths/tesths.github.com/blob/master/images/huginn/huginn.sh)，复制到 Codeanywhere 的文件编辑器里。然后点击右上角保存。
+
+保存到根目录下。
+
+![](http://walkginkgo.com/images/huginn/code-10.png)
 
 然后在你的 Heroku 界面找到下图的地方。
 
+![](http://walkginkgo.com/images/huginn/code-8.png)
+
 替换我写的脚本的以下地方。
 
+![](http://walkginkgo.com/images/huginn/code-9.png)
+
 然后执行脚本。
+
+![](http://walkginkgo.com/images/huginn/code-11.png)
 
 执行完毕之后。
 
