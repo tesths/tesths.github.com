@@ -5,34 +5,27 @@ date:   2017-5-14
 categories: huginn
 ---
 
-
 ## 需要的东西
 
-1. git （用来拉仓库）
-2. Heroku Toolbelt （用来部署）
-3. ruby 环境 （用来配置）
+1. [Codeanywhere](https://codeanywhere.com/) 账号注册（用于 Heroku 环境配置）
+2. [Heroku](http://herokuapp.com/) 账号注册
 
-## 准备工作
+## 部分说明
 
-注册一个 Heroku 的账号，登陆上去。
-
-配置好你的 Heroku Toolbelt（参考 Heroku 官方的说明）。
-
-以及把 gem 的原换了。
-
-由于 Huginn 是一个 ruby 写的应用，所以需要用 gem 把它需要的三方库安装起来，但是 gem 本身是很卡的。所以要把国外的源换到中国，参考 Ruby China 的 [RubyGems 镜像](https://gems.ruby-china.org/)。从 `gem sources` 开始做。
+1. 由于 Huginn 是基于 Ruby 的，所以需要配置 Ruby 的环境。我们这里使用 Codeanywhere，就省去了配置 Ruby 环境。
+2. [Cloud9](https://c9.io/) 是一个云端的 IDE，配置好了安装 Huginn 的所有环境，但是注册需要信用卡。（如果你有信用卡我推荐你使用这个。）我们这里使用 [Codeanywhere](https://codeanywhere.com/)，二者没有特别大的区别，Codeanywhere 比 Cloud9 少了 Heroku 的环境，我会详细说明如何在 Codeanywhere 上配置 Heroku 的环境。
 
 ## 部署步骤
 
-1.登陆 Huginn Github 主页的 [Deployment 部分](https://github.com/huginn/huginn#deployment)，找到 Heroku 的按钮。然后点击，就会跳转到你的 Heroku 了。
+1. 登陆 Huginn Github 主页的 [Deployment 部分](https://github.com/huginn/huginn#deployment)，找到 Heroku 的按钮。然后点击，就会跳转到你的 Heroku 了。
 
 ![](http://walkginkgo.com/images/huginn/heroku-1.png)
 
-2.点完按钮之后会跳转到你的 Heroku 界面。去起个名字。
+2. 点完按钮之后会跳转到你的 Heroku 界面。去起个名字。
 
 ![](http://walkginkgo.com/images/huginn/heroku-2.png)
 
-3.起晚名字什么都不点，直接拉到最后点 Deploy 的按钮。
+3. 起晚名字什么都不点，直接拉到最后点 Deploy 的按钮。
 
 ![](http://walkginkgo.com/images/huginn/heroku-3.png)
 
@@ -44,19 +37,47 @@ categories: huginn
 
 ![](http://walkginkgo.com/images/huginn/heroku-5.png)
 
-4.这样就进入到网页了。这里 Huginn 很人性化的把步骤贴出来了。由于我们用的是自动安装，所以没有创建管理员用户，也有一些东西需要配置。（可以看到已经可以访问域名了）
+4. 这样就进入到网页了。这里 Huginn 很人性化的把步骤贴出来了。由于我们用的是自动安装，所以没有创建管理员用户，也有一些东西需要配置。（可以看到已经可以访问域名了）
 
 ![](http://walkginkgo.com/images/huginn/heroku-6.png)
 
-这里首先需要在命令行登陆你的 heroku（对不用第一步看文档了，直接做），就是在命令行输入 `heroku login`。
+现在我们对照着 Huginn 的说明来做。
 
-剩下的就对着白色的复制粘贴命令做可以了。到最后一步 `bin/setup_heroku` 的时候会让你输入一些 Yes or no，或者是邮箱什么的，我就不详细说了。实在搞不定就在群里问。一个一个写得截图太麻烦了，容我偷个懒。
+5. 登陆 Codeanywhere，点击右上角的 Editor。
 
-里面有一步会设置或者直接给你一个邀请码，还有设置管理员用户。还有登陆的管理员账号和密码。记得保存好这些。
+
+
+会进入一个选择界面，如我截图。
+
+第一次的话点完 Create 会让你验证邮箱，验证完邮箱对着上图再做一遍就可以了。
+
+6. Codeanywhere 已经配置好了 Linux 和 Ruby 的环境，我们点击第一个进入命令行。
+
+如果你想省事，我写了一个脚本。这样你只需要输入很少的命令就可以了。
+
+上 [huginn.sh](https://github.com/tesths/tesths.github.com/blob/master/images/huginn/huginn.sh)，复制到 Codeanywhere 的文件编辑器里。
+
+然后在你的 Heroku 界面找到下图的地方。
+
+替换我写的脚本的以下地方。
+
+然后执行脚本。
+
+执行完毕之后。
+
+先进入 `cd code-huginn/`。
+
+在命令行登陆你的 heroku ，就是在命令行输入 `heroku login`。
+
+之后执行 `heroku git:remote -a code-huginn`。
+
+最后执行 `bin/setup_heroku`。
+
+剩下的就是开始自动配置了。
 
 ## 几点说明
 
-1. Heroku 部署很简单，如果有问题，那基本是 gem 的问题，看看报错信息，搞不定就上群里来交流一下。
+1. Heroku 部署很简单，利用我写的脚本应该很快。
 2. Heroku 有时间限制，有时候网站会挂，官方推荐可以使用 uptimerobot 来持续网站运行。参考官方文档。
 
 
