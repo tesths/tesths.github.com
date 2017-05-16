@@ -30,6 +30,8 @@ cd code-huginn
 
 cp .env.example .env
 
-gem install bundler heroku
+gem install heroku
+
+gem install bundler
 
 bundle
