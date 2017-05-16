@@ -53,7 +53,15 @@ categories: huginn
 
 第一次的话点完 Create 会让你验证邮箱，验证完邮箱对着上图再做一遍就可以了。
 
-6. 下面的话，如果你想省事，我写了一个脚本。这样你只需要输入很少的命令就可以了。
+6. 我们首先要下载新版本的 ruby 环境。
+
+![](http://walkginkgo.com/images/huginn/code-14.png)
+
+安装完毕后使用。
+
+![](http://walkginkgo.com/images/huginn/code-13.png)
+
+下面的话，我写了一个脚本。这样你只需要输入很少的命令就可以了。
 
 点击文件 新建文件。
 
@@ -61,7 +69,7 @@ categories: huginn
 
 上 [huginn.sh](https://github.com/tesths/tesths.github.com/blob/master/images/huginn/huginn.sh)，复制到 Codeanywhere 的文件编辑器里。然后点击右上角保存。
 
-保存到根目录下。
+保存到根目录下，**文件名保存为 huginn.sh**。
 
 ![](http://walkginkgo.com/images/huginn/code-10.png)
 
@@ -73,13 +81,13 @@ categories: huginn
 
 ![](http://walkginkgo.com/images/huginn/code-9.png)
 
-然后执行脚本。
+然后执行脚本 huginn.sh，bash 是执行的意思。
 
 ![](http://walkginkgo.com/images/huginn/code-11.png)
 
 执行完毕之后。
 
-先进入 `cd code-huginn/`。
+先进入 `cd code-huginn/`（这里的 code-huginn 输入你刚替换我文件中的名字就好）。
 
 在命令行登陆你的 heroku ，就是在命令行输入 `heroku login`。
 
