@@ -6,41 +6,89 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 May 2017 13:00:30 +0800</pubDate>
-    <lastBuildDate>Sun, 14 May 2017 13:00:30 +0800</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <pubDate>Mon, 09 Apr 2018 09:50:19 +0800</pubDate>
+    <lastBuildDate>Mon, 09 Apr 2018 09:50:19 +0800</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>浅谈解决 Instagram 推送失效的问题</title>
+        <description>&lt;p&gt;最近由于某些需要。需要关注 Instagram 的博主，ins 本身是提供了推送服务的，但是由于各种原因，经常收不到推送，这就需要自己采取爬虫的形式。&lt;/p&gt;
+
+&lt;h2 id=&quot;推送服务&quot;&gt;推送服务&lt;/h2&gt;
+
+&lt;p&gt;推送服务有很多选择，除了国内的平台都可以。我在这里采取了比较灵活的 telegram bot。tg 是一款很伟大的产品，很简单的方式就可以对接机器人自动发布消息。&lt;/p&gt;
+
+&lt;p&gt;我采用了 &lt;a href=&quot;https://github.com/atipugin/telegram-bot-ruby&quot;&gt;telegram-bot-ruby&lt;/a&gt; 这个 gem，来将 ruby 脚本和 tg 联系起来。&lt;/p&gt;
+
+&lt;p&gt;虽然我更推荐你们使用 python 或者 php，在 GitHub 上有很多和 ins 相关的 python 的库，甚至可以调用到 ins 私有的 api 接口。由于我最近的技术栈都是 ruby 所以就采用了 ruby。&lt;/p&gt;
+
+&lt;h2 id=&quot;爬虫获取&quot;&gt;爬虫获取&lt;/h2&gt;
+
+&lt;p&gt;ins 自身的网络请求是 api 分离的，这意味着如果爬虫爬取到了 json 接口之后可以直接获取 json 的数据。只需要在所有的 url 后面加上 ?__a=1 即可获得 json 格式的数据。&lt;/p&gt;
+
+&lt;h2 id=&quot;爬虫方案&quot;&gt;爬虫方案&lt;/h2&gt;
+
+&lt;p&gt;我采取的方案是每 5s 请求一次。对比前一次和这一次的区别。这里就不详细叙述了。&lt;/p&gt;
+
+&lt;h2 id=&quot;网络请求优化及异常处理&quot;&gt;网络请求优化及异常处理&lt;/h2&gt;
+
+&lt;p&gt;由于我的程序一开始写的不够规范，导致重复请求过多。而 instagram 对于请求频率过于高的 ip 会返回 429 错误。429 是请求次数过多。&lt;/p&gt;
+
+&lt;p&gt;而在请求错误过多的情况下，会导致异常处理。这里我采取 try catch 的方案。&lt;/p&gt;
+
+&lt;p&gt;在逐步优化后我的爬虫现在平均每分钟运行 12 次。已经处于不会被封的范围内了。&lt;/p&gt;
+
+&lt;h2 id=&quot;小彩蛋&quot;&gt;小彩蛋&lt;/h2&gt;
+
+&lt;p&gt;graphql 已经被 Instagram 采用。突然有一天的接口全部是 graphql 了。导致的就是需要重新修改 json 的解析。现在的解析还是有点复杂的。&lt;/p&gt;
+
+&lt;h2 id=&quot;开源&quot;&gt;开源&lt;/h2&gt;
+
+&lt;p&gt;我已经将代码开源在 https://gist.github.com/tesths/24b211eeae5acd5097e3efd647057acb。由于之前写的还有很多 try catch 的异常没有完全写进去，但是因为已经基本满足我的使用需要所以就没有继续完善。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 09 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/linux/2018/04/09/instagram.html</link>
+        <guid isPermaLink="true">http://localhost:4000/linux/2018/04/09/instagram.html</guid>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Heroku 安装 Huginn</title>
         <description>&lt;h2 id=&quot;需要的东西&quot;&gt;需要的东西&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;git （用来拉仓库）&lt;/li&gt;
-  &lt;li&gt;Heroku Toolbelt （用来部署）&lt;/li&gt;
-  &lt;li&gt;ruby 环境 （用来配置）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codeanywhere.com/&quot;&gt;Codeanywhere&lt;/a&gt; 账号注册（用于 Heroku 环境配置）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://herokuapp.com/&quot;&gt;Heroku&lt;/a&gt; 账号注册&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
+&lt;h2 id=&quot;部分说明&quot;&gt;部分说明&lt;/h2&gt;
 
-&lt;p&gt;注册一个 Heroku 的账号，登陆上去。&lt;/p&gt;
-
-&lt;p&gt;配置好你的 Heroku Toolbelt（参考 Heroku 官方的说明）。&lt;/p&gt;
-
-&lt;p&gt;以及把 gem 的原换了。&lt;/p&gt;
-
-&lt;p&gt;由于 Huginn 是一个 ruby 写的应用，所以需要用 gem 把它需要的三方库安装起来，但是 gem 本身是很卡的。所以要把国外的源换到中国，参考 Ruby China 的 &lt;a href=&quot;https://gems.ruby-china.org/&quot;&gt;RubyGems 镜像&lt;/a&gt;。从 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem sources&lt;/code&gt; 开始做。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;由于 Huginn 是基于 Ruby 的，所以需要配置 Ruby 的环境。我们这里使用 Codeanywhere，就省去了配置 Ruby 环境。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://c9.io/&quot;&gt;Cloud9&lt;/a&gt; 是一个云端的 IDE，配置好了安装 Huginn 的所有环境，但是注册需要信用卡。（如果你有信用卡我推荐你使用这个。）我们这里使用 &lt;a href=&quot;https://codeanywhere.com/&quot;&gt;Codeanywhere&lt;/a&gt;，二者没有特别大的区别，Codeanywhere 比 Cloud9 少了 Heroku 的环境，我会详细说明如何在 Codeanywhere 上配置 Heroku 的环境。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;部署步骤&quot;&gt;部署步骤&lt;/h2&gt;
 
-&lt;p&gt;1.登陆 Huginn Github 主页的 &lt;a href=&quot;https://github.com/huginn/huginn#deployment&quot;&gt;Deployment 部分&lt;/a&gt;，找到 Heroku 的按钮。然后点击，就会跳转到你的 Heroku 了。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;登陆 Huginn Github 主页的 &lt;a href=&quot;https://github.com/huginn/huginn#deployment&quot;&gt;Deployment 部分&lt;/a&gt;，找到 Heroku 的按钮。然后点击，就会跳转到你的 Heroku 了。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/heroku-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;2.点完按钮之后会跳转到你的 Heroku 界面。去起个名字。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;点完按钮之后会跳转到你的 Heroku 界面。去起个名字。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/heroku-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;3.起晚名字什么都不点，直接拉到最后点 Deploy 的按钮。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;起晚名字什么都不点，直接拉到最后点 Deploy 的按钮。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/heroku-3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -52,20 +100,76 @@
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/heroku-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;4.这样就进入到网页了。这里 Huginn 很人性化的把步骤贴出来了。由于我们用的是自动安装，所以没有创建管理员用户，也有一些东西需要配置。（可以看到已经可以访问域名了）&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;这样就进入到网页了。这里 Huginn 很人性化的把步骤贴出来了。由于我们用的是自动安装，所以没有创建管理员用户，也有一些东西需要配置。（可以看到已经可以访问域名了）&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/heroku-6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这里首先需要在命令行登陆你的 heroku（对不用第一步看文档了，直接做），就是在命令行输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;现在我们对照着 Huginn 的说明来做。&lt;/p&gt;
 
-&lt;p&gt;剩下的就对着白色的复制粘贴命令做可以了。到最后一步 &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/setup_heroku&lt;/code&gt; 的时候会让你输入一些 Yes or no，或者是邮箱什么的，我就不详细说了。实在搞不定就在群里问。一个一个写得截图太麻烦了，容我偷个懒。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;登陆 Codeanywhere，点击右上角的 Editor。&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;里面有一步会设置或者直接给你一个邀请码，还有设置管理员用户。还有登陆的管理员账号和密码。记得保存好这些。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;会进入一个选择界面，如我截图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第一次的话点完 Create 会让你验证邮箱，验证完邮箱对着上图再做一遍就可以了。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;我们首先要下载新版本的 ruby 环境。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装完毕后使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面的话，我写了一个脚本。这样你只需要输入很少的命令就可以了。&lt;/p&gt;
+
+&lt;p&gt;点击文件 新建文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上 &lt;a href=&quot;https://github.com/tesths/tesths.github.com/blob/master/images/huginn/huginn.sh&quot;&gt;huginn.sh&lt;/a&gt;，复制到 Codeanywhere 的文件编辑器里。然后点击右上角保存。&lt;/p&gt;
+
+&lt;p&gt;保存到根目录下，&lt;strong&gt;文件名保存为 huginn.sh&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在你的 Heroku 界面找到下图的地方。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;替换我写的脚本的以下地方。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后执行脚本 huginn.sh，bash 是执行的意思。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/huginn/code-11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;执行完毕之后。&lt;/p&gt;
+
+&lt;p&gt;先进入 &lt;code class=&quot;highlighter-rouge&quot;&gt;cd code-huginn/&lt;/code&gt;（这里的 code-huginn 输入你刚替换我文件中的名字就好）。&lt;/p&gt;
+
+&lt;p&gt;在命令行登陆你的 heroku ，就是在命令行输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;之后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku git:remote -a code-huginn&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;最后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/setup_heroku&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;剩下的就是开始自动配置了。&lt;/p&gt;
 
 &lt;h2 id=&quot;几点说明&quot;&gt;几点说明&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Heroku 部署很简单，如果有问题，那基本是 gem 的问题，看看报错信息，搞不定就上群里来交流一下。&lt;/li&gt;
+  &lt;li&gt;Heroku 部署很简单，利用我写的脚本应该很快。&lt;/li&gt;
   &lt;li&gt;Heroku 有时间限制，有时候网站会挂，官方推荐可以使用 uptimerobot 来持续网站运行。参考官方文档。&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -365,8 +469,7 @@ export LANGUAGE=en_US.UTF-8&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这两行的 # 去掉的。&lt;/p&gt;
 
@@ -472,8 +575,7 @@ default-storage-engine = InnoDB&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这两行的 &lt;strong&gt;#&lt;/strong&gt; 去掉了的。&lt;/p&gt;
 
@@ -762,8 +864,7 @@ default-storage-engine = InnoDB&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a
 applyTwice f x = f (f x)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这个函数的作用就是，重复执行某一个操作两次。&lt;/p&gt;
 
@@ -771,8 +872,7 @@ applyTwice f x = f (f x)
 16
 ghci&amp;gt; applyTwice (multThree 2 2) 9
 144
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;现在我们用Swift实现这个函数。&lt;/p&gt;
 
@@ -780,8 +880,7 @@ ghci&amp;gt; applyTwice (multThree 2 2) 9
     let a: U = element
     return f(f(a))
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;然后写一个&lt;strong&gt;sum3&lt;/strong&gt;和上一篇的&lt;strong&gt;multThree&lt;/strong&gt;作为我们&lt;strong&gt;applyTwice&lt;/strong&gt;中的&lt;strong&gt;f&lt;/strong&gt;。&lt;/p&gt;
 
@@ -797,8 +896,7 @@ func multThree(adder: Int) -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int {
         }
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let a = applyTwice(sum3, element: 10)
 print(a)
@@ -807,8 +905,7 @@ print(a)
 let b = applyTwice(multThree(2)(2), element: 9)
 print(b)
 // b = 144
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这里有几个问题&lt;/p&gt;
 
@@ -826,8 +923,7 @@ print(b)
 zipWith' _ [] _ = []
 zipWith' _ _ [] = []
 zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;zipWith的作用就是讲两个列表通过某个函数合成一个函数。&lt;/p&gt;
 
@@ -835,8 +931,7 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 [6,8,7,9]
 ghci&amp;gt; zipWith' max [6,3,2,1] [7,3,1,5]
 [7,3,2,5]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;我们用Swift实现一下。偷懒了没做判断，数组长度假定一样..直接就数组1长度-1就行了…&lt;/p&gt;
 
@@ -847,8 +942,7 @@ ghci&amp;gt; zipWith' max [6,3,2,1] [7,3,1,5]
     }
     return array3
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;再写两个函数进行操作。&lt;/p&gt;
 
@@ -859,8 +953,7 @@ ghci&amp;gt; zipWith' max [6,3,2,1] [7,3,1,5]
 func max(a: Int, b: Int) -&amp;gt; Int {
     return a &amp;gt; b ? a : b
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let c = zipWith(sum, array1: [4,2,5,6], array2: [2,6,2,3])
 print(c)
@@ -869,8 +962,7 @@ print(c)
 let d = zipWith(max, array1: [4,2,5,6], array2: [2,6,2,3])
 print(d)
 //d = [4, 6, 5, 6]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;接着我们实现fliter，请看Haskell的代码多么的神奇！&lt;/p&gt;
 
@@ -879,8 +971,7 @@ filter _ [] = []
 filter p (x:xs)
 	| p x       = x : filter p xs
 	| otherwise = filter p xs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;我就不贴Haskell的使用了。最后我们实现一下Swift版本的fliter。&lt;/p&gt;
 
@@ -893,8 +984,7 @@ filter p (x:xs)
     }
     return result
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;写一个big函数&lt;/p&gt;
 
@@ -905,14 +995,12 @@ filter p (x:xs)
         return false
     }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let e = [1, 2, 3, 4, 5, 6]
 let ee = jfliter(big, array: e)
 print(ee)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这里有一个问题，为什么不用Array的extension扩展？我写的时候遇到一个神奇的问题..没写出来。还在看是什么问题中。&lt;/p&gt;
 
@@ -969,8 +1057,7 @@ print(ee)
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func curry&amp;lt;A, B, C&amp;gt;(f: (A, B) -&amp;gt; C) -&amp;gt; A -&amp;gt; B -&amp;gt; C {
     return { x in { y in f(x, y) } }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;怎么去理解这种写法的范型，是一个很值得讨论的问题。我以前一直觉得，Swift中像上个函数这么写，是有6个参数的，后来发现我错了，第一个是和上篇文章一样的那个T。我们要传一个函数，而当这个函数传完的时候，现在这个curry会根据之前的那个函数变成了一个A-&amp;gt;B-&amp;gt;C类型的函数。&lt;/p&gt;
 
@@ -999,8 +1086,7 @@ let sumWith3 = curriedSum(3)
 print(sumWith2)
 
 print(sumWith3(5))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying1.png&quot; alt=&quot;currying1&quot; /&gt;&lt;/p&gt;
 
@@ -1030,8 +1116,7 @@ let multZero = multThree(4)(2)(1)
 print(multTwo(2)(1))
 print(multOne(2))
 print(multZero)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying2.png&quot; alt=&quot;currying2&quot; /&gt;&lt;/p&gt;
 
@@ -1045,15 +1130,13 @@ print(multZero)
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int
 multThree x y z = x * y * z
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; multThree 2 3 4
 24
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;首先来说，我们可以直接这么使用，那么就是一个参数(常数)，一个参数(常数)，一个参数(常数)，返回值(常数)。但实际上又可以理解为，&lt;strong&gt;(((multThree 2) 3) 4)&lt;/strong&gt;&lt;/p&gt;
 
@@ -1062,8 +1145,7 @@ multThree x y z = x * y * z
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; let multTwoWithNine = multThree 9
 ghci&amp;gt; multTwoWithNine 2 3
 54
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;这样的话，其实就是&lt;/p&gt;
 
@@ -1093,102 +1175,6 @@ ghci&amp;gt; multTwoWithNine 2 3
         <pubDate>Mon, 27 Jun 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</link>
         <guid isPermaLink="true">http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</guid>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Learn You a Swift for Great Good! part -1</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;只有一句话，初学，欢迎讨论，求轻喷。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;为什么是-1，因为我需要为自己的学习做一些准备工作，今天的准备工作很简单(其实也不简单，都看好几天了有一点头绪)，在Swift中寻找一个f。&lt;/p&gt;
-
-&lt;p&gt;什么意思呢？在Haskell中，如果现在有一个函数作为参数的话，需要写一个f就可以了。举个例子。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]
-map _ [] = []
-map f (x:xs) = f x : map f xs
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..&lt;/p&gt;
-
-&lt;p&gt;稍微解释一下Haskell的语法，解释完了才能知道在Swift中怎么去对应起来。第一行是类型定义。map的第一个参数是一个函数，就是(a-&amp;gt;b)，然后又是一个参数[a]，然后是返回值[b]。所以整个map有两个参数。&lt;/p&gt;
-
-&lt;p&gt;第二行，_ 在learnyouahaskell中描述为代表一个范型。所以可以理解为不管第一个参数是什么，都返回和第二个参数一样的类型，也就是一个list类型。&lt;/p&gt;
-
-&lt;p&gt;第三行，第一个f就是我们的(a-&amp;gt;b)这个函数，第二个是列表的递归，每次取列表的第一个元素，依次执行map后面那个f。所以执行起来就是，第一个元素，f 第二个元素。&lt;/p&gt;
-
-&lt;p&gt;今天的主戏，就是在Swift中找到那个f，其实这个f，就是一个函数。但是这个函数需要接受任何类型。&lt;/p&gt;
-
-&lt;p&gt;这几天一直在看，看唐巧的Swift烧脑体操系列，看ray上的教程，然后查阅资料。结论也很简单，就是范型。官方文档&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Generics.html&quot;&gt;Generics&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;之所以我看了很久，是因为我之前对于范型是迷糊的，现在也不清晰。足以见我Swift功底之差。但是看了也没有特别大的问题，范型是一个很好东西。&lt;/p&gt;
-
-&lt;p&gt;那么我们开始考虑怎么去写一个Swift版本的map函数。我们对照Haskell一步一步来。&lt;/p&gt;
-
-&lt;p&gt;首先，需要一个函数f: a-&amp;gt;b，然后需要一个数组，最后返回一个数组。我们来用Swift实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;func jmap&amp;lt;U, T&amp;gt;(f: U -&amp;gt; T, array: [U]) -&amp;gt; [T]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;map :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;采用范型的方式，让Swift和Haskell很好的对应了起来。语法上基本没有大的区别。下面要具体的实现map函数里面的内容。&lt;/p&gt;
-
-&lt;p&gt;我们返回了一个参数类型是T的数组，所以jmap里面需要有一个T类型的数组来用于返回。同时，我们要向f函数中传入一次的数组元素，这里用for in循环就可以了。&lt;/p&gt;
-
-&lt;p&gt;所以完整的代码是这样的。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func jmap&amp;lt;U, T&amp;gt;(f: U -&amp;gt; T, array: [U]) -&amp;gt; [T] {
-    var result = [T]()
-    for element in array {
-        result.append(f(element))
-    }
-    return result
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;下面要做的事情。就是增加数组的extension。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension Array {
-    func jjmap&amp;lt;U&amp;gt;(f: (Array.Element) -&amp;gt; U) -&amp;gt; [U] {
-        return jmap(f, array: self)
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;至此就可以使用我们自己写的map函数了。&lt;/p&gt;
-
-&lt;p&gt;下一篇，继续范型和高阶函数，所以很有可能还是负的part。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;本系列旨在将Haskell和Swift中的函数式对应起来学习。阅读过程中有什么错误欢迎留言。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;参考链接&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24002733/add-an-element-to-an-array-in-swift&quot;&gt;Add an element to an array in Swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html&quot;&gt;Functions&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html&quot;&gt;Collection Types&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://walkginkgo.com/free/2016/03/06/Higher-Order-Functions.html&quot;&gt;Higher-Order Functions&lt;/a&gt; 自己偶尔参考一下自己之前写的博客..&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ijoshsmith.com/2015/12/09/higher-order-functions-in-swift/&quot;&gt;Higher-order functions in Swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@ivicamil/higher-order-functions-in-swift-part-1-d8e75f963d13#.a1nb2nvjr&quot;&gt;Higher Order Functions In Swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-2-function-argument/&quot;&gt;Swift 烧脑体操（二） - 函数的参数&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/&quot;&gt;Swift 烧脑体操（三） - 高阶函数&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2016/03/05/swift-gym-4-map-and-flatmap/&quot;&gt;Swift 烧脑体操（四） - map 和 flatMap&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sat, 25 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/25/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
         
         
         <category>iOS</category>

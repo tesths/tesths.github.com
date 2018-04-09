@@ -18,6 +18,8 @@
   <!-- <link href="/css/style.css" rel="stylesheet"> -->
 <!--  <link href="/css/syntax.css" rel="stylesheet"> -->
   <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
 </head>
 
 
@@ -92,8 +94,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>lucky :: Int -&gt; String
 lucky 7 = "LUCKY NUMBER SEVEN!"
 lucky x = "Sorry, you're out of luck, pal!"
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这个其实和swift的语法很相似，以至于我觉得swift这里很大程度上借鉴了haskell的语法。lucky作为一个函数，参数是一个Int类型，返回值是一个String类型。当我们运行时，如果是7，就会显示是幸运数字，如果不是，那就显示sorry。</p>
 
@@ -131,24 +132,21 @@ lucky x = "Sorry, you're out of luck, pal!"
 
 <div class="highlighter-rouge"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
 multThree x y z = x * y * z
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这是一个函数，参数是三个Int类型，返回这三个Int的乘积。</p>
 
 <p>也可以写成这样。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>multThree :: Int -&gt; (Int -&gt; (Int -&gt; Int))
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>所以，我们来分析书上的一个例子。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
 ghci&gt; multTwoWithNine 2 3
 54
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>在这里，我们让multTwoWithNine等于了一个函数，这个函数是multThree 9。那这个时候multThree 9实际上算是返回了一个函数。那么这样的话，可以将这个函数赋值为一个变量。</p>
 
@@ -177,8 +175,7 @@ ghci&gt; multTwoWithNine 2 3
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
 16
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>在这里，我们看上去applyTwice有三个参数，但是前两个参数被包起来了。也就是说，我们有一个函数参数，一个参数和一个返回值。</p>
 
@@ -194,8 +191,7 @@ ghci&gt; multTwoWithNine 2 3
 zipWith' _ [] _ = []
 zipWith' _ _ [] = []
 zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>按照我上面说的，第一个函数参数，实际上是a，b参数返回c。</p>
 
@@ -203,8 +199,7 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
 [6,8,7,9]
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这个例子中，对[a]和[b]中的每一个元素进行+操作。实际上就是第一个(a -&gt; b -&gt; c)中的操作了。</p>
 
@@ -217,22 +212,19 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 <div class="highlighter-rouge"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>我们看这个函数，按照对zipWith’的理解，我们知道，这个操作其实是对[a]列表中的元素进行操作，然后这些值返回一个[b]列表。</p>
 
 <p>我们来分析一个复杂点的map。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>首先我们(a -&gt; b)要进行的函数操作其实是(map (^2))，那对第一个列表[1,2]来说，又是一个列表了，所以要返回一个列表。(map (^2)) 1 的结果是1，(map (^2)) 2的结果是4，然后返回一个列表，即[1,4]。一次类推，所以结果就是。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[[1,4],[9,16,25,36],[49,64]]
-</code></pre>
-</div>
+</code></pre></div>
 
 <h2 id="swift中的应用">swift中的应用</h2>
 
@@ -249,8 +241,7 @@ let brr = arr.map {
 	"No." + String($0)
 }
 // brr = ["No.1", "No.2", "No.4"]
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>第一个arr.map，在map中，实际上就是实现了我们上文map中f的应用，对列表里的每个元素就会进行操作。实际上和haskell中的map函数没有什么差别了。</p>
 

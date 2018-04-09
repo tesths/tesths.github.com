@@ -18,6 +18,8 @@
   <!-- <link href="/css/style.css" rel="stylesheet"> -->
 <!--  <link href="/css/syntax.css" rel="stylesheet"> -->
   <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
 </head>
 
 
@@ -93,8 +95,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
     return { x in { y in f(x, y) } }
 }
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>怎么去理解这种写法的范型，是一个很值得讨论的问题。我以前一直觉得，Swift中像上个函数这么写，是有6个参数的，后来发现我错了，第一个是和上篇文章一样的那个T。我们要传一个函数，而当这个函数传完的时候，现在这个curry会根据之前的那个函数变成了一个A-&gt;B-&gt;C类型的函数。</p>
 
@@ -123,8 +124,7 @@ let sumWith3 = curriedSum(3)
 print(sumWith2)
 
 print(sumWith3(5))
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/swiftfrp/currying1.png" alt="currying1" /></p>
 
@@ -154,8 +154,7 @@ let multZero = multThree(4)(2)(1)
 print(multTwo(2)(1))
 print(multOne(2))
 print(multZero)
-</code></pre>
-</div>
+</code></pre></div>
 
 <p><img src="/images/swiftfrp/currying2.png" alt="currying2" /></p>
 
@@ -169,15 +168,13 @@ print(multZero)
 
 <div class="highlighter-rouge"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
 multThree x y z = x * y * z
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; multThree 2 3 4
 24
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>首先来说，我们可以直接这么使用，那么就是一个参数(常数)，一个参数(常数)，一个参数(常数)，返回值(常数)。但实际上又可以理解为，<strong>(((multThree 2) 3) 4)</strong></p>
 
@@ -186,8 +183,7 @@ multThree x y z = x * y * z
 <div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
 ghci&gt; multTwoWithNine 2 3
 54
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这样的话，其实就是</p>
 

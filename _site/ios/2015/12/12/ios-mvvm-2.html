@@ -18,6 +18,8 @@
   <!-- <link href="/css/style.css" rel="stylesheet"> -->
 <!--  <link href="/css/syntax.css" rel="stylesheet"> -->
   <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
 </head>
 
 
@@ -156,8 +158,7 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
 self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>第一句话是声明了一个demoImpl，将navigation穿进去。
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>

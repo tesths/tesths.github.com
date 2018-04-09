@@ -18,6 +18,8 @@
   <!-- <link href="/css/style.css" rel="stylesheet"> -->
 <!--  <link href="/css/syntax.css" rel="stylesheet"> -->
   <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
 </head>
 
 
@@ -79,8 +81,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..</p>
 
@@ -117,8 +118,7 @@ map f (x:xs) = f x : map f xs
     }
     return result
 }
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>下面要做的事情。就是增加数组的extension。</p>
 
@@ -127,8 +127,7 @@ map f (x:xs) = f x : map f xs
         return jmap(f, array: self)
     }
 }
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>至此就可以使用我们自己写的map函数了。</p>
 
