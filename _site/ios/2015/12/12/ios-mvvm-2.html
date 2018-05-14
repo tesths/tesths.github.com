@@ -117,7 +117,7 @@
 <h2 id="分离点击事件">分离点击事件</h2>
 <p>我们新建一个FirstViewModel，在FirstViewModel.h中增加一个</p>
 
-<p><code class="highlighter-rouge"><span class="k">@property</span> <span class="p">(</span><span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">RACCommand</span> <span class="o">*</span><span class="n">excutePush</span><span class="p">;</span></code></p>
+<p><code class="highlighter-rouge">@property (strong, nonatomic) RACCommand *excutePush;</code></p>
 
 <p>然后我们让刚刚在FirstViewController里定义的那个pushBtn的rac_command，将它赋值为FirstViewModel里的excutePush</p>
 
@@ -156,9 +156,9 @@
 
 <p>我们在初始化的时候加上这两句核心代码。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
 self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
-</code></pre></div>
+</code></pre></div></div>
 
 <p>第一句话是声明了一个demoImpl，将navigation穿进去。
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>

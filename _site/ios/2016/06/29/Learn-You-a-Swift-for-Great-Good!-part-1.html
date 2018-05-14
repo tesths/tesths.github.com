@@ -78,29 +78,29 @@
 
 <p>上次我们实现了multThree函数，在learnyouahaskell中下一个稍微有点复杂的函数，是applyTwice。直接上Haskell的代码了。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>applyTwice :: (a -&gt; a) -&gt; a -&gt; a
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>applyTwice :: (a -&gt; a) -&gt; a -&gt; a
 applyTwice f x = f (f x)
-</code></pre></div>
+</code></pre></div></div>
 
 <p>这个函数的作用就是，重复执行某一个操作两次。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
 16
 ghci&gt; applyTwice (multThree 2 2) 9
 144
-</code></pre></div>
+</code></pre></div></div>
 
 <p>现在我们用Swift实现这个函数。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func applyTwice&lt;U&gt;(f: U -&gt; U, element: U) -&gt; U {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func applyTwice&lt;U&gt;(f: U -&gt; U, element: U) -&gt; U {
     let a: U = element
     return f(f(a))
 }
-</code></pre></div>
+</code></pre></div></div>
 
 <p>然后写一个<strong>sum3</strong>和上一篇的<strong>multThree</strong>作为我们<strong>applyTwice</strong>中的<strong>f</strong>。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func sum3(a: Int) -&gt; Int {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func sum3(a: Int) -&gt; Int {
     return a + 3
 }
 
@@ -112,16 +112,16 @@ func multThree(adder: Int) -&gt; Int -&gt; Int -&gt; Int {
         }
     }
 }
-</code></pre></div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>let a = applyTwice(sum3, element: 10)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let a = applyTwice(sum3, element: 10)
 print(a)
 // a = 16
 
 let b = applyTwice(multThree(2)(2), element: 9)
 print(b)
 // b = 144
-</code></pre></div>
+</code></pre></div></div>
 
 <p>这里有几个问题</p>
 
@@ -135,63 +135,63 @@ print(b)
 
 <p>实现到这，我们接着learnyouahaskell往下实现。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]
 zipWith' _ [] _ = []
 zipWith' _ _ [] = []
 zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
-</code></pre></div>
+</code></pre></div></div>
 
 <p>zipWith的作用就是讲两个列表通过某个函数合成一个函数。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
 [6,8,7,9]
 ghci&gt; zipWith' max [6,3,2,1] [7,3,1,5]
 [7,3,2,5]
-</code></pre></div>
+</code></pre></div></div>
 
 <p>我们用Swift实现一下。偷懒了没做判断，数组长度假定一样..直接就数组1长度-1就行了…</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func zipWith&lt;U, V&gt;(f: (U, U) -&gt; V, array1: [U], array2: [U]) -&gt; [V] {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func zipWith&lt;U, V&gt;(f: (U, U) -&gt; V, array1: [U], array2: [U]) -&gt; [V] {
     var array3 = [V]()
     for i in 0...array1.count-1 {
         array3.append(f(array1[i], array2[i]))
     }
     return array3
 }
-</code></pre></div>
+</code></pre></div></div>
 
 <p>再写两个函数进行操作。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func sum(a: Int, b: Int) -&gt; Int {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func sum(a: Int, b: Int) -&gt; Int {
     return a + b
 }
 
 func max(a: Int, b: Int) -&gt; Int {
     return a &gt; b ? a : b
 }
-</code></pre></div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>let c = zipWith(sum, array1: [4,2,5,6], array2: [2,6,2,3])
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let c = zipWith(sum, array1: [4,2,5,6], array2: [2,6,2,3])
 print(c)
 //c = [6, 8, 7, 9]
 
 let d = zipWith(max, array1: [4,2,5,6], array2: [2,6,2,3])
 print(d)
 //d = [4, 6, 5, 6]
-</code></pre></div>
+</code></pre></div></div>
 
 <p>接着我们实现fliter，请看Haskell的代码多么的神奇！</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
 filter _ [] = []
 filter p (x:xs)
 	| p x       = x : filter p xs
 	| otherwise = filter p xs
-</code></pre></div>
+</code></pre></div></div>
 
 <p>我就不贴Haskell的使用了。最后我们实现一下Swift版本的fliter。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func jfliter&lt;U&gt;(f: U -&gt; Bool, array: [U]) -&gt; [U] {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func jfliter&lt;U&gt;(f: U -&gt; Bool, array: [U]) -&gt; [U] {
     var result = [U]()
     for element in array {
         if f(element) {
@@ -200,23 +200,23 @@ filter p (x:xs)
     }
     return result
 }
-</code></pre></div>
+</code></pre></div></div>
 
 <p>写一个big函数</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func big(a: Int) -&gt; Bool {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func big(a: Int) -&gt; Bool {
     if a &gt; 3 {
         return true
     } else {
         return false
     }
 }
-</code></pre></div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>let e = [1, 2, 3, 4, 5, 6]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let e = [1, 2, 3, 4, 5, 6]
 let ee = jfliter(big, array: e)
 print(ee)
-</code></pre></div>
+</code></pre></div></div>
 
 <p>这里有一个问题，为什么不用Array的extension扩展？我写的时候遇到一个神奇的问题..没写出来。还在看是什么问题中。</p>
 

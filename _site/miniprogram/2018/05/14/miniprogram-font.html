@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>微信小程序自定义字体</title>
+  <meta name="description" content="最近给单位在做小程序，中间需要使用自定义字体。稍微梳理下整个过程。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/css/style.css" rel="stylesheet"> -->
+<!--  <link href="/css/syntax.css" rel="stylesheet"> -->
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">微信小程序自定义字体</h1>
+    <p class="post-meta">May 14, 2018</p>
+  </header>
+
+  <article class="post-content">
+    <p>最近给单位在做小程序，中间需要使用自定义字体。稍微梳理下整个过程。</p>
+
+<h2 id="起因">起因</h2>
+
+<p>在小程序中是可以使用 font-family 属性的，但是官方没有给出有哪些 font 是可以选用的，所以我们无法知道小程序到底可以支持哪些内置的字体。自定义字体就成为了一个问题。</p>
+
+<p>小程序本身不支持将字体拖进去，然后通过引用的方式来使用字体。即使可以，一个思源字体随便都 10MB，拖进去之后整个大小就超过了小程序的 2MB 限制。</p>
+
+<p>在网上查找之后还有一个方案，就是使用在线的 <a href="https://transfonter.org/">transfonter.org</a> 将字体转换成 base64 的方式。有使用 base64 的方案，但是还是会超过大小。而且 <a href="https://transfonter.org/">transfonter.org</a> 对字体的大小本身还存在限制。这就是很麻烦的一件事情。</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>那么如何解决呢？我这里提供两个方案。</p>
+
+<p><strong>一是通过在线应用 url 的方式。</strong></p>
+
+<p>这种方案就是将字体文件存在文件服务器上，通过地址的方案引到小程序中，比如我下午使用的 http://o9791noio.bkt.clouddn.com/songti.TTF 这个网址，是七牛的，可以使用！而且这种方案在 <a href="https://github.com/youzan/zanui-weapp">zanui-weapp</a> 的 issue 是有人提到的，链接是 <a href="https://github.com/youzan/zanui-weapp/issues/101">使用”单元格”时，icon无法使用</a>，但是我在真机测试的时候不可以，没有具体排查。我觉得问题的原因有两个，一是网上有些资料说 iOS 必须使用 https，二还是最根本的字体大小的问题，如果字体太大，模拟器就会有错误提示，真机在最开始如果没有加载也会非常麻烦。总之这个方案目前是被我 pass 的。</p>
+
+<p><strong>二就是下面我现在使用的我觉得合理的方案。上 <a href="http://font-spider.org/">字蛛</a>。当然这个也不是最好的解决方案。</strong></p>
+
+<p>根据我的需求，我需要的个性化字体都是写死了，就是不需要网络加载。那么就可以采用字蛛对字体进行压缩。字蛛会把 html 中用到的字进行提取和压缩，用不到的就 pass 掉。这样会给原来的 ttf 文件进行一个强力的压缩，比如我压缩之后整个 ttf 文件的大小就变成了 8kb。这个效果还是显而易见的，这个时候再采用 <a href="https://transfonter.org/">transfonter.org</a> 将字体转换为 base64 就可以了。</p>
+
+<h2 id="脑洞">脑洞</h2>
+
+<p><strong>那么假设一下一个情况，如果需要的是动态字体怎么办？</strong></p>
+
+<p>虽然我暂时还没有这个需求，我想到的方案是，首先后台会将专门的字体进行一个标记，那么在标记之后，使用 font-spider 将原字体进行压缩，再使用 url 获取的方式来动态加载，由于这个时候的字体文件很小，那么就不会有字体太大手机端加载不出来的情况。</p>
+
+<p>或者就是直接把常用字进行 base64 加密，就省去了网络获取的问题了。</p>
+
+<p>非常想知道青芒杂志咋弄的 哈哈。</p>
+
+
+  </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tesths'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+</p>
+      </div>
+    </div>
+
+  </div>
+<!-- <script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script> -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>

@@ -6,9 +6,121 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Apr 2018 09:50:19 +0800</pubDate>
-    <lastBuildDate>Mon, 09 Apr 2018 09:50:19 +0800</lastBuildDate>
+    <pubDate>Mon, 14 May 2018 19:16:14 +0800</pubDate>
+    <lastBuildDate>Mon, 14 May 2018 19:16:14 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>微信小程序自定义字体</title>
+        <description>&lt;p&gt;最近给单位在做小程序，中间需要使用自定义字体。稍微梳理下整个过程。&lt;/p&gt;
+
+&lt;h2 id=&quot;起因&quot;&gt;起因&lt;/h2&gt;
+
+&lt;p&gt;在小程序中是可以使用 font-family 属性的，但是官方没有给出有哪些 font 是可以选用的，所以我们无法知道小程序到底可以支持哪些内置的字体。自定义字体就成为了一个问题。&lt;/p&gt;
+
+&lt;p&gt;小程序本身不支持将字体拖进去，然后通过引用的方式来使用字体。即使可以，一个思源字体随便都 10MB，拖进去之后整个大小就超过了小程序的 2MB 限制。&lt;/p&gt;
+
+&lt;p&gt;在网上查找之后还有一个方案，就是使用在线的 &lt;a href=&quot;https://transfonter.org/&quot;&gt;transfonter.org&lt;/a&gt; 将字体转换成 base64 的方式。有使用 base64 的方案，但是还是会超过大小。而且 &lt;a href=&quot;https://transfonter.org/&quot;&gt;transfonter.org&lt;/a&gt; 对字体的大小本身还存在限制。这就是很麻烦的一件事情。&lt;/p&gt;
+
+&lt;h2 id=&quot;解决方案&quot;&gt;解决方案&lt;/h2&gt;
+
+&lt;p&gt;那么如何解决呢？我这里提供两个方案。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;一是通过在线应用 url 的方式。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这种方案就是将字体文件存在文件服务器上，通过地址的方案引到小程序中，比如我下午使用的 http://o9791noio.bkt.clouddn.com/songti.TTF 这个网址，是七牛的，可以使用！而且这种方案在 &lt;a href=&quot;https://github.com/youzan/zanui-weapp&quot;&gt;zanui-weapp&lt;/a&gt; 的 issue 是有人提到的，链接是 &lt;a href=&quot;https://github.com/youzan/zanui-weapp/issues/101&quot;&gt;使用”单元格”时，icon无法使用&lt;/a&gt;，但是我在真机测试的时候不可以，没有具体排查。我觉得问题的原因有两个，一是网上有些资料说 iOS 必须使用 https，二还是最根本的字体大小的问题，如果字体太大，模拟器就会有错误提示，真机在最开始如果没有加载也会非常麻烦。总之这个方案目前是被我 pass 的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;二就是下面我现在使用的我觉得合理的方案。上 &lt;a href=&quot;http://font-spider.org/&quot;&gt;字蛛&lt;/a&gt;。当然这个也不是最好的解决方案。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;根据我的需求，我需要的个性化字体都是写死了，就是不需要网络加载。那么就可以采用字蛛对字体进行压缩。字蛛会把 html 中用到的字进行提取和压缩，用不到的就 pass 掉。这样会给原来的 ttf 文件进行一个强力的压缩，比如我压缩之后整个 ttf 文件的大小就变成了 8kb。这个效果还是显而易见的，这个时候再采用 &lt;a href=&quot;https://transfonter.org/&quot;&gt;transfonter.org&lt;/a&gt; 将字体转换为 base64 就可以了。&lt;/p&gt;
+
+&lt;h2 id=&quot;脑洞&quot;&gt;脑洞&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;那么假设一下一个情况，如果需要的是动态字体怎么办？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;虽然我暂时还没有这个需求，我想到的方案是，首先后台会将专门的字体进行一个标记，那么在标记之后，使用 font-spider 将原字体进行压缩，再使用 url 获取的方式来动态加载，由于这个时候的字体文件很小，那么就不会有字体太大手机端加载不出来的情况。&lt;/p&gt;
+
+&lt;p&gt;或者就是直接把常用字进行 base64 加密，就省去了网络获取的问题了。&lt;/p&gt;
+
+&lt;p&gt;非常想知道青芒杂志咋弄的 哈哈。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 14 May 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</link>
+        <guid isPermaLink="true">http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</guid>
+        
+        
+        <category>miniprogram</category>
+        
+      </item>
+    
+      <item>
+        <title>Ruby Memory</title>
+        <description>&lt;p&gt;layout: post
+title:  查找 ruby 内存泄漏
+date:   2018-5-9
+categories: server
+—&lt;/p&gt;
+
+&lt;p&gt;本文没有深入探讨 ruby 的内存管理问题，本人水平有限，没有去深入看内存管理，而且我现在主要需要实现功能，这里只谈我是怎么解决问题的。&lt;/p&gt;
+
+&lt;h2 id=&quot;起因&quot;&gt;起因&lt;/h2&gt;
+
+&lt;p&gt;提到内存泄漏，这是个非常麻烦以及难以解决的问题，ruby 是自动回收内存，不是像 c 一样手动回收，虽然大部分语言现在都是这样，但是这就导致一个非常麻烦的问题，内存泄漏怎么办。我在解决这个问题的时候心里是有阴影的，因为之前写过一个 swift 的图表动画，运行几次之后就变的特别卡。一直也没有找到原因，后来换了一种非常啰嗦的写法才解决。所以这次是心有余悸的。&lt;/p&gt;
+
+&lt;p&gt;事情的起端是我写了一个定时爬取数据的 ruby 程序。基本思路是用 ruby 来调用 python 脚本。然后通过 ruby 的 activerecord 存入数据库。为什么不用 python 直接存数据非得用 ruby 绕一下的理由是，activerocord 很好用，以及我想熟悉 ruby 栈，最后是这样可以和我的服务器 activerecord 无缝对接上，所以就用 ruby 了。&lt;/p&gt;
+
+&lt;p&gt;我的需求是每个整点的第 22 分钟时运行一次，这里使用了 ruby 的 &lt;a href=&quot;https://github.com/jmettraux/rufus-scheduler&quot;&gt;rufus-scheduler&lt;/a&gt;，在这个 gem 里有一个是调用 cron。但是问题在于，真的调用 cron 了吗？我没有看源代码，但是最终根据我内存泄漏的原因，我分析是没有的。起因就是，我把程序上传到服务器上，每次运行 3-4 天之后服务器就无法 ssh，但是可以 ping。查了一下觉得有可能是内存泄漏，于是开始了排查。&lt;/p&gt;
+
+&lt;h2 id=&quot;排查&quot;&gt;排查&lt;/h2&gt;
+
+&lt;p&gt;一开始我傻不拉唧直接在服务器上看内存使用。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.CPU占用最多的前10个进程： 
+ps auxw|head -1;ps auxw|sort -rn -k3|head -10
+2.内存消耗最多的前10个进程 
+ps auxw|head -1;ps auxw|sort -rn -k4|head -10
+3.虚拟内存使用最多的前10个进程
+ps auxw|head -1;ps auxw|sort -rn -k5|head -10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我这里使用了第 2 个。但是这个方法是很傻的，因为你不可能每小时都登服务器，只能大概判断，不过我间隔了一段时间登录之后发现确实程序内存使用上升。于是切换到本地测试。&lt;/p&gt;
+
+&lt;p&gt;我把定时任务换成了一个 while 循环，使用了一个函数&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def report
+  p 'Memory ' + `ps ax -o pid,rss | grep -E &quot;^[[:space:]]*#{$$}&quot;`
+          .strip.split.map(&amp;amp;:to_i)[1].to_s + 'KB'
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个程序运行一段时间就会发现内存是在增长的，虽然当内存变大，ruby 的自动回收机制会让内存变小，但是总体还是在不断变大。&lt;/p&gt;
+
+&lt;h2 id=&quot;解决&quot;&gt;解决&lt;/h2&gt;
+
+&lt;p&gt;于是就需要开始排查到底是哪泄漏了。这里用到的 gem 是 &lt;a href=&quot;https://github.com/SamSaffron/memory_profiler&quot;&gt;memory_profiler&lt;/a&gt;。这里要注意，不能写成死循环检测，也不能循环次数太多检测，不然依然会导致内存使用过高。这是我遇到的坑。&lt;/p&gt;
+
+&lt;p&gt;使用 memory_profiler 之后，它会显示 retain 的 object，超级神奇！还会显示内存泄漏的行数。我就不阐述了，非常直观明了。&lt;/p&gt;
+
+&lt;p&gt;我的问题在于 ruby 调用 JSON 解析和 Time 的时候。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  allData = JSON.parse(result)
+  current_time = Time.now.strftime(&quot;%H&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里实际上 allData 和 current_time 都已经是对象了。而 rufus-scheduler 并没有真正的调用 cron。所以导致每个小时都有 allData 和 current_time。即使内存回收，这个地方也是不会完全回收。&lt;/p&gt;
+
+&lt;p&gt;解决方案很简单，加一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;= nil&lt;/code&gt; 就 ok。至少目前我修改过的程序已经运行 3 天内存依然比较稳定，希望一直稳定下去…&lt;/p&gt;
+
+&lt;p&gt;以上。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 09 May 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/05/09/ruby-memory.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/09/ruby-memory.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>浅谈解决 Instagram 推送失效的问题</title>
@@ -467,9 +579,9 @@ export LANGUAGE=en_US.UTF-8&lt;/p&gt;
 
 &lt;p&gt;在这一步中建议直接把&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;这两行的 # 去掉的。&lt;/p&gt;
 
@@ -573,9 +685,9 @@ default-storage-engine = InnoDB&lt;/p&gt;
 
 &lt;p&gt;我选择的是在这步把&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;这两行的 &lt;strong&gt;#&lt;/strong&gt; 去掉了的。&lt;/p&gt;
 
@@ -849,335 +961,6 @@ default-storage-engine = InnoDB&lt;/p&gt;
         
         
         <category>Mac</category>
-        
-      </item>
-    
-      <item>
-        <title>Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;今天代码多，话少，基本全是干货，而且应该是没人写过。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;今天我们用Swift实现在learnyouahaskell中几个高阶函数。我会把Haskell和Swift的代码都贴出来对照。顺便会加点说明。&lt;/p&gt;
-
-&lt;p&gt;上次我们实现了multThree函数，在learnyouahaskell中下一个稍微有点复杂的函数，是applyTwice。直接上Haskell的代码了。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;applyTwice :: (a -&amp;gt; a) -&amp;gt; a -&amp;gt; a
-applyTwice f x = f (f x)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;这个函数的作用就是，重复执行某一个操作两次。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; applyTwice (+3) 10
-16
-ghci&amp;gt; applyTwice (multThree 2 2) 9
-144
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;现在我们用Swift实现这个函数。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func applyTwice&amp;lt;U&amp;gt;(f: U -&amp;gt; U, element: U) -&amp;gt; U {
-    let a: U = element
-    return f(f(a))
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;然后写一个&lt;strong&gt;sum3&lt;/strong&gt;和上一篇的&lt;strong&gt;multThree&lt;/strong&gt;作为我们&lt;strong&gt;applyTwice&lt;/strong&gt;中的&lt;strong&gt;f&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func sum3(a: Int) -&amp;gt; Int {
-    return a + 3
-}
-
-func multThree(adder: Int) -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int {
-    return {
-        a in  {
-            b in
-            a * b * adder
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let a = applyTwice(sum3, element: 10)
-print(a)
-// a = 16
-
-let b = applyTwice(multThree(2)(2), element: 9)
-print(b)
-// b = 144
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;这里有几个问题&lt;/p&gt;
-
-&lt;p&gt;1.为什么Haskell中可以用&lt;strong&gt;(+3)&lt;/strong&gt;？&lt;/p&gt;
-
-&lt;p&gt;我觉得这个问题的回答是，Haskell里+就是一个函数，因为我觉得这么回答才合理…Haskell里所有的操作都是函数，所以对于+来说，就有两个参数，当我们赋值一个参数的时候，按照柯里化的概念，它还可以是一个函数。所以在Haskell中可以直接用+3。&lt;/p&gt;
-
-&lt;p&gt;2.为什么在Swift中，我们调用&lt;strong&gt;applyTwice&lt;/strong&gt;的时候传的是&lt;strong&gt;sum&lt;/strong&gt;而不是&lt;strong&gt;sum(3)&lt;/strong&gt;？为什么调用&lt;strong&gt;multThree&lt;/strong&gt;的时候又写&lt;strong&gt;multThree(2)(2)&lt;/strong&gt;？&lt;/p&gt;
-
-&lt;p&gt;因为我们在定义&lt;strong&gt;f&lt;/strong&gt;的时候，定义了一个类型是&lt;strong&gt;U -&amp;gt; U&lt;/strong&gt;类型，而不是&lt;strong&gt;U&lt;/strong&gt;类型，如果我们此时写的是&lt;strong&gt;sum(3)&lt;/strong&gt;，那么&lt;strong&gt;sum(3)&lt;/strong&gt;本身实际上是一个&lt;strong&gt;U&lt;/strong&gt;类型了。所以这里写&lt;strong&gt;sum&lt;/strong&gt;。简单的说，函数返回值的类型，其实就是f的类型。而对于&lt;strong&gt;multThree&lt;/strong&gt;来说，只有当是&lt;strong&gt;multThree(2)(2)&lt;/strong&gt;的时候，它的返回类型才是一个&lt;strong&gt;Int -&amp;gt; Int&lt;/strong&gt;类型，从而和我们的&lt;strong&gt;U -&amp;gt; U&lt;/strong&gt;对应起来。&lt;/p&gt;
-
-&lt;p&gt;实现到这，我们接着learnyouahaskell往下实现。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zipWith' :: (a -&amp;gt; b -&amp;gt; c) -&amp;gt; [a] -&amp;gt; [b] -&amp;gt; [c]
-zipWith' _ [] _ = []
-zipWith' _ _ [] = []
-zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;zipWith的作用就是讲两个列表通过某个函数合成一个函数。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
-[6,8,7,9]
-ghci&amp;gt; zipWith' max [6,3,2,1] [7,3,1,5]
-[7,3,2,5]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;我们用Swift实现一下。偷懒了没做判断，数组长度假定一样..直接就数组1长度-1就行了…&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func zipWith&amp;lt;U, V&amp;gt;(f: (U, U) -&amp;gt; V, array1: [U], array2: [U]) -&amp;gt; [V] {
-    var array3 = [V]()
-    for i in 0...array1.count-1 {
-        array3.append(f(array1[i], array2[i]))
-    }
-    return array3
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;再写两个函数进行操作。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func sum(a: Int, b: Int) -&amp;gt; Int {
-    return a + b
-}
-
-func max(a: Int, b: Int) -&amp;gt; Int {
-    return a &amp;gt; b ? a : b
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let c = zipWith(sum, array1: [4,2,5,6], array2: [2,6,2,3])
-print(c)
-//c = [6, 8, 7, 9]
-
-let d = zipWith(max, array1: [4,2,5,6], array2: [2,6,2,3])
-print(d)
-//d = [4, 6, 5, 6]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;接着我们实现fliter，请看Haskell的代码多么的神奇！&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;filter :: (a -&amp;gt; Bool) -&amp;gt; [a] -&amp;gt; [a]
-filter _ [] = []
-filter p (x:xs)
-	| p x       = x : filter p xs
-	| otherwise = filter p xs
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;我就不贴Haskell的使用了。最后我们实现一下Swift版本的fliter。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func jfliter&amp;lt;U&amp;gt;(f: U -&amp;gt; Bool, array: [U]) -&amp;gt; [U] {
-    var result = [U]()
-    for element in array {
-        if f(element) {
-            result.append(element)
-        }
-    }
-    return result
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;写一个big函数&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func big(a: Int) -&amp;gt; Bool {
-    if a &amp;gt; 3 {
-        return true
-    } else {
-        return false
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let e = [1, 2, 3, 4, 5, 6]
-let ee = jfliter(big, array: e)
-print(ee)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;这里有一个问题，为什么不用Array的extension扩展？我写的时候遇到一个神奇的问题..没写出来。还在看是什么问题中。&lt;/p&gt;
-
-&lt;p&gt;最后，我们看一下Haskell中的foldl，foldl其实就是依次从左边对列表进行操作。&lt;/p&gt;
-
-&lt;p&gt;Haskell中的例子都有lambda，解释起来又花好多时间，就不找例子了。我来填一下上次在T沙龙中留下的坑，方志刚写的reverse。如果在Haskell中，直接用foldl，可以让数组逆序排列，因为foldl本来就是从左一个元素一个元素操作，这样的话，会将第一个元素放在数组里，依次放，这样就相当于reverse了，由于在Swift里没有foldl，所以直接用reverse，效果其实是一样的。&lt;/p&gt;
-
-&lt;p&gt;至此，我们的就绪工作基本上完成，learnyouahaskell高阶函数剩下的部分太具有Haskell的特性，和Swift我也是在找不到什么联系，就不再说了。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这个系列的下一个部分，再写，可能就会直接到Functor了，最近我要好好的再准备一下Haskell的知识，所以可能会停更这个系列一段时间。中间这段时间我尽量在iOS上还有其他干货推出。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;参考资料&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://learnyouahaskell.com/&quot;&gt;Learn You a Haskell for Great Good! &lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Wed, 29 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/29/Learn-You-a-Swift-for-Great-Good!-part-1.html</guid>
-        
-        
-        <category>iOS</category>
-        
-      </item>
-    
-      <item>
-        <title>Learn You a Swift for Great Good! part 0 -- Swift Currying</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;刚刚才发现上一篇的内容和Functional Swift中重了很多(因为买了没看🙄昨天翻了一遍)，而且我是自己尝试写的..今天应该就不会怎么重了，因为我本来就打算按照计划对照Haskell来写Swift，Haskell中高阶函数有map，filter，所以肯定会重。不过除此之外，我还会尽我所能实现Haskell中的其他高阶函数。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;对了我看了喵神的&lt;a href=&quot;http://swifter.tips/currying/&quot;&gt;柯里化 (CURRYING)&lt;/a&gt;以及&lt;a href=&quot;https://www.objc.io/books/functional-swift/&quot;&gt;Functional Swift&lt;/a&gt;中的柯里化。Functional Swift中的例子其实还不错，但是没有用curry的范型来举例子，再加上我悟性太差，导致看了很久。最终根据Stackoverflow上找到了一个例子，看的差不多了。&lt;/p&gt;
-
-&lt;p&gt;我觉得应该可以把这个概念解释的还不错了。&lt;/p&gt;
-
-&lt;p&gt;其实在Haskell，是有柯里化(下文统一Currying)的。因为英文是Currying，大概我拙劣的英文觉得Currying是Carrying的意思，也就是，携带..而且Haskell是pure function的，curried是默认的..这个恰好是昨天我想在Swift中实现zipwith函数时候遇到的问题。learnyouahaskell第五章高阶函数一开头就是Curried Functions来开头的。&lt;/p&gt;
-
-&lt;p&gt;所以今天先补上Haskell中和Currying还有Partial application相关的概念。&lt;/p&gt;
-
-&lt;p&gt;这里是wiki的地址。&lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;Currying&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Partial_application&quot;&gt;Partial application&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Currying我觉得可以简单理解为，你想返回什么都可以。而Partial application可以理解为固定参数得到的函数。&lt;/p&gt;
-
-&lt;p&gt;在函数式编程要随时记得，任何参数或者返回值都可能是一个函数。&lt;/p&gt;
-
-&lt;p&gt;以上是learnyouahaskell中提到相关的概念的介绍。下面我们来介绍Swift中的Currying。&lt;/p&gt;
-
-&lt;p&gt;举两个例子来说明，一个是Stackoverflow上的我稍作了改动..一个是我根据Haskell写的。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func curry&amp;lt;A, B, C&amp;gt;(f: (A, B) -&amp;gt; C) -&amp;gt; A -&amp;gt; B -&amp;gt; C {
-    return { x in { y in f(x, y) } }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;怎么去理解这种写法的范型，是一个很值得讨论的问题。我以前一直觉得，Swift中像上个函数这么写，是有6个参数的，后来发现我错了，第一个是和上篇文章一样的那个T。我们要传一个函数，而当这个函数传完的时候，现在这个curry会根据之前的那个函数变成了一个A-&amp;gt;B-&amp;gt;C类型的函数。&lt;/p&gt;
-
-&lt;p&gt;所以我们可以暂时不管前面那个参数f:，现在整个函数可以看做是一个A-&amp;gt;B-&amp;gt;C的函数。&lt;/p&gt;
-
-&lt;p&gt;所谓currying，就是说，我现在让这个函数可以返回值是C，或者是返回B-&amp;gt;C这样一个函数！这样让函数的扩展性就大大增加了！&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;配图看playground！！！！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func curry&amp;lt;A, B, C&amp;gt;(f: (A, B) -&amp;gt; C) -&amp;gt; A -&amp;gt; B -&amp;gt; C {
-    return { x in { y in f(x, y) } }
-}
-
-func sum(a: Int, b: Int) -&amp;gt; Int {
-    return a + b
-}
-
-let curriedSum = curry(sum)
-
-let sumWith2 = curriedSum(3)(6)
-
-let sumWith3 = curriedSum(3)
-
-print(sumWith2)
-
-print(sumWith3(5))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying1.png&quot; alt=&quot;currying1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我们向curry函数中传一个形如(A, B)-&amp;gt;C的函数sum，此时curriedSum是一个&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;类型的函数，这点很好理解。&lt;/p&gt;
-
-&lt;p&gt;下面是重点，我们如果想直接调用计算，因为函数是&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;，那么就用&lt;strong&gt;curriedSum(num1)(num2)&lt;/strong&gt;就可以了，此时的返回值是&lt;strong&gt;Int&lt;/strong&gt;，如果我们想固定一个值，那么就用&lt;strong&gt;curriedSum(num1)&lt;/strong&gt;，那么此时的返回值其实是&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;类型。想得到最终那个值的话，就必须再传一个参数，才能让返回类型由&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;变为&lt;strong&gt;Int&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;可以随时注意&lt;strong&gt;playground&lt;/strong&gt;中&lt;strong&gt;sumWith2&lt;/strong&gt;和&lt;strong&gt;sumWith3&lt;/strong&gt;显示的函数类型。&lt;/p&gt;
-
-&lt;p&gt;这也就是currying的最大好处，想返回什么返回什么。可以返回一个-&amp;gt;Int，也可以返回一个&lt;strong&gt;Int-&amp;gt;Int(一个函数)&lt;/strong&gt;。其实不是想返回什么就返回什么，是参数想传什么就传什么，没啥区别。&lt;/p&gt;
-
-&lt;p&gt;我们在看一个Haskell中例子，我写了一个Swift版本。这个例子无非就是多了一个参数，不过可以更方便理解。(这个函数是learnyouahaskell第五章高阶函数Curried Functions中第一个函数)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func multThree(adder: Int) -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int {
-    return {
-        a in  {
-            b in
-            a * b * adder
-        }
-    }
-}
-
-let multTwo = multThree(3)
-let multOne = multThree(4)(3)
-let multZero = multThree(4)(2)(1)
-
-print(multTwo(2)(1))
-print(multOne(2))
-print(multZero)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/swiftfrp/currying2.png&quot; alt=&quot;currying2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个函数，其实是一个&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;类型…一会看Haskell原函数就懂了。所以理论上我们可以返回三种类型，&lt;strong&gt;Int-&amp;gt;Int-&amp;gt;Int&lt;/strong&gt;，&lt;strong&gt;Int-&amp;gt;Int&lt;/strong&gt;，&lt;strong&gt;Int&lt;/strong&gt;。前两个是函数，最后一个是返回值。&lt;/p&gt;
-
-&lt;p&gt;就是我们依次&lt;strong&gt;multTwo&lt;/strong&gt;和&lt;strong&gt;multOne&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;最后提一个细节，为什么我们调用的时候要用&lt;strong&gt;multThree(4)(2)(1)&lt;/strong&gt;？个人觉得，这就是函数式，其实是传了三个函数，只不过是常数函数。所以用()。&lt;/p&gt;
-
-&lt;p&gt;最后我们看Haskell中实现&lt;strong&gt;multThree&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;multThree :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; Int
-multThree x y z = x * y * z
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; multThree 2 3 4
-24
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;首先来说，我们可以直接这么使用，那么就是一个参数(常数)，一个参数(常数)，一个参数(常数)，返回值(常数)。但实际上又可以理解为，&lt;strong&gt;(((multThree 2) 3) 4)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;我们还可以怎么去用这个函数呢。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ghci&amp;gt; let multTwoWithNine = multThree 9
-ghci&amp;gt; multTwoWithNine 2 3
-54
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;这样的话，其实就是&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;multThree :: Int -&amp;gt; ((Int -&amp;gt; Int) -&amp;gt; Int)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这样看来，无论参数也好，返回值也好，都可以是一个函数。&lt;/p&gt;
-
-&lt;p&gt;当然，我觉得，在Haskell中写更爽一点。当然为什么那么爽。其实Curry是个姓，这个人的名，叫Haskell。&lt;/p&gt;
-
-&lt;p&gt;最后结个尾。&lt;/p&gt;
-
-&lt;p&gt;“Currying is common paradigm in functional programming. In fact in Haskell (another functional programming language) every function is curried by default.”其实就是..在Haskell中，所有函数都是默认curried。&lt;/p&gt;
-
-&lt;p&gt;参考资料&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/28767658/how-to-understand-the-currying-in-swift&quot;&gt;How to understand the currying in Swift?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24107191/curry-function-in-swift&quot;&gt;Curry Function in Swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://swifter.tips/currying/&quot;&gt;柯里化 (CURRYING)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Currying&quot;&gt;Currying&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/thoughtbot/Curry/blob/master/Source/Curry.swift&quot;&gt;thoughtbot/Curry&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://learnyouahaskell.com/&quot;&gt;Learn You a Haskell for Great Good! &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.objc.io/books/functional-swift/&quot;&gt;Functional Swift&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Partial_application&quot;&gt;Partial application&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Mon, 27 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ios/2016/06/27/Learn-You-a-Swift-for-Great-Good!-part-0.html</guid>
-        
-        
-        <category>iOS</category>
         
       </item>
     

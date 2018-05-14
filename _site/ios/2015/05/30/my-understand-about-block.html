@@ -101,13 +101,13 @@
 <h2 id="part1-block的简单定义"><em>part1 block的简单定义</em></h2>
 <p>我现在定义一个简单的block。</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">myBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//1
-</span><span class="n">myBlock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">myBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//1</span>
+<span class="n">myBlock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"---%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//2
-</span><span class="p">};</span>
-<span class="n">myBlock</span><span class="p">(</span><span class="s">@"11111"</span><span class="p">);</span><span class="c1">//3
-</span><span class="o">//</span> <span class="n">Outputs</span><span class="o">:---</span><span class="mi">11111</span></code></pre></figure>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"---%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//2</span>
+<span class="p">};</span>
+<span class="n">myBlock</span><span class="p">(</span><span class="s">@"11111"</span><span class="p">);</span><span class="c1">//3</span>
+<span class="c1">// Outputs:---11111</span></code></pre></figure>
 
 <p>可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个参数还可以是一个函数。当然如果是int类型的block就需要return一个返回值了。</p>
 
@@ -123,8 +123,8 @@
 首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import "ViewController.h"
-</span><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">MyBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//typedef定义一个block
-</span>
+</span><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">MyBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//typedef定义一个block</span>
+
 <span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
 <span class="k">@end</span>
 
@@ -132,17 +132,17 @@
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
     <span class="n">MyBlock</span> <span class="n">tblock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"-----%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//1
-</span>    <span class="p">};</span>
-    <span class="p">[</span><span class="n">self</span> <span class="nf">testBlock</span><span class="p">:</span><span class="n">tblock</span><span class="p">];</span><span class="c1">//2
-</span><span class="p">}</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"-----%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//1</span>
+    <span class="p">};</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">testBlock</span><span class="p">:</span><span class="n">tblock</span><span class="p">];</span><span class="c1">//2</span>
+<span class="p">}</span>
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">testBlock</span><span class="o">:</span><span class="p">(</span><span class="n">MyBlock</span><span class="p">)</span><span class="n">mBlock</span>
-<span class="c1">//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock
-//简单的说格式就是 “返回值 + (^) + 参数 + 名字”
-</span><span class="p">{</span>
-    <span class="n">mBlock</span><span class="p">(</span><span class="s">@"1111"</span><span class="p">);</span><span class="c1">//3
-</span><span class="p">}</span>
-<span class="o">//</span> <span class="n">Outputs</span><span class="o">:-----</span><span class="mi">1111</span></code></pre></figure>
+<span class="c1">//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock</span>
+<span class="c1">//简单的说格式就是 “返回值 + (^) + 参数 + 名字”</span>
+<span class="p">{</span>
+    <span class="n">mBlock</span><span class="p">(</span><span class="s">@"1111"</span><span class="p">);</span><span class="c1">//3</span>
+<span class="p">}</span>
+<span class="c1">// Outputs:-----1111</span></code></pre></figure>
 
 <p>在上面的代码中，我们写了一个testBlock的函数，将我们的tblock作为参数传到了testBlock函数里面，然后再testBlock里用mBlock调用了我们所写的MyBlock这个函数。</p>
 
@@ -188,16 +188,16 @@
 TestViewController是我们需要调用网络请求的地方。
 SearchModel是一个model，我用来解析数据的。</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//  TestNetworkViewController.h
-</span><span class="cp">#import &lt;UIKit/UIKit.h&gt;
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//  TestNetworkViewController.h</span>
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;
 #import "SearchModel.h"
 </span><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">GetModel</span><span class="p">)(</span><span class="n">SearchModel</span> <span class="o">*</span><span class="n">model</span><span class="p">);</span>
 <span class="k">@interface</span> <span class="nc">TestNetworkViewController</span> <span class="p">:</span> <span class="nc">UIViewController</span>
 <span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUrl</span><span class="p">:(</span><span class="n">GetModel</span><span class="p">)</span><span class="nv">getmodel</span><span class="p">;</span>
 <span class="k">@end</span>
 
-<span class="c1">//TestNetworkViewController.m
-</span><span class="cp">#import "TestNetworkViewController.h"
+<span class="c1">//TestNetworkViewController.m</span>
+<span class="cp">#import "TestNetworkViewController.h"
 </span><span class="k">@interface</span> <span class="nc">TestNetworkViewController</span> <span class="p">()</span>
 <span class="k">@end</span>
 <span class="k">@implementation</span> <span class="nc">TestNetworkViewController</span>
@@ -217,8 +217,8 @@ SearchModel是一个model，我用来解析数据的。</p>
 <span class="p">}</span>
 <span class="k">@end</span>
 
-<span class="c1">//  TestViewController.h
-</span><span class="cp">#import &lt;UIKit/UIKit.h&gt;
+<span class="c1">//  TestViewController.h</span>
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;
 #import "SearchModel.h"
 </span><span class="k">@interface</span> <span class="nc">TestViewController</span> <span class="p">:</span> <span class="nc">UIViewController</span>
 <span class="k">@end</span>
@@ -233,8 +233,8 @@ SearchModel是一个model，我用来解析数据的。</p>
 <span class="k">@implementation</span> <span class="nc">TestViewController</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
-    <span class="c1">// Do any additional setup after loading the view.
-</span>    <span class="n">UIButton</span> <span class="o">*</span><span class="n">testBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nf">buttonWithType</span><span class="p">:</span><span class="n">UIButtonTypeSystem</span><span class="p">];</span>
+    <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="n">UIButton</span> <span class="o">*</span><span class="n">testBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nf">buttonWithType</span><span class="p">:</span><span class="n">UIButtonTypeSystem</span><span class="p">];</span>
     <span class="p">[</span><span class="n">testBtn</span> <span class="nf">setTitle</span><span class="p">:</span><span class="s">@"test"</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
     <span class="p">[</span><span class="n">testBtn</span> <span class="nf">setTitleColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">redColor</span><span class="p">]</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
     <span class="n">testBtn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>

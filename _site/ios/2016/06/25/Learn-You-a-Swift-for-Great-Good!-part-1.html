@@ -78,10 +78,10 @@
 
 <p>什么意思呢？在Haskell中，如果现在有一个函数作为参数的话，需要写一个f就可以了。举个例子。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
-</code></pre></div>
+</code></pre></div></div>
 
 <p>这是在Learn You a Haskell for Great Good!(以后统称为learnyouahaskell)一书中的第六章Higher order functions中写的一个map函数的。没具体看Haskell源码怎么实现的map..</p>
 
@@ -111,23 +111,23 @@ map f (x:xs) = f x : map f xs
 
 <p>所以完整的代码是这样的。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T] {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T] {
     var result = [T]()
     for element in array {
         result.append(f(element))
     }
     return result
 }
-</code></pre></div>
+</code></pre></div></div>
 
 <p>下面要做的事情。就是增加数组的extension。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>extension Array {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension Array {
     func jjmap&lt;U&gt;(f: (Array.Element) -&gt; U) -&gt; [U] {
         return jmap(f, array: self)
     }
 }
-</code></pre></div>
+</code></pre></div></div>
 
 <p>至此就可以使用我们自己写的map函数了。</p>
 
