@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 May 2018 20:46:49 +0800</pubDate>
-    <lastBuildDate>Mon, 21 May 2018 20:46:49 +0800</lastBuildDate>
+    <pubDate>Mon, 21 May 2018 21:05:38 +0800</pubDate>
+    <lastBuildDate>Mon, 21 May 2018 21:05:38 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -46,41 +46,42 @@
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/4.png&quot; alt=&quot;ffmpeg-4&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这个时候再输入一个命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 &lt;a href=&quot;http://walkginkgo.com/images/ffmpeg/render.sh&quot;&gt;render,sh&lt;/a&gt;网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。&lt;/p&gt;
+&lt;p&gt;这个时候再输入一个命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 &lt;a href=&quot;http://walkginkgo.com/images/ffmpeg/render.sh&quot;&gt;render.sh&lt;/a&gt;网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/5.png&quot; alt=&quot;ffmpeg-5&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
 
-&lt;p&gt;使用方案，需要用哪一个方法，就把最前面的 # 号去掉。&lt;/p&gt;
+&lt;p&gt;使用方案，需要用哪一个方法，就把最前面的 # 号去掉。中文那行不能注释。&lt;strong&gt;以及记得把视频 ass 还有 logo 的图都和那个黑色的 ffmpeg 放在一起。&lt;/strong&gt;下文有详细图。&lt;/p&gt;
 
-&lt;p&gt;我在 render.sh 里定义了几个方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/14.png&quot; alt=&quot;ffmpeg-14&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;转换视频格式&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;把需要的方案注释之后，在 Terminal 里运行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;。就会开始压制了。&lt;/p&gt;
 
-&lt;p&gt;把 in 改成你的视频名字，out 改成输出的视频名称即可。把视频和那个黑色的 ffmpeg 放在一起，下文压制字幕有详细截图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/15.png&quot; alt=&quot;ffmpeg-15&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;比如我想把 wake.mp4 换成 mkv。就写一句。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/16.png&quot; alt=&quot;ffmpeg-16&quot; /&gt;
+render.sh 里定义了几个方法。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.转换视频格式&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;把 in 改成你的视频名字，out 改成输出的视频名称即可。&lt;/p&gt;
+
+&lt;p&gt;比如我想把 wake.mp4 换成 mkv。就改为。&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ffmpeg -i &quot;wake1.mp4&quot; wake.mkv&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/6.png&quot; alt=&quot;ffmpeg-6&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;压制 srt 字幕&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;2.压制 srt 字幕&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;把 in.mp4 换成你的 mp4，把 xx.srt 换成你的 srt 文件，out.mp4 换成你需要的名字。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;压制 ass 字幕&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;3.压制 ass 字幕&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;把 in.mp4 换成你的 mp4&lt;/p&gt;
 
-&lt;p&gt;把 xx.srt 换成你的 srt 文件&lt;/p&gt;
+&lt;p&gt;把 xx.srt 换成你的 ass 文件&lt;/p&gt;
 
 &lt;p&gt;out.mp4 换成你需要的名字。如下图。&lt;/p&gt;
 
@@ -90,9 +91,9 @@
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/9.png&quot; alt=&quot;ffmpeg-9&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;压制带 logo 的（logo 在上 ass 字幕在下）&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;4.压制带 logo 的（logo 在上 ass 字幕在下）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这里的 logo 在上 ass 在下，是指如果 logo 和滚轴重复在一起，哪一个在上面。下文有反着的。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/10.png&quot; alt=&quot;ffmpeg-10&quot; /&gt;&lt;/p&gt;
 
@@ -110,15 +111,11 @@
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/12.png&quot; alt=&quot;ffmpeg-12&quot; /&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;压制带 logo 的（ass 字幕在上 logo 在下）&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;5.压制带 logo 的（ass 字幕在上 logo 在下）&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;同上。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;压制延迟出现 logo 的&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;6.压制延迟出现 logo 的&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;大部分同上。&lt;/p&gt;
 
@@ -130,12 +127,16 @@
 
 &lt;p&gt;我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 &lt;code class=&quot;highlighter-rouge&quot;&gt;enable='between(t,10,120)'&lt;/code&gt;。即修改两个数字即可。&lt;/p&gt;
 
+&lt;p&gt;总结一下就是。准备需要的 mp4，ass，logo，然后修改 render.sh 文件。以及在 Terminal 运行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;render.sh 文件中如果多行的话，多行都需要注释，如我的图。&lt;/li&gt;
   &lt;li&gt;需要使用哪个则把前面的 # 去掉，其他的还得用 # 弄上。&lt;/li&gt;
   &lt;li&gt;如果使用中遇到错误请发邮件给我，虽然我不一定可以解决，但是可以试试看。邮箱是 tesths@yahoo.com。&lt;/li&gt;
+  &lt;li&gt;如果你有更好的方案也欢迎留言或者给我发邮件。&lt;/li&gt;
+  &lt;li&gt;以及有什么不明白的，留言和发邮件都可以。&lt;/li&gt;
   &lt;li&gt;以上。&lt;/li&gt;
 &lt;/ol&gt;
 
