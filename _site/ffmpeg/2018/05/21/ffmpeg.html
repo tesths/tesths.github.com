@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mac 下压制字幕和 logo</title>
+  <meta name="description" content="  本文将不定期补充 ffmpeg 其余压制方案或者命令行使用方法">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/css/style.css" rel="stylesheet"> -->
+<!--  <link href="/css/syntax.css" rel="stylesheet"> -->
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">Mac 下压制字幕和 logo</h1>
+    <p class="post-meta">May 21, 2018</p>
+  </header>
+
+  <article class="post-content">
+    <blockquote>
+  <p>本文将不定期补充 ffmpeg 其余压制方案或者命令行使用方法</p>
+</blockquote>
+
+<p>这篇博客要感谢蒸包同志！没有蒸包同志的教学就没有这篇博客的输出。以及，我尽量写的白话文。以及如果需求大我会开发 Mac 可视化版本的压制软件…这是后话。</p>
+
+<h2 id="问题">问题</h2>
+
+<p>大部分字幕组做视频压制，标准配备都是 Windows 版本的小丸工具箱。但是小丸工具箱的 Mac 版本没有 Windows 那么好。其次的问题是怎么 Mac 怎么打 logo。在我们组内使用 Aegisub 打 logo。使用 Aegisub 打 logo 的话，需要给 Aegisub 安装 vsflitermod 插件，这玩意没有 Mac 的。最后的问题是，Mac 下没有好的压制工具。</p>
+
+<h2 id="工具问题">工具问题</h2>
+
+<p>小丸实际上是针对 ffmpeg 进行了图像化的封装。那么原理上我们只要会 ffmpeg 就可以在 Mac 上达到相同的功能。而 Mac 下没有很好的 ffmpeg 的图形化客户端。那没办法，只有用命令行了。（如果需求量大我考虑下自己开发一个图形化的，但是目前还不会）</p>
+
+<h2 id="预备">预备</h2>
+
+<p>首先需要下载一个 ffmpeg 在 Mac 下的可执行文件。<a href="https://evermeet.cx/ffmpeg/">https://evermeet.cx/ffmpeg/</a> 这个是 ffmpeg 官网跳转的链接。下载右下角的（其实都可以）。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/1.png" alt="ffmpeg-1" /></p>
+
+<p>之后解压缩文件，会得到一个下图这样黑黑的东西。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/2.png" alt="ffmpeg-2" /></p>
+
+<p>我的建议是建一个单独的文件夹。把这个 ffmpeg 放进去。然后的话就需要一点点计算机的知识了…没有很难，我也会尽量阐述的可以理解一点，而且全部配图。我也基本保证就这一点点专业性的东西。</p>
+
+<p>首先在电脑里找到 Terminal。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/3.png" alt="ffmpeg-3" /></p>
+
+<p>这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，<code class="highlighter-rouge">cd Documents/ffmpeg/</code>。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/4.png" alt="ffmpeg-4" /></p>
+
+<p>这个时候再输入一个命令 <code class="highlighter-rouge">ls</code>。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 <a href="http://walkginkgo.com/images/ffmpeg/render.sh">render,sh</a>网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/5.png" alt="ffmpeg-5" /></p>
+
+<h2 id="使用">使用</h2>
+
+<p>使用方案，需要用哪一个方法，就把最前面的 # 号去掉。</p>
+
+<p>我在 render.sh 里定义了几个方法。</p>
+
+<ol>
+  <li>转换视频格式</li>
+</ol>
+
+<p>把 in 改成你的视频名字，out 改成输出的视频名称即可。把视频和那个黑色的 ffmpeg 放在一起，下文压制字幕有详细截图。</p>
+
+<p>比如我想把 wake.mp4 换成 mkv。就写一句。</p>
+
+<p><code class="highlighter-rouge">./ffmpeg -i "wake1.mp4" wake.mkv</code></p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/6.png" alt="ffmpeg-6" /></p>
+
+<ol>
+  <li>压制 srt 字幕</li>
+</ol>
+
+<p>把 in.mp4 换成你的 mp4，把 xx.srt 换成你的 srt 文件，out.mp4 换成你需要的名字。</p>
+
+<ol>
+  <li>压制 ass 字幕</li>
+</ol>
+
+<p>把 in.mp4 换成你的 mp4</p>
+
+<p>把 xx.srt 换成你的 srt 文件</p>
+
+<p>out.mp4 换成你需要的名字。如下图。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/8.png" alt="ffmpeg-8" /></p>
+
+<p>压制完成后就会是。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/9.png" alt="ffmpeg-9" /></p>
+
+<ol>
+  <li>压制带 logo 的（logo 在上 ass 字幕在下）</li>
+</ol>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/10.png" alt="ffmpeg-10" /></p>
+
+<p>由于我上文提到的，Mac 下的 Aegisub 插件是没有的，那我们可以利用 ffmpeg 来压制。将 logo 文件放在 ffmpeg 文件夹下。</p>
+
+<p>wakemeup1.mp4 换成你的 mp4 文件名</p>
+
+<p>logo-small.png 换成你的 logo 图片</p>
+
+<p>wakemeup1.ass 换成你的 ass 文件</p>
+
+<p>overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 <a href="http://tieba.baidu.com/p/2706704635">如何在ASS字幕中插入各种图片</a>，里面的 <code class="highlighter-rouge">{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0</code> 方案。先确定 logo 位置，填写到这里。</p>
+
+<p>直接在 Aegisub 上比对下也行。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/12.png" alt="ffmpeg-12" /></p>
+
+<ol>
+  <li>压制带 logo 的（ass 字幕在上 logo 在下）</li>
+</ol>
+
+<p>同上。</p>
+
+<ol>
+  <li>压制延迟出现 logo 的</li>
+</ol>
+
+<p>大部分同上。</p>
+
+<p><img src="http://walkginkgo.com/images/ffmpeg/13.png" alt="ffmpeg-13" /></p>
+
+<p>出现时间修改。</p>
+
+<p><code class="highlighter-rouge">enable='between(t,35,6*60+30)'</code></p>
+
+<p>我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 <code class="highlighter-rouge">enable='between(t,10,120)'</code>。即修改两个数字即可。</p>
+
+<h2 id="注意事项">注意事项</h2>
+
+<ol>
+  <li>render.sh 文件中如果多行的话，多行都需要注释，如我的图。</li>
+  <li>需要使用哪个则把前面的 # 去掉，其他的还得用 # 弄上。</li>
+  <li>如果使用中遇到错误请发邮件给我，虽然我不一定可以解决，但是可以试试看。邮箱是 tesths@yahoo.com。</li>
+  <li>以上。</li>
+</ol>
+
+<p><strong>以及，最重要的是，本篇是有版权的，但是可以随意转载…转载的时候著名 PineconeSanaChina。</strong></p>
+
+
+  </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tesths'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+</p>
+      </div>
+    </div>
+
+  </div>
+<!-- <script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script> -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>

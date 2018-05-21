@@ -6,9 +6,150 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 May 2018 19:16:14 +0800</pubDate>
-    <lastBuildDate>Mon, 14 May 2018 19:16:14 +0800</lastBuildDate>
+    <pubDate>Mon, 21 May 2018 20:46:49 +0800</pubDate>
+    <lastBuildDate>Mon, 21 May 2018 20:46:49 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Mac 下压制字幕和 logo</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文将不定期补充 ffmpeg 其余压制方案或者命令行使用方法&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这篇博客要感谢蒸包同志！没有蒸包同志的教学就没有这篇博客的输出。以及，我尽量写的白话文。以及如果需求大我会开发 Mac 可视化版本的压制软件…这是后话。&lt;/p&gt;
+
+&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;大部分字幕组做视频压制，标准配备都是 Windows 版本的小丸工具箱。但是小丸工具箱的 Mac 版本没有 Windows 那么好。其次的问题是怎么 Mac 怎么打 logo。在我们组内使用 Aegisub 打 logo。使用 Aegisub 打 logo 的话，需要给 Aegisub 安装 vsflitermod 插件，这玩意没有 Mac 的。最后的问题是，Mac 下没有好的压制工具。&lt;/p&gt;
+
+&lt;h2 id=&quot;工具问题&quot;&gt;工具问题&lt;/h2&gt;
+
+&lt;p&gt;小丸实际上是针对 ffmpeg 进行了图像化的封装。那么原理上我们只要会 ffmpeg 就可以在 Mac 上达到相同的功能。而 Mac 下没有很好的 ffmpeg 的图形化客户端。那没办法，只有用命令行了。（如果需求量大我考虑下自己开发一个图形化的，但是目前还不会）&lt;/p&gt;
+
+&lt;h2 id=&quot;预备&quot;&gt;预备&lt;/h2&gt;
+
+&lt;p&gt;首先需要下载一个 ffmpeg 在 Mac 下的可执行文件。&lt;a href=&quot;https://evermeet.cx/ffmpeg/&quot;&gt;https://evermeet.cx/ffmpeg/&lt;/a&gt; 这个是 ffmpeg 官网跳转的链接。下载右下角的（其实都可以）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/1.png&quot; alt=&quot;ffmpeg-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;之后解压缩文件，会得到一个下图这样黑黑的东西。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/2.png&quot; alt=&quot;ffmpeg-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我的建议是建一个单独的文件夹。把这个 ffmpeg 放进去。然后的话就需要一点点计算机的知识了…没有很难，我也会尽量阐述的可以理解一点，而且全部配图。我也基本保证就这一点点专业性的东西。&lt;/p&gt;
+
+&lt;p&gt;首先在电脑里找到 Terminal。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/3.png&quot; alt=&quot;ffmpeg-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，&lt;code class=&quot;highlighter-rouge&quot;&gt;cd Documents/ffmpeg/&lt;/code&gt;。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/4.png&quot; alt=&quot;ffmpeg-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个时候再输入一个命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 &lt;a href=&quot;http://walkginkgo.com/images/ffmpeg/render.sh&quot;&gt;render,sh&lt;/a&gt;网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/5.png&quot; alt=&quot;ffmpeg-5&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;使用方案，需要用哪一个方法，就把最前面的 # 号去掉。&lt;/p&gt;
+
+&lt;p&gt;我在 render.sh 里定义了几个方法。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;转换视频格式&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;把 in 改成你的视频名字，out 改成输出的视频名称即可。把视频和那个黑色的 ffmpeg 放在一起，下文压制字幕有详细截图。&lt;/p&gt;
+
+&lt;p&gt;比如我想把 wake.mp4 换成 mkv。就写一句。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ffmpeg -i &quot;wake1.mp4&quot; wake.mkv&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/6.png&quot; alt=&quot;ffmpeg-6&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压制 srt 字幕&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;把 in.mp4 换成你的 mp4，把 xx.srt 换成你的 srt 文件，out.mp4 换成你需要的名字。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压制 ass 字幕&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;把 in.mp4 换成你的 mp4&lt;/p&gt;
+
+&lt;p&gt;把 xx.srt 换成你的 srt 文件&lt;/p&gt;
+
+&lt;p&gt;out.mp4 换成你需要的名字。如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/8.png&quot; alt=&quot;ffmpeg-8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;压制完成后就会是。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/9.png&quot; alt=&quot;ffmpeg-9&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压制带 logo 的（logo 在上 ass 字幕在下）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/10.png&quot; alt=&quot;ffmpeg-10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;由于我上文提到的，Mac 下的 Aegisub 插件是没有的，那我们可以利用 ffmpeg 来压制。将 logo 文件放在 ffmpeg 文件夹下。&lt;/p&gt;
+
+&lt;p&gt;wakemeup1.mp4 换成你的 mp4 文件名&lt;/p&gt;
+
+&lt;p&gt;logo-small.png 换成你的 logo 图片&lt;/p&gt;
+
+&lt;p&gt;wakemeup1.ass 换成你的 ass 文件&lt;/p&gt;
+
+&lt;p&gt;overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 &lt;a href=&quot;http://tieba.baidu.com/p/2706704635&quot;&gt;如何在ASS字幕中插入各种图片&lt;/a&gt;，里面的 &lt;code class=&quot;highlighter-rouge&quot;&gt;{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0&lt;/code&gt; 方案。先确定 logo 位置，填写到这里。&lt;/p&gt;
+
+&lt;p&gt;直接在 Aegisub 上比对下也行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/12.png&quot; alt=&quot;ffmpeg-12&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压制带 logo 的（ass 字幕在上 logo 在下）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;同上。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压制延迟出现 logo 的&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大部分同上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/13.png&quot; alt=&quot;ffmpeg-13&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;出现时间修改。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;enable='between(t,35,6*60+30)'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 &lt;code class=&quot;highlighter-rouge&quot;&gt;enable='between(t,10,120)'&lt;/code&gt;。即修改两个数字即可。&lt;/p&gt;
+
+&lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;render.sh 文件中如果多行的话，多行都需要注释，如我的图。&lt;/li&gt;
+  &lt;li&gt;需要使用哪个则把前面的 # 去掉，其他的还得用 # 弄上。&lt;/li&gt;
+  &lt;li&gt;如果使用中遇到错误请发邮件给我，虽然我不一定可以解决，但是可以试试看。邮箱是 tesths@yahoo.com。&lt;/li&gt;
+  &lt;li&gt;以上。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;以及，最重要的是，本篇是有版权的，但是可以随意转载…转载的时候著名 PineconeSanaChina。&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 21 May 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</guid>
+        
+        
+        <category>ffmpeg</category>
+        
+      </item>
     
       <item>
         <title>微信小程序自定义字体</title>
@@ -870,97 +1011,6 @@ default-storage-engine = InnoDB&lt;/p&gt;
         
         
         <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>Mac状态栏Hack</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;依旧是一篇探究 Mac 软件原理的文章&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;前几天在用小历的时候，发现了这么一个功能。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status1.png&quot; alt=&quot;2016-07-09_status1.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择之后，小历会从这样变到这样。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status2.png&quot; alt=&quot;2016-07-09_status2.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status3.png&quot; alt=&quot;2016-07-09_status3.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后我就开始想这个是怎么实现的，这里我们必须要对比一个软件，卖了105.88人民币的著名 Mac 状态栏管理软件 &lt;a href=&quot;https://www.macbartender.com/&quot;&gt;Bartender 2&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;在 Bartender 中有一个功能，你可以按住 ⌘ 之后点击图标来拖动来改变它在 Mac 状态栏的位置，就像这样（看网易云音乐）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status4.png&quot; alt=&quot;2016-07-09_status4.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果 Bartender 可以的，那为什么小历不能这么做，这样的话用户体验不是更好吗？于是开始了一轮疯狂的 Google 和 Stackoverflow 。&lt;/p&gt;
-
-&lt;p&gt;结果结论是，在老版本的 Mac 操作系统中，是默认支持 ⌘+ 图标改变位置的，但是在 10.11 中，这个功能被取消了，只有使用 Bartender 来改变位置。而在 Apple 给出的 API 中，没有可以改变状态栏图标位置的方法。那么 Bartender 是怎么实现的，小历又为什么不能实现。之后就是接着查。&lt;/p&gt;
-
-&lt;p&gt;经过不断的改变关键字..在某一个 Stackoverflow 中发现了一个叫做 &lt;strong&gt;NSMenuExtra&lt;/strong&gt; 的类，这是私有的 API ，在这个方法中，可以实现 Bartender 中的那个改变位置的效果，但是如果使用了苹果私有的  API ，应用是不能上线到 App Store 的，小历上线到了 App Store ，说明没有用到私有 API，之后我就一片混乱了…&lt;/p&gt;
-
-&lt;p&gt;无耐之下，我在微博上给小历的作者发了一个私信，没想到很快小历的作者就给我回复了！他给了我一个 Github 的地址，&lt;a href=&quot;https://github.com/shergin/NSStatusBar-MISSINGOrder&quot;&gt;NSStatusBar-MISSINGOrder&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status5.png&quot; alt=&quot;2016-07-09_status5.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;之后我看了一下，正如作者所说，是构造了一个 &lt;strong&gt;Selector&lt;/strong&gt;，但实际上是用 Hack 的方法调用了两个方法&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (void)_insertStatusItem:(id)arg1 withPriority:(long long)arg2;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;- (id)_statusItemWithLength:(double)arg1 withPriority:(long long)arg2;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;我们来看这两个方法。&lt;strong&gt;Priority&lt;/strong&gt; 实际上是确定位置的，优先级越高，位置越靠左。但是问题在于，这两个方法不在 &lt;strong&gt;NSMenuExtra&lt;/strong&gt; 中，那么这两个方法又是哪来的呢？&lt;/p&gt;
-
-&lt;p&gt;其实这两个方法是 Apple 留下的后门，这两个方法是 &lt;strong&gt;NSStatusBar&lt;/strong&gt; 中没有公开的 API。&lt;/p&gt;
-
-&lt;p&gt;于是，我决定开始使用 class-dump 来查看未公开的 API。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./class-dump -H -o ~/Desktop /System/Library/Frameworks/AppKit.framework&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这个命令会把 &lt;strong&gt;AppKit.framework&lt;/strong&gt; 中的所有方法都导出一个一个的.h文件。&lt;/p&gt;
-
-&lt;p&gt;在里面找到 &lt;strong&gt;NSStatusBar.h&lt;/strong&gt;，就可以看到这两个方法了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status7.png&quot; alt=&quot;2016-07-09_status7.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;所以在小历当中，怎么说呢..其实是调用了私有的 API，但是不明显，而且调用的很少。所以上线到 App Store 是没有太大问题的。&lt;/p&gt;
-
-&lt;p&gt;下面我们来猜测一下 Bartender 可以把所有图标放到状态栏下面那行的大概原理。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./class-dump -H -o ~/Desktop/private /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这个命令会把 &lt;strong&gt;NSMenuExtra&lt;/strong&gt; 相关的.h头文件导出。还有其他的一系列头文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o9791noio.bkt.clouddn.com/2016-07-09_status6.png&quot; alt=&quot;2016-07-09_status6.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NSMenuExtra&lt;/strong&gt; 中有 drawRect 方法，应该就是先画 view，然后把图标放进去就可以啦。&lt;/p&gt;
-
-&lt;p&gt;至于按⌘拖动那个嘛..我估计，应该是提供了某个方法，可能是在 &lt;strong&gt;NSMenuExtraView&lt;/strong&gt; 中的 &lt;strong&gt;mouseDown&lt;/strong&gt; 方法，但是没文档啥的，我不确定..就得试和看命名了，我就不继续深究了。因为本来也就是一次探究大概原理的文章，主要是我 Bartender 都买了..也就没有什么继续研究的动力了哈哈。&lt;/p&gt;
-
-&lt;p&gt;小小总结一下。&lt;/p&gt;
-
-&lt;p&gt;如果是做 Mac 开发的，class-dump 是个好东西，因为在 Mac 上，你可以不上线 App Store 来分发你的应用，那么我们就可以调用私有  API 来 Hack 很多好玩的功能，这样其实是很好的。比如 Bartender，100多块钱而且基本用 Mac 都会买，还是可以赚上一笔的。&lt;/p&gt;
-
-&lt;p&gt;其次，class-dump 导出的头文件是没有文档的，这个就真的纯靠试和看命名了。需要开发者的耐心和不怕死的心。&lt;/p&gt;
-
-&lt;p&gt;参考链接：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cocoadevcentral.com/articles/000078.php&quot;&gt;Building NSMenuExtra - A Small Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://duhanebel.wordpress.com/2010/04/02/nsmenuextra-how-to-work-with-undocumented-apis/&quot;&gt;NSMenuExtra – working with undocumented APIs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/shergin/NSStatusBar-MISSINGOrder&quot;&gt;NSStatusBar-MISSINGOrder&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.tanhao.me/code/1672.html/&quot;&gt;MAC系统状态栏通过插件添加图标MenuExtra Plugin&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://linfan.info/blog/2012/02/28/cocoa-icon-on-right-side-of-menu-bar/&quot;&gt;Cocoa菜单栏右侧图标的实现&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 09 Jul 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/mac/2016/07/09/statusbar.html</link>
-        <guid isPermaLink="true">http://localhost:4000/mac/2016/07/09/statusbar.html</guid>
-        
-        
-        <category>Mac</category>
         
       </item>
     
