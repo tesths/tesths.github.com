@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cocoa 封装 ffmpeg</title>
+  <meta name="description" content="上次写完推文之后发现压制还是很麻烦，转念一想，要么自己做一个 GUI 的吧，于是有了将近三星期零零散散的开发。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ffmpeg/2018/06/12/cocoa-ffmpeg.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/css/style.css" rel="stylesheet"> -->
+<!--  <link href="/css/syntax.css" rel="stylesheet"> -->
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">Cocoa 封装 ffmpeg</h1>
+    <p class="post-meta">Jun 12, 2018</p>
+  </header>
+
+  <article class="post-content">
+    <p>上次写完推文之后发现压制还是很麻烦，转念一想，要么自己做一个 GUI 的吧，于是有了将近三星期零零散散的开发。</p>
+
+<p>下面把我开发的过程记录下。</p>
+
+<h2 id="如何使用-ffmpeg">如何使用 ffmpeg</h2>
+
+<p>在 iOS 开发中，ffmpeg 是使用编译过的文件进行开发。而在 Mac 中，我查阅了一部分资料，（可能是我花的时间太少），最后查询的结果是直接使用可执行文件。</p>
+
+<p>这里就很简单了，直接把 ffmpeg 拖进工程，然后使用 nstask 来调用就可以了。</p>
+
+<h2 id="drag-and-drop">drag and drop</h2>
+
+<p>drag and drop 是这种程序标配的了。好在 drag and drop 有很多学习资料。文章最后会放上我查阅的一些资料。</p>
+
+<h2 id="小细节">小细节</h2>
+
+<p>有很多小坑是我整个过程中踩的，比如 NSButton 的文字居中。比如 nstask 的暂停。我使用了别人的代码，但是发现变量初始化有问题。排查了半天。</p>
+
+<h2 id="开源">开源</h2>
+
+<p>根据我的预期，这个项目是会开源的…但不是在现在。大概我测试写完会开源出去。所以多的就不写了。反正这个代码写的也不咋样，但是效果还凑合！</p>
+
+<p>就这。</p>
+
+<h3 id="参考资料">参考资料</h3>
+
+<ol>
+  <li>
+    <p><a href="https://www.raywenderlich.com/136272/drag-and-drop-tutorial-for-macos">Drag and Drop Tutorial for macOS</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.raywenderlich.com/125071/nstask-tutorial-os-x">NSTask Tutorial for OS X</a></p>
+  </li>
+  <li>
+    <p><a href="https://stackoverflow.com/questions/29233247/implementing-a-drag-and-drop-zone-in-swift">Implementing a drag-and-drop zone in Swift</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/onmyway133/YoutubeDownloader">YoutubeDownloader</a></p>
+  </li>
+</ol>
+
+
+  </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tesths'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+</p>
+      </div>
+    </div>
+
+  </div>
+<!-- <script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script> -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>
