@@ -1,51 +1,61 @@
+
 <html style="display: flex; justify-content: center;flex-direction: column;">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .box {
-            display: flex;
-            justify-content: row;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .img {
-            width:300px;
-            height:400px;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .intro {
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color:rgba(138, 165, 253, 0.589);
+            }
+            .box {
+                display: flex;
+                justify-content: row;
+                align-items: center;
+                flex-wrap: wrap;
+                box-shadow: 3px 3px 3px #8888888a;
+                border-radius:25px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color: whitesmoke;
+            }
+            .img {
+                width:300px;
+                align-items: center;
+            }
+            .intro {
+                margin: 20 20 20 20;
+            }
+
+            #para {
+                background-color: bisque;
+            }
+            @media all and (max-width: 800px) {
+                .img, .intro {
+                    border-radius:25px 25px 0 0;
+                    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">ikun的网站</h1>
+        <p id="para" style="text-align: center;">下面是蔡徐坤</p>
+        <div style="display: flex; justify-content: center;flex-direction: column;align-items: center;">
+            <div class="box">
+                <img class="img" src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=10fc9941c21b9d169eca923392b7dfea/bd3eb13533fa828bc024967df11f4134970a5a2c.jpg">
+                <div class="intro">蔡徐坤（August），1998年8月2日出生于湖南省，中国内地男歌手、演员。</div>
+            </div>
+            <div class="box" id="box-2">
+                <img class="img" src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=d3eae47fd0b44aed4d43b6b6d275ec64/908fa0ec08fa513d73658beb376d55fbb2fbd93c.jpg">
+                <div class="intro">2012年4月，蔡徐坤S因参加综艺节目《向上吧！少年》进入全国200强而进入娱乐圈 [1]  ；8月，参演个人首部偶像剧《童话二分之一》 [2]  。2014年3月，参演个人首部电影《完美假妻168》。2015年7月，蔡徐坤参加真人秀节目《星动亚洲》，并成功进入全国前十五强。2016年10月，蔡徐坤通过10人男子组合SWIN正式出道 [3]  。2018年1月，参加爱奇艺打造的中国首档偶像男团竞演养成类真人秀《偶像练习生》，并于同年4月6日获得最高票数，以NINE PERCENT九人男团C位作为队长出道 [4]  。</div>
+            </div>
+            <div class="box">
+                <img class="img" src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=83d4e008d154564ef168ec6bd2b7f7e7/7e3e6709c93d70cff1477616f4dcd100baa12b68.jpg">
+                <div class="intro">2018年1月，参加爱奇艺重点打造的中国首档偶像男团竞演养成类真人秀《偶像练习生》。4月6日，《偶像练习生》总决赛，获得最高票数，以NINE PERCENT九人男团C位出道</div>
+            </div>
             
-        }
-        @media all and (max-width: 800px) {
-            .img, .intro {
-                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-            }
-            #box-2 {
-                flex-direction: column-reverse;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1 style="text-align: center;">ikun的网站</h1>
-    <p style="text-align: center;">下面是蔡徐坤</p>
-    <div style="display: flex; justify-content: center;flex-direction: column;align-items: center;">
-        <div class="box">
-            <img class="img" src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=10fc9941c21b9d169eca923392b7dfea/bd3eb13533fa828bc024967df11f4134970a5a2c.jpg">
-            <div class="intro">蔡徐坤出生于 1998.8.2。湖南人。身高 1.82，体重 55 千克。</div>
         </div>
-        <div class="box" id="box-2">
-            <div class="intro">他最喜欢看文摘，散文类书。最喜欢吃芹菜炒牛肉。</div>
-            <img class="img" src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=d3eae47fd0b44aed4d43b6b6d275ec64/908fa0ec08fa513d73658beb376d55fbb2fbd93c.jpg">
-        </div>
-        <div class="box">
-            <img class="img" src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike272%2C5%2C5%2C272%2C90/sign=83d4e008d154564ef168ec6bd2b7f7e7/7e3e6709c93d70cff1477616f4dcd100baa12b68.jpg">
-            <div class="intro">最拿手的菜是蛋炒饭。</div>
-        </div>
-        
-    </div>
-</body>
-
-
-</html>
+    </body>
+    
+    
+    </html>
+    
