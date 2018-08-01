@@ -1,0 +1,55 @@
+
+<html style="display: flex; justify-content: center;flex-direction: column;">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .box {
+                display: flex;
+                justify-content: row;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .img {
+                width:400px;
+                height:200px;
+                align-items: center;
+                margin-top: 20px;
+            }
+            .intro {
+                text-align: center;
+            }
+            @media all and (max-width: 800px) {
+                .img, .intro {
+                    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                }
+
+                .intro {
+                    margin-top: 10px;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1 style="text-align: center;">mwy 的刺激战场</h1>
+        <p style="text-align: center;">下面是刺激战场相关</p>
+        <div style="display: flex; justify-content: center;flex-direction: column;align-items: center;">
+            <div class="box">
+                <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533102821465&di=3cc3efdf5dbf6d8aeb8fbb3271baba37&imgtype=0&src=http%3A%2F%2Fimgnews.mumayi.com%2Ffile%2F2018%2F03%2F02%2Fbfd3744d322d28f98c2a99f050c749e0.jpg">
+                <div class="intro">欢迎来到刺激战场。</div>
+            </div>
+            <div class="box" id="box-2">
+                <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533102842969&di=3ef7346134c1f202bc27ed03e4e2cc0c&imgtype=0&src=http%3A%2F%2Fp2.ifengimg.com%2Ffck%2F2018_05%2F78046e62cdd1b32_w488_h274.jpg">
+                <div class="intro">飞机已经起飞，各位特种兵准备跳伞。</div>
+            </div>
+            <div class="box">
+                <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533102882287&di=4fa5226824bef039b49634b990001c94&imgtype=0&src=http%3A%2F%2Fimg.99danji.com%2Fuploadfile%2F2018%2F0703%2F20180703015531276.png">
+                <div class="intro">超级空投。</div>
+            </div>
+            
+        </div>
+    </body>
+    
+    
+    </html>
+    
