@@ -3,31 +3,45 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            .box {
-                display: flex;
-                justify-content: row;
-                align-items: center;
-                flex-wrap: wrap;
-            }
-            .img {
-                width:400px;
-                height:200px;
-                align-items: center;
-                margin-top: 20px;
-            }
-            .intro {
-                text-align: center;
-            }
-            @media all and (max-width: 800px) {
-                .img, .intro {
-                    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                body {
+                    background-color:  black;
                 }
-
-                .intro {
+                h1 {
+                    color: white;
+                }
+                p {
+                    color: white;
+                }
+                .box {
+                    display: flex;
+                    justify-content: row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    box-shadow: 3px 3px 3px #8888888a;
+                    border-radius:20px;
                     margin-top: 10px;
+                    margin-bottom: 10px;
+                    background-color: whitesmoke;
                 }
-            }
-        </style>
+                .img {
+                    width:300px;
+                    align-items: center;
+                }
+                .intro {
+                    margin: 20 20 20 20;
+                    text-align: center;
+                }
+    
+                #para {
+                    background-color: bisque;
+                }
+                @media all and (max-width: 800px) {
+                    .img, .intro {
+                        border-radius:20px 20px 0 0;
+                        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                    }
+                }
+            </style>
 
     </head>
     <body>
