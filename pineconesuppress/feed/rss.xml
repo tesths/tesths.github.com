@@ -18,7 +18,7 @@
           ]]>
         </description>
         <pubDate>Sat, 7 Sep 2017 19:30:11 +0000</pubDate>
-        <enclosure url="http://walkginkgo.com/pineconesuppress/version/PineconeSuppress 1.0.3.dmg" sparkle:version="1.0.1" length="107758" type="application/octet-stream" sparkle:dsaSignature="MEQCICiESP0ophoQeC1VdM/LMW25efj2541vz7fhaIgI88r/AiA+h0Win/fQUC/pBLVKQCLOql0Rd/eaLKiTiTMCxq5tBw==" />
+        <enclosure url="http://walkginkgo.com/pineconesuppress/version/PineconeSuppress%201.0.3.dmg" sparkle:version="1.0.1" length="107758" type="application/octet-stream" sparkle:dsaSignature="MEQCICiESP0ophoQeC1VdM/LMW25efj2541vz7fhaIgI88r/AiA+h0Win/fQUC/pBLVKQCLOql0Rd/eaLKiTiTMCxq5tBw==" />
       </item>
   </channel>
 </rss>
