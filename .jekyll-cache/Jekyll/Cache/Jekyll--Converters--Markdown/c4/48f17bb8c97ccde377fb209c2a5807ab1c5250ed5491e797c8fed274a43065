@@ -1,0 +1,109 @@
+I"�<h3 id="慎哥开博客了博客做的很好看欢迎访问cbsfly">慎哥开博客了，博客做的很好看！欢迎访问~<a href="http://cbsfly.github.io">cbsfly</a></h3>
+
+<blockquote>
+  <p>请合理利用互联网，不要对国家安全造成任何威胁！</p>
+</blockquote>
+
+<p>因为要做比赛所以倒腾了<a href="https://openwrt.org/">OpenWrt</a>倒腾了不到一天，做个小的记录。</p>
+
+<p>前天上网买的路由器昨天就到货了，淘宝，33，硬改了的。16M闪存64内存好像。</p>
+
+<p>昨天和店家交流了一下，店家人真的不错。然后我就开始把店家装好的操作系统重装，这次买的路由器是可以刷官方原版的，我就下载了一个最新版的<a href="http://downloads.openwrt.org/chaos_calmer/15.05/">chaos_calmer</a>。</p>
+
+<p>什么是OpenWrt，简单的说，就是在你的路由器里面装个Linux操作系统。装上Linux的操作系统，是吧，你们懂得。基本上啥都能干了。</p>
+
+<p>如果你家用的是极路由或者是小米路由，你要清楚，那都是深度定制的OpenWrt…</p>
+
+<p>我倒腾了如下几个东西。一，中继。二，jump gfw。三，8021x校园网拨号。具体如下。</p>
+
+<h2 id="预备">预备</h2>
+<ol>
+  <li>首先你得有个硬件能刷操作系统的路由器。我建议某宝买硬改的，很便宜。</li>
+  <li>在ubuntu中，操作系统更新和安装软件用的是apt-get，在OpenWrt里用的是opkg(我觉得是OpenWrt Package的缩写)</li>
+  <li>第二步可以联网进行操作，也可以本地安装。当然我一直觉得联网的好，不用编译配置啥的了…</li>
+  <li>刚刷完操作系统的时候路由器的无线网默认是关闭的，需要登录打开。</li>
+  <li>因为是操作系统，所以我们可以通过ssh root@192.168.1.1来对操作系统进行操作。</li>
+  <li>刷完路由器的那个web界面叫luci。下文会用到。</li>
+  <li>没找到中文语言包，所以下文全是英文。</li>
+</ol>
+
+<h2 id="中继">中继</h2>
+<p>OpenWrt可以作为无线中继。在此感谢班长和姜导提供该技能包。</p>
+
+<p>所谓无线中继，就是你用OpweWrt连接无线网，然后再把这个无线网的信号扩展了。这样就解决了一个路由器信号不够强的问题。其次，前文说道，OpenWrt是个Linux的操作系统，我们安装软件需要让路由器联网。</p>
+
+<p>让路由器联网有两种方式，一种直接插网线到lan口。事实证明这样我就找不到路由器的ip了…</p>
+
+<p>在咨询了班长之后我选择了无线中继的方式。</p>
+
+<p>这有篇<a href="http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS">百度文库的教程</a>写得很详细了我就不对步骤进行赘述了（百度文库还能有这种好材料…）因为我刷的是最新的cc版本路由器，所以界面不太一样，但是没啥差别。我只强调一个问题。</p>
+
+<p>在第一步里，一定要设置lan口的ip，不能在同一个网段。我设置成192.168.10.1，设置完成之后，OpenWrt路由器会通过上级路由器获得一个ip，通过OpenWrt这个路由连接的设备，ssh的ip地址变成192.168.10.1，web访问也变成192.168.10.1。</p>
+
+<p>全部设置完就可以通过OpenWrt路由器上网了，此时ssh到OpenWrt，发现已经可以ping了。</p>
+
+<h2 id="jump-gfw">jump gfw</h2>
+<p>前几天发朋友圈问了个敏感问题，没想到那么多人回复…</p>
+
+<p>我现在是要入党的人，但是我又是程序员，有时候确实不得不那什么。</p>
+
+<p>所以在此也说一下，你们有需求可以私聊我，我很乐意帮忙，具体手机和电脑怎么做我就不写了。路由器也是因为要做比赛才倒腾的。</p>
+
+<p>我用的是shadowsocks的方式，也可以用vpn，我们工作室的极路由提供了vpn的接口，表示vpn太难搭建。</p>
+
+<p><a href="https://github.com/shadowsocks/openwrt-shadowsocks">openwrt-shadowsocks</a>Github地址。</p>
+
+<p>首先下载预编译的ipk到本地安装。在<a href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.3-33429ad/">shadowsocks-libev</a>找到对应的机型。我的是ar71xx，然后找到那个下载次数最多的shadowsocks-libev-spec版本。这个是针对OpenWrt的优化版本。</p>
+
+<p>下载完毕之后，通过scp命令上传到OpenWrt上，先<code class="highlighter-rouge">opkg update</code>，这一步是更新源，和我们ubuntu的update一样。</p>
+
+<p>接着</p>
+
+<p><code class="highlighter-rouge">opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk</code></p>
+
+<p>安装，他会自动的把需要的依赖包一并下载了。到这就完成了对ss的安装。</p>
+
+<p>在shadowsocks-libev-spec从v1.5.2开始可以使用luci配置界面。所以我就找了一下luci的package，所有的package都在<a href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/packages/">packages列表</a>。luci-app-shadowsocks-spec_1.3.7-1_all.ipk我的叫这个，我就下载了然后继续scp上传，然后</p>
+
+<p><code class="highlighter-rouge">opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk</code></p>
+
+<p>之后登陆web界面，这时候就有可视化的配置界面了。</p>
+
+<p><img src="/images/openwrt/openwrt.png" alt="openwrt" /></p>
+
+<p>输入你的ss账号密码就可以了。但是需要在最下面添加ignore list，让国内的网站直接连接网络，不然的话像我，就没法看nba直播了，很多视频优酷什么的也不能看了…</p>
+
+<p>这一步其实是关键的，新建一个后缀为list的文件，然后输入这串命令</p>
+
+<p><code class="highlighter-rouge">wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' &gt; /dev/ignore.list</code></p>
+
+<p>然后把ignore的路径设置到你配置的那个文件就可以了。</p>
+
+<p>这时候在开腾讯nba就能看直播了…我简直，为了看球什么都干得出来。然后再连接路由器就可以Jump gfw了~</p>
+
+<h2 id="8021x校园网拨号">8021x校园网拨号</h2>
+<p>不过我们不用更换源，首先我们需要</p>
+
+<p><code class="highlighter-rouge">opkg remove wpad-mini</code></p>
+
+<p>然后<code class="highlighter-rouge">opkg install wpad</code>和<code class="highlighter-rouge">opkg install wpa-cli</code>。</p>
+
+<p>然后配置8021x的文件就可以上网了。</p>
+
+<p>因为我走了中继，所以这个没有具体实践到拨号，只实践到安装依赖包。</p>
+
+<p>具体参考迪哥的博客<a href="http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html">极路由root并8021x校园网拨号经验分享</a></p>
+
+<h2 id="结尾">结尾</h2>
+<blockquote>
+  <p>请合理利用互联网，不要对国家安全造成任何威胁！</p>
+</blockquote>
+
+<h2 id="参考链接">参考链接</h2>
+<ol>
+  <li><a href="http://wenku.baidu.com/link?url=X8GEcVGOxcygQFB3EmYr1pfvLFbn_JvY4-7aGNoBft2ykQCnd8-yTAVybONuVi7X-dhGqmgIHYKxGyI_v6MlnXxERGFTwGz8h_uSouBK4tS">Openwrt无线中继教程</a></li>
+  <li><a href="http://cindyfn.com/jiluyou/2015/02/04/ji-lu-you-8021.html">极路由root并8021x校园网拨号经验分享</a></li>
+  <li><a href="https://github.com/shadowsocks/openwrt-shadowsocks">openwrt-shadowsocks</a></li>
+  <li><a href="http://blog.tshine.me/openwrt%E4%B9%8Bshadowsocks%E6%9B%B4%E6%96%B0ignore-list.html">OpenWRT之Shadowsocks更新ignore.list</a></li>
+</ol>
+:ET

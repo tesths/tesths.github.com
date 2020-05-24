@@ -1,0 +1,202 @@
+I"�S<h2 id="for-cm-and-plusub">FOR CM AND PLUSUB</h2>
+
+<h2 id="废话">废话</h2>
+<blockquote>
+  <p>开发iOS距离一年还有四个月。block的文章看了很多。也在项目中使用了，但是使用率很低，仅限于最最简单的界面传值。</p>
+</blockquote>
+
+<blockquote>
+  <p>我最近处于一个深度学习和补作业做实验的阶段(重点是补作业和做实验)，而且经历了两个项目现在对于OC的理解又更进了一步。于是抽时间把之前下载的关于block的视频又翻出来看了一下。有一些感受写出来，以便CM和PLUSUB以后的iOSer可以很快的学习到关于block的使用。以后这样的文章都会在标题加一个FOR CM AND PLUSUB。</p>
+</blockquote>
+
+<h2 id="概述">概述</h2>
+<blockquote>
+  <p>block就是闭包，可以用来回调。</p>
+</blockquote>
+
+<blockquote>
+  <p>再简单一点，指向函数的指针。</p>
+</blockquote>
+
+<blockquote>
+  <p>我现在只会简单的使用block，下午写了个demo利用block封装了afnetworking然后在另一个界面调用afnetworking的请求。当然不复杂。</p>
+</blockquote>
+
+<blockquote>
+  <p>上代码吧，不然再废话都解释不清楚什么是block。</p>
+</blockquote>
+
+<h2 id="part1-block的简单定义"><em>part1 block的简单定义</em></h2>
+<p>我现在定义一个简单的block。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">myBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//1</span>
+<span class="n">myBlock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"---%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//2</span>
+<span class="p">};</span>
+<span class="n">myBlock</span><span class="p">(</span><span class="s">@"11111"</span><span class="p">);</span><span class="c1">//3</span>
+<span class="c1">// Outputs:---11111</span></code></pre></figure>
+
+<p>可以这么理解，我定义了一个返回值为void类型的block。void后面跟了一个函数，但是这个函数函数名是以^开头的，需要用括号包起来，参数也需要用括号包起来。参数可以是一个int类型，可以是一个NSString类型，还可以是一个函数！可以是多个参数还可以是一个函数。当然如果是int类型的block就需要return一个返回值了。</p>
+
+<p>然后我们开始对这个void类型的函数进行定义。就是令它等于一个“^+参数”然后里面像定义一个函数一样就行了。
+在调用这个block的时候就直接就myBlock加参数就可以了。</p>
+
+<p>我们可以打断点来看一下整个block的执行顺序。我在代码后面加了标示。</p>
+
+<p>执行顺序是1 3 2，可以看到myBlock没有按照程序执行的顺序来调用而是在调用之后执行了2的代码。这个例子可能不那么明显，但是可以开始初步理解回调。</p>
+
+<h2 id="part2-传参block"><em>part2 传参block</em></h2>
+<p>下面把难度加大一点，我们把block当参数传。然后看一个block的例子。
+首先来回顾一个c语言里伟大的typedef，我们开头会利用typedef定义一个block。如果不利用typedef定义一个block，那么函数传参的时候会写很多代码。一会我会详述。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import "ViewController.h"
+</span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">^</span><span class="n">MyBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">);</span><span class="c1">//typedef定义一个block</span>
+
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="n">MyBlock</span> <span class="n">tblock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"-----%@"</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span><span class="c1">//1</span>
+    <span class="p">};</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">testBlock</span><span class="p">:</span><span class="n">tblock</span><span class="p">];</span><span class="c1">//2</span>
+<span class="p">}</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">testBlock</span><span class="p">:(</span><span class="n">MyBlock</span><span class="p">)</span><span class="nv">mBlock</span>
+<span class="c1">//如果开始没有用typedef定义的话，此处的函数变为- (void)testBlock:(void(^)(NSString *str))myblock
+//简单的说格式就是 “返回值 + (^) + 参数 + 名字”
+</span><span class="p">{</span>
+    <span class="n">mBlock</span><span class="p">(</span><span class="s">@"1111"</span><span class="p">);</span><span class="c1">//3</span>
+<span class="p">}</span>
+<span class="c1">// Outputs:-----1111</span></code></pre></figure>
+
+<p>在上面的代码中，我们写了一个testBlock的函数，将我们的tblock作为参数传到了testBlock函数里面，然后再testBlock里用mBlock调用了我们所写的MyBlock这个函数。</p>
+
+<p>打断点看一下整体的运行流程，2 3 1。这里可以更加明显理解“回调”的含义。</p>
+
+<h2 id="part3-点击button触发block"><em>part3 点击button触发block</em></h2>
+<p>经历了上面两个part基本上应该对block有个简单的理解。下面再加一点难度，用按钮触发一个回调来改变按钮的颜色。</p>
+
+<p>不多解释，直接上代码。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import "ViewController.h"
+</span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">^</span><span class="n">MyBlock</span><span class="p">)(</span><span class="n">UIColor</span> <span class="o">*</span><span class="n">color</span><span class="p">);</span>
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">UIButton</span> <span class="o">*</span><span class="n">testbtn</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">testbtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nf">buttonWithType</span><span class="p">:</span><span class="n">UIButtonTypeSystem</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">testbtn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">testbtn</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">greenColor</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">testbtn</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">testbtn</span> <span class="nf">addTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">action</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">testfunc</span><span class="p">)</span> <span class="n">forControlEvents</span><span class="o">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">testfunc</span>
+<span class="p">{</span>
+    <span class="n">MyBlock</span> <span class="n">myblock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">UIColor</span> <span class="o">*</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">self</span><span class="p">.</span><span class="n">testbtn</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">testBlock</span><span class="p">:</span><span class="n">myblock</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">testBlock</span><span class="p">:(</span><span class="n">MyBlock</span><span class="p">)</span><span class="nv">myBlock</span>
+<span class="p">{</span>
+    <span class="n">UIColor</span> <span class="o">*</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">redColor</span><span class="p">];</span>
+    <span class="n">myBlock</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="part4-利用回调分离afnetwork的请求"><em>part4 利用回调分离afnetwork的请求</em></h2>
+<p>直接上代码了。</p>
+
+<p>TestNetworkViewController是afnetwork使用的地方。
+TestViewController是我们需要调用网络请求的地方。
+SearchModel是一个model，我用来解析数据的。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//  TestNetworkViewController.h</span>
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;
+#import "SearchModel.h"
+</span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">^</span><span class="n">GetModel</span><span class="p">)(</span><span class="n">SearchModel</span> <span class="o">*</span><span class="n">model</span><span class="p">);</span>
+<span class="k">@interface</span> <span class="nc">TestNetworkViewController</span> <span class="p">:</span> <span class="nc">UIViewController</span>
+<span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUrl</span><span class="p">:(</span><span class="n">GetModel</span><span class="p">)</span><span class="nv">getmodel</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="c1">//TestNetworkViewController.m</span>
+<span class="cp">#import "TestNetworkViewController.h"
+</span><span class="k">@interface</span> <span class="nc">TestNetworkViewController</span> <span class="p">()</span>
+<span class="k">@end</span>
+<span class="k">@implementation</span> <span class="nc">TestNetworkViewController</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUrl</span><span class="p">:(</span><span class="n">GetModel</span><span class="p">)</span><span class="nv">getmodel</span>
+<span class="p">{</span>
+    <span class="n">AFHTTPRequestOperationManager</span> <span class="o">*</span><span class="n">manager</span> <span class="o">=</span> <span class="p">[</span><span class="n">AFHTTPRequestOperationManager</span> <span class="nf">manager</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">manager</span> <span class="nf">GET</span><span class="p">:</span><span class="s">@"http://xxx.xx.xxx.xx:xxxx/app/search_haosou"</span> <span class="nf">parameters</span><span class="p">:@{</span><span class="s">@"keyword"</span><span class="o">:</span><span class="s">@"android"</span><span class="p">}</span> <span class="n">success</span><span class="o">:^</span><span class="p">(</span><span class="n">AFHTTPRequestOperation</span> <span class="o">*</span><span class="n">operation</span><span class="p">,</span> <span class="n">id</span> <span class="n">responseObject</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"JSON: %@"</span><span class="p">,</span> <span class="n">responseObject</span><span class="p">);</span>
+	<span class="n">SearchModel</span> <span class="o">*</span><span class="n">service</span> <span class="o">=</span> <span class="p">[</span><span class="n">MTLJSONAdapter</span> <span class="nf">modelOfClass</span><span class="p">:</span><span class="n">SearchModel</span><span class="p">.</span><span class="n">class</span> <span class="nf">fromJSONDictionary</span><span class="p">:</span><span class="n">responseObject</span> <span class="n">error</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+	<span class="n">getmodel</span><span class="p">(</span><span class="n">service</span><span class="p">);</span>
+    <span class="p">}</span> <span class="n">failure</span><span class="o">:^</span><span class="p">(</span><span class="n">AFHTTPRequestOperation</span> <span class="o">*</span><span class="n">operation</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Error: %@"</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">}];</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+
+<span class="c1">//  TestViewController.h</span>
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;
+#import "SearchModel.h"
+</span><span class="k">@interface</span> <span class="nc">TestViewController</span> <span class="p">:</span> <span class="nc">UIViewController</span>
+<span class="k">@end</span>
+
+<span class="cp">#import "TestViewController.h"
+#import "TestNetworkViewController.h"
+#import "SearchModel.h"
+</span><span class="k">@interface</span> <span class="nc">TestViewController</span> <span class="p">()</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">SearchModel</span> <span class="o">*</span><span class="n">test</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">TestViewController</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="n">UIButton</span> <span class="o">*</span><span class="n">testBtn</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIButton</span> <span class="nf">buttonWithType</span><span class="p">:</span><span class="n">UIButtonTypeSystem</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">testBtn</span> <span class="nf">setTitle</span><span class="p">:</span><span class="s">@"test"</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">testBtn</span> <span class="nf">setTitleColor</span><span class="p">:[</span><span class="n">UIColor</span> <span class="nf">redColor</span><span class="p">]</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+    <span class="n">testBtn</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+    <span class="p">[</span><span class="n">testBtn</span> <span class="nf">addTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">action</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">getUrl</span><span class="p">)</span> <span class="n">forControlEvents</span><span class="o">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">testBtn</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">whiteColor</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">getUrl</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">TestNetworkViewController</span> <span class="nf">getUrl</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">SearchModel</span> <span class="o">*</span><span class="n">model</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">self</span><span class="p">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">model</span><span class="p">;</span>
+	<span class="n">NSLog</span><span class="p">(</span><span class="s">@"</span><span class="se">\n\n\n\n</span><span class="s">%@"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">test</span><span class="p">);</span>
+    <span class="p">}];</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="总结">总结</h2>
+<blockquote>
+  <p>首先还是得说一下我这里只是演示了最最简单的block使用，因为作为一个iOS开发者不会block，那么有一大半的代码是看不懂的，在后面理解RAC的时候也会出现很大的问题。所以这里我只是做了简单的说明，至于在block里为什么不能调用self，自从segmentfault上有人问过之后我答错之后现在也算是理解了一部分了，但是牵扯到了内存回收的问题，我还需要一段时间来消化。消化完之后会继续写博客的。</p>
+</blockquote>
+
+<blockquote>
+  <p>总之，block非常的有用，初期写block非常的难过，但是难过过了也就慢慢会喜欢上block的。</p>
+</blockquote>
+
+<h2 id="post-credits-scene">post-credits scene</h2>
+<blockquote>
+  <p>最近实在是忙的不可开交，一星期两场考试四个实验。还欠了人jobdeer.com一篇博客还没写，人送的书都没时间看。抽时间还要补起来。</p>
+</blockquote>
+
+<blockquote>
+  <p>最近博客的更新频率也是大大降低…唉。都是泪。</p>
+</blockquote>
+
+<blockquote>
+  <p>先写到这了。</p>
+</blockquote>
+:ET

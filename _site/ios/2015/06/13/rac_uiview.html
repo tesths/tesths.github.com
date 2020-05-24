@@ -52,6 +52,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -86,10 +88,10 @@
 <h2 id="在uibutton上的使用"><code class="highlighter-rouge">在UIButton上的使用</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[[</span><span class="n">self</span><span class="p">.</span><span class="n">testBtn</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">]</span>
-                            <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nl">subscribeNext:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">TestViewController</span> <span class="o">*</span><span class="n">testVC</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TestViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
     <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">testVC</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
-<span class="p">}];</span></code></pre></figure>
+<span class="err">}</span><span class="p">];</span></code></pre></figure>
 
 <p>在这里，对uibutton添加了一个rac_signalForControlEvents的方式，就不用利用addtarget的方式来再写一个方法来进行对uibutton添加点击事件了。</p>
 
@@ -115,13 +117,13 @@
 我把中间的两句核心代码贴出来。self是因为我继承了一个textfield先进行功能添加和封装。所以self就是代指一个textfield了。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[[</span><span class="n">self</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventEditingDidBegin</span><span class="p">]</span> 
-                    <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">editing</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nl">subscribeNext:</span><span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">editing</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">self</span><span class="p">.</span><span class="n">bottomBorder</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">blackColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
-<span class="p">}];</span>
+<span class="err">}</span><span class="p">];</span>
 <span class="p">[[</span><span class="n">self</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventEditingDidEnd</span><span class="p">]</span> 
-                    <span class="nf">subscribeNext</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">editing</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nl">subscribeNext:</span><span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">editing</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">self</span><span class="p">.</span><span class="n">bottomBorder</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="nf">grayColor</span><span class="p">].</span><span class="n">CGColor</span><span class="p">;</span>
-<span class="p">}];</span></code></pre></figure>
+<span class="err">}</span><span class="p">];</span></code></pre></figure>
 
 <p>其实这两句是可以用addtarget的方式来添加的，但是我选择了用RAC的方式，更为简单也更为容易理解。当textfield被选中的时候，下面的borderline会变成黑色，当结束选择的时候，变成灰色。(其实当选择的时候borderline应该还要加粗)。</p>
 

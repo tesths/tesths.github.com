@@ -52,6 +52,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -180,12 +182,12 @@
             <span class="k">return</span> <span class="n">RACTuplePack</span><span class="p">(</span><span class="n">responseObject</span><span class="p">,</span> <span class="nb">nil</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}]</span>
-             <span class="nf">catch</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+             <span class="nl">catch:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
                  <span class="n">DebugLog</span><span class="p">(</span><span class="s">@"</span><span class="se">\n</span><span class="s">===========response===========</span><span class="se">\n</span><span class="s">%@:</span><span class="se">\n</span><span class="s">%@"</span><span class="p">,</span> <span class="n">aPath</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
                  <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nf">showError</span><span class="p">:</span><span class="n">error</span><span class="p">];</span>
              <span class="p">}]</span> <span class="n">replayLazily</span><span class="p">];</span>
     <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<span class="err">}</span></code></pre></figure>
 
 <p><code class="highlighter-rouge">这是对返回值的处理</code></p>
 

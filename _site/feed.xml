@@ -6,9 +6,307 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jul 2018 09:34:08 +0800</pubDate>
-    <lastBuildDate>Sun, 15 Jul 2018 09:34:08 +0800</lastBuildDate>
-    <generator>Jekyll v3.7.3</generator>
+    <pubDate>Sun, 24 May 2020 10:21:15 +0800</pubDate>
+    <lastBuildDate>Sun, 24 May 2020 10:21:15 +0800</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>关于 Uranus 的一些事情</title>
+        <description>&lt;p&gt;Uranus 是我做的第一款尝试收费的软件。它的主要功能是在 Mac 上下载 Instagram 以及下载后的素材管理。我知道这是一个及其小众的需求，不过我有时候自己有下载的需求，加上我觉得 Instagram 下载是一个一直都会存在的需求，就做了。大概是从 8 月底开始的项目，做到 11 月底，3 个月，磨出来一个 App，不说代码层面的，至少做出来的样子我很满意，和我一开始的预期差不多。功能上目前也没有测试出来 bug。&lt;/p&gt;
+
+&lt;p&gt;至于它能给我带来多少收入，哎，不清楚，可能没多少，想让这个 App 实现盈利，还有很长的路要走。我一开始想的确实简单了。不扯这些了，聊聊 App。&lt;/p&gt;
+
+&lt;h2 id=&quot;关于名字&quot;&gt;关于名字&lt;/h2&gt;
+
+&lt;p&gt;起名字一直是我很痛苦的事情，Uranus 是天王星的意思。用星座是因为玩的很好的一个朋友的网名是星座，突然有一天我觉得星座不错，如果能做十二个星座的 App 岂不是很帅气！而且这样减轻了后续做 App 起名字的负担…所以就用了，至于为什么是天王星，因为它是太阳系八大行星之一，就这么简单。&lt;/p&gt;
+
+&lt;h2 id=&quot;关于-logo&quot;&gt;关于 Logo&lt;/h2&gt;
+
+&lt;p&gt;这个图标也是每次做 App 的大问题，之前有做过 Twitter 转 Instagram 的账户，就用了很喜欢的明星的头像的主色调加上一个下的箭头代表下载。完成了这个 Logo。不满意，但是至少表达清楚了意思。&lt;/p&gt;
+
+&lt;h2 id=&quot;关于功能&quot;&gt;关于功能&lt;/h2&gt;
+
+&lt;p&gt;Uranus 实际上可以拆解成两个部分。下载部分，素材管理部分。实际上可以单独拆开，原计划只有下载功能，但是 App Store 不给上架。再加上和朋友聊了下，如果可以管理下载好的素材不是很好吗。然后就想着把完成度做高点，加上了素材管理。至少对于我个人来说，我希望这个软件可以实现的是把 Instagram 作为一个灵感库，所以素材管理也很重要。主要这样也显的高端一点。&lt;/p&gt;
+
+&lt;p&gt;下载功能上支持复制 Instagram 网址进行自动下载，也支持手动下载（可以设置快捷键）。下载类型支持普通的时间线，highlights 和 story，图像和视频都支持。&lt;/p&gt;
+
+&lt;p&gt;素材管理上，支持提取普通时间线的文字选择和复制，以及图片的主色调复制，支持批量选中后复制和导出。支持删除功能。&lt;/p&gt;
+
+&lt;h2 id=&quot;价格的问题&quot;&gt;价格的问题&lt;/h2&gt;
+
+&lt;p&gt;Mac 上下载 Instagram，一想就是个小到不能再小的需求。所以我和朋友说，如果这个软件能给我带来 1000 元的收入，我就满足了…比较了一下市面上的软件，比较的软件很多，比如大名鼎鼎的 Eagle，Flume，Grids，我觉得我 6.99 美元 1 个激活码真的不贵。至于价格的问题，这只是我的第一次尝试。我暂时不会放弃独立开发这条路的。&lt;/p&gt;
+
+&lt;p&gt;肯定有人说，啊，你能收入 1000 元就满足了吗？当然不是，我希望可以收入 3000 元，开发三个月，一个月 1000 块钱，对于我来说基本可以回本。足够支持我下一个 App 的开发了…最主要的是可以交代我的老父亲不让我去考公务员…而且对于我的信心肯定是一个大的提升。&lt;/p&gt;
+
+&lt;h2 id=&quot;优势是什么&quot;&gt;优势是什么&lt;/h2&gt;
+
+&lt;p&gt;比起 Eagle，肯定没有那么强大的储存能力以及多平台支持，但是我的支持 Instagram 所有的类型下载。比起 Flume，我的只能下载，但我兼容 Flume 的下载。比起 Grids，我觉得我做的比它好看。我还提供了 Highlights 的下载，这个是市面上很少的。比起免费的 chrome 插件，我不卡顿，而且提供了管理。最重要的是，我比他们都便宜。&lt;/p&gt;
+
+&lt;h2 id=&quot;后续的计划&quot;&gt;后续的计划&lt;/h2&gt;
+
+&lt;p&gt;其实对于 Uranus 我目前没有特别大的功能更新计划，前期会主要在性能，稳定性以及小功能的完善上下功夫，我要让它可以稳定的运行一段时间再筹备大功能的开发。大的功能也有计划，但是大概率就是以另一种形式呈现，比如拆分开的插件形式这种，我还没有详细的计划，但是有。&lt;/p&gt;
+
+&lt;p&gt;我这个人很实诚，这是我的第一次收费尝试，我的心里收入目前是 1000 元，如果超过 1000 元就是 3000 元，理由前文已经说了，不再赘述。&lt;/p&gt;
+
+&lt;p&gt;当然后续的计划不仅于此，我在开发这个 Mac App 的过程中，踩了无数的坑，主要是 Mac 开发坑。虽然现在有了 SwiftUI，但是在我调研后发现，SwiftUI 对 Mac 来说还没有那么好，原生的 Mac 开发一定还是未来 2-3 年的主流。后面我会把我踩的坑逐步分享出来，让更多的人了解 Mac App 的 developerment。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;Uranus 无法在 Mac App Store 上架，只能独立分发，今天文章发出去就算是正式发布 App 了。下载地址是 &lt;a href=&quot;https://creamo.studio/uranus/Uranus.dmg&quot;&gt;Uranus&lt;/a&gt;，提供了免费的 7 天下载。&lt;/p&gt;
+
+&lt;p&gt;也欢迎访问我们工作室的网站，目前我们工作室就我一个人，网址是 &lt;a href=&quot;https://creamo.studio/&quot;&gt;Creamo Studio&lt;/a&gt;，工作室 Logo 想法已经有了，但是没画出来，所以也还待定。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/instagram/mac/2019/12/04/uranus.html</link>
+        <guid isPermaLink="true">http://localhost:4000/instagram/mac/2019/12/04/uranus.html</guid>
+        
+        
+        <category>instagram</category>
+        
+        <category>mac</category>
+        
+      </item>
+    
+      <item>
+        <title>Workflow 下载 Instagram 图像及 Story（5.24 更新）</title>
+        <description>&lt;h2 id=&quot;524-更新&quot;&gt;5.24 更新&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Instagram 单独下载一条也需要登录了，单独下载一条设置 Cookie 的方式同 Story。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在查询了一些资料之后，我找到了 Instagram Story 的下载方式，并根据这个方式完成了 Workflow 的版本。感谢 &lt;a href=&quot;https://github.com/tensojka/instastories-backup&quot;&gt;instastories-backup&lt;/a&gt;项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;原理&quot;&gt;原理&lt;/h2&gt;
+
+&lt;p&gt;Instagram 是需要登录验证的，但实际经过我的测试，Instagram 只会检测 cookie 和 user-agent。那么只要在网络请求的 headers 加入 cookie 和 user-agent 实际上就可以了。&lt;/p&gt;
+
+&lt;p&gt;user-agent 是可以直接伪造的，而 cookie 值，需要通过网络版本的 chrome 获取。&lt;/p&gt;
+
+&lt;p&gt;在这个地方，cookie 建议使用自己的，或者是专门注册一个帐号用于下载。如果 cookie 泄露，理论上可以利用 cookie 对相应的用户进行数据篡改。&lt;/p&gt;
+
+&lt;h2 id=&quot;获取-cookie&quot;&gt;获取 cookie&lt;/h2&gt;
+
+&lt;p&gt;打开 Chrome，进入到 www.instagram.com 并登录。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Windows 用户按 f12，Mac 用户按 option+cmd+j，打开控制台。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;此时刷新页面，找到 www.instagram.com 的请求。找到 cookie，然后找到 sessionid。复制 sessionid=140122… 即可。如图所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后把这么一长串，粘贴到 Workflow 的 cookie 里即可进行下载操作。&lt;/p&gt;
+
+&lt;p&gt;普通下载版本截图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins3.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Story 版本下载截图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins1.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
+
+&lt;p&gt;cookie 一定不能泄漏，不然会造成安全问题。&lt;/p&gt;
+
+&lt;p&gt;每个 cookie 的有效期是 90 天，需要时常更新。&lt;/p&gt;
+
+&lt;p&gt;这里通过的是 Instagram 的私有 API 进行操作，所以 workflow 单人单用以免出现滥用。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Aug 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/ins/2018/08/06/ins.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ins/2018/08/06/ins.html</guid>
+        
+        
+        <category>ins</category>
+        
+      </item>
+    
+      <item>
+        <title>PineconeSuppress 上架 Mac App Store 及沙盒机制的部分说明</title>
+        <description>&lt;p&gt;距离上次写博客过去了一个月。这一个月经历了挣扎的上架 MAS。还好我没放弃，终于在昨天上架了 MAS。&lt;/p&gt;
+
+&lt;p&gt;我将凭借我的记忆来叙述这个上架过程中一些对于沙盒机制的理解。以及整个上线过程中存在的坑。&lt;/p&gt;
+
+&lt;h2 id=&quot;第三方-executable-file-的签名&quot;&gt;第三方 executable file 的签名&lt;/h2&gt;
+
+&lt;p&gt;上文提到，我在整个软件的压制过程中，使用的是 ffmpeg 官网的可执行文件压制。而像 Mac 上著名的 INNA 是采用的 ffmpeg 的 .h 头文件 + 部分 objective-c 代码来实现部分和 ffmpeg 相关的代码。&lt;/p&gt;
+
+&lt;p&gt;我承认我不是一个好的工程师，我也承认我觉得使用 ffmpeg 的 c 文件进行二次开发是更好的选择。但是如果我把我的精力放在研究 c 代码上，那这个工程量对于我来说太大，以及我觉得直接使用 ffmpeg 并不是不可以。&lt;/p&gt;
+
+&lt;p&gt;那么采用 ffmpeg 可执行文件作为我们的主要工具，就有一个很重要的问题，那就是 ffmpeg 的签名问题。MAS 版本的所有文件都要求进行签名，我第一次无法上传到 MAS 的问题就是 ffmpeg 没有签名。这里的签名就直接使用 codesign 签名是可以的。除此之外，对于 ffmpeg 要求有一个单独的 entitlement 文件，而这个文件里面应该填写的是&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;plist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;com.apple.security.inherit&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;com.apple.security.app-sandbox&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后在签名的使用 codesign 和 entitlement 签名。&lt;/p&gt;
+
+&lt;p&gt;这就完成了第一步，对于第三方可执行文件的签名，如果这个地方没有签名，连上传到 MAS 都是会被阻碍的。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何理解沙盒机制&quot;&gt;如何理解沙盒机制&lt;/h2&gt;
+
+&lt;p&gt;我将用五次被拒绝的经历来说明我对沙盒机制的理解。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-0-次被拒构建版本不显示图标&quot;&gt;第 0 次被拒（构建版本不显示图标）&lt;/h3&gt;
+
+&lt;p&gt;在我完成第一次上传之后，我的构建版本处一直不显示图标，这和之前的情况是不一样的。这个地方的坑在于可以使用构建版本，但是就是不显示图标…因为我之前经历过不显示图标的问题，最终联系了苹果客服才知道调用了私有 API，但是这次确实是一切正常，就是不显示图标。这个坑经历的时间最长，让我一直觉得是我调用了不该调用的接口。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-1-次被拒-7月7日&quot;&gt;第 1 次被拒 7月7日&lt;/h3&gt;
+
+&lt;p&gt;提交苹果审核之后，我的第一次拒绝在 7.7 这一天出现了。&lt;/p&gt;
+
+&lt;p&gt;主要问题如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/1.png&quot; alt=&quot;mas-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为了可以让搜索引擎更好的搜索到相同的问题，我把文字版本的关键部分贴出来&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Specifically, we found that when the user closes the main application window there is no menu item to re-open it.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;第一个问题好解决，不支持 MOV 的问题，我在 drag and drop 里增加一个判断就解决了。这个 window reopen 的问题我开始着手解决。&lt;/p&gt;
+
+&lt;p&gt;在苹果的 Human Interface Guidelines 里是可以使用点击 Dock 图标来打开的，于是我增加了点击 Dock 图标的方法。&lt;/p&gt;
+
+&lt;p&gt;于此我的两个问题全部解决，重新提交审核。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-2-次被拒-7月9日&quot;&gt;第 2 次被拒 7月9日&lt;/h3&gt;
+
+&lt;p&gt;主要问题如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/2.png&quot; alt=&quot;mas-2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/3.png&quot; alt=&quot;mas-3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第一个和第二个问题的关键部分&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.downloads.read-write&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这两个 entitlement 文件的声明。&lt;/p&gt;
+
+&lt;p&gt;第三个还是 re-open window 的问题。&lt;/p&gt;
+
+&lt;p&gt;我认为 Download 文件夹是可以随意使用的，而且我已经可以点击 Dock 打开了。于是向苹果方发了一个回执。&lt;/p&gt;
+
+&lt;p&gt;`&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The download folder is the default folder to save the compressed video. So I need the download folder to write permission. And I think the right folder path is &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/username/Downloads&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The reopening event is resolved by add &lt;code class=&quot;highlighter-rouge&quot;&gt;makeKeyAndOrderFront&lt;/code&gt; in Appdelegate. If the user closes the window, he can reopen it by click docker icon. And I already test it.
+`&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后苹果给我了一个详细的回复&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+The Downloads folder is only appropriate for items downloaded from the Internet.
+Additionally, clicking the Dock icon is an insufficient means of restoring the Main Window. We advise implementing a menu item.
+We look forward to reviewing your revised binary.
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Download 文件夹的使用权，只有当具备下载功能的时候才可以使用。而苹果认为，单个窗口的应用，点击 Dock 是一个没效率的打开操作，建议使用快捷键打开。&lt;/p&gt;
+
+&lt;p&gt;于是在这个地方，我把 Download 文件夹换成了 Movie 文件夹，然后参考了 CurrencyX 的方案，在 Menu 里加了一个快捷键启动窗口的方法。重新提交审核。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-3-次被拒-7月11日&quot;&gt;第 3 次被拒 7月11日&lt;/h3&gt;
+
+&lt;p&gt;主要问题如下图。&lt;/p&gt;
+
+&lt;p&gt;第一个和第二个问题的关键部分。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/4.png&quot; alt=&quot;mas-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;关键字&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我依然没有解决 executable 的问题，以及在苹果看来 movies 也是不可以被读写的。&lt;/p&gt;
+
+&lt;p&gt;我删除了 entitlement 中 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt;。重新提交审核。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-4-次被拒-7月11日&quot;&gt;第 4 次被拒 7月11日&lt;/h3&gt;
+
+&lt;p&gt;主要问题如下图。&lt;/p&gt;
+
+&lt;p&gt;第一个和第二个问题的关键部分。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/5.png&quot; alt=&quot;mas-5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;关键字&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在这个地方我将 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write&lt;/code&gt; 删除，然后将压制文件的默认文件夹放在了沙盒里的 cache 文件夹。&lt;/p&gt;
+
+&lt;h3 id=&quot;第-5-次被拒-7月13日&quot;&gt;第 5 次被拒 7月13日&lt;/h3&gt;
+
+&lt;p&gt;主要问题如下图。&lt;/p&gt;
+
+&lt;p&gt;问题关键部分。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/mas/6.png&quot; alt=&quot;mas-6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;关键字&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Your app saves user data to the app's container, which is not user accessible, as documented in the &quot;Container Directories and File System Access&quot; of App Sandbox Design Guide:
+&quot;The container is in a hidden location, and so users do not interact with it directly. Specifically, the container is not for user documents. It is for files that your app uses, along with databases, caches, and other app-specific data.&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;于是在这个地方，我把存储位置设置为一个 NSOpenPanel，让用户选择存储位置，重新提交审核。&lt;/p&gt;
+
+&lt;p&gt;终于审核通过。&lt;/p&gt;
+
+&lt;h3 id=&quot;总结&quot;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;我们来复盘整个过程。总的来说是对 MAS 的沙盒机制理解不清楚。下面我将总结及说明。&lt;/p&gt;
+
+&lt;p&gt;首先我们先说沙盒无关的，就是苹果认为，我们应该在 menubar 设置一个可以打开窗口的方案。或者你就直接把它关掉。&lt;/p&gt;
+
+&lt;p&gt;其次是沙盒问题，在 MAS 的沙盒机制中，Download 文件夹和 Movie 文件夹是不可以被随意使用的，Download 文件夹只有下载功能才可以，而如果使用了 Movie 文件，那么 iTunes 的 movie 也是可以被使用的。（第 2 次和第 3 次和第 4 次被拒绝的原因）&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这个是只有当你的应用需要创建可执行文件，这个可执行文件用于启动服务等的时候才能使用。（第 2 次和第 3 次和第 4 次被拒绝的原因）&lt;/p&gt;
+
+&lt;p&gt;沙盒内部的文件，只能被写，不能被用户读取。（第 5 次被拒绝的理由）&lt;/p&gt;
+
+&lt;p&gt;还有一个关键的问题在于，MAS 沙盒默认会获得你从 NSOpenPanel 读取的那个文件夹的权限，而 Drag 和 Recent 的是沙盒获得了操作这个文件的权限，而不是文件夹！&lt;/p&gt;
+
+&lt;p&gt;所以当我使用 Drag and Drop 的时候是无法写文件的，而当我使用 NSOpenPanel 时候就可以。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;PineconeSuppress 已经上架 MAS。地址是 &lt;a href=&quot;https://itunes.apple.com/cn/app/pineconesuppress/id1398134175?l=zh&amp;amp;ls=1&amp;amp;mt=12&quot;&gt;PineconeSuppress&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;同时开发计划将逐步开放在 &lt;a href=&quot;https://trello.com/b/whpNOtsG/pineconesuppress&quot;&gt;trello&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果有任何问题，欢迎留言。&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/11821632/mac-os-app-sandbox-with-command-line-tool&quot;&gt;mac-os-app-sandbox-with-command-line-tool&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://xujiwei.com/blog/2013/02/embed-third-party-binary-in-sandboxed-mac-app/&quot;&gt;在 Sandboxed Mac App 中嵌入第三方可执行文件&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html&quot;&gt;App Sandbox in Depth&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html&quot;&gt;Enabling App Sandbox&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 15 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</guid>
+        
+        
+        <category>ffmpeg</category>
+        
+      </item>
     
       <item>
         <title>Cocoa 封装 ffmpeg</title>
@@ -68,6 +366,8 @@
         <description>&lt;blockquote&gt;
   &lt;p&gt;本文将不定期补充 ffmpeg 其余压制方案或者命令行使用方法&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;如果有在 Mac 下压制字幕需求的话，可以直接在 Mac App Store 搜索 &lt;a href=&quot;https://apps.apple.com/cn/app/pineconesuppress/id1398134175?l=en&amp;amp;mt=12&quot;&gt;PineconeSuppress&lt;/a&gt;。我将 ffmpeg 进行了可视化的封装，可以更加轻松的在 Mac 下压制字幕哦~&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;这篇博客要感谢蒸包同志！没有蒸包同志的教学就没有这篇博客的输出。以及，要说难确实也有点难度，要说不难，我真的很努力写的白话文加配图了。以及如果需求大我会开发 Mac 可视化版本的压制软件…这是后话。&lt;/p&gt;
 
@@ -567,260 +867,6 @@ end
         <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/life/2016/09/06/kindle.html</link>
         <guid isPermaLink="true">http://localhost:4000/life/2016/09/06/kindle.html</guid>
-        
-        
-        <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>工作室总结</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;这个总结，想到哪写到哪。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;大三下的一学期，感觉整个人和工作室融合的非常之密切。因为接手工作室已经大三下了，大三下存在几个问题：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;如果招新，那么他们只有一学期的成长时间。&lt;/li&gt;
-  &lt;li&gt;工作室濒临垮台。&lt;/li&gt;
-  &lt;li&gt;我自身的时间有限，不可能全部精力放在工作室上。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;面对上面两个问题，在学期初给自己定了几个目标：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;招人，工作室不能死。&lt;/li&gt;
-  &lt;li&gt;如果招到人，尽我最大努力去教他们一些技术上的东西。&lt;/li&gt;
-  &lt;li&gt;尽可能多在工作室呆着。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;对于招人，我只能说很幸运，在詹导可姐还有各位导生的大力帮助下，我们工作室招人的时候尽然出现了工作室坐不下的情况。当然这里大二占了大多数。也有大一的。当时和闫哥想，这么多人，能最后坚持下来的有多少呢。事实证明，淘汰率依然很高，最终留下的人工作室的位置占了一半。很多人坚持了几星期，也有很多人坚持了大半学期，可能因为课业问题放弃了。最终留下的这些人，我相信他们或多或少学到了很多东西。&lt;/p&gt;
-
-&lt;p&gt;如何用一学期的时间去让招来的人在技术上有一个质的飞越，这是我所思考的。对于这一点，我也在学期初定下了几个目标：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;教会他们用谷歌，用 stackoverflow&lt;/li&gt;
-  &lt;li&gt;多看英文资料，多用英文搜索&lt;/li&gt;
-  &lt;li&gt;教会他们用 GitHub&lt;/li&gt;
-  &lt;li&gt;教会他们看源码&lt;/li&gt;
-  &lt;li&gt;如果时间充足，补充一些函数式编程方面的知识&lt;/li&gt;
-  &lt;li&gt;后台从 Java 全面换向 Ruby&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实上面几个实现起来说是简单，其实比我预想的要难一点。就拿用谷歌来说，为了让他们用谷歌，我硬是花大价钱买了路由器，连上路由器就能翻墙。但是难点在于，十几年的百度习惯不可能说改就改。再比如多看英文，有几个人能踏踏实实看英文？大部分人我相信对于英文还是有厌恶感的。看英文都厌烦，用全英文的搜索更是难。看英文烦，那么用stackoverflow和GitHub就会烦。再加上刚学，技术实力达不到，看源码也是很费劲的。&lt;/p&gt;
-
-&lt;p&gt;同时对于我自身来说，面对这么多人，加上我和闫哥还想做一些事情，加上课业，就显得很麻烦。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;在初期的时候，我的精力大多放在培养新人，但是很多时候培养的并不好，我自身的原因也很大，这是我所没有想到的，包括我和闫哥的配合上，也存在很大的问题。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;对于我存在的问题，我去学院工作室和许聚龙聊了一次，和詹导聊了一次。也进行过很多思考，并和闫哥讨论，重新分工等等，做了一些改变。但是由于各方面，更多是自己水平不足能力有限，导致工作室很多事务出现了一些拖延等，这是我所需要在后面的日子检讨的。&lt;/p&gt;
-
-&lt;p&gt;除这些之外，针对工作室之前的问题，我也有以下几个想做改进的地方：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;工作室不是全部学技术的地方，大家的感情也很重要，尤其是负责人和下面人的关系。是为了别人更好，而不是压榨大于感情。&lt;/li&gt;
-  &lt;li&gt;如果实现盈利，钱大家分，无论创业也好，不创业也好，根据劳动力来发工资。作为项目负责人，可以多拿，但是还是要秉承不压榨。&lt;/li&gt;
-  &lt;li&gt;对于盈利的大部分，作为工作室的经费，用于聚餐，学弟学妹们接手工作室之后使用。不会什么都不留下就离开工作室。&lt;/li&gt;
-  &lt;li&gt;我们技术很牛逼，但不是最牛逼的&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以上几点，说我是隐射也好，什么也好，是我想做的一些改变。比如第二点，如果一个项目10万，最后分到真正开发人员手里就两三千甚至更少，不知道还好，如果知道，开发人员心里会怎么想，还能不能踏踏实实的跟着boss干。我不是说不可以压榨，压榨也有一个度。我经历的度，未免是我在学校那么工作室里看到压榨比例最高的了。比如第一点，如果我发自肺腑愿意跟着某个boss干，boss却不给予真心相对，我相信即使是创业团队，也不应该吧。我更是觉得，创业，靠的是大家拧成一股绳，各自分散，能干什么呢？技术也是一样，BAT 再厉害，做不到踏踏实实的去静下来钻研一个技术，阅读源码，技术永远不会提高。&lt;/p&gt;
-
-&lt;p&gt;这是我想去改变的，也是我希望后面工作室的人可以去改变的。&lt;/p&gt;
-
-&lt;p&gt;对于我所提到的上面提到的四方面的目标，这学期基本完成任务。&lt;/p&gt;
-
-&lt;p&gt;工作室没死，活的很好，我们人现在也不少，我也在这学期尽可能的在工作室呆上更多的时间。而且，如果说创业，核心的人肯定是有了。&lt;/p&gt;
-
-&lt;p&gt;甚至这学期最最厉害的，可以说是我们大三的几个，除了我，都找到了很好的实习。&lt;strong&gt;琪姐去了腾讯，闫哥去了搜狐，金妮去了百词斩。&lt;/strong&gt;不能说和我有很大的关系，但是也有那么一点关系吧。这是后面可以去很骄傲的说的，也是工作室很厉害的一个体现。&lt;/p&gt;
-
-&lt;p&gt;在技术上再多说一些。我在用一学期的时间把工作室打造的可以去创业，如果他们有这个新的话。&lt;/p&gt;
-
-&lt;p&gt;举几个例子来说，我们的后台从 Ruby 换到了 Java，这一点杜奎奎的功不可没。Ruby 太适合创业了。再比如，解决问题的能力，经过我一学期疯狂的洗脑，现在虽然很多人不愿意用英文搜谷歌，但是也愿意用中文搜谷歌了。这就意味着，他们解决问题的能力会比一般人强上一大截。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;教会他们用谷歌，用 stackoverflow&lt;/li&gt;
-  &lt;li&gt;多看英文资料，多用英文搜索&lt;/li&gt;
-  &lt;li&gt;教会他们用 GitHub&lt;/li&gt;
-  &lt;li&gt;教会他们看源码&lt;/li&gt;
-  &lt;li&gt;如果时间充足，补充一些函数式编程方面的知识&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;对于我定下的技术上 1-6 的实现，基本上是比较圆满的了。下面分别来说一下。&lt;/p&gt;
-
-&lt;p&gt;对于第一点，除了让工作室的无线网直接可以上谷歌之外，我在最开始的时候经常教他们如何去debug，我是做 iOS 的，但是利用谷歌和stackoverflow，可以很好的弥补技术栈的缺失。比如给张瑞调bug的时候，调了几次，他就意识到，原来英文搜索那么厉害，那么牛逼。在这一点上，我还举行过分享，来证明谷歌比百度好。&lt;/p&gt;
-
-&lt;p&gt;对于 GitHub 的使用，因为没来及做分享，但是花时间写了一篇博客，质量个人感觉还比较高。&lt;/p&gt;
-
-&lt;p&gt;看源码这一点，由于很多能力上的问题，他们的水平可能暂时还打不到，但是我每天说每天说，也很好的给他们洗脑了。&lt;/p&gt;
-
-&lt;p&gt;最后一点，我也进行了分享，给他们说了一点函数式的东西。&lt;/p&gt;
-
-&lt;p&gt;除此之外，我们经常聚餐，我常说，我这学期请你们吃饭的次数，顶上过去我在工作室吃饭次数的总和了，还都是工作室掏钱。我自以为和他们处的都不错，至少我在用心的对待他们，这就可以了。&lt;/p&gt;
-
-&lt;p&gt;这学期做了一个项目，对于分成，很负责人的说，我拿的也就比他们多一两百块钱而已…因为我从对接到各个部分都参与了。剩下的钱，除了聚餐之外，都留给他们用作日常开销了。&lt;/p&gt;
-
-&lt;p&gt;比较负责任的说，算是基本完成了预期的目标。&lt;/p&gt;
-
-&lt;p&gt;中间有一次和迪哥聊了一下，迪哥说我们没有魄力了，不去做东西了，对此我想解释一下。&lt;/p&gt;
-
-&lt;p&gt;首先来说，工作室之前留下的坑，稍微有点大了。技术上，人力上，成长上，都存在很大的问题，我在填，而且我想把这群娃带好，我用了一年半的时间来到现在的水平，我需要用一学期的时间让他们达到，这是需要时间的。而且，工作室不能死在我们手上，说是要交要交，真的就交了？不现实。创业也好，做东西也好，需要看情况来做。不是我不想做，用一学期的时间做别人两学期的事情，这是很耗费精力的。&lt;/p&gt;
-
-&lt;p&gt;当然，这只是说辞，我说了我也存在一些问题，确实也存在，这是我要去改变的，人无完人，我也不是样样精通，所以这学期有什么做的不好的，也需要一些谅解。&lt;/p&gt;
-
-&lt;p&gt;最后还想说一点，给现在的纯技术的工作室。做应用做网站想创业，可以，当然可以，但是难度在逐渐变大，如果有机会我还负责工作室，给我一学期加两个月的时间，我绝对带这个工作室转型。&lt;/p&gt;
-
-&lt;p&gt;下学期，工作室需要过渡的后面的娃们去做了，我也已经尽我最大的努力去给他们营造一个更好的环境和技术栈了。希望他们能很好的发展。&lt;/p&gt;
-
-&lt;p&gt;不过后面的事情谁知道呢？&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 26 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/life/2016/08/26/cm.html</link>
-        <guid isPermaLink="true">http://localhost:4000/life/2016/08/26/cm.html</guid>
-        
-        
-        <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>大三下学期总结</title>
-        <description>&lt;p&gt;有些个文章总得写。&lt;/p&gt;
-
-&lt;p&gt;大三下过的实在是充实到不能更充实。课程是一方面，工作室是一方面，当然这两方面就足够我应付的了。偶尔在加参加个什么比赛，日子就过的浑浑噩噩了。&lt;/p&gt;
-
-&lt;p&gt;再加上大三下，不能保研又不能出国，上课自然而然就显得开始放荡不羁。每天泡在电脑跟前的时间实在是创下了新的记录。我的很多改变来自于工作室，工作室也有很多改变来自于我。这是后话。&lt;/p&gt;
-
-&lt;p&gt;其实大三下是成长比较快的一学期，因为之前的一年半在工作室和学长创业，实在是见到了很多让人觉得心中有力又不知道怎么去表述的感觉。长期的外包做的我每天除了哭累还是哭累。以至于在工作室的时候隔三差五就和琪姐说不想干了。&lt;/p&gt;
-
-&lt;p&gt;但是痛苦总是让人可以有很多蜕变，经历过很多委屈很多不开心，会开始认清这个世界残酷的一面。你愿意掏心掏肺跟着别人干，别人可不会这么觉得，你是下属，就是要压榨你。当然我相信这是个例。当然我希望现实社会这也是个例。&lt;/p&gt;
-
-&lt;p&gt;技术上也是一样，经历了一年半的外包，几乎是全靠自己不断的琢磨，开始逐渐找到正确的学习方式，也开始把自己的一些弯路给小学弟们分享。这也是后话了。&lt;/p&gt;
-
-&lt;p&gt;很久没去做管理才发现自己这方面的才能需要更多的去锻炼了。这学期买了kindle，看了很多书，这一点是这学期非常满意的，看了很多书对自己的各方面都是一个提升的过程。后面这一块也是需要加强的。读书不只是会让个人能力提高，还可以对很多事情的看法产生一个新的理解。&lt;/p&gt;
-
-&lt;p&gt;学习上实在是没啥好说的。这学期精力大多放在工作室上，除了自己学了Swift，参与了T沙龙之外，技术上说实话实在是没有什么提高。倒是各方面都涉及了一点，作为工作室负责人，你不得不去从前端会到后台再到两个客户端。包括我一直很想学的Haskell，这学期也重新捡起来开始学了。暑假也学了一部分。&lt;/p&gt;
-
-&lt;p&gt;这学期还开了公众号，在写作上重新给自己定了目标。也算是大学后面的一个目标。不靠技术吃饭，靠写文字吃饭。如果能做到我会很开心的。&lt;/p&gt;
-
-&lt;p&gt;后面的打算，逐渐打算转方向，计算机的一切，最终都来源于更高深的理论基础，所以后面的重心会更偏向理论一点。&lt;/p&gt;
-
-&lt;p&gt;之前都是感谢信安1班，这学期很好的是，我们每周都会一起打篮球，没事窜寝室闲扯。大家一起锻炼总是好的。这学期几乎是跑了一学期的步，也是我很值得骄傲的一点。&lt;/p&gt;
-
-&lt;p&gt;这学期还要感谢工作室的小学弟们和小学妹们，尤其闫哥琪姐还有金尼。因为我可以自豪的说，我们工作室出了一个搜狐，一个腾讯，一个百词斩，都和我有关系，哈哈。他们的努力是必然的，我的协助也是有一定帮助的这不能否认。&lt;/p&gt;
-
-&lt;p&gt;在工作室看到很多小姑娘总是好的，枯燥的生活总得有点色彩。小学弟们也很努力，至少我现在可以比较放心的觉得工作室不会死了。这也是后话了。&lt;/p&gt;
-
-&lt;p&gt;总之。&lt;/p&gt;
-
-&lt;p&gt;这一学期实在是充实的让我觉得瞬间就没了。&lt;/p&gt;
-
-&lt;p&gt;依旧。&lt;/p&gt;
-
-&lt;p&gt;各种感谢！深鞠躬！爱你们！&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 22 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/life/2016/08/22/year3-second-term.html</link>
-        <guid isPermaLink="true">http://localhost:4000/life/2016/08/22/year3-second-term.html</guid>
-        
-        
-        <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>Huginn 安装备注（持续更新）</title>
-        <description>&lt;h2 id=&quot;安装准备工作&quot;&gt;安装准备工作&lt;/h2&gt;
-
-&lt;p&gt;Huginn 的官方安装指南全部步骤已经经过测试，建议安装时直接复制官方所提供的指令进行安装。如果遇到问题，请查看最下面的 &lt;strong&gt;错误解决方法&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;对于大多数服务器来说，由于配置不够，基本都会出现 “Cannot allocate memory” 问题，也请查看 &lt;strong&gt;错误解决方法&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;1-需要在开始的时候设置主机语言&quot;&gt;1. 需要在开始的时候设置主机语言&lt;/h3&gt;
-
-&lt;p&gt;如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是&lt;/p&gt;
-
-&lt;p&gt;export LC_ALL=en_US.UTF-8 （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）
-export LANGUAGE=en_US.UTF-8&lt;/p&gt;
-
-&lt;h3 id=&quot;2-需要设置时区&quot;&gt;2. 需要设置时区&lt;/h3&gt;
-
-&lt;p&gt;不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。&lt;/p&gt;
-
-&lt;p&gt;sudo dpkg-reconfigure tzdata&lt;/p&gt;
-
-&lt;p&gt;在Huginn官方的安装wiki中，其实有很多安装问题没有具体列出，我在上一篇博客中做了一些总结。在这篇博客中，我会做成一个安装问题的集合。以方便各位的安装。&lt;/p&gt;
-
-&lt;h2 id=&quot;官方-wiki-部分修正以及注释&quot;&gt;官方 wiki 部分修正以及注释&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-官方最开始有一步-import-nodejs-repository&quot;&gt;1. 官方最开始有一步 Import node.js repository…&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;curl -sL https://deb.nodesource.com/setup_0.12&lt;/td&gt;
-      &lt;td&gt;sudo bash -&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 apt-get install nodejs 就可以了。&lt;/p&gt;
-
-&lt;p&gt;因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。&lt;/p&gt;
-
-&lt;h3 id=&quot;2-install-init-script&quot;&gt;2. Install Init Script&lt;/h3&gt;
-
-&lt;p&gt;在这一步中建议直接把&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# web: bundle exec unicorn -c config/unicorn.rb
-# jobs: bundle exec rails runner bin/threaded.rb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这两行的 # 去掉的。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-配置-nginx&quot;&gt;3. 配置 nginx&lt;/h3&gt;
-
-&lt;p&gt;YOUR_SERVER_FQDN 这个改成你的主机ip就可以了。我没有域名不知道域名的怎么弄。&lt;/p&gt;
-
-&lt;p&gt;备注：我没有使用 https ，所以如果有需要 https 自己踩下吧。
-作者很耐心，提 issue 的话很快就能回复，而且问题定位比较准确。提的时候先查看有没有重复的，然后记得用英文就好。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-mysql-安装时不建议装-mysql_secure_installation&quot;&gt;4. Mysql 安装时不建议装 mysql_secure_installation&lt;/h3&gt;
-
-&lt;p&gt;会加强你的密码强度..个人觉得太费事了。&lt;/p&gt;
-
-&lt;h3 id=&quot;5-install-gems-如果报错执行-bundle-install&quot;&gt;5. Install Gems 如果报错，执行 bundle install&lt;/h3&gt;
-
-&lt;p&gt;如标题&lt;/p&gt;
-
-&lt;h2 id=&quot;错误解决方法&quot;&gt;错误解决方法&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-全部安装完毕web打开-css-不显示&quot;&gt;1. 全部安装完毕web打开 css 不显示&lt;/h3&gt;
-
-&lt;p&gt;Rails 静态资源需要编译，不然 css 不显示。我已经提了 issue ，遇到这个问题可以参看这个 issue。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/cantino/huginn/issues/1581&quot;&gt;css and image is not load&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-在-bundle-install-的时候显示-cannot-allocate-memory-等一系列和memory相关的报错&quot;&gt;2. 在 bundle install 的时候显示 “Cannot allocate memory” 等一系列和memory相关的报错&lt;/h3&gt;
-
-&lt;p&gt;简单的说，swap 不够了。具体方法见 &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04&quot;&gt;How To Add Swap on Ubuntu 14.04&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-mysql-设置-innodb-出现-unknown-system-variable-storage_engine&quot;&gt;3. Mysql 设置 Innodb 出现 ‘Unknown system variable ‘storage_engine’’&lt;/h3&gt;
-
-&lt;p&gt;直接在/etc/mysql/my.cnf 中设置&lt;/p&gt;
-
-&lt;p&gt;[mysqld]
-default-storage-engine = InnoDB&lt;/p&gt;
-
-&lt;p&gt;参见：&lt;a href=&quot;http://dba.stackexchange.com/questions/101908/migrate-jira-to-mysql-unknown-system-variable-storage-engine&quot;&gt;Migrate Jira to MySql - Unknown system variable ‘storage_engine’&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 10 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/life/2016/08/10/huginn-install.html</link>
-        <guid isPermaLink="true">http://localhost:4000/life/2016/08/10/huginn-install.html</guid>
         
         
         <category>life</category>

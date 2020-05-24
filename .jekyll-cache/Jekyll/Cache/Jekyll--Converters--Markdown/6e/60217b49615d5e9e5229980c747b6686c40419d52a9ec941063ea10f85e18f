@@ -1,0 +1,124 @@
+I"�&<h2 id="习惯性的废话">习惯性的废话</h2>
+<p>好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。</p>
+
+<p>我知道很多人想看八卦是吧。。我也想写写我最近在干什么，为什么看上去那么忙，动态也有一段时间没更新。有时间写博客在说吧。</p>
+
+<p>因为项目基本上结束，所以有时间研究mvvm，当然我还在学swift。学swift的原因是，它开源了。当然后面还安排了看一部分源码。期待后面满满干货的博客吧！</p>
+
+<p>上次博客说了。我们的ViewModel到底在干啥，两件事情，网络请求，逻辑实现。当然，ViewModel不会那么简单。但是，我们先实现这两个。</p>
+
+<p>那么来吧。</p>
+
+<blockquote>
+  <p>我想大多初始化定义的代码都能看懂，也没有叙述的必要，我主要把我觉得最主要的几个部分叙述一下。</p>
+</blockquote>
+
+<h2 id="代理-protocol">代理 Protocol</h2>
+<p>为什么先说代理。这也是之前和慎哥也说过cell里面有点击事件怎么写。（不知道这么写对不对…后面看一部分源码之后会再聊这个话题，先留坑）代理可以干什么，跨Controller传值。跨Controller调方法。</p>
+
+<p>我们之前写代理，都是在某个Controller里的.h文件最上面创建代理。但实际上，Xcode提供了专门的Protocol文件。之前没有搞明白也是因为我觉得代理必须要再某个文件里声明。</p>
+
+<p>所以，当我们单独声明了一个Protocol文件的时候，就意味着，这个Protocol可以像一个类一样来声明变量了。</p>
+
+<h2 id="raccommand">RACCommand</h2>
+<p>这个东西是做啥的。我只能说我解释不好，因为我没有完全理解这个东西。我只能把我理解的说出来。</p>
+
+<p>我们的按钮都有一个点击事件。当点击的时候出发一个函数。</p>
+
+<p>但是，当我们用了RACCommand的时候，我们的点击事件就可以这么写了。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">self</span><span class="p">.</span><span class="n">pushBtn</span><span class="p">.</span><span class="n">rac_command</span> <span class="o">=</span> <span class="p">[[</span><span class="n">RACCommand</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSignalBlock</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">id</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">];</span>
+<span class="p">}];</span></code></pre></figure>
+
+<p>和我之前写过的这种写法又不一样了。这种写法其实是对button addtarget那个方法的一个rac式的封装。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">[[</span><span class="n">self</span><span class="p">.</span><span class="n">testBtn</span> <span class="nf">rac_signalForControlEvents</span><span class="p">:</span><span class="n">UIControlEventTouchUpInside</span><span class="p">]</span>
+                            <span class="nl">subscribeNext:</span><span class="o">^</span><span class="p">(</span><span class="n">id</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TestViewController</span> <span class="o">*</span><span class="n">testVC</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TestViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nf">pushViewController</span><span class="p">:</span><span class="n">testVC</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="err">}</span><span class="p">];</span></code></pre></figure>
+
+<p>用第一种方法的原因呢，我们可以把点击事件赋值成为一个RACCommand类型的属性。既然可以变成一个属性了，那么就可以重新定义并且赋值。</p>
+
+<h2 id="分离点击事件">分离点击事件</h2>
+<p>我们新建一个FirstViewModel，在FirstViewModel.h中增加一个</p>
+
+<p><code class="highlighter-rouge">@property (strong, nonatomic) RACCommand *excutePush;</code></p>
+
+<p>然后我们让刚刚在FirstViewController里定义的那个pushBtn的rac_command，将它赋值为FirstViewModel里的excutePush</p>
+
+<p><code class="highlighter-rouge">self.pushBtn.rac_command = self.viewModel.excutePush;</code></p>
+
+<p>这么一赋值，就达成了一个目的。按钮的事件在viewModel中执行。</p>
+
+<p>需要注意的是，RACCommand的block返回的时一个signal。所以，在viewModel中，我们要这么写</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc">    <span class="n">self</span><span class="p">.</span><span class="n">excutePush</span> <span class="o">=</span> <span class="p">[[</span><span class="n">RACCommand</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithSignalBlock</span><span class="p">:</span><span class="o">^</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">(</span><span class="n">id</span> <span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"test signal"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">RACSignal</span> <span class="nf">empty</span><span class="p">];</span>
+    <span class="p">}];</span></code></pre></figure>
+
+<p>这样，我们就实现了对点击事件的分离。</p>
+
+<h2 id="分离跳转">分离跳转</h2>
+<p>分离跳转，就要用到我开始说的代理了。
+我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法</p>
+
+<p><code class="highlighter-rouge">- (void)pushViewModel:(id)viewModel;</code></p>
+
+<p>我们在NSLog(@”test signal”);下面增加</p>
+
+<p><code class="highlighter-rouge">[self.service pushViewModel:viewModel];</code></p>
+
+<p>我们还要实现这个代理。</p>
+
+<p>在ray中的<a href="http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1">教程</a>和雷大神的<a href="https://github.com/leichunfeng/MVVMReactiveCocoa">MVVMReactiveCocoa</a>都是新建了一个Impl文件，专门用来跳转，基本思路就是navigation本身就是一个堆栈，其实所有的vc都是在navigation其中的。我们只要控制这个这个最基本的navigation的跳转就可以了。</p>
+
+<p>我们新建一个MVVMdemoImpl文件，里面有一个初始化的方法。</p>
+
+<p><code class="highlighter-rouge">- (instancetype)initWithNavigationController:(UINavigationController *)navigationController</code></p>
+
+<p>我们把根navigation传进去来进行逻辑跳转。</p>
+
+<p>我们在初始化的时候加上这两句核心代码。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
+self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
+</code></pre></div></div>
+
+<p>第一句话是声明了一个demoImpl，将navigation穿进去。
+第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>
+
+<p><code class="highlighter-rouge">-(instancetype)initWithService:(id&lt;MVVMdemoService&gt;)service</code></p>
+
+<p>参数是一个代理。我们传的时一个NSObject类型的值。而且在MVVMdemoImpl.m中，也没有对于代理的赋值为自己。</p>
+
+<p>我是这么理解的，如果有不对，还请谅解。</p>
+
+<p>当我们加入代理MVVMdemoService在MVVMdemoImpl的时候，因为MVVMdemoImpl是一个nsobject类型，而MVVMdemoService也是一个nsobject类型。所以，此时我们的MVVMdemoImpl具有MVVMdemoService的属性了，我们做的就是，让FirstViewModel里的service的代理即是MVVMdemoImpl。</p>
+
+<p>简单的说。</p>
+
+<p><code class="highlighter-rouge">就是MVVMdemoImpl == FirstViewModel.service</code></p>
+
+<p>那么这样的话，我们的service就可以执行MVVMdemoImpl里的pushViewModel方法了。</p>
+
+<h2 id="小结">小结</h2>
+<p>其实上面的最后AppDelegate的赋值代理这一块还不是很明白。有时间再说说吧。好久没写博客就想发一篇了。</p>
+
+<p>以上完整代码在<a href="https://github.com/judi0713/MVVMdemo">MVVMdemo</a></p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<p>1.<a href="https://github.com/leichunfeng/MVVMReactiveCocoa">leichunfeng/MVVMReactiveCocoa</a></p>
+
+<p>2.<a href="http://codeblog.shape.dk/blog/2013/12/05/reactivecocoa-essentials-understanding-and-using-raccommand/">ReactiveCocoa Essentials: Understanding and Using RACCommand</a></p>
+
+<p>3.<a href="http://stackoverflow.com/questions/19440683/why-does-raccommands-block-return-a-signal">Why Does RACCommand’s block return a signal?</a></p>
+
+<p>4.<a href="http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1">MVVM Tutorial with ReactiveCocoa: Part 1/2</a></p>
+
+<p>最后的最后，有些事情，我自己不愿去努力去争取我谁也不怪。有些事情我想的很明白我一点都不想想明白。</p>
+:ET

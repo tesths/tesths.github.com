@@ -1,0 +1,30 @@
+I"<p>因为实在是觉得jekyllbootstrap太丑。而且确实想尝试一下原生的jekyll感觉，于是今天早上重新开始了jekyll的尝试。</p>
+
+<p>首先是新建一个我的jekyll博客。</p>
+
+<p><img src="/images/use-jekyll/use-jekyll-1.png" alt="use-jekyll-1" /></p>
+
+<p>然后我们将建好的git仓库clone到本地</p>
+
+<p><img src="/images/use-jekyll/use-jekyll-2.png" alt="use-jekyll-2" /></p>
+
+<p>我不知道怎么将myblog设置为我的git根目录来上传。
+然后就利用了笨办法，讲myblog里的所有文件移动到judi0713这个文件夹里。
+命令是</p>
+
+<p><img src="/images/use-jekyll/use-jekyll-3.png" alt="use-jekyll-3" /></p>
+
+<p>顺便提一下， mv这个命令可以重新命名，重命名的方式就是mv filename1 filename2
+mv可以移动文件，批量移动文件的方式就是用*号。
+比如我这里使用的，就是可以将myblog的所有文件全部移动，相应的，如果是*.*那么会将myblog的所有文件移动，保留文件夹。</p>
+
+<p>现在我们已经将jekyll创建的文件全部移动到了git仓库里。
+下面就是要将仓库里的文件全部上传了。</p>
+
+<p><img src="/images/use-jekyll/use-jekyll-4.png" alt="use-jekyll-4" /></p>
+
+<p>就是这三条。具体每一条什么含义我大概明白，但是从昨晚上到今天早上我已经被git这几条命令搞的有点晕了。
+我全部理清楚之后会专门写一个和git命令行有关的blog的。</p>
+
+<p>打开<a href="http://judi0713.github.io/">judi0713.github.io</a>已经可以访问了。</p>
+:ET
