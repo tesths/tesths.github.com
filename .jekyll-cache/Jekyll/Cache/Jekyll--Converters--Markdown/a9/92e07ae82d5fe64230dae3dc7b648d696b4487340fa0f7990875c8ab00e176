@@ -1,0 +1,42 @@
+I"�<h2 id="524-更新">5.24 更新</h2>
+
+<p><strong>Instagram 单独下载一条也需要登录了，单独下载一条设置 Cookie 的方式同 Story。</strong></p>
+
+<p>在查询了一些资料之后，我找到了 Instagram Story 的下载方式，并根据这个方式完成了 Workflow 的版本。感谢 <a href="https://github.com/tensojka/instastories-backup">instastories-backup</a>项目。</p>
+
+<h2 id="原理">原理</h2>
+
+<p>Instagram 是需要登录验证的，但实际经过我的测试，Instagram 只会检测 cookie 和 user-agent。那么只要在网络请求的 headers 加入 cookie 和 user-agent 实际上就可以了。</p>
+
+<p>user-agent 是可以直接伪造的，而 cookie 值，需要通过网络版本的 chrome 获取。</p>
+
+<p>在这个地方，cookie 建议使用自己的，或者是专门注册一个帐号用于下载。如果 cookie 泄露，理论上可以利用 cookie 对相应的用户进行数据篡改。</p>
+
+<h2 id="获取-cookie">获取 cookie</h2>
+
+<p>打开 Chrome，进入到 www.instagram.com 并登录。</p>
+
+<p><strong>Windows 用户按 f12，Mac 用户按 option+cmd+j，打开控制台。</strong></p>
+
+<p>此时刷新页面，找到 www.instagram.com 的请求。找到 cookie，然后找到 sessionid。复制 sessionid=140122… 即可。如图所示。</p>
+
+<p><img src="/Users/tesths/Documents/tesths.github.com/images/ins/ins2.png =350x1000" alt="" /></p>
+
+<p>然后把这么一长串，粘贴到 Workflow 的 cookie 里即可进行下载操作。</p>
+
+<p>普通下载版本截图</p>
+
+<p><img src="http://walkginkgo.com/images/ins/ins3.JPG" alt="" /></p>
+
+<p>Story 版本下载截图</p>
+
+<p><img src="http://walkginkgo.com/images/ins/ins1.JPG" alt="" /></p>
+
+<h2 id="注意事项">注意事项</h2>
+
+<p>cookie 一定不能泄漏，不然会造成安全问题。</p>
+
+<p>每个 cookie 的有效期是 90 天，需要时常更新。</p>
+
+<p>这里通过的是 Instagram 的私有 API 进行操作，所以 workflow 单人单用以免出现滥用。</p>
+:ET
