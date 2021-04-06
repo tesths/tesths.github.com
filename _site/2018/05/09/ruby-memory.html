@@ -18,7 +18,7 @@ categories: server
 
 <p>一开始我傻不拉唧直接在服务器上看内存使用。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.CPU占用最多的前10个进程： 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.CPU占用最多的前10个进程： 
 ps auxw|head -1;ps auxw|sort -rn -k3|head -10
 2.内存消耗最多的前10个进程 
 ps auxw|head -1;ps auxw|sort -rn -k4|head -10
@@ -30,7 +30,7 @@ ps auxw|head -1;ps auxw|sort -rn -k5|head -10
 
 <p>我把定时任务换成了一个 while 循环，使用了一个函数</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def report
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def report
   p 'Memory ' + `ps ax -o pid,rss | grep -E "^[[:space:]]*#{$$}"`
           .strip.split.map(&amp;:to_i)[1].to_s + 'KB'
 end
@@ -46,13 +46,13 @@ end
 
 <p>我的问题在于 ruby 调用 JSON 解析和 Time 的时候。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  allData = JSON.parse(result)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  allData = JSON.parse(result)
   current_time = Time.now.strftime("%H")
 </code></pre></div></div>
 
 <p>这里实际上 allData 和 current_time 都已经是对象了。而 rufus-scheduler 并没有真正的调用 cron。所以导致每个小时都有 allData 和 current_time。即使内存回收，这个地方也是不会完全回收。</p>
 
-<p>解决方案很简单，加一个 <code class="highlighter-rouge">= nil</code> 就 ok。至少目前我修改过的程序已经运行 3 天内存依然比较稳定，希望一直稳定下去…</p>
+<p>解决方案很简单，加一个 <code class="language-plaintext highlighter-rouge">= nil</code> 就 ok。至少目前我修改过的程序已经运行 3 天内存依然比较稳定，希望一直稳定下去…</p>
 
 <p>以上。</p>
 

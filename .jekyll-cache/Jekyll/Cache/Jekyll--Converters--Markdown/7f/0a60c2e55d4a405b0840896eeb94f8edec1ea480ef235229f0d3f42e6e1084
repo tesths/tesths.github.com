@@ -1,4 +1,4 @@
-I"� <blockquote>
+I"H!<blockquote>
   <p>刚刚才发现上一篇的内容和Functional Swift中重了很多(因为买了没看🙄昨天翻了一遍)，而且我是自己尝试写的..今天应该就不会怎么重了，因为我本来就打算按照计划对照Haskell来写Swift，Haskell中高阶函数有map，filter，所以肯定会重。不过除此之外，我还会尽我所能实现Haskell中的其他高阶函数。</p>
 </blockquote>
 
@@ -20,7 +20,7 @@
 
 <p>举两个例子来说明，一个是Stackoverflow上的我稍作了改动..一个是我根据Haskell写的。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
     return { x in { y in f(x, y) } }
 }
 </code></pre></div></div>
@@ -35,7 +35,7 @@
   <p>配图看playground！！！！</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func curry&lt;A, B, C&gt;(f: (A, B) -&gt; C) -&gt; A -&gt; B -&gt; C {
     return { x in { y in f(x, y) } }
 }
 
@@ -66,7 +66,7 @@ print(sumWith3(5))
 
 <p>我们在看一个Haskell中例子，我写了一个Swift版本。这个例子无非就是多了一个参数，不过可以更方便理解。(这个函数是learnyouahaskell第五章高阶函数Curried Functions中第一个函数)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func multThree(adder: Int) -&gt; Int -&gt; Int -&gt; Int {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func multThree(adder: Int) -&gt; Int -&gt; Int -&gt; Int {
     return {
         a in  {
             b in
@@ -94,13 +94,13 @@ print(multZero)
 
 <p>最后我们看Haskell中实现<strong>multThree</strong>。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
 multThree x y z = x * y * z
 </code></pre></div></div>
 
 <p>这个例子我在博客中也有提到，在这个例子中，我们可以去理解参数和返回值都可以是一个函数。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; multThree 2 3 4
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; multThree 2 3 4
 24
 </code></pre></div></div>
 
@@ -108,14 +108,14 @@ multThree x y z = x * y * z
 
 <p>我们还可以怎么去用这个函数呢。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
 ghci&gt; multTwoWithNine 2 3
 54
 </code></pre></div></div>
 
 <p>这样的话，其实就是</p>
 
-<p><code class="highlighter-rouge">multThree :: Int -&gt; ((Int -&gt; Int) -&gt; Int)</code></p>
+<p><code class="language-plaintext highlighter-rouge">multThree :: Int -&gt; ((Int -&gt; Int) -&gt; Int)</code></p>
 
 <p>这样看来，无论参数也好，返回值也好，都可以是一个函数。</p>
 

@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>PineconeSuppress 上架 Mac App Store 及沙盒机制的部分说明</title>
+  <title>松果压制上架 Mac App Store 及沙盒机制的部分说明</title>
   <meta name="description" content="距离上次写博客过去了一个月。这一个月经历了挣扎的上架 MAS。还好我没放弃，终于在昨天上架了 MAS。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="http://walkginkgo.com/ffmpeg/2018/07/15/MAS-sanbox.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +43,70 @@
       <div class="trigger">
         
           
+          <a class="page-link" href="/achieve/2015-10-4-ios-mvvm-11.html">iOS开发框架MVVM 1理解开发模式(填坑)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-12-ios-mvvm-2.html">iOS开发模式MVVM 2分离业务逻辑</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-19-feelings.html">创业和情怀</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-2-15-brackets-emmet.html">关于前端文本编辑器的废话和Emmet部分文档说明</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-22-ios-sumup-1.html">Jekyll问题解答和iOS开发小结Ⅰ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-7-git-easyuse.html">命令行git简单使用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-4-20-ios-sumup-2.html">iOS近期开发小结Ⅱ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-1-use-xampp-build-dvwa.html">利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-3-ios-mvvm-1.html">iOS开发框架MVVM 1理解开发模式(占坑，未写完)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-12-rac_uiview.html">ReactiveCocoa在UIView上的运用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-29-to-my-dear.html">给萌萌哒的子渔酱</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-3-7-Higher-Order-Functions.html">Higher-Order Functions</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-25-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%20-1.html">Learn You a Swift for Great Good! part -1</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-27-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%200.html">Learn You a Swift for Great Good! part 0 -- Swift Currying</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-29-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%201.html">Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2019-12-4-uranus.html">关于 Uranus 的一些事情</a>
+          
+        
+          
           <a class="page-link" href="/about/">关于我</a>
           
         
@@ -67,7 +131,7 @@
         <div class="post">
 
   <header class="post-header" align="center" >
-    <h1 class="post-title">PineconeSuppress 上架 Mac App Store 及沙盒机制的部分说明</h1>
+    <h1 class="post-title">松果压制上架 Mac App Store 及沙盒机制的部分说明</h1>
     <p class="post-meta">Jul 15, 2018</p>
   </header>
 
@@ -84,16 +148,16 @@
 
 <p>那么采用 ffmpeg 可执行文件作为我们的主要工具，就有一个很重要的问题，那就是 ffmpeg 的签名问题。MAS 版本的所有文件都要求进行签名，我第一次无法上传到 MAS 的问题就是 ffmpeg 没有签名。这里的签名就直接使用 codesign 签名是可以的。除此之外，对于 ffmpeg 要求有一个单独的 entitlement 文件，而这个文件里面应该填写的是</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
-<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;dict&gt;</span>
-	<span class="nt">&lt;key&gt;</span>com.apple.security.inherit<span class="nt">&lt;/key&gt;</span>
-	<span class="nt">&lt;true/&gt;</span>
-	<span class="nt">&lt;key&gt;</span>com.apple.security.app-sandbox<span class="nt">&lt;/key&gt;</span>
-	<span class="nt">&lt;true/&gt;</span>
-<span class="nt">&lt;/dict&gt;</span>
-<span class="nt">&lt;/plist&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+	&lt;key&gt;com.apple.security.inherit&lt;/key&gt;
+	&lt;true/&gt;
+	&lt;key&gt;com.apple.security.app-sandbox&lt;/key&gt;
+	&lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
 </code></pre></div></div>
 
 <p>然后在签名的使用 codesign 和 entitlement 签名。</p>
@@ -118,7 +182,7 @@
 
 <p>为了可以让搜索引擎更好的搜索到相同的问题，我把文字版本的关键部分贴出来</p>
 
-<p><code class="highlighter-rouge">Specifically, we found that when the user closes the main application window there is no menu item to re-open it.</code></p>
+<p><code class="language-plaintext highlighter-rouge">Specifically, we found that when the user closes the main application window there is no menu item to re-open it.</code></p>
 
 <p>第一个问题好解决，不支持 MOV 的问题，我在 drag and drop 里增加一个判断就解决了。这个 window reopen 的问题我开始着手解决。</p>
 
@@ -136,7 +200,7 @@
 
 <p>第一个和第二个问题的关键部分</p>
 
-<p><code class="highlighter-rouge">com.apple.security.files.downloads.read-write</code> 和 <code class="highlighter-rouge">com.apple.security.files.user-selected.executable</code> 这两个 entitlement 文件的声明。</p>
+<p><code class="language-plaintext highlighter-rouge">com.apple.security.files.downloads.read-write</code> 和 <code class="language-plaintext highlighter-rouge">com.apple.security.files.user-selected.executable</code> 这两个 entitlement 文件的声明。</p>
 
 <p>第三个还是 re-open window 的问题。</p>
 
@@ -144,18 +208,18 @@
 
 <p>`</p>
 <ol>
-  <li>The download folder is the default folder to save the compressed video. So I need the download folder to write permission. And I think the right folder path is <code class="highlighter-rouge">/Users/username/Downloads</code>.</li>
-  <li>The reopening event is resolved by add <code class="highlighter-rouge">makeKeyAndOrderFront</code> in Appdelegate. If the user closes the window, he can reopen it by click docker icon. And I already test it.
+  <li>The download folder is the default folder to save the compressed video. So I need the download folder to write permission. And I think the right folder path is <code class="language-plaintext highlighter-rouge">/Users/username/Downloads</code>.</li>
+  <li>The reopening event is resolved by add <code class="language-plaintext highlighter-rouge">makeKeyAndOrderFront</code> in Appdelegate. If the user closes the window, he can reopen it by click docker icon. And I already test it.
 `</li>
 </ol>
 
 <p>然后苹果给我了一个详细的回复</p>
 
-<p><code class="highlighter-rouge">
+<p>`
 The Downloads folder is only appropriate for items downloaded from the Internet.
 Additionally, clicking the Dock icon is an insufficient means of restoring the Main Window. We advise implementing a menu item.
 We look forward to reviewing your revised binary.
-</code></p>
+`</p>
 
 <p>Download 文件夹的使用权，只有当具备下载功能的时候才可以使用。而苹果认为，单个窗口的应用，点击 Dock 是一个没效率的打开操作，建议使用快捷键打开。</p>
 
@@ -171,11 +235,11 @@ We look forward to reviewing your revised binary.
 
 <p>关键字</p>
 
-<p><code class="highlighter-rouge">com.apple.security.files.user-selected.executable</code> 和 <code class="highlighter-rouge">com.apple.security.assets.movies.read-write: Yes</code></p>
+<p><code class="language-plaintext highlighter-rouge">com.apple.security.files.user-selected.executable</code> 和 <code class="language-plaintext highlighter-rouge">com.apple.security.assets.movies.read-write: Yes</code></p>
 
 <p>我依然没有解决 executable 的问题，以及在苹果看来 movies 也是不可以被读写的。</p>
 
-<p>我删除了 entitlement 中 <code class="highlighter-rouge">com.apple.security.files.user-selected.executable</code>。重新提交审核。</p>
+<p>我删除了 entitlement 中 <code class="language-plaintext highlighter-rouge">com.apple.security.files.user-selected.executable</code>。重新提交审核。</p>
 
 <h3 id="第-4-次被拒-7月11日">第 4 次被拒 7月11日</h3>
 
@@ -187,9 +251,9 @@ We look forward to reviewing your revised binary.
 
 <p>关键字</p>
 
-<p><code class="highlighter-rouge">com.apple.security.assets.movies.read-write: Yes</code></p>
+<p><code class="language-plaintext highlighter-rouge">com.apple.security.assets.movies.read-write: Yes</code></p>
 
-<p>在这个地方我将 <code class="highlighter-rouge">com.apple.security.assets.movies.read-write</code> 删除，然后将压制文件的默认文件夹放在了沙盒里的 cache 文件夹。</p>
+<p>在这个地方我将 <code class="language-plaintext highlighter-rouge">com.apple.security.assets.movies.read-write</code> 删除，然后将压制文件的默认文件夹放在了沙盒里的 cache 文件夹。</p>
 
 <h3 id="第-5-次被拒-7月13日">第 5 次被拒 7月13日</h3>
 
@@ -201,7 +265,7 @@ We look forward to reviewing your revised binary.
 
 <p>关键字</p>
 
-<p><code class="highlighter-rouge">Your app saves user data to the app's container, which is not user accessible, as documented in the "Container Directories and File System Access" of App Sandbox Design Guide:
+<p><code class="language-plaintext highlighter-rouge">Your app saves user data to the app's container, which is not user accessible, as documented in the "Container Directories and File System Access" of App Sandbox Design Guide:
 "The container is in a hidden location, and so users do not interact with it directly. Specifically, the container is not for user documents. It is for files that your app uses, along with databases, caches, and other app-specific data."</code></p>
 
 <p>于是在这个地方，我把存储位置设置为一个 NSOpenPanel，让用户选择存储位置，重新提交审核。</p>
@@ -216,7 +280,7 @@ We look forward to reviewing your revised binary.
 
 <p>其次是沙盒问题，在 MAS 的沙盒机制中，Download 文件夹和 Movie 文件夹是不可以被随意使用的，Download 文件夹只有下载功能才可以，而如果使用了 Movie 文件，那么 iTunes 的 movie 也是可以被使用的。（第 2 次和第 3 次和第 4 次被拒绝的原因）</p>
 
-<p><code class="highlighter-rouge">com.apple.security.files.user-selected.executable</code> 这个是只有当你的应用需要创建可执行文件，这个可执行文件用于启动服务等的时候才能使用。（第 2 次和第 3 次和第 4 次被拒绝的原因）</p>
+<p><code class="language-plaintext highlighter-rouge">com.apple.security.files.user-selected.executable</code> 这个是只有当你的应用需要创建可执行文件，这个可执行文件用于启动服务等的时候才能使用。（第 2 次和第 3 次和第 4 次被拒绝的原因）</p>
 
 <p>沙盒内部的文件，只能被写，不能被用户读取。（第 5 次被拒绝的理由）</p>
 
@@ -280,7 +344,7 @@ We look forward to reviewing your revised binary.
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
           <li>testHs</li>
-          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+          <li><a href="mailto:judi0713@foxmail.com">judi0713@foxmail.com</a>
 
           <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
           </li>

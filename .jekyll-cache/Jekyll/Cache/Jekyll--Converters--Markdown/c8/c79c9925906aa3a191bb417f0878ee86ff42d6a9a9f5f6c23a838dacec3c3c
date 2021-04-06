@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"<blockquote>
   <p>本文将不定期补充 ffmpeg 其余压制方案或者命令行使用方法</p>
 </blockquote>
 
@@ -30,11 +30,11 @@
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/3.png" alt="ffmpeg-3" /></p>
 
-<p>这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，<code class="highlighter-rouge">cd Documents/ffmpeg/</code>。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹</p>
+<p>这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，<code class="language-plaintext highlighter-rouge">cd Documents/ffmpeg/</code>。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹</p>
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/4.png" alt="ffmpeg-4" /></p>
 
-<p>这个时候再输入一个命令 <code class="highlighter-rouge">ls</code>。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 <a href="http://walkginkgo.com/images/ffmpeg/render.sh">render.sh</a>网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。</p>
+<p>这个时候再输入一个命令 <code class="language-plaintext highlighter-rouge">ls</code>。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 <a href="http://walkginkgo.com/images/ffmpeg/render.sh">render.sh</a>网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。</p>
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/5.png" alt="ffmpeg-5" /></p>
 
@@ -44,7 +44,7 @@
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/14.png" alt="ffmpeg-14" /></p>
 
-<p>把需要的方案注释之后，在 Terminal 里运行 <code class="highlighter-rouge">bash render.sh</code>。就会开始压制了。</p>
+<p>把需要的方案注释之后，在 Terminal 里运行 <code class="language-plaintext highlighter-rouge">bash render.sh</code>。就会开始压制了。</p>
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/15.png" alt="ffmpeg-15" /></p>
 
@@ -57,7 +57,7 @@ render.sh 里定义了几个方法。</p>
 
 <p>比如我想把 wake.mp4 换成 mkv。就改为。</p>
 
-<p><code class="highlighter-rouge">./ffmpeg -i "wake1.mp4" wake.mkv</code></p>
+<p><code class="language-plaintext highlighter-rouge">./ffmpeg -i "wake1.mp4" wake.mkv</code></p>
 
 <p><img src="http://walkginkgo.com/images/ffmpeg/6.png" alt="ffmpeg-6" /></p>
 
@@ -93,7 +93,7 @@ render.sh 里定义了几个方法。</p>
 
 <p>wakemeup1.ass 换成你的 ass 文件</p>
 
-<p>overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 <a href="http://tieba.baidu.com/p/2706704635">如何在ASS字幕中插入各种图片</a>，里面的 <code class="highlighter-rouge">{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0</code> 方案。先确定 logo 位置，填写到这里。</p>
+<p>overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 <a href="http://tieba.baidu.com/p/2706704635">如何在ASS字幕中插入各种图片</a>，里面的 <code class="language-plaintext highlighter-rouge">{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0</code> 方案。先确定 logo 位置，填写到这里。</p>
 
 <p>直接在 Aegisub 上比对下也行。</p>
 
@@ -111,11 +111,11 @@ render.sh 里定义了几个方法。</p>
 
 <p>出现时间修改。</p>
 
-<p><code class="highlighter-rouge">enable='between(t,35,6*60+30)'</code></p>
+<p><code class="language-plaintext highlighter-rouge">enable='between(t,35,6*60+30)'</code></p>
 
-<p>我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 <code class="highlighter-rouge">enable='between(t,10,120)'</code>。即修改两个数字即可。</p>
+<p>我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 <code class="language-plaintext highlighter-rouge">enable='between(t,10,120)'</code>。即修改两个数字即可。</p>
 
-<p>总结一下就是。准备需要的 mp4，ass，logo，然后修改 render.sh 文件。以及在 Terminal 运行 <code class="highlighter-rouge">bash render.sh</code></p>
+<p>总结一下就是。准备需要的 mp4，ass，logo，然后修改 render.sh 文件。以及在 Terminal 运行 <code class="language-plaintext highlighter-rouge">bash render.sh</code></p>
 
 <h2 id="注意事项">注意事项</h2>
 

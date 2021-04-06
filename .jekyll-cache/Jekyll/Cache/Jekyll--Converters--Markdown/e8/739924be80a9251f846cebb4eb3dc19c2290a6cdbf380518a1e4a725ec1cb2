@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"�<blockquote>
   <p>只有一句话，初学，欢迎讨论，求轻喷。</p>
 </blockquote>
 
@@ -6,7 +6,7 @@
 
 <p>什么意思呢？在Haskell中，如果现在有一个函数作为参数的话，需要写一个f就可以了。举个例子。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
 </code></pre></div></div>
@@ -29,9 +29,9 @@ map f (x:xs) = f x : map f xs
 
 <p>首先，需要一个函数f: a-&gt;b，然后需要一个数组，最后返回一个数组。我们来用Swift实现。</p>
 
-<p><code class="highlighter-rouge">func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T]</code></p>
+<p><code class="language-plaintext highlighter-rouge">func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T]</code></p>
 
-<p><code class="highlighter-rouge">map :: (a -&gt; b) -&gt; [a] -&gt; [b]</code></p>
+<p><code class="language-plaintext highlighter-rouge">map :: (a -&gt; b) -&gt; [a] -&gt; [b]</code></p>
 
 <p>采用范型的方式，让Swift和Haskell很好的对应了起来。语法上基本没有大的区别。下面要具体的实现map函数里面的内容。</p>
 
@@ -39,7 +39,7 @@ map f (x:xs) = f x : map f xs
 
 <p>所以完整的代码是这样的。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T] {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func jmap&lt;U, T&gt;(f: U -&gt; T, array: [U]) -&gt; [T] {
     var result = [T]()
     for element in array {
         result.append(f(element))
@@ -50,7 +50,7 @@ map f (x:xs) = f x : map f xs
 
 <p>下面要做的事情。就是增加数组的extension。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension Array {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension Array {
     func jjmap&lt;U&gt;(f: (Array.Element) -&gt; U) -&gt; [U] {
         return jmap(f, array: self)
     }

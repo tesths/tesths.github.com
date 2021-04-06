@@ -1,15 +1,14 @@
-I"�
-<h2 id="一些废话">一些废话</h2>
+I"<h2 id="一些废话">一些废话</h2>
 <p>距离下一个项目大概还有一个星期的时间，除去各种实验和上课还有期中考试的复习，加上一部分设计的任务，剩下的能学习的时间实在是少之又少。
 五一三天看了三场球看了两场跑男，其他时间基本上都泡在电脑前研究了MVVM的开发模式。昨天看了一下午实在是没有任何起色，今天算是到了说好的五一两篇博客的DDL了。决定还是写点东西。</p>
 
 <h2 id="racmvc和mvvm">RAC、MVC和MVVM</h2>
-<p><code class="highlighter-rouge">RAC(ReactiveCocoa)</code>里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。</p>
+<p><code class="language-plaintext highlighter-rouge">RAC(ReactiveCocoa)</code>里的东西实在是有点多，RAC本身就不好理解，这么几天，说RAC是FRP的思想。我倒是没有发现里面和函数式编程有关的东西（可能是我水平太低而且没有深入理解RAC和Haskell），但是响应式的编程方式确实有了一定的理解。我理解的响应式，就是这边动作出现更换，视图和其他的对应连接的东西也会随之改变。</p>
 
-<p><code class="highlighter-rouge">MVC(Model View Controller)</code>是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
+<p><code class="language-plaintext highlighter-rouge">MVC(Model View Controller)</code>是Apple官方也给出的开发模式，但是实际开发中，View和Controller很多时候是绑定在一起的。我在之前的iOS开发小记中提到过对于model层的理解。在我的第一个项目里，甚至连网络请求也是写在Controller里的，这就导致了Controller里包含了大量的代码，从视图到网络请求。我在后期维护和添加内容的时候，变得非常非常的困难。
 所以这就有我们开发模式逐渐改变的第一步，迪哥利用RAC将网络层单独分离出来的写法。而且我们不断的将控件抽象出来，减少Controller中的代码。虽然代码量增加，但是后期的维护会简单不少。</p>
 
-<p><code class="highlighter-rouge">MVVM(Model ViewModel Model)</code>是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。</p>
+<p><code class="language-plaintext highlighter-rouge">MVVM(Model ViewModel Model)</code>是RAC出现后提出的iOS开发新模式，分离出一个ViewModel。View层中除了View，还有Controller。</p>
 
 <h2 id="mvc和mvvm的比较">MVC和MVVM的比较</h2>
 <p>其实我想贴图，但是资料太多，我还是先第一步用语言来解释我自身的理解。

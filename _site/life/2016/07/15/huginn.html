@@ -10,8 +10,8 @@
   <meta name="description" content="  如果你不知道什么是 RSS，赶紧去查查是什么然后用起来吧，相信我，用了就再也离不开了。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/life/2016/07/15/huginn.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="http://walkginkgo.com/life/2016/07/15/huginn.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +41,70 @@
       </a>
 
       <div class="trigger">
+        
+          
+          <a class="page-link" href="/achieve/2015-10-4-ios-mvvm-11.html">iOS开发框架MVVM 1理解开发模式(填坑)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-12-ios-mvvm-2.html">iOS开发模式MVVM 2分离业务逻辑</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-19-feelings.html">创业和情怀</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-2-15-brackets-emmet.html">关于前端文本编辑器的废话和Emmet部分文档说明</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-22-ios-sumup-1.html">Jekyll问题解答和iOS开发小结Ⅰ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-7-git-easyuse.html">命令行git简单使用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-4-20-ios-sumup-2.html">iOS近期开发小结Ⅱ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-1-use-xampp-build-dvwa.html">利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-3-ios-mvvm-1.html">iOS开发框架MVVM 1理解开发模式(占坑，未写完)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-12-rac_uiview.html">ReactiveCocoa在UIView上的运用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-29-to-my-dear.html">给萌萌哒的子渔酱</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-3-7-Higher-Order-Functions.html">Higher-Order Functions</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-25-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%20-1.html">Learn You a Swift for Great Good! part -1</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-27-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%200.html">Learn You a Swift for Great Good! part 0 -- Swift Currying</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-29-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%201.html">Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2019-12-4-uranus.html">关于 Uranus 的一些事情</a>
+          
         
           
           <a class="page-link" href="/about/">关于我</a>
@@ -94,9 +158,9 @@
 
 <h3 id="坑1-官方最开始有一步-import-nodejs-repository">坑1. 官方最开始有一步 Import node.js repository…</h3>
 
-<p><code class="highlighter-rouge">curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -</code></p>
+<p><code class="language-plaintext highlighter-rouge">curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -</code></p>
 
-<p>这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 <code class="highlighter-rouge">apt-get install nodejs</code> 就可以了。</p>
+<p>这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 <code class="language-plaintext highlighter-rouge">apt-get install nodejs</code> 就可以了。</p>
 
 <p>因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。</p>
 
@@ -104,13 +168,13 @@
 
 <p>如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是</p>
 
-<p><code class="highlighter-rouge">export LC_ALL=en_US.UTF-8</code> （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
+<p><code class="language-plaintext highlighter-rouge">export LC_ALL=en_US.UTF-8</code> （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
 
 <h3 id="坑3-需要设置时区">坑3. 需要设置时区</h3>
 
 <p>不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。</p>
 
-<p><code class="highlighter-rouge">sudo dpkg-reconfigure tzdata</code></p>
+<p><code class="language-plaintext highlighter-rouge">sudo dpkg-reconfigure tzdata</code></p>
 
 <h3 id="坑4-全部安装完毕-css-不显示">坑4. 全部安装完毕 css 不显示</h3>
 
@@ -124,7 +188,7 @@
 
 <p>我选择的是在这步把</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
 </code></pre></div></div>
 
@@ -192,7 +256,7 @@
 
 <p>复制的东西如下。</p>
 
-<p><code class="highlighter-rouge">/html/body/div[1]/div/div/ul/li[1]/h2/a/span/text()</code></p>
+<p><code class="language-plaintext highlighter-rouge">/html/body/div[1]/div/div/ul/li[1]/h2/a/span/text()</code></p>
 
 <p>把之前的 css 改成 xpath 然后直接复制就可以了。点击下面的 Dry Run，可以看到我们的标题已经搞定了。（css 使用见下面备注）</p>
 
@@ -204,13 +268,13 @@
 
 <p><strong>解决问题1</strong>，需要把我们的 xpath 改成这样。</p>
 
-<p><code class="highlighter-rouge">/html/body/div[1]/div/div/ul/li/h2/a/span/text()</code></p>
+<p><code class="language-plaintext highlighter-rouge">/html/body/div[1]/div/div/ul/li/h2/a/span/text()</code></p>
 
 <p>是因为 <strong>li[1]</strong> 代表我们第一个标题，所以把[1]去了就可以了。</p>
 
 <p><strong>解决问题2</strong>，需要我们加上一句话。</p>
 
-<p><code class="highlighter-rouge">"value": "normalize-space(.)"</code></p>
+<p><code class="language-plaintext highlighter-rouge">"value": "normalize-space(.)"</code></p>
 
 <p>这句话的意思就是把空格去了。</p>
 
@@ -334,7 +398,7 @@
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
           <li>testHs</li>
-          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+          <li><a href="mailto:judi0713@foxmail.com">judi0713@foxmail.com</a>
 
           <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
           </li>

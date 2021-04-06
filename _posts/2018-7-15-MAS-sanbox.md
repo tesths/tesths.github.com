@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  PineconeSuppress 上架 Mac App Store 及沙盒机制的部分说明
+title:  松果压制上架 Mac App Store 及沙盒机制的部分说明
 date:   2018-7-15
 categories: ffmpeg
 ---

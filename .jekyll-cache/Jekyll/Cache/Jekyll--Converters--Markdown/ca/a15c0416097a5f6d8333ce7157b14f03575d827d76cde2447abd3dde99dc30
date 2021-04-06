@@ -1,4 +1,4 @@
-I"�0<blockquote>
+I"*1<blockquote>
   <p>如果你不知道什么是 RSS，赶紧去查查是什么然后用起来吧，相信我，用了就再也离不开了。</p>
 </blockquote>
 
@@ -20,9 +20,9 @@
 
 <h3 id="坑1-官方最开始有一步-import-nodejs-repository">坑1. 官方最开始有一步 Import node.js repository…</h3>
 
-<p><code class="highlighter-rouge">curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -</code></p>
+<p><code class="language-plaintext highlighter-rouge">curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -</code></p>
 
-<p>这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 <code class="highlighter-rouge">apt-get install nodejs</code> 就可以了。</p>
+<p>这一步官方用了脚本执行，可以不复制那个 curl 开头的，新版本的 nodejs 安装只需要用 <code class="language-plaintext highlighter-rouge">apt-get install nodejs</code> 就可以了。</p>
 
 <p>因为官方在后面 Install the required packages 中有 nodejs 的安装，所以 Import node.js repository 这一步其实可以不去做。</p>
 
@@ -30,13 +30,13 @@
 
 <p>如果不设置主机语言的话，会在后面有很神奇的错误。设置主机语言的命令是</p>
 
-<p><code class="highlighter-rouge">export LC_ALL=en_US.UTF-8</code> （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
+<p><code class="language-plaintext highlighter-rouge">export LC_ALL=en_US.UTF-8</code> （需要设置中文自行 google，可能这样设置还不够..最好查一下怎么设置语言）</p>
 
 <h3 id="坑3-需要设置时区">坑3. 需要设置时区</h3>
 
 <p>不设置时区抓取的时候时间会有问题，不过这一步问题不大。命令如下。</p>
 
-<p><code class="highlighter-rouge">sudo dpkg-reconfigure tzdata</code></p>
+<p><code class="language-plaintext highlighter-rouge">sudo dpkg-reconfigure tzdata</code></p>
 
 <h3 id="坑4-全部安装完毕-css-不显示">坑4. 全部安装完毕 css 不显示</h3>
 
@@ -50,7 +50,7 @@
 
 <p>我选择的是在这步把</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
 </code></pre></div></div>
 
@@ -118,7 +118,7 @@
 
 <p>复制的东西如下。</p>
 
-<p><code class="highlighter-rouge">/html/body/div[1]/div/div/ul/li[1]/h2/a/span/text()</code></p>
+<p><code class="language-plaintext highlighter-rouge">/html/body/div[1]/div/div/ul/li[1]/h2/a/span/text()</code></p>
 
 <p>把之前的 css 改成 xpath 然后直接复制就可以了。点击下面的 Dry Run，可以看到我们的标题已经搞定了。（css 使用见下面备注）</p>
 
@@ -130,13 +130,13 @@
 
 <p><strong>解决问题1</strong>，需要把我们的 xpath 改成这样。</p>
 
-<p><code class="highlighter-rouge">/html/body/div[1]/div/div/ul/li/h2/a/span/text()</code></p>
+<p><code class="language-plaintext highlighter-rouge">/html/body/div[1]/div/div/ul/li/h2/a/span/text()</code></p>
 
 <p>是因为 <strong>li[1]</strong> 代表我们第一个标题，所以把[1]去了就可以了。</p>
 
 <p><strong>解决问题2</strong>，需要我们加上一句话。</p>
 
-<p><code class="highlighter-rouge">"value": "normalize-space(.)"</code></p>
+<p><code class="language-plaintext highlighter-rouge">"value": "normalize-space(.)"</code></p>
 
 <p>这句话的意思就是把空格去了。</p>
 

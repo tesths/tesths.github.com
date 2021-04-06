@@ -1,4 +1,4 @@
-I"�<h2 id="安装准备工作">安装准备工作</h2>
+I"�<h2 id="安装准备工作">安装准备工作</h2>
 
 <p>Huginn 的官方安装指南全部步骤已经经过测试，建议安装时直接复制官方所提供的指令进行安装。如果遇到问题，请查看最下面的 <strong>错误解决方法</strong>。</p>
 
@@ -40,7 +40,7 @@ export LANGUAGE=en_US.UTF-8</p>
 
 <p>在这一步中建议直接把</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># web: bundle exec unicorn -c config/unicorn.rb
 # jobs: bundle exec rails runner bin/threaded.rb
 </code></pre></div></div>
 

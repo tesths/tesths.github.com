@@ -1,4 +1,4 @@
-I"�&<h2 id="习惯性的废话">习惯性的废话</h2>
+I"&'<h2 id="习惯性的废话">习惯性的废话</h2>
 <p>好的，作死的我不复习来写博客了。下星期要开始进入8成全面复习了。</p>
 
 <p>我知道很多人想看八卦是吧。。我也想写写我最近在干什么，为什么看上去那么忙，动态也有一段时间没更新。有时间写博客在说吧。</p>
@@ -45,11 +45,11 @@
 <h2 id="分离点击事件">分离点击事件</h2>
 <p>我们新建一个FirstViewModel，在FirstViewModel.h中增加一个</p>
 
-<p><code class="highlighter-rouge">@property (strong, nonatomic) RACCommand *excutePush;</code></p>
+<p><code class="language-plaintext highlighter-rouge">@property (strong, nonatomic) RACCommand *excutePush;</code></p>
 
 <p>然后我们让刚刚在FirstViewController里定义的那个pushBtn的rac_command，将它赋值为FirstViewModel里的excutePush</p>
 
-<p><code class="highlighter-rouge">self.pushBtn.rac_command = self.viewModel.excutePush;</code></p>
+<p><code class="language-plaintext highlighter-rouge">self.pushBtn.rac_command = self.viewModel.excutePush;</code></p>
 
 <p>这么一赋值，就达成了一个目的。按钮的事件在viewModel中执行。</p>
 
@@ -66,11 +66,11 @@
 <p>分离跳转，就要用到我开始说的代理了。
 我们做一个MVVMdemoService的代理，我放在Protocol文件夹里了。这个代理就声明了一个方法</p>
 
-<p><code class="highlighter-rouge">- (void)pushViewModel:(id)viewModel;</code></p>
+<p><code class="language-plaintext highlighter-rouge">- (void)pushViewModel:(id)viewModel;</code></p>
 
 <p>我们在NSLog(@”test signal”);下面增加</p>
 
-<p><code class="highlighter-rouge">[self.service pushViewModel:viewModel];</code></p>
+<p><code class="language-plaintext highlighter-rouge">[self.service pushViewModel:viewModel];</code></p>
 
 <p>我们还要实现这个代理。</p>
 
@@ -78,20 +78,20 @@
 
 <p>我们新建一个MVVMdemoImpl文件，里面有一个初始化的方法。</p>
 
-<p><code class="highlighter-rouge">- (instancetype)initWithNavigationController:(UINavigationController *)navigationController</code></p>
+<p><code class="language-plaintext highlighter-rouge">- (instancetype)initWithNavigationController:(UINavigationController *)navigationController</code></p>
 
 <p>我们把根navigation传进去来进行逻辑跳转。</p>
 
 <p>我们在初始化的时候加上这两句核心代码。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.demoImpl = [[MVVMdemoImpl alloc] initWithNavigationController:self.naviVC];
 self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 </code></pre></div></div>
 
 <p>第一句话是声明了一个demoImpl，将navigation穿进去。
 第二句话是声明了一个firstViewModel，把第一个demoImpl传了进去。这个地方的疑问在于，我们声明的时候是</p>
 
-<p><code class="highlighter-rouge">-(instancetype)initWithService:(id&lt;MVVMdemoService&gt;)service</code></p>
+<p><code class="language-plaintext highlighter-rouge">-(instancetype)initWithService:(id&lt;MVVMdemoService&gt;)service</code></p>
 
 <p>参数是一个代理。我们传的时一个NSObject类型的值。而且在MVVMdemoImpl.m中，也没有对于代理的赋值为自己。</p>
 
@@ -101,7 +101,7 @@ self.firstViewModel = [[FirstViewModel alloc] initWithService:self.demoImpl];
 
 <p>简单的说。</p>
 
-<p><code class="highlighter-rouge">就是MVVMdemoImpl == FirstViewModel.service</code></p>
+<p><code class="language-plaintext highlighter-rouge">就是MVVMdemoImpl == FirstViewModel.service</code></p>
 
 <p>那么这样的话，我们的service就可以执行MVVMdemoImpl里的pushViewModel方法了。</p>
 

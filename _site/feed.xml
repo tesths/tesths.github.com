@@ -4,72 +4,141 @@
     <title>testHs</title>
     <description>我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 May 2020 10:26:56 +0800</pubDate>
-    <lastBuildDate>Sun, 24 May 2020 10:26:56 +0800</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <link>http://walkginkgo.com/</link>
+    <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 06 Apr 2021 22:46:21 +0800</pubDate>
+    <lastBuildDate>Tue, 06 Apr 2021 22:46:21 +0800</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
     
       <item>
-        <title>关于 Uranus 的一些事情</title>
-        <description>&lt;p&gt;Uranus 是我做的第一款尝试收费的软件。它的主要功能是在 Mac 上下载 Instagram 以及下载后的素材管理。我知道这是一个及其小众的需求，不过我有时候自己有下载的需求，加上我觉得 Instagram 下载是一个一直都会存在的需求，就做了。大概是从 8 月底开始的项目，做到 11 月底，3 个月，磨出来一个 App，不说代码层面的，至少做出来的样子我很满意，和我一开始的预期差不多。功能上目前也没有测试出来 bug。&lt;/p&gt;
+        <title>2020 年的总结</title>
+        <description>&lt;p&gt;上大学的时候每年都会写个总结，自从毕业回家之后再也没写过。从今年开始重新开写吧。&lt;/p&gt;
 
-&lt;p&gt;至于它能给我带来多少收入，哎，不清楚，可能没多少，想让这个 App 实现盈利，还有很长的路要走。我一开始想的确实简单了。不扯这些了，聊聊 App。&lt;/p&gt;
+&lt;h2 id=&quot;工作&quot;&gt;工作&lt;/h2&gt;
 
-&lt;h2 id=&quot;关于名字&quot;&gt;关于名字&lt;/h2&gt;
+&lt;p&gt;大部分人的总结都会着重总结下自己的工作，我的工作实在没啥好总结的。工作对我来说，就是混口饭吃，我不止一次思考过现在这个工作对我的意义，实在也想不出来这份工作能带给我多大的意义，这种感觉在今年更为强烈。&lt;/p&gt;
 
-&lt;p&gt;起名字一直是我很痛苦的事情，Uranus 是天王星的意思。用星座是因为玩的很好的一个朋友的网名是星座，突然有一天我觉得星座不错，如果能做十二个星座的 App 岂不是很帅气！而且这样减轻了后续做 App 起名字的负担…所以就用了，至于为什么是天王星，因为它是太阳系八大行星之一，就这么简单。&lt;/p&gt;
+&lt;p&gt;我曾经看到很多人说一定要把握住自己上班的时间，我想说的是，有的班是这样，有的班不是，如果一个工作有着肉眼可见的天花板，有着肉眼可见的缺陷，我想这个工作是没有把握的必要。我经常思考这份工作给我的意义，最后的结论是这份工作可以让我有收入来做我想做的事情，让我的生活可以规律一点，其他我也实在想不出来什么。关于工作这个事在最后这个月实在思考了很多，得出的结论是我 2021 我想换了。&lt;/p&gt;
 
-&lt;h2 id=&quot;关于-logo&quot;&gt;关于 Logo&lt;/h2&gt;
+&lt;p&gt;想换的念头年年都有，今年尤为强烈。我不知道我还会干多久，总之想再在这个单位有所成长，会有，但也不会有多大的突破。我也有问题，但我认为这是多方面因素的结果。&lt;/p&gt;
 
-&lt;p&gt;这个图标也是每次做 App 的大问题，之前有做过 Twitter 转 Instagram 的账户，就用了很喜欢的明星的头像的主色调加上一个下的箭头代表下载。完成了这个 Logo。不满意，但是至少表达清楚了意思。&lt;/p&gt;
+&lt;p&gt;其他关于工作想说的就是，因为这份工作，我经历了很多无法想象的事情，比如年初去小区门口执勤，比如差点去抗洪，该经历的都经历了，不想经历的也经历了。虽然有着很多不情愿，可这些不情愿带给我了很多意想不到的收获，这也算苦中作乐了。&lt;/p&gt;
 
-&lt;h2 id=&quot;关于功能&quot;&gt;关于功能&lt;/h2&gt;
+&lt;p&gt;对于这个工作我想说的是，如果钱给不够，那就要靠人的自我驱动，如果一个人不想做，那你怎么讲怎么骂，驱动的效果都是有限的。&lt;/p&gt;
 
-&lt;p&gt;Uranus 实际上可以拆解成两个部分。下载部分，素材管理部分。实际上可以单独拆开，原计划只有下载功能，但是 App Store 不给上架。再加上和朋友聊了下，如果可以管理下载好的素材不是很好吗。然后就想着把完成度做高点，加上了素材管理。至少对于我个人来说，我希望这个软件可以实现的是把 Instagram 作为一个灵感库，所以素材管理也很重要。主要这样也显的高端一点。&lt;/p&gt;
+&lt;p&gt;最后关于这个工作，我想感谢这份工作在疫情的时候可以让我有个正当理由可以出来，然后去给小妹妹送了吃的和口罩，我也感谢这份工作前段时间让我出差得以从外地给小妹妹买了吃的。只要这个工作让我顺便能给小妹妹送点东西的地方，我都很感谢。&lt;/p&gt;
 
-&lt;p&gt;下载功能上支持复制 Instagram 网址进行自动下载，也支持手动下载（可以设置快捷键）。下载类型支持普通的时间线，highlights 和 story，图像和视频都支持。&lt;/p&gt;
+&lt;p&gt;对这份工作的总结就是我对这份工作的态度，干一天是一天，敷衍一天是一天。以上，关于工作的总结到此为止。&lt;/p&gt;
 
-&lt;p&gt;素材管理上，支持提取普通时间线的文字选择和复制，以及图片的主色调复制，支持批量选中后复制和导出。支持删除功能。&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h2 id=&quot;价格的问题&quot;&gt;价格的问题&lt;/h2&gt;
+&lt;p&gt;下面是正儿八经我想总结的。&lt;/p&gt;
 
-&lt;p&gt;Mac 上下载 Instagram，一想就是个小到不能再小的需求。所以我和朋友说，如果这个软件能给我带来 1000 元的收入，我就满足了…比较了一下市面上的软件，比较的软件很多，比如大名鼎鼎的 Eagle，Flume，Grids，我觉得我 6.99 美元 1 个激活码真的不贵。至于价格的问题，这只是我的第一次尝试。我暂时不会放弃独立开发这条路的。&lt;/p&gt;
+&lt;h2 id=&quot;个人健康&quot;&gt;个人健康&lt;/h2&gt;
 
-&lt;p&gt;肯定有人说，啊，你能收入 1000 元就满足了吗？当然不是，我希望可以收入 3000 元，开发三个月，一个月 1000 块钱，对于我来说基本可以回本。足够支持我下一个 App 的开发了…最主要的是可以交代我的老父亲不让我去考公务员…而且对于我的信心肯定是一个大的提升。&lt;/p&gt;
+&lt;p&gt;今年的胃依然不太好，疫情在家瘦了二十多斤，不过经历了疫情我也彻底发现了我的胃不舒服和我的状态是完全正相关的。一旦我熬夜，第二天我的胃就会难受。&lt;/p&gt;
 
-&lt;h2 id=&quot;优势是什么&quot;&gt;优势是什么&lt;/h2&gt;
+&lt;p&gt;今年4月去做了胃镜，又是啥事没有，狠下心喝了快2个月的中药无果，决定自己调节。之后就是开始坚持冥想，今年冥想带给我很大的改变。以前我总说自己焦虑，现在也焦虑，但现在好了很多。&lt;/p&gt;
 
-&lt;p&gt;比起 Eagle，肯定没有那么强大的储存能力以及多平台支持，但是我的支持 Instagram 所有的类型下载。比起 Flume，我的只能下载，但我兼容 Flume 的下载。比起 Grids，我觉得我做的比它好看。我还提供了 Highlights 的下载，这个是市面上很少的。比起免费的 chrome 插件，我不卡顿，而且提供了管理。最重要的是，我比他们都便宜。&lt;/p&gt;
+&lt;p&gt;当我可以进入冥想状态的时候我会感到很舒服，睡眠也好，胃也好，但我一旦无法进入状态，就会很难受。&lt;/p&gt;
 
-&lt;h2 id=&quot;后续的计划&quot;&gt;后续的计划&lt;/h2&gt;
+&lt;p&gt;我一切感到不舒服的源头，包括我的胃问题的根源，其实我自己也很清楚，就是经常处于高度紧张的状态无法松弛下来。这个不是一天两天可以解决的难题，吃了一段时间西药没啥效果，前几天又开了中药，希望可以有所好转，我慢慢再调节吧。&lt;/p&gt;
 
-&lt;p&gt;其实对于 Uranus 我目前没有特别大的功能更新计划，前期会主要在性能，稳定性以及小功能的完善上下功夫，我要让它可以稳定的运行一段时间再筹备大功能的开发。大的功能也有计划，但是大概率就是以另一种形式呈现，比如拆分开的插件形式这种，我还没有详细的计划，但是有。&lt;/p&gt;
+&lt;p&gt;还好的是今年都又在坚持锻炼，基本有空的时候都会去打个篮球。关于这个篮球我要再多说几句，今年球技并没有什么提升，不过在打篮球的时候也越发清楚的看到自己的问题，我向这是以前都没有过的。希望明年球技可以再提升吧。&lt;/p&gt;
 
-&lt;p&gt;我这个人很实诚，这是我的第一次收费尝试，我的心里收入目前是 1000 元，如果超过 1000 元就是 3000 元，理由前文已经说了，不再赘述。&lt;/p&gt;
+&lt;h2 id=&quot;感情&quot;&gt;感情&lt;/h2&gt;
 
-&lt;p&gt;当然后续的计划不仅于此，我在开发这个 Mac App 的过程中，踩了无数的坑，主要是 Mac 开发坑。虽然现在有了 SwiftUI，但是在我调研后发现，SwiftUI 对 Mac 来说还没有那么好，原生的 Mac 开发一定还是未来 2-3 年的主流。后面我会把我踩的坑逐步分享出来，让更多的人了解 Mac App 的 developerment。&lt;/p&gt;
+&lt;p&gt;自从去年11月？大概。从那之后我好像并无太大的新目标。我自己对于感情的感受就是，浪了太久，突然发现最好的就在身边，即使我可能永远得不到，我也不愿意去找其他人了。&lt;/p&gt;
+
+&lt;p&gt;年初的时候我就决定取消一切相亲活动，目前看来实践的挺好。&lt;/p&gt;
+
+&lt;p&gt;今年给小妹妹送了口罩，买了蛋糕，七七八八带了点东西。七夕左右的时候把我自己缝的香包给她送去了，没说是我缝的，就说是单位搞活动发的。这大概是我印象最深的一次。&lt;/p&gt;
+
+&lt;p&gt;很多人说我坚持是徒劳，是执念，是自我感动。但我觉得在这个事情上我想的挺清楚的，我从一开始就做好了不可能的心理准备。这是我那么多年不珍惜身边人应得的报应，所以我都可以接受。&lt;/p&gt;
+
+&lt;p&gt;至于可能性我也觉得不高，不高不代表我不会努力，不会继续思考新的解决方案。&lt;/p&gt;
+
+&lt;p&gt;经历了那么多小姑娘，最后发现记忆力竟然有这么个人这些年一直印象都挺好。这事是我一直觉得最有意思的地方，我只能说无论结果如何，我现在的选择一点点都不后悔。&lt;/p&gt;
+
+&lt;p&gt;如此毅然决然的心里只有一个姑娘的情况，那么多年好像是第一次。&lt;/p&gt;
+
+&lt;h2 id=&quot;家庭&quot;&gt;家庭&lt;/h2&gt;
+
+&lt;p&gt;家庭只能说勉强。老巨经常出去玩，这事挺好。我妈最近身体也不太好，但也能勉强过日子。&lt;/p&gt;
+
+&lt;p&gt;奶奶和姥姥也还行。&lt;/p&gt;
+
+&lt;p&gt;有些事也不能多说。&lt;/p&gt;
+
+&lt;p&gt;我只想说过一天是一天吧，无甚要求。&lt;/p&gt;
+
+&lt;h2 id=&quot;理财&quot;&gt;理财&lt;/h2&gt;
+
+&lt;p&gt;在这上面小挣了一笔，也越发清楚自己现在投资的问题。&lt;/p&gt;
+
+&lt;p&gt;今年学会了网格交易，但是购买的品种太多。之前买的不合理存在更加合理的配置方案。我也在今年开始坚定的购买指数作为我的投资手段。&lt;/p&gt;
+
+&lt;p&gt;好在今年受益是正的，正了2个月的工资。&lt;/p&gt;
+
+&lt;p&gt;不过最大的收获是因为理财这件事我开始意识到，不怕没机会，怕的是机会来了你把握不住。&lt;/p&gt;
+
+&lt;p&gt;理财这件事不光是为了挣钱，从理财的过程中不断看到新的底层原理才是这件事最大的意义。&lt;/p&gt;
+
+&lt;h2 id=&quot;副业&quot;&gt;副业&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;我的 App&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;昨晚在回忆今年的时候才发现，我今年一个新的 App 都没做，所以我今年到底在干嘛呢…&lt;/p&gt;
+
+&lt;p&gt;之前做的压制软件终于在今年实现了盈利，虽然不多，但这是个好的信号，我相信明年我会挣的更多。我也越发认识到，开发 App 有着天然的流量问题，所以我今年也在解决流量问题。&lt;/p&gt;
+
+&lt;p&gt;好在今年的 App 盈利了，盈利了就好。盈利了就可以堵上很多人的嘴，盈利了就可以持续的做这件事。日子还很长，我相信会有好的结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;我的内容&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我想把除了 App 以外所有的东西都放在内容上。今年最后的几个月我开始了日更，我开始把之前的流量导入到我的公众号。目前有 1700 个粉丝，虽然这些人也不咋看我这个破号。不过没关系，我现在有了冷启动的流量。这就是我最大的资本。&lt;/p&gt;
+
+&lt;p&gt;我还写了4篇科普内容，这4篇科普内容的价值在我看来是我明年最大的资本。&lt;/p&gt;
+
+&lt;p&gt;我也越发确定我的副业就两件事，一是开发App，二是做好的计算机科普内容。想明白这点还是在去当伴郎的路上。想明白就好。&lt;/p&gt;
+
+&lt;p&gt;今年最大的痛苦依然是陷入了没有好想法的困境，不知道为什么。希望明年可以爆发一些灵感吧。&lt;/p&gt;
+
+&lt;p&gt;今年的副业完全实现了收入，理财也好，开发软件也好，甚至写破公众号都实现了收入。还是那句话，不多，但是有，这就是最大的资本。这也是我2020年最大的收获。&lt;/p&gt;
 
 &lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
 
-&lt;p&gt;Uranus 无法在 Mac App Store 上架，只能独立分发，今天文章发出去就算是正式发布 App 了。下载地址是 &lt;a href=&quot;https://creamo.studio/uranus/Uranus.dmg&quot;&gt;Uranus&lt;/a&gt;，提供了免费的 7 天下载。&lt;/p&gt;
+&lt;p&gt;2020虽然很难，但我肉眼可见的看到了自己的成长。钱也好，思考也好，我都明明确确的看到了，感受到了。我也越发明确我想做的事情，我以后想成为的样子。如果要给我的2020打个分，我会打5分。剩下5分，每年1分，在30岁的时候我想满分。&lt;/p&gt;
 
-&lt;p&gt;也欢迎访问我们工作室的网站，目前我们工作室就我一个人，网址是 &lt;a href=&quot;https://creamo.studio/&quot;&gt;Creamo Studio&lt;/a&gt;，工作室 Logo 想法已经有了，但是没画出来，所以也还待定。&lt;/p&gt;
+&lt;p&gt;今年我真的很满意了，可惜我的胃口很大，我还不够满足。毕业之后我试图隐藏，可我无法把自己内心的心高气傲给掩饰了。如果不是这种心高气傲，我本该就此停止。我想说的是，不好意思我确实实力比一般人要强。我想做的事我很快就会实现。我知道很多人会等着打我的脸，我不怕，给我点时间，让我来证名。&lt;/p&gt;
+
+&lt;p&gt;关于2020想说的太多，就此打住也许是最好的选择。一如我几年前写年终总结的最后都会写的。&lt;/p&gt;
+
+&lt;p&gt;感谢各位，感谢我的家人，同事，感谢我的小伙伴们，感谢我爱的人和爱我的人。&lt;/p&gt;
+
+&lt;p&gt;感谢不开心的事，也感谢开心的事，这些都将成为我以后的财富。&lt;/p&gt;
+
+&lt;p&gt;各种感谢！深鞠躬！爱你们！&lt;/p&gt;
+
 </description>
-        <pubDate>Wed, 04 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/instagram/mac/2019/12/04/uranus.html</link>
-        <guid isPermaLink="true">http://localhost:4000/instagram/mac/2019/12/04/uranus.html</guid>
+        <pubDate>Thu, 31 Dec 2020 00:00:00 +0800</pubDate>
+        <link>http://walkginkgo.com/2020/12/31/conclusion.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/2020/12/31/conclusion.html</guid>
         
-        
-        <category>instagram</category>
-        
-        <category>mac</category>
         
       </item>
     
       <item>
-        <title>Workflow 下载 Instagram 图像及 Story（5.24 更新）</title>
-        <description>&lt;h2 id=&quot;524-更新&quot;&gt;5.24 更新&lt;/h2&gt;
+        <title>快捷指令下载 Instagram 图像及 Story（7.10 更新）</title>
+        <description>&lt;h2 id=&quot;710-更新&quot;&gt;7.10 更新&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;目前只需要在捷径最前面填写即可。详情见图！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;62-更新&quot;&gt;6.2 更新&lt;/h2&gt;
+
+&lt;p&gt;&lt;del&gt;Story 下载两个地方都需要增加 Cookie 啦，见截图。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;524-更新&quot;&gt;5.24 更新&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Instagram 单独下载一条也需要登录了，单独下载一条设置 Cookie 的方式同 Story。&lt;/strong&gt;&lt;/p&gt;
 
@@ -89,19 +158,19 @@
 
 &lt;p&gt;&lt;strong&gt;Windows 用户按 f12，Mac 用户按 option+cmd+j，打开控制台。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;此时刷新页面，找到 www.instagram.com 的请求。找到 cookie，然后找到 sessionid。复制 sessionid=140122… 即可。如图所示。&lt;/p&gt;
+&lt;p&gt;此时刷新页面，找到 www.instagram.com 的请求。找到 cookie，然后找到 sessionid。复制这串 140122… （这串数字+字母+符号，每个人不同，有人可能是 5124…等）如图所示。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;然后把这么一长串，粘贴到 Workflow 的 cookie 里即可进行下载操作。&lt;/p&gt;
+&lt;p&gt;然后把这么一长串，粘贴到捷径中最开始的 sessionid= 后面即可进行下载操作。&lt;/p&gt;
 
 &lt;h3 id=&quot;普通下载版本截图&quot;&gt;普通下载版本截图&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins3.JPG&quot; alt=&quot;&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;story-版本下载截图&quot;&gt;Story 版本下载截图&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins1.JPG&quot; alt=&quot;&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ins/ins3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
 
@@ -112,8 +181,8 @@
 &lt;p&gt;这里通过的是 Instagram 的私有 API 进行操作，所以 workflow 单人单用以免出现滥用。&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Aug 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ins/2018/08/06/ins.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ins/2018/08/06/ins.html</guid>
+        <link>http://walkginkgo.com/ins/2018/08/06/ins.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ins/2018/08/06/ins.html</guid>
         
         
         <category>ins</category>
@@ -121,7 +190,7 @@
       </item>
     
       <item>
-        <title>PineconeSuppress 上架 Mac App Store 及沙盒机制的部分说明</title>
+        <title>松果压制上架 Mac App Store 及沙盒机制的部分说明</title>
         <description>&lt;p&gt;距离上次写博客过去了一个月。这一个月经历了挣扎的上架 MAS。还好我没放弃，终于在昨天上架了 MAS。&lt;/p&gt;
 
 &lt;p&gt;我将凭借我的记忆来叙述这个上架过程中一些对于沙盒机制的理解。以及整个上线过程中存在的坑。&lt;/p&gt;
@@ -134,16 +203,16 @@
 
 &lt;p&gt;那么采用 ffmpeg 可执行文件作为我们的主要工具，就有一个很重要的问题，那就是 ffmpeg 的签名问题。MAS 版本的所有文件都要求进行签名，我第一次无法上传到 MAS 的问题就是 ffmpeg 没有签名。这里的签名就直接使用 codesign 签名是可以的。除此之外，对于 ffmpeg 要求有一个单独的 entitlement 文件，而这个文件里面应该填写的是&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;plist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;version=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;com.apple.security.inherit&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;com.apple.security.app-sandbox&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;
+&amp;lt;plist version=&quot;1.0&quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+	&amp;lt;key&amp;gt;com.apple.security.inherit&amp;lt;/key&amp;gt;
+	&amp;lt;true/&amp;gt;
+	&amp;lt;key&amp;gt;com.apple.security.app-sandbox&amp;lt;/key&amp;gt;
+	&amp;lt;true/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;然后在签名的使用 codesign 和 entitlement 签名。&lt;/p&gt;
@@ -168,7 +237,7 @@
 
 &lt;p&gt;为了可以让搜索引擎更好的搜索到相同的问题，我把文字版本的关键部分贴出来&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Specifically, we found that when the user closes the main application window there is no menu item to re-open it.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Specifically, we found that when the user closes the main application window there is no menu item to re-open it.&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;第一个问题好解决，不支持 MOV 的问题，我在 drag and drop 里增加一个判断就解决了。这个 window reopen 的问题我开始着手解决。&lt;/p&gt;
 
@@ -186,7 +255,7 @@
 
 &lt;p&gt;第一个和第二个问题的关键部分&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.downloads.read-write&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这两个 entitlement 文件的声明。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.files.downloads.read-write&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这两个 entitlement 文件的声明。&lt;/p&gt;
 
 &lt;p&gt;第三个还是 re-open window 的问题。&lt;/p&gt;
 
@@ -194,18 +263,18 @@
 
 &lt;p&gt;`&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;The download folder is the default folder to save the compressed video. So I need the download folder to write permission. And I think the right folder path is &lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/username/Downloads&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;The reopening event is resolved by add &lt;code class=&quot;highlighter-rouge&quot;&gt;makeKeyAndOrderFront&lt;/code&gt; in Appdelegate. If the user closes the window, he can reopen it by click docker icon. And I already test it.
+  &lt;li&gt;The download folder is the default folder to save the compressed video. So I need the download folder to write permission. And I think the right folder path is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/Users/username/Downloads&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The reopening event is resolved by add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;makeKeyAndOrderFront&lt;/code&gt; in Appdelegate. If the user closes the window, he can reopen it by click docker icon. And I already test it.
 `&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;然后苹果给我了一个详细的回复&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;p&gt;`
 The Downloads folder is only appropriate for items downloaded from the Internet.
 Additionally, clicking the Dock icon is an insufficient means of restoring the Main Window. We advise implementing a menu item.
 We look forward to reviewing your revised binary.
-&lt;/code&gt;&lt;/p&gt;
+`&lt;/p&gt;
 
 &lt;p&gt;Download 文件夹的使用权，只有当具备下载功能的时候才可以使用。而苹果认为，单个窗口的应用，点击 Dock 是一个没效率的打开操作，建议使用快捷键打开。&lt;/p&gt;
 
@@ -221,11 +290,11 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;关键字&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;我依然没有解决 executable 的问题，以及在苹果看来 movies 也是不可以被读写的。&lt;/p&gt;
 
-&lt;p&gt;我删除了 entitlement 中 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt;。重新提交审核。&lt;/p&gt;
+&lt;p&gt;我删除了 entitlement 中 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt;。重新提交审核。&lt;/p&gt;
 
 &lt;h3 id=&quot;第-4-次被拒-7月11日&quot;&gt;第 4 次被拒 7月11日&lt;/h3&gt;
 
@@ -237,9 +306,9 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;关键字&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write: Yes&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;在这个地方我将 &lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write&lt;/code&gt; 删除，然后将压制文件的默认文件夹放在了沙盒里的 cache 文件夹。&lt;/p&gt;
+&lt;p&gt;在这个地方我将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.assets.movies.read-write&lt;/code&gt; 删除，然后将压制文件的默认文件夹放在了沙盒里的 cache 文件夹。&lt;/p&gt;
 
 &lt;h3 id=&quot;第-5-次被拒-7月13日&quot;&gt;第 5 次被拒 7月13日&lt;/h3&gt;
 
@@ -251,7 +320,7 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;关键字&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Your app saves user data to the app's container, which is not user accessible, as documented in the &quot;Container Directories and File System Access&quot; of App Sandbox Design Guide:
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Your app saves user data to the app's container, which is not user accessible, as documented in the &quot;Container Directories and File System Access&quot; of App Sandbox Design Guide:
 &quot;The container is in a hidden location, and so users do not interact with it directly. Specifically, the container is not for user documents. It is for files that your app uses, along with databases, caches, and other app-specific data.&quot;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;于是在这个地方，我把存储位置设置为一个 NSOpenPanel，让用户选择存储位置，重新提交审核。&lt;/p&gt;
@@ -266,7 +335,7 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;其次是沙盒问题，在 MAS 的沙盒机制中，Download 文件夹和 Movie 文件夹是不可以被随意使用的，Download 文件夹只有下载功能才可以，而如果使用了 Movie 文件，那么 iTunes 的 movie 也是可以被使用的。（第 2 次和第 3 次和第 4 次被拒绝的原因）&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这个是只有当你的应用需要创建可执行文件，这个可执行文件用于启动服务等的时候才能使用。（第 2 次和第 3 次和第 4 次被拒绝的原因）&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.apple.security.files.user-selected.executable&lt;/code&gt; 这个是只有当你的应用需要创建可执行文件，这个可执行文件用于启动服务等的时候才能使用。（第 2 次和第 3 次和第 4 次被拒绝的原因）&lt;/p&gt;
 
 &lt;p&gt;沙盒内部的文件，只能被写，不能被用户读取。（第 5 次被拒绝的理由）&lt;/p&gt;
 
@@ -300,8 +369,8 @@ We look forward to reviewing your revised binary.
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 15 Jul 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</guid>
+        <link>http://walkginkgo.com/ffmpeg/2018/07/15/MAS-sanbox.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/07/15/MAS-sanbox.html</guid>
         
         
         <category>ffmpeg</category>
@@ -353,8 +422,8 @@ We look forward to reviewing your revised binary.
 
 </description>
         <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ffmpeg/2018/06/12/cocoa-ffmpeg.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/06/12/cocoa-ffmpeg.html</guid>
+        <link>http://walkginkgo.com/ffmpeg/2018/06/12/cocoa-ffmpeg.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/06/12/cocoa-ffmpeg.html</guid>
         
         
         <category>ffmpeg</category>
@@ -395,11 +464,11 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/3.png&quot; alt=&quot;ffmpeg-3&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，&lt;code class=&quot;highlighter-rouge&quot;&gt;cd Documents/ffmpeg/&lt;/code&gt;。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹&lt;/p&gt;
+&lt;p&gt;这时候要看下 ffmpeg 在哪个文件夹，比如我的 ffmpeg 在 Document 下的 ffmpeg 里。那么就输入命令，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd Documents/ffmpeg/&lt;/code&gt;。cd 的意思就是进入某个文件夹的意思。我们这里就是进入了 ffmpeg 的文件夹&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/4.png&quot; alt=&quot;ffmpeg-4&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这个时候再输入一个命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 &lt;a href=&quot;http://walkginkgo.com/images/ffmpeg/render.sh&quot;&gt;render.sh&lt;/a&gt;网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。&lt;/p&gt;
+&lt;p&gt;这个时候再输入一个命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls&lt;/code&gt;。ls 的意思是显示这个文件夹下所有的文件。可以看我的配图。到这步在 Terminal 看到有 ffmpeg 就可以了。然后点这个 &lt;a href=&quot;http://walkginkgo.com/images/ffmpeg/render.sh&quot;&gt;render.sh&lt;/a&gt;网页，就会自动下载一个文件，将这个文件放到和 ffmpeg 一个文件夹就可以啦。如下图。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/5.png&quot; alt=&quot;ffmpeg-5&quot; /&gt;&lt;/p&gt;
 
@@ -409,7 +478,7 @@ We look forward to reviewing your revised binary.
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/14.png&quot; alt=&quot;ffmpeg-14&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;把需要的方案注释之后，在 Terminal 里运行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;。就会开始压制了。&lt;/p&gt;
+&lt;p&gt;把需要的方案注释之后，在 Terminal 里运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;。就会开始压制了。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/15.png&quot; alt=&quot;ffmpeg-15&quot; /&gt;&lt;/p&gt;
 
@@ -422,7 +491,7 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 &lt;p&gt;比如我想把 wake.mp4 换成 mkv。就改为。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ffmpeg -i &quot;wake1.mp4&quot; wake.mkv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./ffmpeg -i &quot;wake1.mp4&quot; wake.mkv&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://walkginkgo.com/images/ffmpeg/6.png&quot; alt=&quot;ffmpeg-6&quot; /&gt;&lt;/p&gt;
 
@@ -458,7 +527,7 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 &lt;p&gt;wakemeup1.ass 换成你的 ass 文件&lt;/p&gt;
 
-&lt;p&gt;overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 &lt;a href=&quot;http://tieba.baidu.com/p/2706704635&quot;&gt;如何在ASS字幕中插入各种图片&lt;/a&gt;，里面的 &lt;code class=&quot;highlighter-rouge&quot;&gt;{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0&lt;/code&gt; 方案。先确定 logo 位置，填写到这里。&lt;/p&gt;
+&lt;p&gt;overlay=1060:70 这里的 1060:70 是距离屏幕左边 1060 的位置，距离屏幕上面 70 的位置。可以在 Aegisub 确定好在填写。可以参考 &lt;a href=&quot;http://tieba.baidu.com/p/2706704635&quot;&gt;如何在ASS字幕中插入各种图片&lt;/a&gt;，里面的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{\p1\1img\bord0\shad0\(logo-small.png\pos(1123,166.99)}m 0 0 l 0 120 l 240 120 l 240 0&lt;/code&gt; 方案。先确定 logo 位置，填写到这里。&lt;/p&gt;
 
 &lt;p&gt;直接在 Aegisub 上比对下也行。&lt;/p&gt;
 
@@ -476,11 +545,11 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 &lt;p&gt;出现时间修改。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;enable='between(t,35,6*60+30)'&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enable='between(t,35,6*60+30)'&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 &lt;code class=&quot;highlighter-rouge&quot;&gt;enable='between(t,10,120)'&lt;/code&gt;。即修改两个数字即可。&lt;/p&gt;
+&lt;p&gt;我现在想从第 10 秒到最后，假设影片长度 120 秒。那么修改 为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enable='between(t,10,120)'&lt;/code&gt;。即修改两个数字即可。&lt;/p&gt;
 
-&lt;p&gt;总结一下就是。准备需要的 mp4，ass，logo，然后修改 render.sh 文件。以及在 Terminal 运行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;总结一下就是。准备需要的 mp4，ass，logo，然后修改 render.sh 文件。以及在 Terminal 运行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash render.sh&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
 
@@ -498,8 +567,8 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 21 May 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</guid>
+        <link>http://walkginkgo.com/ffmpeg/2018/05/21/ffmpeg.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/05/21/ffmpeg.html</guid>
         
         
         <category>ffmpeg</category>
@@ -542,8 +611,8 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 May 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</link>
-        <guid isPermaLink="true">http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</guid>
+        <link>http://walkginkgo.com/miniprogram/2018/05/14/miniprogram-font.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/miniprogram/2018/05/14/miniprogram-font.html</guid>
         
         
         <category>miniprogram</category>
@@ -572,7 +641,7 @@ categories: server
 
 &lt;p&gt;一开始我傻不拉唧直接在服务器上看内存使用。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.CPU占用最多的前10个进程： 
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.CPU占用最多的前10个进程： 
 ps auxw|head -1;ps auxw|sort -rn -k3|head -10
 2.内存消耗最多的前10个进程 
 ps auxw|head -1;ps auxw|sort -rn -k4|head -10
@@ -584,7 +653,7 @@ ps auxw|head -1;ps auxw|sort -rn -k5|head -10
 
 &lt;p&gt;我把定时任务换成了一个 while 循环，使用了一个函数&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def report
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def report
   p 'Memory ' + `ps ax -o pid,rss | grep -E &quot;^[[:space:]]*#{$$}&quot;`
           .strip.split.map(&amp;amp;:to_i)[1].to_s + 'KB'
 end
@@ -600,20 +669,20 @@ end
 
 &lt;p&gt;我的问题在于 ruby 调用 JSON 解析和 Time 的时候。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  allData = JSON.parse(result)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  allData = JSON.parse(result)
   current_time = Time.now.strftime(&quot;%H&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;这里实际上 allData 和 current_time 都已经是对象了。而 rufus-scheduler 并没有真正的调用 cron。所以导致每个小时都有 allData 和 current_time。即使内存回收，这个地方也是不会完全回收。&lt;/p&gt;
 
-&lt;p&gt;解决方案很简单，加一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;= nil&lt;/code&gt; 就 ok。至少目前我修改过的程序已经运行 3 天内存依然比较稳定，希望一直稳定下去…&lt;/p&gt;
+&lt;p&gt;解决方案很简单，加一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;= nil&lt;/code&gt; 就 ok。至少目前我修改过的程序已经运行 3 天内存依然比较稳定，希望一直稳定下去…&lt;/p&gt;
 
 &lt;p&gt;以上。&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 09 May 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/05/09/ruby-memory.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/09/ruby-memory.html</guid>
+        <link>http://walkginkgo.com/2018/05/09/ruby-memory.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/2018/05/09/ruby-memory.html</guid>
         
         
       </item>
@@ -656,8 +725,8 @@ end
 
 </description>
         <pubDate>Mon, 09 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/linux/2018/04/09/instagram.html</link>
-        <guid isPermaLink="true">http://localhost:4000/linux/2018/04/09/instagram.html</guid>
+        <link>http://walkginkgo.com/linux/2018/04/09/instagram.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/linux/2018/04/09/instagram.html</guid>
         
         
         <category>linux</category>
@@ -764,13 +833,13 @@ end
 
 &lt;p&gt;执行完毕之后。&lt;/p&gt;
 
-&lt;p&gt;先进入 &lt;code class=&quot;highlighter-rouge&quot;&gt;cd code-huginn/&lt;/code&gt;（这里的 code-huginn 输入你刚替换我文件中的名字就好）。&lt;/p&gt;
+&lt;p&gt;先进入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd code-huginn/&lt;/code&gt;（这里的 code-huginn 输入你刚替换我文件中的名字就好）。&lt;/p&gt;
 
-&lt;p&gt;在命令行登陆你的 heroku ，就是在命令行输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在命令行登陆你的 heroku ，就是在命令行输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;heroku login&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;之后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku git:remote -a code-huginn&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;之后执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;heroku git:remote -a code-huginn&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;最后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/setup_heroku&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;最后执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bin/setup_heroku&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;剩下的就是开始自动配置了。&lt;/p&gt;
 
@@ -783,8 +852,8 @@ end
 
 </description>
         <pubDate>Sun, 14 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/huginn/2017/05/14/heroku-huginn.html</link>
-        <guid isPermaLink="true">http://localhost:4000/huginn/2017/05/14/heroku-huginn.html</guid>
+        <link>http://walkginkgo.com/huginn/2017/05/14/heroku-huginn.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/huginn/2017/05/14/heroku-huginn.html</guid>
         
         
         <category>huginn</category>
@@ -865,8 +934,8 @@ end
 
 </description>
         <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/life/2016/09/06/kindle.html</link>
-        <guid isPermaLink="true">http://localhost:4000/life/2016/09/06/kindle.html</guid>
+        <link>http://walkginkgo.com/life/2016/09/06/kindle.html</link>
+        <guid isPermaLink="true">http://walkginkgo.com/life/2016/09/06/kindle.html</guid>
         
         
         <category>life</category>

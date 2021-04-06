@@ -1,4 +1,4 @@
-I"U<h2 id="需要的东西">需要的东西</h2>
+I"�<h2 id="需要的东西">需要的东西</h2>
 
 <ol>
   <li><a href="https://codeanywhere.com/">Codeanywhere</a> 账号注册（用于 Heroku 环境配置）</li>
@@ -96,13 +96,13 @@
 
 <p>执行完毕之后。</p>
 
-<p>先进入 <code class="highlighter-rouge">cd code-huginn/</code>（这里的 code-huginn 输入你刚替换我文件中的名字就好）。</p>
+<p>先进入 <code class="language-plaintext highlighter-rouge">cd code-huginn/</code>（这里的 code-huginn 输入你刚替换我文件中的名字就好）。</p>
 
-<p>在命令行登陆你的 heroku ，就是在命令行输入 <code class="highlighter-rouge">heroku login</code>。</p>
+<p>在命令行登陆你的 heroku ，就是在命令行输入 <code class="language-plaintext highlighter-rouge">heroku login</code>。</p>
 
-<p>之后执行 <code class="highlighter-rouge">heroku git:remote -a code-huginn</code>。</p>
+<p>之后执行 <code class="language-plaintext highlighter-rouge">heroku git:remote -a code-huginn</code>。</p>
 
-<p>最后执行 <code class="highlighter-rouge">bin/setup_heroku</code>。</p>
+<p>最后执行 <code class="language-plaintext highlighter-rouge">bin/setup_heroku</code>。</p>
 
 <p>剩下的就是开始自动配置了。</p>
 

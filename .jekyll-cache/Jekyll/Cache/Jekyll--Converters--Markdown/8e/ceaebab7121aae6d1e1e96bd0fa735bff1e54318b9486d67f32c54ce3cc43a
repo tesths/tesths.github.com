@@ -1,4 +1,4 @@
-I"� <blockquote>
+I"]!<blockquote>
   <p>本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。
 今天不打算写的，今天实验课太无聊。我决定写一写。</p>
 </blockquote>
@@ -19,7 +19,7 @@
 
 <p>首先来看一个函数，lucky。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lucky :: Int -&gt; String
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lucky :: Int -&gt; String
 lucky 7 = "LUCKY NUMBER SEVEN!"
 lucky x = "Sorry, you're out of luck, pal!"
 </code></pre></div></div>
@@ -58,7 +58,7 @@ lucky x = "Sorry, you're out of luck, pal!"
 
 <p>我们一个一个来看。先看返回一个函数的情况。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
 multThree x y z = x * y * z
 </code></pre></div></div>
 
@@ -66,12 +66,12 @@ multThree x y z = x * y * z
 
 <p>也可以写成这样。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; (Int -&gt; (Int -&gt; Int))
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; (Int -&gt; (Int -&gt; Int))
 </code></pre></div></div>
 
 <p>所以，我们来分析书上的一个例子。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
 ghci&gt; multTwoWithNine 2 3
 54
 </code></pre></div></div>
@@ -101,7 +101,7 @@ ghci&gt; multTwoWithNine 2 3
 
 <p>看个例子就明白了。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
 16
 </code></pre></div></div>
 
@@ -115,7 +115,7 @@ ghci&gt; multTwoWithNine 2 3
 
 <p>说了这么多还是混乱是吧…感觉上这个例子可能不能很好的说明。那我们看两个好懂的。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]
 zipWith' _ [] _ = []
 zipWith' _ _ [] = []
 zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
@@ -125,7 +125,7 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 <p>那么我们对[a]中的元素和[b]中的元素执行第一个函数的方法，最后返回的应该是列表中的每一个元素操作后的结果。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
 [6,8,7,9]
 </code></pre></div></div>
 
@@ -137,7 +137,7 @@ zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
 
 <p>再看一个map，这个在rac和rx都有用到。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
 </code></pre></div></div>
@@ -146,12 +146,12 @@ map f (x:xs) = f x : map f xs
 
 <p>我们来分析一个复杂点的map。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
 </code></pre></div></div>
 
 <p>首先我们(a -&gt; b)要进行的函数操作其实是(map (^2))，那对第一个列表[1,2]来说，又是一个列表了，所以要返回一个列表。(map (^2)) 1 的结果是1，(map (^2)) 2的结果是4，然后返回一个列表，即[1,4]。一次类推，所以结果就是。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,4],[9,16,25,36],[49,64]]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,4],[9,16,25,36],[49,64]]
 </code></pre></div></div>
 
 <h2 id="swift中的应用">swift中的应用</h2>
@@ -162,7 +162,7 @@ map f (x:xs) = f x : map f xs
 
 <p>那我们来迁移一下理解。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1, 2, 4]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1, 2, 4]
 // arr = [1, 2, 4]
 
 let brr = arr.map {

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Higher-Order Functions</title>
+  <meta name="description" content="我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://walkginkgo.com/achieve/2016-3-7-Higher-Order-Functions.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
+  
+  
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/css/style.css" rel="stylesheet"> -->
+<!--  <link href="/css/syntax.css" rel="stylesheet"> -->
+  <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 主页</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/achieve/2015-10-4-ios-mvvm-11.html">iOS开发框架MVVM 1理解开发模式(填坑)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-12-ios-mvvm-2.html">iOS开发模式MVVM 2分离业务逻辑</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-19-feelings.html">创业和情怀</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-2-15-brackets-emmet.html">关于前端文本编辑器的废话和Emmet部分文档说明</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-22-ios-sumup-1.html">Jekyll问题解答和iOS开发小结Ⅰ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-7-git-easyuse.html">命令行git简单使用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-4-20-ios-sumup-2.html">iOS近期开发小结Ⅱ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-1-use-xampp-build-dvwa.html">利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-3-ios-mvvm-1.html">iOS开发框架MVVM 1理解开发模式(占坑，未写完)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-12-rac_uiview.html">ReactiveCocoa在UIView上的运用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-29-to-my-dear.html">给萌萌哒的子渔酱</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-3-7-Higher-Order-Functions.html">Higher-Order Functions</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-25-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%20-1.html">Learn You a Swift for Great Good! part -1</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-27-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%200.html">Learn You a Swift for Great Good! part 0 -- Swift Currying</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-29-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%201.html">Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2019-12-4-uranus.html">关于 Uranus 的一些事情</a>
+          
+        
+          
+          <a class="page-link" href="/about/">关于我</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header" align="center" >
+    <h1 class="post-title">Higher-Order Functions</h1>
+    <p class="post-meta">Mar 6, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <blockquote>
+  <p>本来打算昨天写的，昨天说好了休假又帮忙解决很多问题。
+今天不打算写的，今天实验课太无聊。我决定写一写。</p>
+</blockquote>
+
+<p>最后的部分可能我会结合swift来写一写。看我写的进度…</p>
+
+<h2 id="背景">背景</h2>
+
+<hr />
+
+<p>说好的看Learn You a Haskell for Great Good，寒假敲了不少，到higher-order function卡了。光敲已经不能理解了。最近的早上有时候去的早就会看一看理解一下Haskell，把higher-order function看了小半，Lambdas之前的部分，准备写一写，也算是个记录。不得不感叹，这玩意真TM难懂。</p>
+
+<h2 id="introduction">introduction</h2>
+
+<hr />
+
+<p>首先简单的说一下Haskell的语法，只有这样我才能更好的把后面的东西写明白。</p>
+
+<p>首先来看一个函数，lucky。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lucky :: Int -&gt; String
+lucky 7 = "LUCKY NUMBER SEVEN!"
+lucky x = "Sorry, you're out of luck, pal!"
+</code></pre></div></div>
+
+<p>这个其实和swift的语法很相似，以至于我觉得swift这里很大程度上借鉴了haskell的语法。lucky作为一个函数，参数是一个Int类型，返回值是一个String类型。当我们运行时，如果是7，就会显示是幸运数字，如果不是，那就显示sorry。</p>
+
+<h2 id="higher-order-function">higher-order function</h2>
+
+<hr />
+
+<p>什么是higher-order function。在haskell第五章的开始说了。</p>
+
+<blockquote>
+  <p>Haskell functions can take functions as parameters and return functions as return values. A function that does either of these things is called a higher-order function.</p>
+</blockquote>
+
+<p>在wiki中得介绍是这样的。</p>
+
+<blockquote>
+  <p>在数学和计算机科学中，高阶函数是至少满足下列一个条件的函数：
+接受一个或多个函数作为输入
+输出一个函数</p>
+</blockquote>
+
+<p>可以看到这两个其实想表达的意思是一样的。那就是，函数作为参数，或者返回一个函数。</p>
+
+<p>简单的说，在C语言中，我们都是这么写的…void func(int, int) return void。</p>
+
+<p>在haskell中，我们可以这么写，func func(func, func) return func。</p>
+
+<p>在函数式编程中，函数已经成为了头等公民。这就是高阶函数。到这基本上就可以理解面向对象总是说函数式把函数传来传去的梗了…</p>
+
+<h2 id="func-return-func">func return func</h2>
+
+<hr />
+
+<p>我们一个一个来看。先看返回一个函数的情况。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; Int -&gt; Int -&gt; Int
+multThree x y z = x * y * z
+</code></pre></div></div>
+
+<p>这是一个函数，参数是三个Int类型，返回这三个Int的乘积。</p>
+
+<p>也可以写成这样。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>multThree :: Int -&gt; (Int -&gt; (Int -&gt; Int))
+</code></pre></div></div>
+
+<p>所以，我们来分析书上的一个例子。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; let multTwoWithNine = multThree 9
+ghci&gt; multTwoWithNine 2 3
+54
+</code></pre></div></div>
+
+<p>在这里，我们让multTwoWithNine等于了一个函数，这个函数是multThree 9。那这个时候multThree 9实际上算是返回了一个函数。那么这样的话，可以将这个函数赋值为一个变量。</p>
+
+<p>也就是我们的multTwoWithNine。这个时候我们的multTwoWithNine实际上要计算的就是两个数的乘积再乘上9，而乘9，实际上不算是一个函数。</p>
+
+<p>这里就达到了函数返回一个函数。即我的标题，func return func。</p>
+
+<h2 id="func-as-parameters">func as parameters</h2>
+
+<hr />
+
+<p>来看例子。</p>
+
+<blockquote>
+  <p>In Haskell, functions can take other functions as parameters, and as you’ve seen, they can also return functions as return values.</p>
+</blockquote>
+
+<p>也就是说，函数可以将函数作为参数。</p>
+
+ 	applyTwice :: (a -&gt; a) -&gt; a -&gt; a
+ 	applyTwice f x = f (f x)
+
+<p>这个例子种，f实际上就是一个方法。</p>
+
+<p>看个例子就明白了。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; applyTwice (+3) 10
+16
+</code></pre></div></div>
+
+<p>在这里，我们看上去applyTwice有三个参数，但是前两个参数被包起来了。也就是说，我们有一个函数参数，一个参数和一个返回值。</p>
+
+<p>f x = f (f x)实际上就是f方法执行了两次。</p>
+
+<p>怎么去理解高阶函数呢？实际上在我看来，可以这么理解，第一个函数参数，实际上实现了在第三个参数的操作。</p>
+
+<p>为什么这里会等于16，实际上这样操作的。10 + 3 + 3。也就是，实际上第三个参数执行了函数参数的方法，得到了返回值。</p>
+
+<p>说了这么多还是混乱是吧…感觉上这个例子可能不能很好的说明。那我们看两个好懂的。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]
+zipWith' _ [] _ = []
+zipWith' _ _ [] = []
+zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys
+</code></pre></div></div>
+
+<p>按照我上面说的，第一个函数参数，实际上是a，b参数返回c。</p>
+
+<p>那么我们对[a]中的元素和[b]中的元素执行第一个函数的方法，最后返回的应该是列表中的每一个元素操作后的结果。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; zipWith' (+) [4,2,5,6] [2,6,2,3]
+[6,8,7,9]
+</code></pre></div></div>
+
+<p>这个例子中，对[a]和[b]中的每一个元素进行+操作。实际上就是第一个(a -&gt; b -&gt; c)中的操作了。</p>
+
+<p>第二行和第三行的意思其实是，第一个函数参数不管它什么类型，我们迪哥参数和第三个参数只要是列表，就返回列表。</p>
+
+<p>这么一看，其实高阶函数也不是很难吧。</p>
+
+<p>再看一个map，这个在rac和rx都有用到。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map _ [] = []
+map f (x:xs) = f x : map f xs
+</code></pre></div></div>
+
+<p>我们看这个函数，按照对zipWith’的理解，我们知道，这个操作其实是对[a]列表中的元素进行操作，然后这些值返回一个[b]列表。</p>
+
+<p>我们来分析一个复杂点的map。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ghci&gt; map (map (^2)) [[1,2],[3,4,5,6],[7,8]]
+</code></pre></div></div>
+
+<p>首先我们(a -&gt; b)要进行的函数操作其实是(map (^2))，那对第一个列表[1,2]来说，又是一个列表了，所以要返回一个列表。(map (^2)) 1 的结果是1，(map (^2)) 2的结果是4，然后返回一个列表，即[1,4]。一次类推，所以结果就是。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[1,4],[9,16,25,36],[49,64]]
+</code></pre></div></div>
+
+<h2 id="swift中的应用">swift中的应用</h2>
+
+<hr />
+
+<p><a href="http://blog.devtang.com/2016/02/27/swift-gym-3-higher-order-function/">Swift 烧脑体操（三） - 高阶函数</a>看到了swift中高阶函数的运用。</p>
+
+<p>那我们来迁移一下理解。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1, 2, 4]
+// arr = [1, 2, 4]
+
+let brr = arr.map {
+	"No." + String($0)
+}
+// brr = ["No.1", "No.2", "No.4"]
+</code></pre></div></div>
+
+<p>第一个arr.map，在map中，实际上就是实现了我们上文map中f的应用，对列表里的每个元素就会进行操作。实际上和haskell中的map函数没有什么差别了。</p>
+
+<p>实际上来说，高阶函数的应用很多，后面我在学习swift之后会继续说说这个高阶函数，当然，在我能搞定的情况下，我想尝试去学学Monad。</p>
+
+<blockquote>
+  <p>大概，大概，把我理解的高阶函数交会给工作室学弟学妹们的时候，就是我要离开工作室去考研或者工作的时候了~</p>
+</blockquote>
+
+  </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'tesths'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">testHs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>testHs</li>
+          <li><a href="mailto:judi0713@foxmail.com">judi0713@foxmail.com</a>
+
+          <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/judi0713">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">judi0713</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
+</p>
+      </div>
+    </div>
+
+  </div>
+<!-- <script src="/js/bootstrap.min.js"></script>
+<script src="/three/jquery.pin/jquery.pin.min.js"></script> -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60194293-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</footer>
+
+
+  </body>
+
+</html>

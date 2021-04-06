@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"�<blockquote>
   <p>依旧是一篇探究 Mac 软件原理的文章</p>
 </blockquote>
 
@@ -30,9 +30,9 @@
 
 <p>之后我看了一下，正如作者所说，是构造了一个 <strong>Selector</strong>，但实际上是用 Hack 的方法调用了两个方法</p>
 
-<p><code class="highlighter-rouge">- (void)_insertStatusItem:(id)arg1 withPriority:(long long)arg2;</code></p>
+<p><code class="language-plaintext highlighter-rouge">- (void)_insertStatusItem:(id)arg1 withPriority:(long long)arg2;</code></p>
 
-<p><code class="highlighter-rouge">- (id)_statusItemWithLength:(double)arg1 withPriority:(long long)arg2;</code></p>
+<p><code class="language-plaintext highlighter-rouge">- (id)_statusItemWithLength:(double)arg1 withPriority:(long long)arg2;</code></p>
 
 <p>我们来看这两个方法。<strong>Priority</strong> 实际上是确定位置的，优先级越高，位置越靠左。但是问题在于，这两个方法不在 <strong>NSMenuExtra</strong> 中，那么这两个方法又是哪来的呢？</p>
 
@@ -40,7 +40,7 @@
 
 <p>于是，我决定开始使用 class-dump 来查看未公开的 API。</p>
 
-<p><code class="highlighter-rouge">./class-dump -H -o ~/Desktop /System/Library/Frameworks/AppKit.framework</code></p>
+<p><code class="language-plaintext highlighter-rouge">./class-dump -H -o ~/Desktop /System/Library/Frameworks/AppKit.framework</code></p>
 
 <p>这个命令会把 <strong>AppKit.framework</strong> 中的所有方法都导出一个一个的.h文件。</p>
 
@@ -52,7 +52,7 @@
 
 <p>下面我们来猜测一下 Bartender 可以把所有图标放到状态栏下面那行的大概原理。</p>
 
-<p><code class="highlighter-rouge">./class-dump -H -o ~/Desktop/private /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin</code></p>
+<p><code class="language-plaintext highlighter-rouge">./class-dump -H -o ~/Desktop/private /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin</code></p>
 
 <p>这个命令会把 <strong>NSMenuExtra</strong> 相关的.h头文件导出。还有其他的一系列头文件。</p>
 

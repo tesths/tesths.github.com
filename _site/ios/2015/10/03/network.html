@@ -10,8 +10,8 @@
   <meta name="description" content="FOR CM AND PLUSUB">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/ios/2015/10/03/network.html">
-  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="http://walkginkgo.com/ios/2015/10/03/network.html">
+  <link rel="alternate" type="application/rss+xml" title="testHs" href="http://walkginkgo.com/feed.xml" />
   
   
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +41,70 @@
       </a>
 
       <div class="trigger">
+        
+          
+          <a class="page-link" href="/achieve/2015-10-4-ios-mvvm-11.html">iOS开发框架MVVM 1理解开发模式(填坑)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-12-ios-mvvm-2.html">iOS开发模式MVVM 2分离业务逻辑</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-12-19-feelings.html">创业和情怀</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-2-15-brackets-emmet.html">关于前端文本编辑器的废话和Emmet部分文档说明</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-22-ios-sumup-1.html">Jekyll问题解答和iOS开发小结Ⅰ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-3-7-git-easyuse.html">命令行git简单使用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-4-20-ios-sumup-2.html">iOS近期开发小结Ⅱ</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-1-use-xampp-build-dvwa.html">利用XAMPP在Ubuntu下搭建渗透测试平台DVWA</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-5-3-ios-mvvm-1.html">iOS开发框架MVVM 1理解开发模式(占坑，未写完)</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-12-rac_uiview.html">ReactiveCocoa在UIView上的运用</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2015-6-29-to-my-dear.html">给萌萌哒的子渔酱</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-3-7-Higher-Order-Functions.html">Higher-Order Functions</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-25-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%20-1.html">Learn You a Swift for Great Good! part -1</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-27-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%200.html">Learn You a Swift for Great Good! part 0 -- Swift Currying</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2016-6-29-Learn%20You%20a%20Swift%20for%20Great%20Good!%20part%201.html">Learn You a Swift for Great Good! part 1 -- Higher-Order Functions in Swift</a>
+          
+        
+          
+          <a class="page-link" href="/achieve/2019-12-4-uranus.html">关于 Uranus 的一些事情</a>
+          
         
           
           <a class="page-link" href="/about/">关于我</a>
@@ -86,15 +150,15 @@
 
 <p>加入工作室一年。一共做了有三四个项目了。我先大概叙述一下我们的网络请求的转变过程</p>
 
-<h2 id="第一阶段-直接调用afnetworking"><code class="highlighter-rouge">第一阶段 直接调用AFNetworking</code></h2>
+<h2 id="第一阶段-直接调用afnetworking"><code class="language-plaintext highlighter-rouge">第一阶段 直接调用AFNetworking</code></h2>
 
 <p>第一个项目那时候懵懂无知，每个界面都直接调<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>。这样导致的问题就是代码量骤然增加。</p>
 
-<h2 id="第二阶段-直接调用ytknetwork"><code class="highlighter-rouge">第二阶段 直接调用YTKNetwork</code></h2>
+<h2 id="第二阶段-直接调用ytknetwork"><code class="language-plaintext highlighter-rouge">第二阶段 直接调用YTKNetwork</code></h2>
 
 <p>第二个项目刚做的时候唐巧开源了他们在猿题库封装的<a href="https://github.com/yuantiku/YTKNetwork">YTKNetwork</a>。那时候还是懵懂无知，还是在每个界面都开始直接调YTKNetwork。人家封装的那么好的东西就被我用成这个栽子，简直对不起巧大。我记得有个界面好像有5条网络请求，可以想象代码的冗余度。</p>
 
-<h2 id="第三阶段-开始使用reactivecocoa"><code class="highlighter-rouge">第三阶段 开始使用ReactiveCocoa</code></h2>
+<h2 id="第三阶段-开始使用reactivecocoa"><code class="language-plaintext highlighter-rouge">第三阶段 开始使用ReactiveCocoa</code></h2>
 
 <p>因为在做第二个项目的时候我和迪哥负责不同的客户端。迪哥在看了limboy的<a href="http://limboy.me/ios/2014/01/05/ios-rest-client-implementation.html">基于AFNetworking2.0和ReactiveCocoa2.1的iOS REST Client</a>开始将网络请求剥离到一个专门的界面，这样每次就不用写很多的东西了。</p>
 
@@ -134,7 +198,7 @@
 
 <p>我们倒着来说。</p>
 
-<h2 id="第三部分-afnetworking"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
+<h2 id="第三部分-afnetworking"><code class="language-plaintext highlighter-rouge">第三部分 AFNetworking</code></h2>
 
 <p>在我分类的AFNetworking里也就是CodingNetAPIClient里，Coding进行了一件事情，那就是进行AFNetworking的网络请求。</p>
 
@@ -142,11 +206,11 @@
 
 <p>然后在网络请求中判断，如果有错误，那么返回nil和id类型的error。如果没错误，返回response和nil。</p>
 
-<h2 id="第二部分-block"><code class="highlighter-rouge">第二部分 block</code></h2>
+<h2 id="第二部分-block"><code class="language-plaintext highlighter-rouge">第二部分 block</code></h2>
 
 <p>在这部分里，回调的结果有两种，一种是有数据，一种是没数据。其实到这就行了。那么现在在这第二个部分干什么呢，json转model。就这么简单。返回的东西，如果有数据返回，那么就再次返回model或者是data和nil，如果没有数据返回，就返回nil和error。</p>
 
-<h2 id="第一部分-block"><code class="highlighter-rouge">第一部分 block</code></h2>
+<h2 id="第一部分-block"><code class="language-plaintext highlighter-rouge">第一部分 block</code></h2>
 <p>到这里，其实只要判断有无数据就可以啦。</p>
 
 <p>好了。下面我们只需要用RAC来替换block就完成了。当然了，中间有坑，不会那么简单的…</p>
@@ -165,8 +229,8 @@
 
 <p>也是倒着来。</p>
 
-<h2 id="第三部分-afnetworking-1"><code class="highlighter-rouge">第三部分 AFNetworking</code></h2>
-<p><code class="highlighter-rouge">这是AFNetworking网络请求</code></p>
+<h2 id="第三部分-afnetworking-1"><code class="language-plaintext highlighter-rouge">第三部分 AFNetworking</code></h2>
+<p><code class="language-plaintext highlighter-rouge">这是AFNetworking网络请求</code></p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="c1">//一切仿照Coding</span>
@@ -189,7 +253,7 @@
     <span class="k">break</span><span class="p">;</span>
 <span class="err">}</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">这是对返回值的处理</code></p>
+<p><code class="language-plaintext highlighter-rouge">这是对返回值的处理</code></p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
         <span class="k">-</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="nf">handleResponse</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">responseJSON</span> <span class="nf">autoShowError</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">autoShowError</span>
@@ -223,7 +287,7 @@
     <span class="k">return</span> <span class="n">error</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">这是重新登陆后再次进行网络请求</code></p>
+<p><code class="language-plaintext highlighter-rouge">这是重新登陆后再次进行网络请求</code></p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">rerequestJsonDataWithPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aPath</span>
@@ -235,7 +299,7 @@
     <span class="p">}];</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="第二部分-rac"><code class="highlighter-rouge">第二部分 RAC</code></h2>
+<h2 id="第二部分-rac"><code class="language-plaintext highlighter-rouge">第二部分 RAC</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="k">-</span> <span class="p">(</span><span class="n">RACSignal</span> <span class="o">*</span><span class="p">)</span><span class="n">test2</span>
@@ -254,7 +318,7 @@
     <span class="p">}];</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="第一部分-rac"><code class="highlighter-rouge">第一部分 RAC</code></h2>
+<h2 id="第一部分-rac"><code class="language-plaintext highlighter-rouge">第一部分 RAC</code></h2>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"> 
 <span class="k">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="nf">test2</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">sender</span>
@@ -275,7 +339,7 @@
 
 <h3 id="问题一回调两个值">问题一：回调两个值</h3>
 
-<p>其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用<code class="highlighter-rouge">RACTupleUnpack(id resultData, NSError *error) = x;</code>来解加压缩变量(用词不准确见谅)</p>
+<p>其实用RAC改写block是不难的，难的在于block传值传了两个回去，RAC我没找到可以传两个值的地方，于是我用了RACTuplePack，这个是RAC里一个宏定义，可以打包变量。然后在信号收取端利用<code class="language-plaintext highlighter-rouge">RACTupleUnpack(id resultData, NSError *error) = x;</code>来解加压缩变量(用词不准确见谅)</p>
 
 <p>在这里非常感谢<a href="supermao.cn/zhe-yang-hao-yong-de-reactivecocoagen-ben-ting-bu-xia-lai/">这样好用的ReactiveCocoa，根本停不下来</a>这篇博客。看到了RACTuplePack这个宏定义。</p>
 
@@ -348,7 +412,7 @@
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
           <li>testHs</li>
-          <li><a href="mailto:judi0713@sina.com">judi0713@sina.com</a>
+          <li><a href="mailto:judi0713@foxmail.com">judi0713@foxmail.com</a>
 
           <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254460935'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1254460935%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
           </li>

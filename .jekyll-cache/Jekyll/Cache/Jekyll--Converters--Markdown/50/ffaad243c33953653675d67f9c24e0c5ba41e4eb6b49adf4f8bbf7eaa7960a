@@ -1,4 +1,4 @@
-I"@<p>上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。</p>
+I"�<p>上周日更新了新版的Mac OS 10.11 EI Captain，上午在工作室升级Xcode7还有keynote等等，下午安装操作系统和各种倒腾。最后发现时间都浪费在下午软件不能正常安装上了。特此写篇博客记录一下整个填更新的填坑过程。</p>
 
 <p>其实我是很反对更新的，一更新就得踩坑，但是强迫症患者没法看到有更新不去更。</p>
 
@@ -6,11 +6,11 @@
 
 <h2 id="1-homebrew不能使用">1. homebrew不能使用</h2>
 
-<p>homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用<code class="highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是<code class="highlighter-rouge">Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool</code></p>
+<p>homebrew本身是需要Xcode的command line的，而新版的Xcode7，应该是会把之前的command line删除了..所以即使你用<code class="language-plaintext highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>但是你还是没有办法使用homebrew，你在使用homebrew的时候，不论什么命令，都是<code class="language-plaintext highlighter-rouge">Failure while executing: /usr/bin/otool -L /usr/bin/install_name_tool</code></p>
 
-<p>当然，有<code class="highlighter-rouge">sudo xcodebuild -license</code>的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。</p>
+<p>当然，有<code class="language-plaintext highlighter-rouge">sudo xcodebuild -license</code>的原因，就是你没有同意xcodebuild的license。当然这些我都试了。还是不行，后来查查发现是command line没有选中的原因。</p>
 
-<p>解决方法：首先<code class="highlighter-rouge">xcode-select -p</code>一般默认是<code class="highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>
+<p>解决方法：首先<code class="language-plaintext highlighter-rouge">xcode-select -p</code>一般默认是<code class="language-plaintext highlighter-rouge">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code>
 但是Xcode7你需要切换到/Library/Developer/CommandLineTools，这时候就好了。</p>
 
 <p>很多人的homebrew不能用是因为权限问题，在使用homebrew doctor的时候会提醒你。这点就不说了。</p>
@@ -30,7 +30,7 @@
 
 <p>打开terminal修改~/.gemrc</p>
 
-<p>增加<code class="highlighter-rouge">gem: -n/usr/local/bin</code>这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。</p>
+<p>增加<code class="language-plaintext highlighter-rouge">gem: -n/usr/local/bin</code>这样就把gem的默认安装环境换到了/usr/local/bin下，这样更新gem就没问题了。</p>
 
 <h2 id="4xcode的alcatraz不在window下显示">4.Xcode的Alcatraz不在window下显示</h2>
 
@@ -42,7 +42,7 @@
 
 <p>这里说明一下，每个Xcode版本的UUID不一样，所以最好的方法是先获取Xcode的UUID。</p>
 
-<p>命令是<code class="highlighter-rouge">defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</code></p>
+<p>命令是<code class="language-plaintext highlighter-rouge">defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</code></p>
 
 <p>最后加到一个plist文件然后重启Xcode就可以了，大部分都是这样解决了。</p>
 

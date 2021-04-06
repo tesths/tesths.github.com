@@ -1,4 +1,4 @@
-I"�<h3 id="慎哥开博客了博客做的很好看欢迎访问cbsfly">慎哥开博客了，博客做的很好看！欢迎访问~<a href="http://cbsfly.github.io">cbsfly</a></h3>
+I"<h3 id="慎哥开博客了博客做的很好看欢迎访问cbsfly">慎哥开博客了，博客做的很好看！欢迎访问~<a href="http://cbsfly.github.io">cbsfly</a></h3>
 
 <blockquote>
   <p>请合理利用互联网，不要对国家安全造成任何威胁！</p>
@@ -55,17 +55,17 @@
 
 <p>首先下载预编译的ipk到本地安装。在<a href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/2.4.3-33429ad/">shadowsocks-libev</a>找到对应的机型。我的是ar71xx，然后找到那个下载次数最多的shadowsocks-libev-spec版本。这个是针对OpenWrt的优化版本。</p>
 
-<p>下载完毕之后，通过scp命令上传到OpenWrt上，先<code class="highlighter-rouge">opkg update</code>，这一步是更新源，和我们ubuntu的update一样。</p>
+<p>下载完毕之后，通过scp命令上传到OpenWrt上，先<code class="language-plaintext highlighter-rouge">opkg update</code>，这一步是更新源，和我们ubuntu的update一样。</p>
 
 <p>接着</p>
 
-<p><code class="highlighter-rouge">opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk</code></p>
+<p><code class="language-plaintext highlighter-rouge">opkg install shadowsocks-libev-spec_2.4.3-1_ar71xx.ipk</code></p>
 
 <p>安装，他会自动的把需要的依赖包一并下载了。到这就完成了对ss的安装。</p>
 
 <p>在shadowsocks-libev-spec从v1.5.2开始可以使用luci配置界面。所以我就找了一下luci的package，所有的package都在<a href="https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/packages/">packages列表</a>。luci-app-shadowsocks-spec_1.3.7-1_all.ipk我的叫这个，我就下载了然后继续scp上传，然后</p>
 
-<p><code class="highlighter-rouge">opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk</code></p>
+<p><code class="language-plaintext highlighter-rouge">opkg install luci-app-shadowsocks-spec_1.3.7-1_all.ipk</code></p>
 
 <p>之后登陆web界面，这时候就有可视化的配置界面了。</p>
 
@@ -75,7 +75,7 @@
 
 <p>这一步其实是关键的，新建一个后缀为list的文件，然后输入这串命令</p>
 
-<p><code class="highlighter-rouge">wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' &gt; /dev/ignore.list</code></p>
+<p><code class="language-plaintext highlighter-rouge">wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' &gt; /dev/ignore.list</code></p>
 
 <p>然后把ignore的路径设置到你配置的那个文件就可以了。</p>
 
@@ -84,9 +84,9 @@
 <h2 id="8021x校园网拨号">8021x校园网拨号</h2>
 <p>不过我们不用更换源，首先我们需要</p>
 
-<p><code class="highlighter-rouge">opkg remove wpad-mini</code></p>
+<p><code class="language-plaintext highlighter-rouge">opkg remove wpad-mini</code></p>
 
-<p>然后<code class="highlighter-rouge">opkg install wpad</code>和<code class="highlighter-rouge">opkg install wpa-cli</code>。</p>
+<p>然后<code class="language-plaintext highlighter-rouge">opkg install wpad</code>和<code class="language-plaintext highlighter-rouge">opkg install wpa-cli</code>。</p>
 
 <p>然后配置8021x的文件就可以上网了。</p>
 
