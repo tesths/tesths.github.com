@@ -4,11 +4,11 @@
     <title>testHs</title>
     <description>我想回馈iOS开发这个大社区，所以我决定写博客。 写的不好，还请见谅。
 </description>
-    <link>http://walkginkgo.com/</link>
-    <atom:link href="http://walkginkgo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 06 Apr 2021 22:46:21 +0800</pubDate>
-    <lastBuildDate>Tue, 06 Apr 2021 22:46:21 +0800</lastBuildDate>
-    <generator>Jekyll v4.2.0</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 06 Apr 2021 22:50:07 +0800</pubDate>
+    <lastBuildDate>Tue, 06 Apr 2021 22:50:07 +0800</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>2020 年的总结</title>
@@ -122,8 +122,8 @@
 
 </description>
         <pubDate>Thu, 31 Dec 2020 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/2020/12/31/conclusion.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/2020/12/31/conclusion.html</guid>
+        <link>http://localhost:4000/2020/12/31/conclusion.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/12/31/conclusion.html</guid>
         
         
       </item>
@@ -181,8 +181,8 @@
 &lt;p&gt;这里通过的是 Instagram 的私有 API 进行操作，所以 workflow 单人单用以免出现滥用。&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 Aug 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ins/2018/08/06/ins.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ins/2018/08/06/ins.html</guid>
+        <link>http://localhost:4000/ins/2018/08/06/ins.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ins/2018/08/06/ins.html</guid>
         
         
         <category>ins</category>
@@ -369,8 +369,8 @@ We look forward to reviewing your revised binary.
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 15 Jul 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ffmpeg/2018/07/15/MAS-sanbox.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/07/15/MAS-sanbox.html</guid>
+        <link>http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/07/15/MAS-sanbox.html</guid>
         
         
         <category>ffmpeg</category>
@@ -422,8 +422,8 @@ We look forward to reviewing your revised binary.
 
 </description>
         <pubDate>Tue, 12 Jun 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ffmpeg/2018/06/12/cocoa-ffmpeg.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/06/12/cocoa-ffmpeg.html</guid>
+        <link>http://localhost:4000/ffmpeg/2018/06/12/cocoa-ffmpeg.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/06/12/cocoa-ffmpeg.html</guid>
         
         
         <category>ffmpeg</category>
@@ -567,8 +567,8 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 21 May 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/ffmpeg/2018/05/21/ffmpeg.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/ffmpeg/2018/05/21/ffmpeg.html</guid>
+        <link>http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ffmpeg/2018/05/21/ffmpeg.html</guid>
         
         
         <category>ffmpeg</category>
@@ -611,8 +611,8 @@ render.sh 里定义了几个方法。&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 14 May 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/miniprogram/2018/05/14/miniprogram-font.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/miniprogram/2018/05/14/miniprogram-font.html</guid>
+        <link>http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</link>
+        <guid isPermaLink="true">http://localhost:4000/miniprogram/2018/05/14/miniprogram-font.html</guid>
         
         
         <category>miniprogram</category>
@@ -681,8 +681,8 @@ end
 
 </description>
         <pubDate>Wed, 09 May 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/2018/05/09/ruby-memory.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/2018/05/09/ruby-memory.html</guid>
+        <link>http://localhost:4000/2018/05/09/ruby-memory.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/09/ruby-memory.html</guid>
         
         
       </item>
@@ -725,8 +725,8 @@ end
 
 </description>
         <pubDate>Mon, 09 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/linux/2018/04/09/instagram.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/linux/2018/04/09/instagram.html</guid>
+        <link>http://localhost:4000/linux/2018/04/09/instagram.html</link>
+        <guid isPermaLink="true">http://localhost:4000/linux/2018/04/09/instagram.html</guid>
         
         
         <category>linux</category>
@@ -852,8 +852,8 @@ end
 
 </description>
         <pubDate>Sun, 14 May 2017 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/huginn/2017/05/14/heroku-huginn.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/huginn/2017/05/14/heroku-huginn.html</guid>
+        <link>http://localhost:4000/huginn/2017/05/14/heroku-huginn.html</link>
+        <guid isPermaLink="true">http://localhost:4000/huginn/2017/05/14/heroku-huginn.html</guid>
         
         
         <category>huginn</category>
@@ -934,8 +934,8 @@ end
 
 </description>
         <pubDate>Tue, 06 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://walkginkgo.com/life/2016/09/06/kindle.html</link>
-        <guid isPermaLink="true">http://walkginkgo.com/life/2016/09/06/kindle.html</guid>
+        <link>http://localhost:4000/life/2016/09/06/kindle.html</link>
+        <guid isPermaLink="true">http://localhost:4000/life/2016/09/06/kindle.html</guid>
         
         
         <category>life</category>
